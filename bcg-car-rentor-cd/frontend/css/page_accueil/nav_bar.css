@@ -1,0 +1,29 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+.nav {
+    background-color: black;
+    height: 100px;
+    padding: 0 6%;
+}
+
+.nav .logo {
+    height: 100%;
+    background-color: ;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav .logo img {
+    height: 70%;
+    background-color: ;
+}
