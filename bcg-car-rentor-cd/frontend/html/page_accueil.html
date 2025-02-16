@@ -5,36 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>page accueil</title>
     <link rel="stylesheet" href="../css/page_accueil/nav_bar.css" />
+    <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css" />
+    <link
+      rel="stylesheet"
+      href="../fontawesome-free-6.7.2-web/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <!-- ***** Nav bar ***** -->
       <nav class="nav">
         <div class="logo">
-          <img src="../images/logo2.png" alt="logo" />
+          <a href="./page_accueil.html"><img src="../images/logo2.png" alt="logo" /></a>
         </div>
 
-        <div class="liens">
-          <ul>
-            <li>Accueil</li>
-            <li>Voitures</li>
-            <li>bcg ?</li>
-            <li>contact</li>
-          </ul>
-        </div>
+        <ul class="menu" id="menu">
+          <li><a href="./page_accueil.html">Accueil</a></li>
+          <li><a href="">Voitures</a></li>
+          <li><a href="">BCG ?</a></li>
+          <li>
+            <a href="">Contact <i class="fa-solid fa-phone"></i></a>
+          </li>
+        </ul>
 
-        <div class="connexion">
-          <a href="#">Se connecter / S'inscrire</a>
-        </div>
-
-        <div>
-            <a href="#"><span></span></a>
+        <div class="connexion_bars">
+          <a href="#" id="connexion"><span>Se connecter</span><i class="fa-solid fa-user"></i></a>
+          <a href="#" id="bars"><i class="fa-solid fa-bars" onclick="toggleMenu()" ></i></a>
         </div>
       </nav>
     </header>
 
     <!-- ***** main section (text,button,image) ***** -->
-    <main></main>
+    <main style="background-color: black; width: 100%; height: 500px"></main>
 
     <!-- ***** section présentation ***** -->
     <section></section>
@@ -51,4 +59,6 @@
     <!-- ***** Footer ***** -->
     <footer></footer>
   </body>
+
+  <script src="../js/page_accueil/nav_bar.js"></script>
 </html>
