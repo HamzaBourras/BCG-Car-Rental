@@ -7,20 +7,22 @@
     outline: none;
 }
 
+
 .nav {
     position: relative;
     width: 100%;
-    background-color: #1E3E62;
+    /* background-color: #000000; */
     height: 90px;
     padding: 0 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
+    border: 1px solid;
 }
 
 .nav .logo {
-    height: 100%;
+    height: 110%;
     width: max-content;
 }
 .nav .logo a {
@@ -77,15 +79,13 @@
 }
 .nav .connexion_bars #connexion i {
     margin-left: 10px;
-    border: 1px solid white;
+    border: 2px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    width: max-content;
-    height: max-content;
     padding: 6px;
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
 .nav .connexion_bars #bars {
     display: none;
