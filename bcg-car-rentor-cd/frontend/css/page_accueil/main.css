@@ -1,7 +1,14 @@
 body {
     background-image: url('../../images/main-bg.png');
-    background-size: 100%;
+    background-size: 100% 1215px;
     background-repeat: no-repeat;
+    /* background-attachment: fixed ; */
+    back
+}
+
+.ttt {
+    /* background-color: red; */
+    color: white;
 }
 main {
     width: 100%;
