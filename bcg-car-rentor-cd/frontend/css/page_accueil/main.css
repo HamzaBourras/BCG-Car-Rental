@@ -1,9 +1,11 @@
 body {
+    background-color: black;
+}
+.Scontainer {
     background-image: url('../../images/main-bg.png');
     background-size: 100% 1215px;
     background-repeat: no-repeat;
     /* background-attachment: fixed ; */
-    back
 }
 
 .ttt {

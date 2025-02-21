@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BCG Car rental</title>
     <link rel="stylesheet" href="../css/page_accueil/nav_bar.css" />
-    <link rel="stylesheet" href="../css/page_accueil/main.css">
+    <link rel="stylesheet" href="../css/page_accueil/main.css" />
+    <link rel="stylesheet" href="../css/page_accueil/presentation.css" />
     <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css" />
     <link
       rel="stylesheet"
@@ -19,51 +20,75 @@
     />
   </head>
   <body>
-    <header>
-      <!-- ***** Nav bar ***** -->
-      <nav class="nav">
-        <div class="logo">
-          <a href="./page_accueil.html"><img src="../images/logo2.png" alt="logo" /></a>
-        </div>
+    <div class="Scontainer">
+      <header>
+        <!-- ***** Nav bar ***** -->
+        <nav class="nav" id="nav">
+          <div class="logo">
+            <a href="./page_accueil.html"
+              ><img src="../images/logo2.png" alt="logo"
+            /></a>
+          </div>
 
-        <ul class="menu" id="menu">
-          <li><a href="./page_accueil.html">Accueil</a></li>
-          <li><a href="">Voitures</a></li>
-          <li><a href="">BCG ?</a></li>
-          <li>
-            <a href="">Contact <i class="fa-solid fa-phone"></i></a>
-          </li>
-        </ul>
+          <ul class="menu" id="menu">
+            <li><a href="./page_accueil.html">Accueil</a></li>
+            <li><a href="">Voitures</a></li>
+            <li><a href="">BCG ?</a></li>
+            <li>
+              <a href="">Contact <i class="fa-solid fa-phone"></i></a>
+            </li>
+          </ul>
 
-        <div class="connexion_bars">
-          <a href="#" id="connexion"><span>Se connecter</span><i class="fa-solid fa-user"></i></a>
-          <a href="#" id="bars"><i class="fa-solid fa-bars" onclick="toggleMenu()" ></i></a>
-        </div>
-      </nav>
-    </header>
+          <div class="connexion_bars">
+            <a href="#" id="connexion"
+              ><span>Se connecter</span><i class="fa-solid fa-user"></i
+            ></a>
+            <a href="#" id="bars"
+              ><i class="fa-solid fa-bars" onclick="toggleMenu()"></i
+            ></a>
+          </div>
+        </nav>
+      </header>
 
-    <!-- ***** main section (text,button,image) ***** -->
-    <main style="width: 100%; height: 500px">
-      <div>
-        <div class="intro">
-          <h2>LOCATION DE VOITURES AU MAROC</h2>
-          <p>Location facile, rapide et fiable.</p>
+      <!-- ***** main section (text,button,image) ***** -->
+      <main style="width: 100%; height: 500px">
+        <div>
+          <div class="intro">
+            <h2>LOCATION DE VOITURES AU MAROC</h2>
+            <p>Location facile, rapide et fiable.</p>
+          </div>
+          <div class="search">
+            <input type="text" placeholder="Rechercher Un modele !" />
+            <a href="#">
+              <button type="submit">
+                <img src="../images/Untitled design (2).png" alt="search" />
+              </button>
+            </a>
+          </div>
         </div>
-        <div class="search">
-          <input type="text" placeholder="Rechercher Un modele !">
-          <a href="#">
-            <button type="submit">
-              <img src="../images/Untitled design (2).png" alt="search">
-            </button>
-          </a>
-        </div>
-      </div>
-      <div></div> 
-    </main>
-    
+        <div></div>
+      </main>
+    </div>
+
     <!-- ***** section présentation ***** -->
     <section>
-      lorem10000
+      <div class="container">
+        <div class="image-box">
+          <img
+            src="../images/voyages-cle.voiture.jpeg"
+            alt="Car key exchange"
+          />
+        </div>
+        <div class="text-box">
+          <h1><span class="red">BCG</span> Car Rental</h1>
+          <p>Votre agence de Location de voitures Marrakech vous offre :</p>
+          <ul>
+            <li>✅ Livraison est gratuite dans la ville Marrakech.</li>
+            <li>✅ Assurance tout risque : Sans franchise.</li>
+            <li>✅ Assurance tout risque : Sans franchise.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- ***** section les trois voitures récents ***** -->

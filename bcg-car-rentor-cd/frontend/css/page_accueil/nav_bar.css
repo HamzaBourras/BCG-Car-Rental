@@ -18,7 +18,7 @@
     justify-content: space-between;
     align-items: center;
     color: white;
-    border: 1px solid;
+    border-bottom: 2px solid;
 }
 
 .nav .logo {
@@ -33,7 +33,6 @@
 }
 .nav .logo a img {
     height: 70%;
-
 }
 
 .nav .menu {
@@ -91,13 +90,17 @@
     display: none;
 }
 .nav .connexion_bars #bars i {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
 }
 
 /****** Pour responsive ******/
 @media (max-width:1268px) {
     .nav {
         padding: 0 2%;
+    }
+
+    .nav .logo a img {
+        height: 50%;
     }
     
     .nav .menu {
@@ -106,7 +109,7 @@
         top: 90px;
         right: 0;
         flex-direction: column;
-        background-color: #1E3E62;
+        background-color: rgba(0, 0, 0, 0.95);
         overflow: hidden;
     }
     
@@ -125,36 +128,4 @@
         display: block;
     }
 
-}
-
-@media (max-width:400px) {
-    html {
-        font-size: 12px;
-    }
-}
-@media (max-width:600px) {
-    html {
-        font-size: 13.5px;
-    }
-}
-@media (max-width:900px) {
-    html {
-        font-size: 14.2px;
-    }
-}
-@media (max-width:1200px) {
-    html {
-        font-size: 15px;
-    }
-}
-
-@media (max-width:1500px) {
-    html {
-        font-size: 15.5px;
-    }
-}
-@media (min-width:1500px) {
-    html {
-        font-size: 16px;
-    }
 }
