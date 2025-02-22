@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthentificationController;
+use App\Http\Controllers\PublicController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix("auth/")->controller(AuthentificationController::class)->group(function () {
     Route::post("inscrire", "inscrire");
+});
+
+
+/***************** Routes publics *******************/
+Route::prefix("public")->controller(PublicController::class)->group(function () {
+    Route::get("voitures/index", "indexVoitures");
 });
