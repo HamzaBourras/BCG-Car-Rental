@@ -70,6 +70,12 @@
     margin: 10px 0;
     /* background-color: red; */
     text-align: left;
+    display: flex;
+    align-items: center;
+}
+.text-box ul li img{
+    margin-right: 7px;
+    /* background-color: green; */
 }
 
 /* Adaptation mobile */
