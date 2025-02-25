@@ -1,117 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BCG Car rental</title>
-    <link rel="stylesheet" href="../css/page_accueil/nav_bar.css" />
-    <link rel="stylesheet" href="../css/page_accueil/main.css" />
-    <link rel="stylesheet" href="../css/page_accueil/presentation.css" />
-    <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css" />
-    <link
-      rel="stylesheet"
-      href="../fontawesome-free-6.7.2-web/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="Scontainer">
-      <header>
-        <!-- ***** Nav bar ***** -->
-        <nav class="nav" id="nav">
-          <div class="logo">
-            <a href="./page_accueil.html"
-              ><img src="../images/logo2.png" alt="logo"
-            /></a>
-          </div>
 
-          <ul class="menu" id="menu">
-            <li><a href="./page_accueil.html">Accueil</a></li>
-            <li><a href="">Voitures</a></li>
-            <li><a href="">BCG ?</a></li>
-            <li>
-              <a href="">Contact <i class="fa-solid fa-phone"></i></a>
-            </li>
-          </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BCG Car rental</title>
+  <link rel="stylesheet" href="../css/page_accueil/nav_bar.css" />
+  <link rel="stylesheet" href="../css/page_accueil/main.css" />
+  <link rel="stylesheet" href="../css/page_accueil/presentation.css" />
+  <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css" />
+  <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900" rel="stylesheet" />
+</head>
 
-          <div class="connexion_bars">
-            <a href="#" id="connexion"
-              ><span>Se connecter</span><i class="fa-solid fa-user"></i
-            ></a>
-            <a href="#" id="bars"
-              ><i class="fa-solid fa-bars" onclick="toggleMenu()"></i
-            ></a>
-          </div>
-        </nav>
-      </header>
-
-      <!-- ***** main section (text,button,image) ***** -->
-      <main style="width: 100%; height: 500px">
-        <div>
-          <div class="intro">
-            <h2>LOCATION DE VOITURES AU MAROC</h2>
-            <p>Location facile, rapide et fiable.</p>
-          </div>
-          <div class="search">
-            <input type="text" placeholder="Rechercher Un modele !" />
-            <a href="#">
-              <button type="submit">
-                <img src="../images/Untitled design (2).png" alt="search" />
-              </button>
-            </a>
-          </div>
+<body>
+  <div class="Scontainer">
+    <header>
+      <!-- ***** Nav bar ***** -->
+      <nav class="nav" id="nav">
+        <div class="logo">
+          <a href="./page_accueil.html"><img src="../images/logo2.png" alt="logo" /></a>
         </div>
-        <div></div>
-      </main>
-    </div>
 
-    <!-- ***** section présentation ***** -->
-    <section>
-      <div class="container">
-        <div class="image-box">
-          <img
-            src="../images/voyages-cle.voiture.jpeg"
-            alt="Car key exchange"
-          />
+        <ul class="menu" id="menu">
+          <li><a href="./page_accueil.html">Accueil</a></li>
+          <li><a href="">Voitures</a></li>
+          <li><a href="">BCG ?</a></li>
+          <li>
+            <a href="">Contact <i class="fa-solid fa-phone"></i></a>
+          </li>
+        </ul>
+
+        <div class="connexion_bars">
+          <a href="#" id="connexion"><span>Se connecter</span><i class="fa-solid fa-user"></i></a>
+          <a href="#" id="bars"><i class="fa-solid fa-bars" onclick="toggleMenu()"></i></a>
         </div>
-        <div class="text-box">
-          <h1><span class="red">BCG</span> Car Rental</h1>
-          <p>Votre agence de Location de voitures Marrakech vous offre :</p>
-          <ul>
-            <li>
-              <img src="../images/x-mark-red.png" width="18px" alt="" />
-              Livraison est gratuite dans la ville Marrakech.
-            </li>
-            <li>
-              <img src="../images/x-mark-red.png" width="18px" alt="" />
-              Assurance tout risque : Sans franchise.
-            </li>
-            <li>
-              <img src="../images/x-mark-red.png" width="18px" alt="" />
-              Assurance tout risque : Sans franchise.
-            </li>
-          </ul>
+      </nav>
+    </header>
+
+    <!-- ***** main section (text,button,image) ***** -->
+    <main style="width: 100%; height: 500px">
+      <div>
+        <div class="intro">
+          <h2>LOCATION DE VOITURES AU MAROC</h2>
+          <p>Location facile, rapide et fiable.</p>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="Rechercher Un modele !" />
+          <a href="#">
+            <button type="submit">
+              <img src="../images/Untitled design (2).png" alt="search" />
+            </button>
+          </a>
         </div>
       </div>
-    </section>
+      <div></div>
+    </main>
+  </div>
 
-    <!-- ***** section les trois voitures récents ***** -->
-    <section></section>
+  <!-- ***** section présentation ***** -->
+  <section>
+    <div class="container">
+      <div class="image-box">
+        <img src="../images/voyages-cle.voiture.jpeg" alt="Car key exchange" />
+      </div>
+      <div class="text-box">
+        <h1><span class="red">BCG</span> Car Rental</h1>
+        <p>Votre agence de Location de voitures Marrakech vous offre :</p>
+        <ul>
+          <li>
+            <img src="../images/x-mark-red.png" width="18px" alt="" />
+            Livraison est gratuite dans la ville Marrakech.
+          </li>
+          <li>
+            <img src="../images/x-mark-red.png" width="18px" alt="" />
+            Assurance tout risque : Sans franchise.
+          </li>
+          <li>
+            <img src="../images/x-mark-red.png" width="18px" alt="" />
+            Assurance tout risque : Sans franchise.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <!-- ***** section les commentaires ***** -->
-    <section></section>
+  <!-- ***** section les trois voitures récents ***** -->
+  <section class="car-features">
+    <h2>DECOUVRIR LES 3 DERNIEURES VOITURES</h2>
 
-    <!-- ***** section à propos de bcg ***** -->
-    <section></section>
+    <!-- Container that holds all car cards -->
+    <div class="cars-container">
 
-    <!-- ***** Footer ***** -->
-    <footer></footer>
-  </body>
+      <!-- One Car Card -->
+      <div class="car-card">
+        <img src="../images/celio.png" alt="nouveau voiture" class="car-image">
+        <h3>CELIO</h3>
+        <p>A PARTIR DE 300dh/jour</p>
 
-  <script src="../js/page_accueil/nav_bar.js"></script>
+        <!-- Feature Icons (Seats, Diesel, Climatiseur) -->
+        <ul class="feature-icons">
+          <li><img src="../images/seat.png" alt="Seats">3 places</li>
+          <li><img src="../images/diesel.png" alt="Diesel">Diesel</li>
+          <li><img src="../images/clim.png" alt="Climatisation">Oui</li>
+        </ul>
+
+        <!-- Reservation Button and WhatsApp (or phone) Icon -->
+        <div class="reserve-section">
+          <button>Reservation</button>
+
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+      </div>
+
+
+  </section>
+
+
+  <!-- ***** section les commentaires ***** -->
+  <section></section>
+
+  <!-- ***** section à propos de bcg ***** -->
+  <section></section>
+
+  <!-- ***** Footer ***** -->
+  <footer></footer>
+</body>
+
+<script src="../js/page_accueil/nav_bar.js"></script>
+
 </html>
