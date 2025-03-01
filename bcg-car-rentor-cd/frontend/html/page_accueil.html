@@ -8,11 +8,10 @@
   <link rel="stylesheet" href="../css/page_accueil/nav_bar.css" />
   <link rel="stylesheet" href="../css/page_accueil/main.css" />
   <link rel="stylesheet" href="../css/page_accueil/presentation.css" />
+  <link rel="stylesheet" href="../css/page_accueil/voitures_recents.css" />
   <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css" />
-  <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900" rel="stylesheet" />
+  
 </head>
 
 <body>
@@ -29,7 +28,7 @@
           <li><a href="">Voitures</a></li>
           <li><a href="">BCG ?</a></li>
           <li>
-            <a href="">Contact <i class="fa-solid fa-phone"></i></a>
+            <a href="./contact_nous.html">Contact <i class="fa-solid fa-phone"></i></a>
           </li>
         </ul>
 
@@ -96,7 +95,7 @@
 
       <!-- One Car Card -->
       <div class="car-card">
-        <img src="../images/celio.png" alt="nouveau voiture" class="car-image">
+        <img src="../images/celio.png" alt="voiture" class="car-image">
         <h3>CELIO</h3>
         <p>A PARTIR DE 300dh/jour</p>
 
@@ -128,7 +127,8 @@
   <!-- ***** Footer ***** -->
   <footer></footer>
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="../js/page_accueil/nav_bar.js"></script>
+<script type="module" src="../js/page_accueil/get_voitures.js"></script>
 
 </html>
