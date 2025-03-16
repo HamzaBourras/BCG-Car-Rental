@@ -1,19 +1,71 @@
 
+html, body {
+    scroll-behavior: smooth;
+}
 
 main {
-    width: 100%;
+    width: 80%;
     height: 500px;
     color: aliceblue;
     font-family: "Orbitron",serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left {
+    width: 50%;
+    padding: 10%;
+    background: red;
+    
+}
+
+.right {
+    width: 50%;
+    display: flex;
+    background: blue;
+}
+.car-img {
+    max-width: 100%;
+    height: auto;
+    padding-right: 15%;
 }
 
 .search {
-    width: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
     height: 45px;
-    border: solid 3px;
+    width: 400px;
+    color: white;
+    background: transparent;
+    border: solid 2px white;
+    border-radius: 30px;
+    padding: 5px;
 }
 
-.search a img {
-    width: 20px;
-    height: 20px;
+.input{
+    width: 90%;
+    padding: 10px 40px 10px 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 15px;
 }
+
+.search-icon {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+.search-icon:hover {
+    color:darkgrey;
+}
+
