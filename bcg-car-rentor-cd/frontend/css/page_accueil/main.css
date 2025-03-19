@@ -116,6 +116,7 @@ main {
     background: #D3D3D3;
 }
 
+
 @media (max-width: 768px) {
     .main {
         flex-direction: column;

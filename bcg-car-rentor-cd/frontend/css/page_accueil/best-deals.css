@@ -1,38 +1,38 @@
-.car-features {
-    padding: 40px;
-    background: #000;
-    /* Light background color */
+.best-deals {
+    margin-bottom: 20px;
     text-align: center;
+    background: red;
+    width: 76%;
+    margin: auto;
 }
 
-.car-features h2 {
+/* ====== SECTION TITLE ====== */
+.best-deals h2 {
     font-size: 25px;
     margin-bottom: 30px;
     color: white;
     font-weight: bold;
+    display: contents;
 }
 
 /* ====== CONTAINER FOR ALL CAR CARDS ====== */
-.cars-container {
+.best-deals .car-cards {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
-    background-color: #000;
-    color: white;
 }
 
 /* ====== EACH CAR CARD ====== */
 .car-card {
     background: #000;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 1px solid white;
+    border-radius: 20px;
     width: 260px;
-    /* Fixed width for consistency */
+    height: max-content;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
+    justify-content: center;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 
