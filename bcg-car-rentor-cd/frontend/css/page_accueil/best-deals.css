@@ -1,87 +1,92 @@
 .best-deals {
     margin-bottom: 20px;
-    text-align: center;
-    background: red;
     width: 76%;
     margin: auto;
 }
 
 /* ====== SECTION TITLE ====== */
 .best-deals h2 {
-    font-size: 25px;
+    font-size: 2rem;
+    text-align: center;
     margin-bottom: 30px;
     color: white;
     font-weight: bold;
-    display: contents;
 }
 
 /* ====== CONTAINER FOR ALL CAR CARDS ====== */
-.best-deals .car-cards {
+.best-deals .cars-cards {
     display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
 /* ====== EACH CAR CARD ====== */
-.car-card {
+.best-deals .cars-cards .car-card {
     background: #000;
     border: 1px solid white;
+    color: #fff;
     border-radius: 20px;
-    width: 260px;
+    width: 300px;
     height: max-content;
-    padding: 20px;
-    text-align: center;
-    justify-content: center;
+    overflow: hidden;
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 
 /* Car image styling */
-.car-image {
-    width: 100%;
+.best-deals .cars-cards .car-card .car-image {
+    width: 90%;
     height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    border-radius: 10px;
+    margin: 5%;
+    object-fit: cover;
 }
 
 /* Headings and paragraph inside card */
-.car-card h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 22px;
-    /* Adjust as needed */
+.best-deals .cars-cards .car-card h2 {
+    font-size: 1.5rem;
     font-weight: 700;
-    /* Bold */
-    text-transform: uppercase;
     color: white;
+    margin: 0 0 0px 15px;
     text-align: start;
 }
 
-.car-card p {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 14px;
-    /* Adjust as needed */
-    font-weight: 200;
+.best-deals .cars-cards .car-card .price {
+    font-size: 0.85rem;
     color: white;
     text-align: start;
+    margin: 0 0 10px 15px;
 }
 
 
 /* ====== FEATURE ICONS (Seats, Diesel, Climatiseur) ====== */
-.feature-icons {
+.best-deals .cars-cards .car-card .car-options {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 15px;
-    list-style: none;
-    padding: 0;
-    margin: 0 0 15px;
+    gap: 65px;
+    font-size: 0.75rem;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding-right: 20px;
+    padding: 5px 20px 5px 0;
+}
+.best-deals .cars-cards .car-card .car-options .seat-option, .diesel-option {
+    display: flex;
+    width: 20px;
+    height: 20px;
+}
+.best-deals .cars-cards .car-card .car-options .climat-option {
+    display: flex;
+    width: 33px;
+    height: 33px;
+}
+.best-deals .cars-cards .car-card .car-options .seat-option span, .diesel-option span, .climat-option span{
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    margin: 0 10%;
 }
 
-/* Icon images inside the list */
-.feature-icons li img {
-    width: 24px;
-    /* Adjust as needed */
-    height: auto;
-}
 
 .fa-whatsapp {
     color: #25d366;
@@ -93,27 +98,59 @@
 }
 
 /* ====== RESERVATION BUTTON AND ICON ====== */
-.reserve-section {
+.reservation {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
 }
 
-/* Reservation button style */
-.reserve-section button {
-    padding: 8px 16px;
-    background: #fff;
-    color: #000;
+.reservation-btn {
+    width: 75%;
+    height: 35px;
+    background: white;
+    outline: none;
     border: none;
-    cursor: pointer;
-    border-radius: 10px;
-    font-weight: bold;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 12px 12px;
+    transition: 0.3s;
+}
+.reservation-btn i {
+    transition: transform 0.2s ease-in-out;
+}
+.reservation-btn:hover i {
+    transform: translateX(5px);
+}
+.reservation-btn:hover {
+    background: #559d5d;
+    box-shadow: 3px 2px 20px -5px rgb(27, 158, 68);
+}
+.reservation-btn:active {
+    transform: translateY(1px);
+    background: #1e8146;
 }
 
+/* ====== WHATSAPP BUTTON AND ICON ====== */
 
-.reserve-section button:hover {
-    background: #444;
+.reservation .whatsapp-btn {
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;
 }
-
-/* End de section de voitures recentes */
+.reservation .whatsapp-btn i {
+    font-size: 1.5rem;
+    color: #000;
+    margin: 1px 0 0 2px;
+}
+.whatsapp-btn:hover {
+    background: #559d5d;
+    box-shadow: 3px 2px 20px -5px rgb(27, 158, 68);
+}
+.whatsapp-btn:active {
+    transform: translateY(1px);
+    background: #1e8146;
+}

@@ -7,7 +7,6 @@ main {
     width: 80%;
     height: 500px;
     color: aliceblue;
-    font-family: "Orbitron",serif;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -38,6 +37,7 @@ main {
 
 .intro {
     margin-bottom: 25px;
+    font-size: 1.2rem;
 }
 
 .search {
@@ -90,30 +90,30 @@ main {
 }
 .explore-btn {
     width: 80%;
-    height: 45px;
+    height: max-content;
     padding: 10px 20px;
-    background: white;
+    background: #dedede;
     outline: none;
     border: none;
     border-radius: 30px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-right: 5%;
-    transition: 0.4s;
+    transition: 0.3s;
 }
-.explore-btn > i {
-    transition: transform 0.3s ease-in-out;
+.explore-btn i {
+    transition: transform 0.2s ease-in-out;
 }
 .explore-btn:hover i {
     transform: translateX(5px);
 }
 .explore-btn:hover {
-    box-shadow: 3px 3px 25px -5px white;
-    background: #D3D3D3;
+    box-shadow: 3px 2px 20px -5px white;
+    background: white;
 }
 .explore-btn:active {
     transform: translateY(2px);
-    box-shadow: 3px 3px 25px -3px white;
-    background: #D3D3D3;
+    box-shadow: 3px 3px 25px -5px white;
+    background: white;
 }
 
 
