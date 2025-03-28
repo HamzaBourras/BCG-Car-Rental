@@ -7,7 +7,7 @@
 
 /* Conteneur principal */
 .container {
-    /* background-color: black; */
+    background-color: transparent;
     color: white;
     display: flex;
     align-items: center;
@@ -76,6 +76,21 @@
 .text-box ul li img {
     margin-right: 7px;
     /* background-color: green; */
+}
+
+.section-divider2 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 3%;
+}
+.section-divider2::after {
+    content: '';
+    position: absolute;
+    width: 65%;
+    height: 2px; /* Height of the divider */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: translateY(-50%) translateX(-50%);
 }
 
 /* Adaptation mobile */
