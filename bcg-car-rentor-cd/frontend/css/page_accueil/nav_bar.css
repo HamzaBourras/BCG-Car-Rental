@@ -23,6 +23,7 @@ body {
     align-items: center;
     color: white;
     border-bottom: 2px solid;
+    z-index: 1;
 }
 
 .nav .logo {
