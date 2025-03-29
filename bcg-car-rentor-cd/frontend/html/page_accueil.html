@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="../css/page_accueil/nav_bar.css" />
   <link rel="stylesheet" href="../css/page_accueil/main.css" />
   <link rel="stylesheet" href="../css/page_accueil/presentation.css" />
-  <link rel="stylesheet" href="../css/page_accueil/voitures_recents.css" />
+  <link rel="stylesheet" href="../css/page_accueil/best-deals.css" />
   <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
   
 </head>
 
@@ -41,24 +41,35 @@
 
     <!-- ***** main section (text,button,image) ***** -->
     <main style="width: 100%; height: 500px">
-      <div>
+      <div class="left">
         <div class="intro">
           <h2>LOCATION DE VOITURES AU MAROC</h2>
           <p>Location facile, rapide et fiable.</p>
         </div>
         <div class="search">
-          <input type="text" placeholder="Rechercher Un modele !" />
-          <a href="#">
-            <button type="submit">
-              <img src="../images/Untitled design (2).png" alt="search" />
-            </button>
+          <input type="text" class="input" placeholder="Rechercher Un modele !" />
+          <button class="search-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
           </a>
         </div>
+        <div class="explore">
+          <p class="ou">OU :</p>
+          <button class="explore-btn">
+            <span>Voir toutes les modèles disponibles</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
       </div>
-      <div></div>
-    </main>
-  </div>
 
+      <div class="right">
+        <img class="car-img" src="../images/Car.png" alt="Car">
+      </div>
+    </main>
+    <div class="section-divider"></div>
+
+
+  </div>
   <!-- ***** section présentation ***** -->
   <section>
     <div class="container">
@@ -66,7 +77,7 @@
         <img src="../images/voyages-cle.voiture.jpeg" alt="Car key exchange" />
       </div>
       <div class="text-box">
-        <h1><span class="red">BCG</span> Car Rental</h1>
+        <h1><span class="red">BCG</span> CAR RENTAL</h1>
         <p>Votre agence de Location de voitures Marrakech vous offre :</p>
         <ul>
           <li>
@@ -85,36 +96,116 @@
       </div>
     </div>
   </section>
+  <div class="section-divider2"></div>
 
-  <!-- ***** section les trois voitures récents ***** -->
-  <section class="car-features">
-    <h2>DECOUVRIR LES 3 DERNIEURES VOITURES</h2>
+
+  <!-- ***** section les offres du jour ***** -->
+  <section class="best-deals">
+    <h2>DECOUVRIR LES OFFRES DU JOUR</h2>
 
     <!-- Container that holds all car cards -->
-    <div class="cars-container">
+    <div class="cars-cards">
 
       <!-- One Car Card -->
       <div class="car-card">
-        <img src="../images/celio.png" alt="voiture" class="car-image">
-        <h3>CELIO</h3>
-        <p>A PARTIR DE 300dh/jour</p>
+        <img src="../images/Cars/clio4.png" alt="Renault clio4" class="car-image">
+        <h2>RENAULT CLIO 4</h2>
+        <p class="price">A PARTIR DE 300dh/jour</p>
 
-        <!-- Feature Icons (Seats, Diesel, Climatiseur) -->
-        <ul class="feature-icons">
-          <li><img src="../images/seat.png" alt="Seats">3 places</li>
-          <li><img src="../images/diesel.png" alt="Diesel">Diesel</li>
-          <li><img src="../images/clim.png" alt="Climatisation">Oui</li>
-        </ul>
+        <!-- Car options (Seats, Diesel, Climatiseur) -->
+        <div class="car-options">
+          <div class="seat-option">
+            <img src="../images/Options/seat.png" alt="">
+            <span>5 Places</span>
+          </div>
+          <div class="diesel-option">
+            <img src="../images/Options/diesel.png" alt="">
+            <span>Diesel</span>
+          </div>
+          <div class="climat-option">
+            <img src="../images/Options/clim2.png" alt="">
+            <span>Oui</span>
+          </div>
+        </div>
 
         <!-- Reservation Button and WhatsApp (or phone) Icon -->
-        <div class="reserve-section">
-          <button>Reservation</button>
-
-          <i class="fa-brands fa-whatsapp"></i>
+        <div class="reservation">
+          <button class="reservation-btn">
+            <span>Reservation</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <button href="https://wa.me/YOUR_NUMBER" class="whatsapp-btn" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+          </button>
         </div>
       </div>
 
+      <div class="car-card">
+        <img src="../images/Cars/clio4.png" alt="Renault clio4" class="car-image">
+        <h2>RENAULT CLIO 4</h2>
+        <p class="price">A PARTIR DE 300dh/jour</p>
 
+        <!-- Car options (Seats, Diesel, Climatiseur) -->
+        <div class="car-options">
+          <div class="seat-option">
+            <img src="../images/Options/seat.png" alt="">
+            <span>5 Places</span>
+          </div>
+          <div class="diesel-option">
+            <img src="../images/Options/diesel.png" alt="">
+            <span>Diesel</span>
+          </div>
+          <div class="climat-option">
+            <img src="../images/Options/clim2.png" alt="">
+            <span>Oui</span>
+          </div>
+        </div>
+
+        <!-- Reservation Button and WhatsApp (or phone) Icon -->
+        <div class="reservation">
+          <button class="reservation-btn">
+            <span>Reservation</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <button href="https://wa.me/YOUR_NUMBER" class="whatsapp-btn" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <img src="../images/Cars/clio4.png" alt="Renault clio4" class="car-image">
+        <h2>RENAULT CLIO 4</h2>
+        <p class="price">A PARTIR DE 300dh/jour</p>
+
+        <!-- Car options (Seats, Diesel, Climatiseur) -->
+        <div class="car-options">
+          <div class="seat-option">
+            <img src="../images/Options/seat.png" alt="">
+            <span>5 Places</span>
+          </div>
+          <div class="diesel-option">
+            <img src="../images/Options/diesel.png" alt="">
+            <span>Diesel</span>
+          </div>
+          <div class="climat-option">
+            <img src="../images/Options/clim2.png" alt="">
+            <span>Oui</span>
+          </div>
+        </div>
+
+        <!-- Reservation Button and WhatsApp (or phone) Icon -->
+        <div class="reservation">
+          <button class="reservation-btn">
+            <span>Reservation</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <button href="https://wa.me/YOUR_NUMBER" class="whatsapp-btn" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+          </button>
+        </div>
+      </div>
+    </div>
   </section>
 
 

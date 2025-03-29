@@ -1,0 +1,163 @@
+.best-deals {
+    display: flex;
+    margin-bottom: 20px;
+    margin: auto;
+    background: #000;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ====== SECTION TITLE ====== */
+.best-deals h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 50px 0 60px 0;
+    color: white;
+    font-weight: bold;
+}
+
+/* ====== CONTAINER FOR ALL CAR CARDS ====== */
+.best-deals .cars-cards {
+    display: flex;
+    align-items: center;
+    width: 76%;
+    gap: 91px;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+/* ====== EACH CAR CARD ====== */
+.best-deals .cars-cards .car-card {
+    background: #000;
+    border: 1px solid white;
+    color: #fff;
+    border-radius: 20px;
+    width: 300px;
+    height: max-content;
+    overflow: hidden;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Car image styling */
+.best-deals .cars-cards .car-card .car-image {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    margin: 5%;
+    object-fit: cover;
+}
+
+/* Headings and paragraph inside card */
+.best-deals .cars-cards .car-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0px 15px;
+    text-align: start;
+}
+
+.best-deals .cars-cards .car-card .price {
+    font-size: 0.85rem;
+    color: white;
+    text-align: start;
+    margin: 0 0 10px 15px;
+}
+
+
+/* ====== FEATURE ICONS (Seats, Diesel, Climatiseur) ====== */
+.best-deals .cars-cards .car-card .car-options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 65px;
+    font-size: 0.75rem;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding-right: 20px;
+    padding: 5px 20px 5px 0;
+}
+.best-deals .cars-cards .car-card .car-options .seat-option, .diesel-option {
+    display: flex;
+    width: 20px;
+    height: 20px;
+}
+.best-deals .cars-cards .car-card .car-options .climat-option {
+    display: flex;
+    width: 33px;
+    height: 33px;
+}
+.best-deals .cars-cards .car-card .car-options .seat-option span, .diesel-option span, .climat-option span{
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    margin: 0 10%;
+}
+
+
+.fa-whatsapp {
+    color: #25d366;
+    font-size: 30px;
+}
+
+.fa-whatsapp:hover {
+    color: #128C7E;
+}
+
+/* ====== RESERVATION BUTTON AND ICON ====== */
+.reservation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reservation-btn {
+    width: 75%;
+    height: 35px;
+    background: white;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 12px 12px;
+    transition: 0.3s;
+}
+.reservation-btn i {
+    transition: transform 0.2s ease-in-out;
+}
+.reservation-btn:hover i {
+    transform: translateX(5px);
+}
+.reservation-btn:hover {
+    background: #559d5d;
+    box-shadow: 3px 2px 20px -5px rgb(27, 158, 68);
+}
+.reservation-btn:active {
+    transform: translateY(1px);
+    background: #1e8146;
+}
+
+/* ====== WHATSAPP BUTTON AND ICON ====== */
+
+.reservation .whatsapp-btn {
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;
+}
+.reservation .whatsapp-btn i {
+    font-size: 1.5rem;
+    color: #000;
+    margin: 1px 0 0 2px;
+}
+.whatsapp-btn:hover {
+    background: #559d5d;
+    box-shadow: 3px 2px 20px -5px rgb(27, 158, 68);
+}
+.whatsapp-btn:active {
+    transform: translateY(1px);
+    background: #1e8146;
+}

@@ -1,19 +1,166 @@
 
+html, body {
+    scroll-behavior: smooth;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%), url('../../images/main-bg.png');
+    /* background-image: url('../../images/main-bg.png'); */
+    background-size: 100% 1215px;
+    background-repeat: no-repeat;
+    
+}
 
 main {
-    width: 100%;
+    width: 80%;
     height: 500px;
     color: aliceblue;
-    font-family: "Orbitron",serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: fadeSlideIn 1s ease-out forwards;
+}
+
+.section-divider {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3%;
+}
+.section-divider::after {
+    content: '';
+    position: absolute;
+    width: 65%;
+    height: 2px; /* Height of the divider */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.left {
+    width: 50%;
+    padding-left: 11%;
+    padding-right: 0;
+    position: relative;
+    bottom: 30px;
+    
+}
+
+.right {
+    width: 55%;
+    display: flex;
+    padding-right: 5%;
+}
+.car-img {
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+}
+
+.intro {
+    margin-bottom: 25px;
+    font-size: 1.2rem;
 }
 
 .search {
-    width: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
     height: 45px;
-    border: solid 3px;
+    width: 95%;
+    color: white;
+    background: transparent;
+    border: solid 2px white;
+    border-radius: 30px;
+    padding: 5px;
 }
 
-.search a img {
-    width: 20px;
-    height: 20px;
+.input{
+    width: 90%;
+    padding: 10px 40px 10px 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 15px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+.search-icon:hover {
+    color:darkgrey;
+}
+
+.explore {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 15px;
+}
+.ou {
+    width: 10%;
+    margin-left: 30px;
+}
+.explore-btn {
+    width: 80%;
+    height: max-content;
+    padding: 10px 20px;
+    background: #dedede;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    margin-right: 5%;
+    transition: 0.3s;
+}
+.explore-btn i {
+    transition: transform 0.2s ease-in-out;
+}
+.explore-btn:hover i {
+    transform: translateX(5px);
+}
+.explore-btn:hover {
+    box-shadow: 3px 2px 20px -5px white;
+    background: white;
+}
+.explore-btn:active {
+    transform: translateY(2px);
+    box-shadow: 3px 3px 25px -5px white;
+    background: white;
+}
+
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        text-align: center;
+    }
+    .right {
+        margin-top: 20px;
+    }
+    .search {
+        margin: 0 auto;
+    }
+
+}
+
+
+/* ANIMATIONS */
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
