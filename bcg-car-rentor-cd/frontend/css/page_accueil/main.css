@@ -2,9 +2,9 @@
 html, body {
     scroll-behavior: smooth;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%), url('../../images/main-bg.png');
-    /* background-image: url('../../images/main-bg.png'); */
     background-size: 100% 1215px;
     background-repeat: no-repeat;
+    background-color: black;
     
 }
 
