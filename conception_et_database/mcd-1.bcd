@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{4555387C-0C7F-4595-93E0-C1DF015C2E2A}" Label="" LastModificationDate="1740245342" Name="ModeleConceptuelDonnees_1" Objects="102" Symbols="20" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" signature="CDM_DATA_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{4555387C-0C7F-4595-93E0-C1DF015C2E2A}" Label="" LastModificationDate="1740254906" Name="ModeleConceptuelDonnees_1" Objects="102" Symbols="20" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" signature="CDM_DATA_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -12,7 +12,7 @@
 <a:Code>MODELECONCEPTUELDONNEES_1</a:Code>
 <a:CreationDate>1739390348</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
-<a:ModificationDate>1740245315</a:ModificationDate>
+<a:ModificationDate>1740245770</a:ModificationDate>
 <a:Modifier>hp</a:Modifier>
 <a:PackageOptionsText>[FolderOptions]
 
@@ -417,7 +417,7 @@ NameToCode=No</a:ModelOptionsText>
 <a:Code>DIAGRAMME_1</a:Code>
 <a:CreationDate>1739390350</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
-<a:ModificationDate>1740245315</a:ModificationDate>
+<a:ModificationDate>1740245770</a:ModificationDate>
 <a:Modifier>hp</a:Modifier>
 <a:DisplayPreferences>[DisplayPreferences]
 
@@ -808,8 +808,8 @@ CARD 0 Arial,8,N</a:FontList>
 <o:AssociationLinkSymbol Id="o8">
 <a:CreationDate>1739392021</a:CreationDate>
 <a:ModificationDate>1739392021</a:ModificationDate>
-<a:Rect>((-2760,6848), (12078,8122))</a:Rect>
-<a:ListOfPoints>((12078,8022),(-2760,8022))</a:ListOfPoints>
+<a:Rect>((-2760,6859), (12129,8133))</a:Rect>
+<a:ListOfPoints>((12129,8033),(-2760,8033))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -952,48 +952,6 @@ CARD 0 Arial,8,N</a:FontList>
 <o:AssociationLink Ref="o28"/>
 </c:Object>
 </o:AssociationLinkSymbol>
-<o:AssociationLinkSymbol Id="o29">
-<a:CreationDate>1740245315</a:CreationDate>
-<a:ModificationDate>1740245315</a:ModificationDate>
-<a:Rect>((-15882,-1186), (-1814,3321))</a:Rect>
-<a:ListOfPoints>((-15844,3321),(-15844,-1186),(-1814,-1186))</a:ListOfPoints>
-<a:CornerStyle>1</a:CornerStyle>
-<a:ArrowStyle>0</a:ArrowStyle>
-<a:LineColor>16744576</a:LineColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>ROLE 0 Arial,8,N
-CARD 0 Arial,8,N</a:FontList>
-<c:SourceSymbol>
-<o:EntitySymbol Ref="o5"/>
-</c:SourceSymbol>
-<c:DestinationSymbol>
-<o:AssociationSymbol Ref="o30"/>
-</c:DestinationSymbol>
-<c:Object>
-<o:AssociationLink Ref="o31"/>
-</c:Object>
-</o:AssociationLinkSymbol>
-<o:AssociationLinkSymbol Id="o32">
-<a:CreationDate>1740245315</a:CreationDate>
-<a:ModificationDate>1740245315</a:ModificationDate>
-<a:Rect>((-1814,-5694), (12255,-1186))</a:Rect>
-<a:ListOfPoints>((12217,-5694),(12217,-1186),(-1814,-1186))</a:ListOfPoints>
-<a:CornerStyle>1</a:CornerStyle>
-<a:ArrowStyle>0</a:ArrowStyle>
-<a:LineColor>16744576</a:LineColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>ROLE 0 Arial,8,N
-CARD 0 Arial,8,N</a:FontList>
-<c:SourceSymbol>
-<o:EntitySymbol Ref="o21"/>
-</c:SourceSymbol>
-<c:DestinationSymbol>
-<o:AssociationSymbol Ref="o30"/>
-</c:DestinationSymbol>
-<c:Object>
-<o:AssociationLink Ref="o33"/>
-</c:Object>
-</o:AssociationLinkSymbol>
 <o:EntitySymbol Id="o5">
 <a:CreationDate>1739390369</a:CreationDate>
 <a:ModificationDate>1739392017</a:ModificationDate>
@@ -1012,14 +970,14 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <c:Object>
-<o:Entity Ref="o34"/>
+<o:Entity Ref="o29"/>
 </c:Object>
 </o:EntitySymbol>
 <o:EntitySymbol Id="o9">
 <a:CreationDate>1739390371</a:CreationDate>
 <a:ModificationDate>1739391800</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((9396,4803), (25178,11545))</a:Rect>
+<a:Rect>((9473,5290), (25101,11058))</a:Rect>
 <a:LineColor>11184640</a:LineColor>
 <a:FillColor>16777136</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1033,7 +991,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <c:Object>
-<o:Entity Ref="o35"/>
+<o:Entity Ref="o30"/>
 </c:Object>
 </o:EntitySymbol>
 <o:EntitySymbol Id="o15">
@@ -1054,7 +1012,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <c:Object>
-<o:Entity Ref="o36"/>
+<o:Entity Ref="o31"/>
 </c:Object>
 </o:EntitySymbol>
 <o:EntitySymbol Id="o21">
@@ -1075,7 +1033,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <c:Object>
-<o:Entity Ref="o37"/>
+<o:Entity Ref="o32"/>
 </c:Object>
 </o:EntitySymbol>
 <o:AssociationSymbol Id="o6">
@@ -1093,7 +1051,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <c:Object>
-<o:Association Ref="o38"/>
+<o:Association Ref="o33"/>
 </c:Object>
 </o:AssociationSymbol>
 <o:AssociationSymbol Id="o12">
@@ -1111,7 +1069,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <c:Object>
-<o:Association Ref="o39"/>
+<o:Association Ref="o34"/>
 </c:Object>
 </o:AssociationSymbol>
 <o:AssociationSymbol Id="o18">
@@ -1129,7 +1087,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <c:Object>
-<o:Association Ref="o40"/>
+<o:Association Ref="o35"/>
 </c:Object>
 </o:AssociationSymbol>
 <o:EntitySymbol Id="o24">
@@ -1150,7 +1108,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <c:Object>
-<o:Entity Ref="o41"/>
+<o:Entity Ref="o36"/>
 </c:Object>
 </o:EntitySymbol>
 <o:AssociationSymbol Id="o25">
@@ -1168,25 +1126,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <c:Object>
-<o:Association Ref="o42"/>
-</c:Object>
-</o:AssociationSymbol>
-<o:AssociationSymbol Id="o30">
-<a:CreationDate>1740245315</a:CreationDate>
-<a:ModificationDate>1740245315</a:ModificationDate>
-<a:Rect>((-4215,-2946), (586,573))</a:Rect>
-<a:LineColor>16744576</a:LineColor>
-<a:FillColor>16765136</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,8,N
-DISPNAME 0 Arial,8,N
-Attributes 0 Arial,8,N
-LABL 0 Arial,8,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<c:Object>
-<o:Association Ref="o43"/>
+<o:Association Ref="o37"/>
 </c:Object>
 </o:AssociationSymbol>
 </c:Symbols>
@@ -1196,7 +1136,7 @@ LABL 0 Arial,8,N</a:FontList>
 <o:ConceptualDiagram Ref="o3"/>
 </c:DefaultDiagram>
 <c:Entities>
-<o:Entity Id="o34">
+<o:Entity Id="o29">
 <a:ObjectID>721DB8CA-2E08-4656-B595-FF5F850FAF7B</a:ObjectID>
 <a:Name>utilisateur</a:Name>
 <a:Code>UTILISATEUR</a:Code>
@@ -1205,7 +1145,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1740245342</a:ModificationDate>
 <a:Modifier>hp</a:Modifier>
 <c:Identifiers>
-<o:Identifier Id="o44">
+<o:Identifier Id="o38">
 <a:ObjectID>C42CFE6E-C7D7-422C-BA99-CEC1DDDFA18A</a:ObjectID>
 <a:Name>pky_Client</a:Name>
 <a:Code>PKY_CLIENT</a:Code>
@@ -1214,15 +1154,15 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1739390612</a:ModificationDate>
 <a:Modifier>Destock Afric</a:Modifier>
 <c:Identifier.Attributes>
-<o:EntityAttribute Ref="o45"/>
+<o:EntityAttribute Ref="o39"/>
 </c:Identifier.Attributes>
 </o:Identifier>
 </c:Identifiers>
 <c:PrimaryIdentifier>
-<o:Identifier Ref="o44"/>
+<o:Identifier Ref="o38"/>
 </c:PrimaryIdentifier>
 <c:Attributes>
-<o:EntityAttribute Id="o45">
+<o:EntityAttribute Id="o39">
 <a:ObjectID>20725E82-93AC-45F1-807A-00D167CC7531</a:ObjectID>
 <a:CreationDate>1739390376</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
@@ -1230,11 +1170,41 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:BaseAttribute.Mandatory>1</a:BaseAttribute.Mandatory>
 <c:DataItem>
+<o:DataItem Ref="o40"/>
+</c:DataItem>
+</o:EntityAttribute>
+<o:EntityAttribute Id="o41">
+<a:ObjectID>9397C0A2-E6EA-4B55-BDD4-DD7FAC5435EA</a:ObjectID>
+<a:CreationDate>1739390376</a:CreationDate>
+<a:Creator>Destock Afric</a:Creator>
+<a:ModificationDate>1739390599</a:ModificationDate>
+<a:Modifier>Destock Afric</a:Modifier>
+<c:DataItem>
+<o:DataItem Ref="o42"/>
+</c:DataItem>
+</o:EntityAttribute>
+<o:EntityAttribute Id="o43">
+<a:ObjectID>3E81752D-E4A2-4EE6-9374-561C55FCE42B</a:ObjectID>
+<a:CreationDate>1739390376</a:CreationDate>
+<a:Creator>Destock Afric</a:Creator>
+<a:ModificationDate>1739390599</a:ModificationDate>
+<a:Modifier>Destock Afric</a:Modifier>
+<c:DataItem>
+<o:DataItem Ref="o44"/>
+</c:DataItem>
+</o:EntityAttribute>
+<o:EntityAttribute Id="o45">
+<a:ObjectID>843EAE5B-95E4-4A94-A40E-AC94B71FFF79</a:ObjectID>
+<a:CreationDate>1739390376</a:CreationDate>
+<a:Creator>Destock Afric</a:Creator>
+<a:ModificationDate>1739390599</a:ModificationDate>
+<a:Modifier>Destock Afric</a:Modifier>
+<c:DataItem>
 <o:DataItem Ref="o46"/>
 </c:DataItem>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o47">
-<a:ObjectID>9397C0A2-E6EA-4B55-BDD4-DD7FAC5435EA</a:ObjectID>
+<a:ObjectID>44FFDDA8-F6F3-487D-A802-EEE3537AD344</a:ObjectID>
 <a:CreationDate>1739390376</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
 <a:ModificationDate>1739390599</a:ModificationDate>
@@ -1244,7 +1214,7 @@ LABL 0 Arial,8,N</a:FontList>
 </c:DataItem>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o49">
-<a:ObjectID>3E81752D-E4A2-4EE6-9374-561C55FCE42B</a:ObjectID>
+<a:ObjectID>F19882B8-9897-48C4-BB74-3F51A0B62F9C</a:ObjectID>
 <a:CreationDate>1739390376</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
 <a:ModificationDate>1739390599</a:ModificationDate>
@@ -1254,57 +1224,27 @@ LABL 0 Arial,8,N</a:FontList>
 </c:DataItem>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o51">
-<a:ObjectID>843EAE5B-95E4-4A94-A40E-AC94B71FFF79</a:ObjectID>
-<a:CreationDate>1739390376</a:CreationDate>
-<a:Creator>Destock Afric</a:Creator>
-<a:ModificationDate>1739390599</a:ModificationDate>
-<a:Modifier>Destock Afric</a:Modifier>
-<c:DataItem>
-<o:DataItem Ref="o52"/>
-</c:DataItem>
-</o:EntityAttribute>
-<o:EntityAttribute Id="o53">
-<a:ObjectID>44FFDDA8-F6F3-487D-A802-EEE3537AD344</a:ObjectID>
-<a:CreationDate>1739390376</a:CreationDate>
-<a:Creator>Destock Afric</a:Creator>
-<a:ModificationDate>1739390599</a:ModificationDate>
-<a:Modifier>Destock Afric</a:Modifier>
-<c:DataItem>
-<o:DataItem Ref="o54"/>
-</c:DataItem>
-</o:EntityAttribute>
-<o:EntityAttribute Id="o55">
-<a:ObjectID>F19882B8-9897-48C4-BB74-3F51A0B62F9C</a:ObjectID>
-<a:CreationDate>1739390376</a:CreationDate>
-<a:Creator>Destock Afric</a:Creator>
-<a:ModificationDate>1739390599</a:ModificationDate>
-<a:Modifier>Destock Afric</a:Modifier>
-<c:DataItem>
-<o:DataItem Ref="o56"/>
-</c:DataItem>
-</o:EntityAttribute>
-<o:EntityAttribute Id="o57">
 <a:ObjectID>34E1EA33-DEA8-4D98-891C-7177A3ADB6A9</a:ObjectID>
 <a:CreationDate>1740245072</a:CreationDate>
 <a:Creator>hp</a:Creator>
 <a:ModificationDate>1740245100</a:ModificationDate>
 <a:Modifier>hp</a:Modifier>
 <c:DataItem>
-<o:DataItem Ref="o58"/>
+<o:DataItem Ref="o52"/>
 </c:DataItem>
 </o:EntityAttribute>
 </c:Attributes>
 </o:Entity>
-<o:Entity Id="o35">
+<o:Entity Id="o30">
 <a:ObjectID>8D526782-47EA-4B81-92EB-03E4AD6AC1B8</a:ObjectID>
 <a:Name>Commentaire</a:Name>
 <a:Code>COMMENTAIRE</a:Code>
 <a:CreationDate>1739390371</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
-<a:ModificationDate>1739392103</a:ModificationDate>
-<a:Modifier>Destock Afric</a:Modifier>
+<a:ModificationDate>1740254906</a:ModificationDate>
+<a:Modifier>hp</a:Modifier>
 <c:Identifiers>
-<o:Identifier Id="o59">
+<o:Identifier Id="o53">
 <a:ObjectID>79DC084E-E77D-4992-A991-96E331069F1F</a:ObjectID>
 <a:Name>pky_Commentaire</a:Name>
 <a:Code>PKY_COMMENTAIRE</a:Code>
@@ -1313,15 +1253,15 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1739391797</a:ModificationDate>
 <a:Modifier>Destock Afric</a:Modifier>
 <c:Identifier.Attributes>
-<o:EntityAttribute Ref="o60"/>
+<o:EntityAttribute Ref="o54"/>
 </c:Identifier.Attributes>
 </o:Identifier>
 </c:Identifiers>
 <c:PrimaryIdentifier>
-<o:Identifier Ref="o59"/>
+<o:Identifier Ref="o53"/>
 </c:PrimaryIdentifier>
 <c:Attributes>
-<o:EntityAttribute Id="o60">
+<o:EntityAttribute Id="o54">
 <a:ObjectID>5215DF6D-D396-4AB6-AA7C-F38506A1F83D</a:ObjectID>
 <a:CreationDate>1739391204</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
@@ -1329,42 +1269,32 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:BaseAttribute.Mandatory>1</a:BaseAttribute.Mandatory>
 <c:DataItem>
-<o:DataItem Ref="o61"/>
+<o:DataItem Ref="o55"/>
 </c:DataItem>
 </o:EntityAttribute>
-<o:EntityAttribute Id="o62">
+<o:EntityAttribute Id="o56">
 <a:ObjectID>188AB619-444C-4040-8DFA-C6604E032961</a:ObjectID>
 <a:CreationDate>1739391204</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
 <a:ModificationDate>1739391780</a:ModificationDate>
 <a:Modifier>Destock Afric</a:Modifier>
 <c:DataItem>
-<o:DataItem Ref="o63"/>
+<o:DataItem Ref="o57"/>
 </c:DataItem>
 </o:EntityAttribute>
-<o:EntityAttribute Id="o64">
+<o:EntityAttribute Id="o58">
 <a:ObjectID>0A3AEEB0-FB10-482C-9C50-F431B9528C74</a:ObjectID>
 <a:CreationDate>1739391204</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
 <a:ModificationDate>1739391780</a:ModificationDate>
 <a:Modifier>Destock Afric</a:Modifier>
 <c:DataItem>
-<o:DataItem Ref="o65"/>
-</c:DataItem>
-</o:EntityAttribute>
-<o:EntityAttribute Id="o66">
-<a:ObjectID>637595BF-9174-4ABF-9665-04D5F3DCD483</a:ObjectID>
-<a:CreationDate>1739391204</a:CreationDate>
-<a:Creator>Destock Afric</a:Creator>
-<a:ModificationDate>1739391780</a:ModificationDate>
-<a:Modifier>Destock Afric</a:Modifier>
-<c:DataItem>
-<o:DataItem Ref="o67"/>
+<o:DataItem Ref="o59"/>
 </c:DataItem>
 </o:EntityAttribute>
 </c:Attributes>
 </o:Entity>
-<o:Entity Id="o36">
+<o:Entity Id="o31">
 <a:ObjectID>E4054DD9-3CE3-4891-8D4B-7422B2413540</a:ObjectID>
 <a:Name>Reservation</a:Name>
 <a:Code>RESERVATION</a:Code>
@@ -1373,7 +1303,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1740245004</a:ModificationDate>
 <a:Modifier>hp</a:Modifier>
 <c:Identifiers>
-<o:Identifier Id="o68">
+<o:Identifier Id="o60">
 <a:ObjectID>C8E078BA-43BB-48C1-9293-EDBE9A4D7FDE</a:ObjectID>
 <a:Name>pky_Reservation</a:Name>
 <a:Code>PKY_RESERVATION</a:Code>
@@ -1382,15 +1312,15 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1739392011</a:ModificationDate>
 <a:Modifier>Destock Afric</a:Modifier>
 <c:Identifier.Attributes>
-<o:EntityAttribute Ref="o69"/>
+<o:EntityAttribute Ref="o61"/>
 </c:Identifier.Attributes>
 </o:Identifier>
 </c:Identifiers>
 <c:PrimaryIdentifier>
-<o:Identifier Ref="o68"/>
+<o:Identifier Ref="o60"/>
 </c:PrimaryIdentifier>
 <c:Attributes>
-<o:EntityAttribute Id="o69">
+<o:EntityAttribute Id="o61">
 <a:ObjectID>8FBD9CF0-0C5D-4E08-BE79-542BD1E70185</a:ObjectID>
 <a:CreationDate>1739391803</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
@@ -1398,52 +1328,52 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:BaseAttribute.Mandatory>1</a:BaseAttribute.Mandatory>
 <c:DataItem>
-<o:DataItem Ref="o70"/>
+<o:DataItem Ref="o62"/>
 </c:DataItem>
 </o:EntityAttribute>
-<o:EntityAttribute Id="o71">
+<o:EntityAttribute Id="o63">
 <a:ObjectID>7D9D62F4-214E-421B-B98C-85F962224BC9</a:ObjectID>
 <a:CreationDate>1739391803</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
 <a:ModificationDate>1739391988</a:ModificationDate>
 <a:Modifier>Destock Afric</a:Modifier>
 <c:DataItem>
-<o:DataItem Ref="o72"/>
+<o:DataItem Ref="o64"/>
 </c:DataItem>
 </o:EntityAttribute>
-<o:EntityAttribute Id="o73">
+<o:EntityAttribute Id="o65">
 <a:ObjectID>71ECF9D9-5C5C-4E04-98E2-920608935250</a:ObjectID>
 <a:CreationDate>1739391803</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
 <a:ModificationDate>1739391988</a:ModificationDate>
 <a:Modifier>Destock Afric</a:Modifier>
 <c:DataItem>
-<o:DataItem Ref="o74"/>
+<o:DataItem Ref="o66"/>
 </c:DataItem>
 </o:EntityAttribute>
-<o:EntityAttribute Id="o75">
+<o:EntityAttribute Id="o67">
 <a:ObjectID>A1880DAA-7040-4814-ADF7-1422BC452F2B</a:ObjectID>
 <a:CreationDate>1739391803</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
 <a:ModificationDate>1739391988</a:ModificationDate>
 <a:Modifier>Destock Afric</a:Modifier>
 <c:DataItem>
-<o:DataItem Ref="o76"/>
+<o:DataItem Ref="o68"/>
 </c:DataItem>
 </o:EntityAttribute>
-<o:EntityAttribute Id="o77">
+<o:EntityAttribute Id="o69">
 <a:ObjectID>21482E0E-FAD4-49D4-AB75-089DE39DF215</a:ObjectID>
 <a:CreationDate>1739391803</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
 <a:ModificationDate>1739391988</a:ModificationDate>
 <a:Modifier>Destock Afric</a:Modifier>
 <c:DataItem>
-<o:DataItem Ref="o78"/>
+<o:DataItem Ref="o70"/>
 </c:DataItem>
 </o:EntityAttribute>
 </c:Attributes>
 </o:Entity>
-<o:Entity Id="o37">
+<o:Entity Id="o32">
 <a:ObjectID>9199B9BE-61A3-4AC4-BD42-89E17213724B</a:ObjectID>
 <a:Name>Voiture</a:Name>
 <a:Code>VOITURE</a:Code>
@@ -1452,7 +1382,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1740245335</a:ModificationDate>
 <a:Modifier>hp</a:Modifier>
 <c:Identifiers>
-<o:Identifier Id="o79">
+<o:Identifier Id="o71">
 <a:ObjectID>36915DC2-B230-4E2C-96F6-03CC7C5EBE40</a:ObjectID>
 <a:Name>pky_Voiture</a:Name>
 <a:Code>PKY_VOITURE</a:Code>
@@ -1461,15 +1391,15 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1739391199</a:ModificationDate>
 <a:Modifier>Destock Afric</a:Modifier>
 <c:Identifier.Attributes>
-<o:EntityAttribute Ref="o80"/>
+<o:EntityAttribute Ref="o72"/>
 </c:Identifier.Attributes>
 </o:Identifier>
 </c:Identifiers>
 <c:PrimaryIdentifier>
-<o:Identifier Ref="o79"/>
+<o:Identifier Ref="o71"/>
 </c:PrimaryIdentifier>
 <c:Attributes>
-<o:EntityAttribute Id="o80">
+<o:EntityAttribute Id="o72">
 <a:ObjectID>C22577A4-CF91-431B-80E6-D080320D1077</a:ObjectID>
 <a:CreationDate>1739390622</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
@@ -1477,11 +1407,51 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:BaseAttribute.Mandatory>1</a:BaseAttribute.Mandatory>
 <c:DataItem>
+<o:DataItem Ref="o73"/>
+</c:DataItem>
+</o:EntityAttribute>
+<o:EntityAttribute Id="o74">
+<a:ObjectID>93BDDD2D-09A3-42D6-ADFC-3CBE537FB410</a:ObjectID>
+<a:CreationDate>1739390622</a:CreationDate>
+<a:Creator>Destock Afric</a:Creator>
+<a:ModificationDate>1739391179</a:ModificationDate>
+<a:Modifier>Destock Afric</a:Modifier>
+<c:DataItem>
+<o:DataItem Ref="o75"/>
+</c:DataItem>
+</o:EntityAttribute>
+<o:EntityAttribute Id="o76">
+<a:ObjectID>88200F0C-8984-44EB-A3BB-74ABF16823C4</a:ObjectID>
+<a:CreationDate>1739390622</a:CreationDate>
+<a:Creator>Destock Afric</a:Creator>
+<a:ModificationDate>1739391179</a:ModificationDate>
+<a:Modifier>Destock Afric</a:Modifier>
+<c:DataItem>
+<o:DataItem Ref="o77"/>
+</c:DataItem>
+</o:EntityAttribute>
+<o:EntityAttribute Id="o78">
+<a:ObjectID>18BFE464-6F1A-487E-9E57-4028F6317EEC</a:ObjectID>
+<a:CreationDate>1739390622</a:CreationDate>
+<a:Creator>Destock Afric</a:Creator>
+<a:ModificationDate>1739391179</a:ModificationDate>
+<a:Modifier>Destock Afric</a:Modifier>
+<c:DataItem>
+<o:DataItem Ref="o79"/>
+</c:DataItem>
+</o:EntityAttribute>
+<o:EntityAttribute Id="o80">
+<a:ObjectID>110F44A9-59AA-4AA4-A4C4-6699EBE4DA1E</a:ObjectID>
+<a:CreationDate>1739390622</a:CreationDate>
+<a:Creator>Destock Afric</a:Creator>
+<a:ModificationDate>1739391179</a:ModificationDate>
+<a:Modifier>Destock Afric</a:Modifier>
+<c:DataItem>
 <o:DataItem Ref="o81"/>
 </c:DataItem>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o82">
-<a:ObjectID>93BDDD2D-09A3-42D6-ADFC-3CBE537FB410</a:ObjectID>
+<a:ObjectID>35422278-9F90-41DF-9D00-30A4B89867E5</a:ObjectID>
 <a:CreationDate>1739390622</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
 <a:ModificationDate>1739391179</a:ModificationDate>
@@ -1491,7 +1461,7 @@ LABL 0 Arial,8,N</a:FontList>
 </c:DataItem>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o84">
-<a:ObjectID>88200F0C-8984-44EB-A3BB-74ABF16823C4</a:ObjectID>
+<a:ObjectID>6A976E06-53BF-4D8B-801A-45DC188EA8B3</a:ObjectID>
 <a:CreationDate>1739390622</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
 <a:ModificationDate>1739391179</a:ModificationDate>
@@ -1501,7 +1471,7 @@ LABL 0 Arial,8,N</a:FontList>
 </c:DataItem>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o86">
-<a:ObjectID>18BFE464-6F1A-487E-9E57-4028F6317EEC</a:ObjectID>
+<a:ObjectID>B0B934D2-BC00-48F3-AE3B-C126F7230CC0</a:ObjectID>
 <a:CreationDate>1739390622</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
 <a:ModificationDate>1739391179</a:ModificationDate>
@@ -1511,7 +1481,7 @@ LABL 0 Arial,8,N</a:FontList>
 </c:DataItem>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o88">
-<a:ObjectID>110F44A9-59AA-4AA4-A4C4-6699EBE4DA1E</a:ObjectID>
+<a:ObjectID>3EE3A316-E346-4E88-9F64-D47D928E355C</a:ObjectID>
 <a:CreationDate>1739390622</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
 <a:ModificationDate>1739391179</a:ModificationDate>
@@ -1521,7 +1491,7 @@ LABL 0 Arial,8,N</a:FontList>
 </c:DataItem>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o90">
-<a:ObjectID>35422278-9F90-41DF-9D00-30A4B89867E5</a:ObjectID>
+<a:ObjectID>24B9228A-A83A-44FC-8E49-0C7A2049ACB6</a:ObjectID>
 <a:CreationDate>1739390622</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
 <a:ModificationDate>1739391179</a:ModificationDate>
@@ -1531,7 +1501,7 @@ LABL 0 Arial,8,N</a:FontList>
 </c:DataItem>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o92">
-<a:ObjectID>6A976E06-53BF-4D8B-801A-45DC188EA8B3</a:ObjectID>
+<a:ObjectID>926AB09F-FC42-48F2-84BA-0B7BB6DB472A</a:ObjectID>
 <a:CreationDate>1739390622</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
 <a:ModificationDate>1739391179</a:ModificationDate>
@@ -1541,58 +1511,18 @@ LABL 0 Arial,8,N</a:FontList>
 </c:DataItem>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o94">
-<a:ObjectID>B0B934D2-BC00-48F3-AE3B-C126F7230CC0</a:ObjectID>
-<a:CreationDate>1739390622</a:CreationDate>
-<a:Creator>Destock Afric</a:Creator>
-<a:ModificationDate>1739391179</a:ModificationDate>
-<a:Modifier>Destock Afric</a:Modifier>
-<c:DataItem>
-<o:DataItem Ref="o95"/>
-</c:DataItem>
-</o:EntityAttribute>
-<o:EntityAttribute Id="o96">
-<a:ObjectID>3EE3A316-E346-4E88-9F64-D47D928E355C</a:ObjectID>
-<a:CreationDate>1739390622</a:CreationDate>
-<a:Creator>Destock Afric</a:Creator>
-<a:ModificationDate>1739391179</a:ModificationDate>
-<a:Modifier>Destock Afric</a:Modifier>
-<c:DataItem>
-<o:DataItem Ref="o97"/>
-</c:DataItem>
-</o:EntityAttribute>
-<o:EntityAttribute Id="o98">
-<a:ObjectID>24B9228A-A83A-44FC-8E49-0C7A2049ACB6</a:ObjectID>
-<a:CreationDate>1739390622</a:CreationDate>
-<a:Creator>Destock Afric</a:Creator>
-<a:ModificationDate>1739391179</a:ModificationDate>
-<a:Modifier>Destock Afric</a:Modifier>
-<c:DataItem>
-<o:DataItem Ref="o99"/>
-</c:DataItem>
-</o:EntityAttribute>
-<o:EntityAttribute Id="o100">
-<a:ObjectID>926AB09F-FC42-48F2-84BA-0B7BB6DB472A</a:ObjectID>
-<a:CreationDate>1739390622</a:CreationDate>
-<a:Creator>Destock Afric</a:Creator>
-<a:ModificationDate>1739391179</a:ModificationDate>
-<a:Modifier>Destock Afric</a:Modifier>
-<c:DataItem>
-<o:DataItem Ref="o101"/>
-</c:DataItem>
-</o:EntityAttribute>
-<o:EntityAttribute Id="o102">
 <a:ObjectID>062E06A1-AF34-41F4-8FA5-E0205F2BB81E</a:ObjectID>
 <a:CreationDate>1740244790</a:CreationDate>
 <a:Creator>hp</a:Creator>
 <a:ModificationDate>1740244953</a:ModificationDate>
 <a:Modifier>hp</a:Modifier>
 <c:DataItem>
-<o:DataItem Ref="o58"/>
+<o:DataItem Ref="o52"/>
 </c:DataItem>
 </o:EntityAttribute>
 </c:Attributes>
 </o:Entity>
-<o:Entity Id="o41">
+<o:Entity Id="o36">
 <a:ObjectID>DB4FB186-3A81-4E5B-B929-3D36E2127B9D</a:ObjectID>
 <a:Name>role</a:Name>
 <a:Code>ROLE</a:Code>
@@ -1601,7 +1531,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1740245225</a:ModificationDate>
 <a:Modifier>hp</a:Modifier>
 <c:Identifiers>
-<o:Identifier Id="o103">
+<o:Identifier Id="o95">
 <a:ObjectID>1175D8AC-2B48-4A74-A251-135AD5585330</a:ObjectID>
 <a:Name>Identifiant_1</a:Name>
 <a:Code>IDENTIFIANT_1</a:Code>
@@ -1610,15 +1540,15 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1740245173</a:ModificationDate>
 <a:Modifier>hp</a:Modifier>
 <c:Identifier.Attributes>
-<o:EntityAttribute Ref="o104"/>
+<o:EntityAttribute Ref="o96"/>
 </c:Identifier.Attributes>
 </o:Identifier>
 </c:Identifiers>
 <c:PrimaryIdentifier>
-<o:Identifier Ref="o103"/>
+<o:Identifier Ref="o95"/>
 </c:PrimaryIdentifier>
 <c:Attributes>
-<o:EntityAttribute Id="o104">
+<o:EntityAttribute Id="o96">
 <a:ObjectID>05194608-739C-4089-B8DC-F34D731C9ACD</a:ObjectID>
 <a:CreationDate>1740245135</a:CreationDate>
 <a:Creator>hp</a:Creator>
@@ -1626,24 +1556,24 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>hp</a:Modifier>
 <a:BaseAttribute.Mandatory>1</a:BaseAttribute.Mandatory>
 <c:DataItem>
-<o:DataItem Ref="o105"/>
+<o:DataItem Ref="o97"/>
 </c:DataItem>
 </o:EntityAttribute>
-<o:EntityAttribute Id="o106">
+<o:EntityAttribute Id="o98">
 <a:ObjectID>B4178C87-D274-4935-A360-B99EFB897FB8</a:ObjectID>
 <a:CreationDate>1740245135</a:CreationDate>
 <a:Creator>hp</a:Creator>
 <a:ModificationDate>1740245173</a:ModificationDate>
 <a:Modifier>hp</a:Modifier>
 <c:DataItem>
-<o:DataItem Ref="o107"/>
+<o:DataItem Ref="o99"/>
 </c:DataItem>
 </o:EntityAttribute>
 </c:Attributes>
 </o:Entity>
 </c:Entities>
 <c:DataItems>
-<o:DataItem Id="o46">
+<o:DataItem Id="o40">
 <a:ObjectID>EDE45150-7E1B-4DB5-9384-2803032DFC8B</a:ObjectID>
 <a:Name>Id_utilisateur</a:Name>
 <a:Code>ID_UTILISATEUR</a:Code>
@@ -1653,7 +1583,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>hp</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o48">
+<o:DataItem Id="o42">
 <a:ObjectID>EADAD2E6-B550-4F34-8297-DE0AB373723C</a:ObjectID>
 <a:Name>nom</a:Name>
 <a:Code>NOM</a:Code>
@@ -1664,7 +1594,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>VA30</a:DataType>
 <a:Length>30</a:Length>
 </o:DataItem>
-<o:DataItem Id="o50">
+<o:DataItem Id="o44">
 <a:ObjectID>D7F3D1E7-4DF8-4E66-AD90-E9BB7CA854F2</a:ObjectID>
 <a:Name>prénom</a:Name>
 <a:Code>PRENOM</a:Code>
@@ -1675,7 +1605,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>VA30</a:DataType>
 <a:Length>30</a:Length>
 </o:DataItem>
-<o:DataItem Id="o52">
+<o:DataItem Id="o46">
 <a:ObjectID>8FBAB645-C45C-4D36-8A43-DF8D19CBFC69</a:ObjectID>
 <a:Name>email</a:Name>
 <a:Code>EMAIL</a:Code>
@@ -1686,7 +1616,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>LA50</a:DataType>
 <a:Length>50</a:Length>
 </o:DataItem>
-<o:DataItem Id="o108">
+<o:DataItem Id="o100">
 <a:ObjectID>F5AF486E-9BC7-47F5-98D0-6EA97D94EEB1</a:ObjectID>
 <a:Name>code_email</a:Name>
 <a:Code>CODE_EMAIL</a:Code>
@@ -1697,7 +1627,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>LVA50</a:DataType>
 <a:Length>50</a:Length>
 </o:DataItem>
-<o:DataItem Id="o54">
+<o:DataItem Id="o48">
 <a:ObjectID>8044BAEE-32F7-43AC-A578-8945894B486A</a:ObjectID>
 <a:Name>N°Tel</a:Name>
 <a:Code>N_TEL</a:Code>
@@ -1708,7 +1638,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>VA11</a:DataType>
 <a:Length>11</a:Length>
 </o:DataItem>
-<o:DataItem Id="o56">
+<o:DataItem Id="o50">
 <a:ObjectID>FEF53B4A-E6A3-4675-AAD5-7DBF7C164BA9</a:ObjectID>
 <a:Name>Adresse</a:Name>
 <a:Code>ADRESSE</a:Code>
@@ -1719,7 +1649,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>LVA50</a:DataType>
 <a:Length>50</a:Length>
 </o:DataItem>
-<o:DataItem Id="o81">
+<o:DataItem Id="o73">
 <a:ObjectID>04E748DE-0F4A-40D6-B771-EE95E1382126</a:ObjectID>
 <a:Name>Id_Voiture</a:Name>
 <a:Code>ID_VOITURE</a:Code>
@@ -1729,7 +1659,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o83">
+<o:DataItem Id="o75">
 <a:ObjectID>A970CD7B-D90D-4AB1-B1EA-FFBEAC227145</a:ObjectID>
 <a:Name>modèle</a:Name>
 <a:Code>MODELE</a:Code>
@@ -1740,7 +1670,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>VA30</a:DataType>
 <a:Length>30</a:Length>
 </o:DataItem>
-<o:DataItem Id="o85">
+<o:DataItem Id="o77">
 <a:ObjectID>F43C993B-88FA-433B-9910-649880CA444A</a:ObjectID>
 <a:Name>marque</a:Name>
 <a:Code>MARQUE</a:Code>
@@ -1751,7 +1681,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>VA30</a:DataType>
 <a:Length>30</a:Length>
 </o:DataItem>
-<o:DataItem Id="o87">
+<o:DataItem Id="o79">
 <a:ObjectID>812CBDCB-8174-4921-B1FE-58A4B4DEB465</a:ObjectID>
 <a:Name>matricule</a:Name>
 <a:Code>MATRICULE</a:Code>
@@ -1762,7 +1692,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>VA30</a:DataType>
 <a:Length>30</a:Length>
 </o:DataItem>
-<o:DataItem Id="o89">
+<o:DataItem Id="o81">
 <a:ObjectID>62F29BF2-0A65-4605-8968-1B492153615D</a:ObjectID>
 <a:Name>Nombre_places</a:Name>
 <a:Code>NOMBRE_PLACES</a:Code>
@@ -1772,7 +1702,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o91">
+<o:DataItem Id="o83">
 <a:ObjectID>DD8E3EA2-CC64-4AD7-9751-3AA429AB79EA</a:ObjectID>
 <a:Name>prix_jour</a:Name>
 <a:Code>PRIX_JOUR</a:Code>
@@ -1784,7 +1714,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Length>5</a:Length>
 <a:Precision>2</a:Precision>
 </o:DataItem>
-<o:DataItem Id="o93">
+<o:DataItem Id="o85">
 <a:ObjectID>FC51A000-DDC6-424F-82A4-F52259CDB5E9</a:ObjectID>
 <a:Name>Vitesse_max</a:Name>
 <a:Code>VITESSE_MAX</a:Code>
@@ -1794,7 +1724,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>hp</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o109">
+<o:DataItem Id="o101">
 <a:ObjectID>DED14DEE-D02D-4CE3-BE40-030E3F9F1E65</a:ObjectID>
 <a:Name>état</a:Name>
 <a:Code>ETAT</a:Code>
@@ -1805,7 +1735,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>VA30</a:DataType>
 <a:Length>30</a:Length>
 </o:DataItem>
-<o:DataItem Id="o110">
+<o:DataItem Id="o102">
 <a:ObjectID>8BD412AD-28D2-4D76-B808-00557D092334</a:ObjectID>
 <a:Name>Année_fabrication</a:Name>
 <a:Code>ANNEE_FABRICATION</a:Code>
@@ -1815,7 +1745,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>hp</a:Modifier>
 <a:DataType>D</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o95">
+<o:DataItem Id="o87">
 <a:ObjectID>2827E891-27D3-42D2-BD2A-3A341585BCC6</a:ObjectID>
 <a:Name>Couleur</a:Name>
 <a:Code>COULEUR</a:Code>
@@ -1826,7 +1756,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>VA10</a:DataType>
 <a:Length>10</a:Length>
 </o:DataItem>
-<o:DataItem Id="o97">
+<o:DataItem Id="o89">
 <a:ObjectID>63127D9D-B914-4090-ADA3-E15365E6BF58</a:ObjectID>
 <a:Name>Type_Carburant</a:Name>
 <a:Code>TYPE_CARBURANT</a:Code>
@@ -1837,7 +1767,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>VA20</a:DataType>
 <a:Length>20</a:Length>
 </o:DataItem>
-<o:DataItem Id="o111">
+<o:DataItem Id="o103">
 <a:ObjectID>448D9E3F-E257-4B59-9912-4850EC7D1CB8</a:ObjectID>
 <a:Name>Type_Transmission</a:Name>
 <a:Code>TYPE_TRANSMISSION</a:Code>
@@ -1848,7 +1778,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>VA20</a:DataType>
 <a:Length>20</a:Length>
 </o:DataItem>
-<o:DataItem Id="o112">
+<o:DataItem Id="o104">
 <a:ObjectID>C4F72D31-2B0A-403F-9BD9-2CFF88F56158</a:ObjectID>
 <a:Name>Puissance</a:Name>
 <a:Code>PUISSANCE</a:Code>
@@ -1858,7 +1788,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>hp</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o113">
+<o:DataItem Id="o105">
 <a:ObjectID>B7D5C559-9FE1-437B-A726-F453B15B97DE</a:ObjectID>
 <a:Name>Cylindrée</a:Name>
 <a:Code>CYLINDREE</a:Code>
@@ -1868,7 +1798,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>hp</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o114">
+<o:DataItem Id="o106">
 <a:ObjectID>B51DDB83-6BF5-4BC3-9A01-B66BDC8E9F28</a:ObjectID>
 <a:Name>Nombre_portes</a:Name>
 <a:Code>NOMBRE_PORTES</a:Code>
@@ -1878,7 +1808,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>hp</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o99">
+<o:DataItem Id="o91">
 <a:ObjectID>938AD1D4-79F7-42B1-8EEE-40274AD0DF30</a:ObjectID>
 <a:Name>Kilométrage</a:Name>
 <a:Code>KILOMETRAGE</a:Code>
@@ -1888,7 +1818,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o101">
+<o:DataItem Id="o93">
 <a:ObjectID>B93A966B-AF29-4F10-8686-17F993E13B89</a:ObjectID>
 <a:Name>Disponibilité</a:Name>
 <a:Code>DISPONIBILITE</a:Code>
@@ -1899,7 +1829,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>VA30</a:DataType>
 <a:Length>30</a:Length>
 </o:DataItem>
-<o:DataItem Id="o61">
+<o:DataItem Id="o55">
 <a:ObjectID>E0CB8CA9-05A0-4734-904A-34E34F9C12B0</a:ObjectID>
 <a:Name>Id_Commentaire</a:Name>
 <a:Code>ID_COMMENTAIRE</a:Code>
@@ -1908,7 +1838,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1739391780</a:ModificationDate>
 <a:Modifier>Destock Afric</a:Modifier>
 </o:DataItem>
-<o:DataItem Id="o63">
+<o:DataItem Id="o57">
 <a:ObjectID>EF0355E2-7620-4F35-9C25-09A3F653D21B</a:ObjectID>
 <a:Name>contenu</a:Name>
 <a:Code>CONTENU</a:Code>
@@ -1919,7 +1849,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>TXT100</a:DataType>
 <a:Length>100</a:Length>
 </o:DataItem>
-<o:DataItem Id="o65">
+<o:DataItem Id="o59">
 <a:ObjectID>CD743210-5111-4ED1-A5C3-DDE2585A1A36</a:ObjectID>
 <a:Name>Note</a:Name>
 <a:Code>NOTE</a:Code>
@@ -1929,17 +1859,17 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o67">
+<o:DataItem Id="o107">
 <a:ObjectID>5B4A9C37-CDE0-486A-8920-8C521B33C20A</a:ObjectID>
 <a:Name>Date_publication</a:Name>
 <a:Code>DATE_PUBLICATION</a:Code>
 <a:CreationDate>1739391204</a:CreationDate>
 <a:Creator>Destock Afric</a:Creator>
-<a:ModificationDate>1739391780</a:ModificationDate>
-<a:Modifier>Destock Afric</a:Modifier>
+<a:ModificationDate>1740254906</a:ModificationDate>
+<a:Modifier>hp</a:Modifier>
 <a:DataType>D</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o70">
+<o:DataItem Id="o62">
 <a:ObjectID>CC38B19C-4273-472C-AD99-DBDC655243F4</a:ObjectID>
 <a:Name>Id_Reservation</a:Name>
 <a:Code>ID_RESERVATION</a:Code>
@@ -1949,7 +1879,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o72">
+<o:DataItem Id="o64">
 <a:ObjectID>4A22618E-E1D4-434D-B0ED-0B671A300FDB</a:ObjectID>
 <a:Name>Date_Debut</a:Name>
 <a:Code>DATE_DEBUT</a:Code>
@@ -1959,7 +1889,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:DataType>D</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o74">
+<o:DataItem Id="o66">
 <a:ObjectID>0236C367-5D79-4C1E-95D2-98D148A78314</a:ObjectID>
 <a:Name>Date_Fin</a:Name>
 <a:Code>DATE_FIN</a:Code>
@@ -1969,7 +1899,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:DataType>D</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o76">
+<o:DataItem Id="o68">
 <a:ObjectID>A930A5AE-94E3-471C-A5B0-FEEA18CDBC05</a:ObjectID>
 <a:Name>Prix_Total</a:Name>
 <a:Code>PRIX_TOTAL</a:Code>
@@ -1981,7 +1911,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Length>10</a:Length>
 <a:Precision>2</a:Precision>
 </o:DataItem>
-<o:DataItem Id="o115">
+<o:DataItem Id="o108">
 <a:ObjectID>CB4B0159-FCEA-4D82-812A-5038176A2859</a:ObjectID>
 <a:Name>Mode_Paiement</a:Name>
 <a:Code>MODE_PAIEMENT</a:Code>
@@ -1992,7 +1922,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>VA20</a:DataType>
 <a:Length>20</a:Length>
 </o:DataItem>
-<o:DataItem Id="o78">
+<o:DataItem Id="o70">
 <a:ObjectID>B570B2FC-AF69-4904-8663-1C2B2AA57156</a:ObjectID>
 <a:Name>Statut_Paiement</a:Name>
 <a:Code>STATUT_PAIEMENT</a:Code>
@@ -2002,7 +1932,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>hp</a:Modifier>
 <a:DataType>BL</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o58">
+<o:DataItem Id="o52">
 <a:ObjectID>71A0DD2D-5151-4D6B-91CC-EA53F7293D15</a:ObjectID>
 <a:Name>chemin_image</a:Name>
 <a:Code>CHEMIN_IMAGE</a:Code>
@@ -2013,7 +1943,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>VA100</a:DataType>
 <a:Length>100</a:Length>
 </o:DataItem>
-<o:DataItem Id="o105">
+<o:DataItem Id="o97">
 <a:ObjectID>5BEE4057-9845-49EA-B254-45572570022A</a:ObjectID>
 <a:Name>id_role</a:Name>
 <a:Code>ID_ROLE</a:Code>
@@ -2023,7 +1953,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>hp</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o107">
+<o:DataItem Id="o99">
 <a:ObjectID>BEBE9163-A328-4B8B-9618-375739FE0EB0</a:ObjectID>
 <a:Name>nom_role</a:Name>
 <a:Code>NOM_ROLE</a:Code>
@@ -2035,7 +1965,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:DataItem>
 </c:DataItems>
 <c:Associations>
-<o:Association Id="o38">
+<o:Association Id="o33">
 <a:ObjectID>EC84FF86-AA45-4D05-A6E3-F325313ABA2A</a:ObjectID>
 <a:Name>Rédiger</a:Name>
 <a:Code>REDIGER</a:Code>
@@ -2044,7 +1974,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1739392103</a:ModificationDate>
 <a:Modifier>Destock Afric</a:Modifier>
 </o:Association>
-<o:Association Id="o39">
+<o:Association Id="o34">
 <a:ObjectID>0ED94D83-6A14-4191-9449-A440C4244999</a:ObjectID>
 <a:Name>Effectuer</a:Name>
 <a:Code>EFFECTUER</a:Code>
@@ -2053,7 +1983,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1739392132</a:ModificationDate>
 <a:Modifier>Destock Afric</a:Modifier>
 </o:Association>
-<o:Association Id="o40">
+<o:Association Id="o35">
 <a:ObjectID>48EEE5BA-5473-478E-A138-67C5CC53D393</a:ObjectID>
 <a:Name>Concerner</a:Name>
 <a:Code>CONCERNER</a:Code>
@@ -2062,22 +1992,13 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1739392164</a:ModificationDate>
 <a:Modifier>Destock Afric</a:Modifier>
 </o:Association>
-<o:Association Id="o42">
+<o:Association Id="o37">
 <a:ObjectID>128EB8B7-9BB4-43A6-83BA-8BBCCC304B75</a:ObjectID>
 <a:Name>avoir</a:Name>
 <a:Code>AVOIR</a:Code>
 <a:CreationDate>1740245200</a:CreationDate>
 <a:Creator>hp</a:Creator>
 <a:ModificationDate>1740245225</a:ModificationDate>
-<a:Modifier>hp</a:Modifier>
-</o:Association>
-<o:Association Id="o43">
-<a:ObjectID>9F9FC4B4-0411-4F32-B6B9-4176F1C59B54</a:ObjectID>
-<a:Name>ajouter</a:Name>
-<a:Code>AJOUTER</a:Code>
-<a:CreationDate>1740245315</a:CreationDate>
-<a:Creator>hp</a:Creator>
-<a:ModificationDate>1740245342</a:ModificationDate>
 <a:Modifier>hp</a:Modifier>
 </o:Association>
 </c:Associations>
@@ -2090,10 +2011,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:Cardinality>0,n</a:Cardinality>
 <c:Object1>
-<o:Association Ref="o38"/>
+<o:Association Ref="o33"/>
 </c:Object1>
 <c:Object2>
-<o:Entity Ref="o34"/>
+<o:Entity Ref="o29"/>
 </c:Object2>
 </o:AssociationLink>
 <o:AssociationLink Id="o10">
@@ -2104,10 +2025,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:Cardinality>1,1</a:Cardinality>
 <c:Object1>
-<o:Association Ref="o38"/>
+<o:Association Ref="o33"/>
 </c:Object1>
 <c:Object2>
-<o:Entity Ref="o35"/>
+<o:Entity Ref="o30"/>
 </c:Object2>
 </o:AssociationLink>
 <o:AssociationLink Id="o13">
@@ -2118,10 +2039,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:Cardinality>1,n</a:Cardinality>
 <c:Object1>
-<o:Association Ref="o39"/>
+<o:Association Ref="o34"/>
 </c:Object1>
 <c:Object2>
-<o:Entity Ref="o34"/>
+<o:Entity Ref="o29"/>
 </c:Object2>
 </o:AssociationLink>
 <o:AssociationLink Id="o16">
@@ -2132,10 +2053,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:Cardinality>1,1</a:Cardinality>
 <c:Object1>
-<o:Association Ref="o39"/>
+<o:Association Ref="o34"/>
 </c:Object1>
 <c:Object2>
-<o:Entity Ref="o36"/>
+<o:Entity Ref="o31"/>
 </c:Object2>
 </o:AssociationLink>
 <o:AssociationLink Id="o19">
@@ -2146,10 +2067,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:Cardinality>1,1</a:Cardinality>
 <c:Object1>
-<o:Association Ref="o40"/>
+<o:Association Ref="o35"/>
 </c:Object1>
 <c:Object2>
-<o:Entity Ref="o36"/>
+<o:Entity Ref="o31"/>
 </c:Object2>
 </o:AssociationLink>
 <o:AssociationLink Id="o22">
@@ -2160,10 +2081,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Destock Afric</a:Modifier>
 <a:Cardinality>0,n</a:Cardinality>
 <c:Object1>
-<o:Association Ref="o40"/>
+<o:Association Ref="o35"/>
 </c:Object1>
 <c:Object2>
-<o:Entity Ref="o37"/>
+<o:Entity Ref="o32"/>
 </c:Object2>
 </o:AssociationLink>
 <o:AssociationLink Id="o26">
@@ -2174,10 +2095,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>hp</a:Modifier>
 <a:Cardinality>1,n</a:Cardinality>
 <c:Object1>
-<o:Association Ref="o42"/>
+<o:Association Ref="o37"/>
 </c:Object1>
 <c:Object2>
-<o:Entity Ref="o41"/>
+<o:Entity Ref="o36"/>
 </c:Object2>
 </o:AssociationLink>
 <o:AssociationLink Id="o28">
@@ -2188,38 +2109,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>hp</a:Modifier>
 <a:Cardinality>1,1</a:Cardinality>
 <c:Object1>
-<o:Association Ref="o42"/>
+<o:Association Ref="o37"/>
 </c:Object1>
 <c:Object2>
-<o:Entity Ref="o34"/>
-</c:Object2>
-</o:AssociationLink>
-<o:AssociationLink Id="o31">
-<a:ObjectID>C5D963A0-429C-4508-B202-E4D1E2486133</a:ObjectID>
-<a:CreationDate>1740245315</a:CreationDate>
-<a:Creator>hp</a:Creator>
-<a:ModificationDate>1740245342</a:ModificationDate>
-<a:Modifier>hp</a:Modifier>
-<a:Cardinality>1,n</a:Cardinality>
-<c:Object1>
-<o:Association Ref="o43"/>
-</c:Object1>
-<c:Object2>
-<o:Entity Ref="o34"/>
-</c:Object2>
-</o:AssociationLink>
-<o:AssociationLink Id="o33">
-<a:ObjectID>F2D5446B-F7F4-46A0-82AC-8DA28FA16195</a:ObjectID>
-<a:CreationDate>1740245315</a:CreationDate>
-<a:Creator>hp</a:Creator>
-<a:ModificationDate>1740245335</a:ModificationDate>
-<a:Modifier>hp</a:Modifier>
-<a:Cardinality>1,1</a:Cardinality>
-<c:Object1>
-<o:Association Ref="o43"/>
-</c:Object1>
-<c:Object2>
-<o:Entity Ref="o37"/>
+<o:Entity Ref="o29"/>
 </c:Object2>
 </o:AssociationLink>
 </c:AssociationsLinks>
