@@ -1,21 +1,13 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+* {
     margin: 0;
     padding: 0;
-    outline: none;
+    box-sizing: border-box;
+    font-family: 'Exo', sans-serif;
 }
-
-body {
-    background-color: black;
-}
-
 
 .nav {
     position: relative;
     width: 100%;
-    /* background-color: #000000; */
     height: 90px;
     padding: 0 10%;
     display: flex;

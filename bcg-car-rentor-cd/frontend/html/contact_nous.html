@@ -1,83 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contactez nous</title>
+    <link rel="stylesheet" href="../css/page_accueil/nav_bar.css" />
+    <link rel="stylesheet" href="../css/contact_nous/contact_nous.css" />
+    <!-- Google icons  -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- font icons  -->
+    <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>contactez nous</title>
-  <link rel="stylesheet" href="../css/page_accueil/nav_bar.css" />
-  <link rel="stylesheet" href="../css/contact_nous/contact_nous.css" />
-   <!-- Google icons  -->
-  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
-    rel="stylesheet">
-     <!-- font icons  -->
-  <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900" rel="stylesheet" />
-</head>
+  <body>
+    <div>
+      <header>
+        <!-- ***** Nav bar ***** -->
+        <div id="navbar_container"></div>
+      </header>
 
-<body>
-  <div class="Scontainer">
-    <header>
-      <!-- ***** Nav bar ***** -->
-      <nav class="nav" id="nav">
-        <div class="logo">
-          <a href="./page_accueil.html"><img src="../images/logo2.png" alt="logo" /></a>
-        </div>
+      <!-- ***** main section (text,button,image) ***** -->
+      <section>
+        <div class="contact-container">
+          <div class="contact-form">
+            <h2>Contacter nous</h2>
+            <form>
+              <div class="form-group">
+                <input type="text" placeholder="Votre prénom ..." required />
+                <input type="text" placeholder="Votre nom ..." required />
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="06 12 34 56 78 ..." required />
+                <input
+                  type="email"
+                  placeholder="example@gmail.com ..."
+                  required
+                />
+              </div>
+              <textarea placeholder="Votre message ici ..." required></textarea>
+              <button type="submit">Envoyer</button>
+            </form>
+          </div>
 
-        <ul class="menu" id="menu">
-          <li><a href="./page_accueil.html">Accueil</a></li>
-          <li><a href="">Voitures</a></li>
-          <li><a href="">BCG ?</a></li>
-          <li>
-            <a href="./contact_nous.html">Contact <i class="fa-solid fa-phone"></i></a>
-          </li>
-        </ul>
-
-        <div class="connexion_bars">
-          <a href="#" id="connexion"><span>Se connecter</span><i class="fa-solid fa-user"></i></a>
-          <a href="#" id="bars"><i class="fa-solid fa-bars" onclick="toggleMenu()"></i></a>
-        </div>
-      </nav>
-    </header>
-
-    <!-- ***** main section (text,button,image) ***** -->
-    <section>
-      <div class="contact-container">
-        <div class="contact-form">
-          <h2>Contacter nous</h2>
-          <form>
-            <div class="form-group">
-              <input type="text" placeholder="Votre prénom ..." required>
-              <input type="text" placeholder="Votre nom ..." required>
-            </div>
-            <div class="form-group">
-              <input type="tel" placeholder="06 12 34 56 78 ..." required>
-              <input type="email" placeholder="example@gmail.com ..." required>
-            </div>
-            <textarea placeholder="Votre message ici ..." required></textarea>
-            <button type="submit">Envoyer</button>
-          </form>
-        </div>
-
-        <div class="contact-info">
-
-          <h3>Cordinations</h3>
-          <a href="" class="contact-info-link">
+          <div class="contact-info">
+            <h3>Cordinations</h3>
+            <a href="" class="contact-info-link">
               <i class="material-icons">call</i>
               <span>0605040302</span>
-          </a>
-          <a href="" class="contact-info-link">
-            <i class="material-icons">mail</i>
-            <span>bcg@gmail.com</span>
-          </a>
-          <a href="" class="contact-info-link">
-            <i class="material-icons">location_on</i>
-            <span>Marrakech</span>
-          </a>        
+            </a>
+            <a href="" class="contact-info-link">
+              <i class="material-icons">mail</i>
+              <span>bcg@gmail.com</span>
+            </a>
+            <a href="" class="contact-info-link">
+              <i class="material-icons">location_on</i>
+              <span>Marrakech</span>
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
-  </div>
-</body>
-
+      </section>
+    </div>
+  </body>
+  <script src="../js/nav_bar.js"></script>
 </html>

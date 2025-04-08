@@ -14,29 +14,25 @@
   <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css" />
   <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
   
+  <style>
+    html {
+      scroll-behavior: sm;
+    }
+     /* body:not(.loaded) {
+    visibility: hidden;
+    opacity: 0;
+  }
+  body.loaded {
+    visibility: visible;
+    opacity: 1;
+  } */
+  </style>
 </head>
 
 <body>
     <header>
       <!-- ***** Nav bar ***** -->
-      <nav class="nav" id="nav">
-        <div class="logo">
-          <a href="./page_accueil.html"><img src="../images/logo2.png" alt="logo" /></a>
-        </div>
-        <ul class="menu" id="menu">
-          <li><a href="./page_accueil.html">Accueil</a></li>
-          <li><a href="">Voitures</a></li>
-          <li><a href="">BCG ?</a></li>
-          <li>
-            <a href="./contact_nous.html">Contact <i class="fa-solid fa-phone"></i></a>
-          </li>
-        </ul>
-
-        <div class="connexion_bars">
-          <a href="#" id="connexion"><span>Se connecter</span><i class="fa-solid fa-user"></i></a>
-          <a href="#" id="bars"><i class="fa-solid fa-bars" onclick="toggleMenu()"></i></a>
-        </div>
-      </nav>
+      <div id="navbar_container" ></div>
     </header>
 
     <!-- ***** main section (text,button,image) ***** -->
@@ -275,7 +271,7 @@
   </section>
 
   <!-- ***** section à propos de bcg ***** -->
-  <section class="about-us">
+  <section class="about-us" id="about">
     <h2>À PROPOS DE NOUS</h2>
     <div class="about-us-left">
       <div class="bcg">
@@ -319,7 +315,7 @@
   <footer></footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="../js/page_accueil/nav_bar.js"></script>
+<script src="../js/nav_bar.js"></script>
 <script type="module" src="../js/page_accueil/get_voitures.js"></script>
 
 </html>
