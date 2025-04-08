@@ -1,0 +1,32 @@
+.about-us {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 30px;
+    width: 76%;
+    color: white;
+    margin: auto;
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 50px 0 40px 0;
+    font-weight: bold;
+}
+
+.about-us .red {
+    color: red;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.about-us .about-us-left {
+    flex: 1;
+    background: red;
+}
+.about-us .about-us-right {
+    flex: 1;
+    min-width: 280px;
+}

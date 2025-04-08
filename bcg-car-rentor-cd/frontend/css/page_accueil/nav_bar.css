@@ -24,6 +24,7 @@ body {
     color: white;
     border-bottom: 2px solid;
     z-index: 1;
+    font-weight: 800;
 }
 
 .nav .logo {
