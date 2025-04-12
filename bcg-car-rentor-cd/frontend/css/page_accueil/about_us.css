@@ -1,12 +1,7 @@
 .about-us {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 30px;
-    width: 76%;
     color: white;
-    margin: auto;
 }
 
 .about-us h2 {
@@ -22,11 +17,17 @@
     font-weight: 700;
 }
 
+.about-us .infos-map {
+    display: flex;
+    justify-content: center;
+    width: 76%;
+    background: blueviolet;
+    margin: auto;
+}
+
 .about-us .about-us-left {
-    flex: 1;
     background: red;
 }
-.about-us .about-us-right {
-    flex: 1;
-    min-width: 280px;
+.about-us .about-us-right .iframe {
+    
 }
