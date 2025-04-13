@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthentificationController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\admin\VoitureController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,10 +21,30 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix("auth/")->controller(AuthentificationController::class)->group(function () {
     Route::post("inscrire", "inscrire");
+    Route::post("connecter", "connecter");
+    Route::post("deconnecter/{user_id}", "deconnecter");
+    Route::post("modifierProfile/{user_id}", "modifierProfile")->middleware("auth:sanctum");
 });
 
 
 /***************** Routes publics *******************/
 Route::prefix("public")->controller(PublicController::class)->group(function () {
-    Route::get("voitures/index", "indexVoitures");
+    Route::get("voitures/index", "indexVoiture");
+});
+
+
+/***************** Routes admin *******************/
+Route::prefix("admin")->middleware("auth:sanctum")->group(function () {
+    Route::prefix("voitures")->controller(VoitureController::class)->group(function () {
+        Route::get("index", "indexVoiture");
+        Route::post("store", "storeVoiture");
+        Route::put("edit/{voiture_id}", "editVoiture");
+        Route::delete("destroy/{voiture_id}", "destroyVoiture");
+    });
+});
+
+Route::get("test", function () {
+    return response()->json([
+        "data" => "hi world"
+    ]);
 });

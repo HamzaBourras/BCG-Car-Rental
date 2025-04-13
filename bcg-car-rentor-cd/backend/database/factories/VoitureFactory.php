@@ -26,8 +26,7 @@ class VoitureFactory extends Factory
             'couleur' => $this->faker->safeColorName,
             'type_carburant' => $this->faker->randomElement(['Essence', 'Diesel', 'Électrique', 'Hybride']),
             'kilometrage' => $this->faker->numberBetween(1000, 200000),
-            'disponibilite' => $this->faker->boolean,
-            'chemin_image' => $this->faker->randomElement([
+            'image' => $this->faker->randomElement([
                 'images_voitures/Renault Clio 5.jpg',
                 'images_voitures/fiat-maroc-500.png',
                 'images_voitures/Dacia-Spring.png'

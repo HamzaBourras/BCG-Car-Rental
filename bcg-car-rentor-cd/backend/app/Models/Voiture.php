@@ -19,7 +19,11 @@ class Voiture extends Model
         'couleur',
         'type_carburant',
         'kilometrage',
-        'disponibilité',
-        'chemin_image',
+        'image',
     ];
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }

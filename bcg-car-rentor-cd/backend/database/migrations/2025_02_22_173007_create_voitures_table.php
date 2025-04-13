@@ -22,8 +22,7 @@ return new class extends Migration
             $table->string("couleur");
             $table->string("type_carburant");
             $table->integer("kilometrage");
-            $table->boolean("disponibilite");
-            $table->string("chemin_image");
+            $table->string("image");
             $table->timestamps();
         });
     }

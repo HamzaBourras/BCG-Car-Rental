@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Models\Reservation;
 use App\Models\Voiture;
-use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Date;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\VoitureRequest;
+use Exception;
 
-class PublicController extends Controller
+class VoitureController extends Controller
 {
+    //
 
-    /************ Retourne tous les voitures *************/
     public function indexVoiture()
     {
         try {
@@ -57,4 +57,37 @@ class PublicController extends Controller
             ], 500);
         }
     }
+
+    public function storeVoiture(VoitureRequest $request)
+    {
+        try {
+            $cheminImage = $request->file('image')->store('images_voitures', 'public');
+            Voiture::create([
+                "modele" => $request->modele,
+                "marque" => $request->marque,
+                "matricule" => $request->matricule,
+                "nombre_place" => $request->nombre_place,
+                "prix_jour" => $request->prix_jour,
+                "vitesse_max" => $request->vitesse_max,
+                "couleur" => $request->couleur,
+                "type_carburant" => $request->type_carburant,
+                "kilometrage" => $request->kilometrage,
+                "image" => $cheminImage
+            ]);
+
+            return response()->json([
+                "success" => true,
+                "message" => "Voiture ajoutée avec succès",
+            ], 200);
+        } catch (\Exception $e) {
+            // Erreur générale
+            return response()->json([
+                "success" => false,
+                "massage" => "Erreur lors de l'ajout de la voiture",
+                "errors" => $e->getMessage()
+            ], 500);
+        }
+    }
+
+    // public funct
 }
