@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:8000/";
+export const baseUrl = "http://localhost:8000/";
 
 /******* Authentification *******/
 export const INSCRIRE_API = `${baseUrl}api/auth/inscrire`;
