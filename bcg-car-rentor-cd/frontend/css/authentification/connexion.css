@@ -1,0 +1,172 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    background-color: gainsboro;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+}
+.ClassForm{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    height: 90%;
+    padding: 20px;
+    padding-right: 0;
+    background-color: rgba(128, 128, 128, 0.71);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+form{
+    width: 350px;
+    margin-left: 20px;
+}
+form input{
+    height: 30px;
+    margin: 10px auto;
+    border-radius: 4px;
+    border: none;
+    width: 80%;
+    transition: 0.3s;
+    padding: 0 5px;
+}
+form input:hover{
+    background-color: rgba(255, 255, 255, 0.685);
+}
+.text{
+    margin-bottom: 40px;
+    position: absolute;
+    bottom: 220px;
+}
+.image{
+    height: 400px;
+    width: 500px;
+}
+.imageG{
+    width: 100%;
+    margin-top: 20px;
+}
+
+#password{
+    transform: translateX(10px);
+}
+
+#email{
+    transform: translateX(33px);
+}
+
+#envoyer{
+    margin-left: 54px;
+    margin-top: 20px;
+    width: 63%;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: white;
+}
+#envoyer:hover{
+    background-color: black;
+    color: white;
+}
+.SousForm{
+    position: relative;
+}
+a{
+    margin-top: 20px;
+    color: rgb(13, 43, 77);
+}
+
+button{
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    height: 30px;
+    padding-left: 5px;
+    padding-right: 3px;
+    justify-content: center;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 73px;
+    width: 60%;
+    transition: 0.3s;
+}
+.HR{
+    margin-top: 10px;
+}
+@media (max-width:1016px) {
+    .image{
+        height: 400px;
+        width: 400px;
+    }
+    hr{
+        width: 100%;
+    }
+    .ClassForm{
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        padding-top: 40px;
+    }
+    .imageG{
+        margin-top: 30px;
+    }
+    .SousForm{
+        margin-top: 20px;
+        height: 200px;
+    }
+    .text{
+        margin-bottom: -25px;
+    }
+}
+
+@media (max-width:673px) {
+    form input{
+        width: 60%;
+    }
+    .image{
+        flex-shrink: 0;
+        width: 300px;
+    }
+    button{
+        width: 50%;
+    }
+    #envoyer{
+        width: 53%;
+    }
+    .imageG{
+        margin-top: 60px;
+    }
+
+    hr{
+        width: 60%;
+        margin-left: 70px;
+    }
+    .text{
+        font-size: 14px;
+    }
+    .ClassForm{
+        width: 100%;
+    }
+}
+
+@media (max-width:403px){
+    .text{
+        margin-left: 30px;
+    }
+    label{
+        margin-left: 15px;
+    }
+    a{
+        margin-left: 15px;
+    }
+}

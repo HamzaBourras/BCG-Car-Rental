@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/authentification/connexion.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ClassForm">
+        <div class="SousForm">
+            <div class="text">
+                <h2>Se connecter</h2>
+                <p>si vous avez un compte,veuillez vous connecter</p>
+            </div>
+            <hr class="HR">
+            <form  action="traitement.php" method="post">
+                <label for="email" >Email</label>
+                <input type="email" id="email" required><br>
+                <label for="password" >Password</label>
+                <input minlength="6" type="password" id="password" required placeholder="Min. 6 caractères"><br>
+                <a href="#" style="white-space: pre;">Mot de passe oublier?</a><br>
+                <input type="submit" value="connecter" id="envoyer">
+            </form>
+            <hr>
+            <button style="background-color: white; padding-top: 0; display: flex; align-items: center;white-space: pre;" type="submit"><img src="Google-Company-logo.jpg" style="width: 20px;" alt="">  connecter avec google</button>
+        </div>
+        <div class="image">
+            <img class="imageG" src="homme-acheter-une-nouvelle-voiture-12433183-10130716.webp" alt="">
+        </div>
+    </div>
+    <script src="JV.js"></script>
+</body>
+</html>
