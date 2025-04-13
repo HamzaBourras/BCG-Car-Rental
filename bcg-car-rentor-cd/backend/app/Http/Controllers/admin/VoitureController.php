@@ -38,6 +38,7 @@ class VoitureController extends Controller
                     "couleur" => $voiture->couleur,
                     "type_carburant" => $voiture->type_carburant,
                     "kilometrage" => $voiture->kilometrage,
+                    "climat" => $voiture->climat,
                     "disponibilite" => $disponible,
                     "image" => "storage/" . $voiture->image,
                 ];
@@ -72,6 +73,7 @@ class VoitureController extends Controller
                 "couleur" => $request->couleur,
                 "type_carburant" => $request->type_carburant,
                 "kilometrage" => $request->kilometrage,
+                "climat" => $request->climat,
                 "image" => $cheminImage
             ]);
 

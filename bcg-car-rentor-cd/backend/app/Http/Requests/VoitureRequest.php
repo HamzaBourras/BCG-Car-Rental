@@ -31,6 +31,7 @@ class VoitureRequest extends FormRequest
             'couleur' => 'required|string|max:30',
             'type_carburant' => 'required|in:essence,diesel,hybride,électrique',
             'kilometrage' => 'required|integer|min:0',
+            'climat' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ];
     }

@@ -38,6 +38,7 @@ class PublicController extends Controller
                     "couleur" => $voiture->couleur,
                     "type_carburant" => $voiture->type_carburant,
                     "kilometrage" => $voiture->kilometrage,
+                    "climat" => $voiture->climat,
                     "disponibilite" => $disponible,
                     "image" => "storage/" . $voiture->image,
                 ];
