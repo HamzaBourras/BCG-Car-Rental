@@ -4,6 +4,7 @@
     color: white;
     width: 76%;
     margin: auto;
+    padding-bottom: 40px;
 }
 
 .about-us h2 {
@@ -17,29 +18,33 @@
     color: red;
     font-size: 2rem;
     font-weight: 700;
-
-}
-
-.about-us .p1 {
-    font-size: 1.4rem;
-    font-weight: 500;
+    
 }
 
 .desc-logo {
     display: flex;
-    
 }
 .about-us-desc {
     flex: 1;
     width: 50%;
-    background: forestgreen;
+    padding-right: 30px;
+    /* background: forestgreen; */
 }
+
+.desc-logo .about-us-desc .p1 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
 .about-us-logo {
     flex: 1;
     width: 50%;
-    background: rebeccapurple;
+    padding-left: 30px;
+    /* background: rebeccapurple; */
 }
-.about-us-logo .img {
-    size: 10px;
-    background: teal;
+.about-us-logo img {
+    /* size: 10px; */
+    /* background: teal; */
+    width: 100%;
 }

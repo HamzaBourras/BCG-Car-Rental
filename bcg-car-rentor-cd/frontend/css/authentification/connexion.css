@@ -1,26 +1,34 @@
-*{
-    padding: 0;
+* {
+    font-family: "Exo";
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
 }
-body{
-    background-color: gainsboro;
+
+body {
+    scroll-behavior: smooth;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%), url('../../images/main-bg.png');
+    background-size: 100% 1215px;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+.container {
     padding: 20px;
-    height: 100vh;
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     font-family: 'Segoe UI', sans-serif;
     font-size: 15px;
+
 }
 .ClassForm{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 85%;
-    height: 90%;
+    height: 85%;
     padding: 20px;
     padding-right: 0;
     background-color: rgba(128, 128, 128, 0.71);
@@ -81,12 +89,12 @@ form input:hover{
 .SousForm{
     position: relative;
 }
-a{
+.SousForm a{
     margin-top: 20px;
     color: rgb(13, 43, 77);
 }
 
-button{
+.SousForm button{
     cursor: pointer;
     border: none;
     text-align: center;
