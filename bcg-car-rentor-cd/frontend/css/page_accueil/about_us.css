@@ -2,17 +2,44 @@
     display: flex;
     flex-direction: column;
     color: white;
+    width: 76%;
+    margin: auto;
 }
 
 .about-us h2 {
     font-size: 2.5rem;
     text-align: center;
-    margin: 50px 0 40px 0;
+    margin: 0px 0 40px 0;
     font-weight: bold;
 }
 
 .about-us .red {
     color: red;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
+
+}
+
+.about-us .p1 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.desc-logo {
+    display: flex;
+    
+}
+.about-us-desc {
+    flex: 1;
+    width: 50%;
+    background: forestgreen;
+}
+.about-us-logo {
+    flex: 1;
+    width: 50%;
+    background: rebeccapurple;
+}
+.about-us-logo .img {
+    size: 10px;
+    background: teal;
 }
