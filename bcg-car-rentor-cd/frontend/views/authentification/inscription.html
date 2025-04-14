@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,11 @@
     <link rel="stylesheet" href="../../css/page_accueil/nav_bar.css">
     <link rel="stylesheet" href="../../css/authentification/inscription.css">
     <link rel="stylesheet" href="/frontend/fontawesome-free-6.7.2-web/css/all.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <header>
-      <!-- ***** Nav bar ***** -->
-      <div id="navbar_container" ></div>
-    </header>
     <div class="ClassForm">
         <div class="Text">
             <h2>S'inscrire</h2>
@@ -21,27 +20,27 @@
         </div>
         <form action="traitement.php" method="post">
             <div class="form-row ">
-                <label for="nom" >Nom</label>
+                <label for="nom">Nom</label>
                 <input type="text" id="nom" required><br>
-                <label for="prenom" >Prénom</label>
+                <label for="prenom">Prénom</label>
                 <input type="text" id="prenom" required><br>
-                <label for="email" >Email</label>
+                <label for="email">Email</label>
                 <input type="email" id="email" required><br>
-                <label for="telephone" >Telephone</label>
+                <label for="telephone">Telephone</label>
                 <input pattern="[0-9]{10}" type="tel" id="telephone" required><br>
-            </div>  
-            <div class="form-row "> 
-                <label for="adresse" >Adresse</label>
+            </div>
+            <div class="form-row ">
+                <label for="adresse">Adresse</label>
                 <input type="text" id="adresse" required><br>
-                <label for="password" >Password</label>
+                <label for="password">Password</label>
                 <input minlength="6" type="password" id="password" required placeholder="Min. 6 caractères"><br>
-                <label for="motpasseverif" >Confirme</label>
+                <label for="motpasseverif">Confirme</label>
                 <input type="password" id="motpasseverif" required><br>
             </div>
             <input type="submit" value="S'inscrire" id="envoyer">
         </form>
     </div>
     <script src="../../js/authentification/verifer_password.js"></script>
-    <script src="../../js/nav_bar.js"></script>
 </body>
+
 </html>

@@ -1,16 +1,16 @@
 import { baseUrl } from "../../apis/api.js";
 // **** fonction pour ajouter les voitures à la page ""des voitures""
+let sectionsCards = document.querySelector(".cars-cards");
 function displayVoitures() {
-  let sectionsCards = document.querySelector(".cars-cards");
 
   let content = "";
   let voitures = JSON.parse(localStorage.getItem("voitures")) // sélectionner les voitures enregistrer dans localStorage avec le fichier /page_accueil/get_voitures.js
 
   voitures.forEach((voiture) => {
-      content += `
+
+    content += `
       <div class="car-card">
-        <img src="${baseUrl + voiture.image}" alt="${voiture.marque} ${
-        voiture.modele
+        <img src="${baseUrl + voiture.image}" alt="${voiture.marque} ${voiture.modele
       } " class="car-image">
         <h2>${voiture.marque} ${voiture.modele}</h2>
         <p class="price">A PARTIR DE ${voiture.prix_jour}dh/jour</p>
@@ -43,15 +43,15 @@ function displayVoitures() {
         </div>
       </div>
       `;
-    
+
   });
 
   sectionsCards.innerHTML = content;
 }
 
 // **** appel à la fonction pour ajouter les voitures à la page ""des voitures""
-document.addEventListener("DOMContentLoaded", function () {
-  displayVoitures();
-});
+// document.addEventListener("DOMContentLoaded", function () {
+displayVoitures();
+// });
 
 

@@ -15,4 +15,5 @@ body {
 
 main {
     padding: 20px;
+    height: max-content;
 }

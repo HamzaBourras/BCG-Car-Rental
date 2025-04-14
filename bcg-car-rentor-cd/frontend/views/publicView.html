@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCG Car rental</title>
+    <link rel="stylesheet" href="../css/page_accueil/nav_bar.css" />
+    <link rel="stylesheet" href="../css/page_accueil/footer.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: sm;
+        }
+
+        /* body:not(.loaded) {
+    visibility: hidden;
+    opacity: 0;
+  }
+  body.loaded {
+    visibility: visible;
+    opacity: 1;
+  } */
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- ***** Nav bar ***** -->
+        <nav class="nav" id="nav">
+            <div class="logo">
+                <a onclick="creerUrl(this)" id="accueil"><img src="/frontend/images/logo2.png" alt="logo" /></a>
+            </div>
+            <ul class="menu" id="menu">
+                <li><a onclick="creerUrl(this)" id="accueil">Accueil</a></li>
+                <li><a onclick="creerUrl(this)" id="voitures">Voitures</a></li>
+                <li><a onclick="creerUrl(this)" id="about">BCG ?</a></li>
+                <li>
+                    <a onclick="creerUrl(this)" id="contact">Contact <i class="fa-solid fa-phone"></i></a>
+                </li>
+            </ul>
+
+            <div class="connexion_bars">
+                <a href="/frontend/views/authentification/connexion.html" id="connexion"><span>Se connecter</span><i
+                        class="fa-solid fa-user"></i></a>
+                <a href="#" id="bars"><i class="fa-solid fa-bars" onclick="toggleMenu()"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- global conatiner où je veux placer les components -->
+    <section id="global_container">
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container" id="footer-container">
+            <!-- Column 1: Logo and Description -->
+            <div>
+                <div class="footer-logo">
+                    <img src="../images/logo2.png" alt="">
+                </div>
+                <p class="footer-description">
+                    It's a never-ending battle of making your cars better and also trying to be better yourself.
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Account -->
+            <div class="footer-column">
+                <h3>Account</h3>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Billing</a></li>
+                    <li><a href="#">Notifications</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: About -->
+            <div class="footer-column">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Company -->
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 All Rights Reserved by BCG Car Rental</p>
+            <div class="links">
+                <a href="#">Terms</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookies</a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+<script src="../js/nav_bar_responsive.js"></script>
+<script src="../js/display_component_public_view.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</html>

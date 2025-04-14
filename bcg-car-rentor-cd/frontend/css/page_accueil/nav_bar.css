@@ -28,9 +28,11 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    cursor: pointer;
 }
 .nav .logo a img {
     height: 70%;
+    cursor: pointer;
 }
 
 .nav .menu {
@@ -49,6 +51,7 @@
 .nav .menu li a {
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 .nav .menu li a i {
     font-size: 1rem;
@@ -67,6 +70,7 @@
     font-weight: 400;
     font-size: 1rem;
     letter-spacing: 0.5px;
+    cursor: pointer;
 }
 .nav .connexion_bars #connexion {
     margin-right: 1.6rem;
