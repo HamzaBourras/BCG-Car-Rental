@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/page_accueil/nav_bar.css">
+    <link rel="stylesheet" href="../../css/authentification/connexion.css">
+    <link rel="stylesheet" href="/frontend/fontawesome-free-6.7.2-web/css/all.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
+</head>
+<body>
+    <header>
+      <!-- ***** Nav bar ***** -->
+      <div id="navbar_container" ></div>
+    </header>
+    <div class="container" >
+        <div class="ClassForm">
+        <div class="SousForm">
+            <div class="text">
+                <h2>Se connecter</h2>
+                <p>si vous avez un compte,<a href="./inscription.html">veuillez vous connecter</a></p>
+            </div>
+            <hr class="HR">
+            <form  action="" method="post">
+                <label for="email" >Email</label>
+                <input type="email" id="email" required><br>
+                <label for="password" >Password</label>
+                <input minlength="6" type="password" id="password" required placeholder="Min. 6 caractères"><br>
+                <a href="#" style="white-space: pre;">Mot de passe oublier?</a><br>
+                <input type="submit" value="connecter" id="envoyer">
+            </form>
+            <hr>
+            <button style="background-color: white; padding-top: 0; display: flex; align-items: center;white-space: pre;" type="submit"><img src="../../images/Google-Company-logo.jpg" style="width: 20px;" alt="">  connecter avec google</button>
+        </div>
+        <div class="image">
+            <img class="imageG" src="../../images/homme-acheter-une-nouvelle-voiture-12433183-10130716.webp" alt="">
+        </div>
+    </div>
+    </div>
+    <script src="../../js/nav_bar.js"></script>
+</body>
+</html>
