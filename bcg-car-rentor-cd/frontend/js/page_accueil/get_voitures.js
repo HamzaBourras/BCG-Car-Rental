@@ -5,7 +5,7 @@ async function getVoitures() {
   try {
     await getData.getD(INDEX_VOITURES);
     if (getData.success == true) {
-      localStorage.setItem("voitures", JSON.stringify(getData.returnData)) // Enregistrer les voitures dans localStorage
+      localStorage.setItem("voitures",JSON.stringify(getData.returnData)) // Enregistrer les voitures dans localStorage
     }
   } catch (err) {
     if (getData.success == false) {
@@ -18,8 +18,5 @@ async function getVoitures() {
 document.addEventListener("DOMContentLoaded", function () {
   getVoitures();
 });
-
-
-
 
 

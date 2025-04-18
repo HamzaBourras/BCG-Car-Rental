@@ -11,8 +11,9 @@ function displayVoitures() {
     if (number <= 3) {
       content += `
       <div class="car-card">
-        <img src="${baseUrl + voiture.image}" alt="${voiture.marque} ${voiture.modele
-        } " class="car-image">
+        <img src="${baseUrl + voiture.image}" alt="${voiture.marque} ${
+        voiture.modele
+      } " class="car-image">
         <h2>${voiture.marque} ${voiture.modele}</h2>
         <p class="price">A PARTIR DE ${voiture.prix_jour}dh/jour</p>
 
@@ -52,7 +53,6 @@ function displayVoitures() {
 }
 
 // **** appel à la fonction pour ajouter les voitures à la page ""d'accueil""
-// document.addEventListener("DOMContentLoaded", function () {
-displayVoitures();
-// });
-
+document.addEventListener("DOMContentLoaded", function () {
+  displayVoitures();
+});

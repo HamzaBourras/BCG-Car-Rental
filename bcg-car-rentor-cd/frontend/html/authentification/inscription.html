@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/page_accueil/nav_bar.css">
+    <link rel="stylesheet" href="../../css/authentification/inscription.css">
+    <link rel="stylesheet" href="/frontend/fontawesome-free-6.7.2-web/css/all.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- style du div du message -->
+    <style>
+        #glob {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            background-color: rgba(58, 58, 58, 0.811);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #glob #content {
+            position: relative;
+            width: 50%;
+            height: max-content;
+            min-height: 100px;
+            background-color: rgba(255, 255, 255, 0.908);
+            border-radius: 15px;
+            padding: 10px 20px;
+        }
+
+        #glob #content #message {
+            font-size: 26px;
+            text-transform: uppercase;
+        }
+
+        #glob #content #btn {
+            text-align: end;
+        }
+
+        #glob #content #btn button {
+            border-radius: 8px;
+            box-sizing: border-box;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            list-style: none;
+            margin: 10px;
+            outline: none;
+            padding: 8px 16px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: baseline;
+            touch-action: manipulation;
+        }
+
+        #glob #content #errors {
+            padding: 5px 10%;
+        }
+
+        #glob #content #errors li {
+            margin: 4px 0;
+            color: #ff1919;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .danger {
+            border: 2px solid #c71414;
+            color: #c71414;
+        }
+
+        .danger:hover {
+            color: #FFFFFF;
+            background-color: #c71414;
+            transition: 400ms;
+        }
+
+        .success {
+            border: 2px solid #0b7840;
+            color: #0b7840;
+        }
+
+        .success:hover {
+            color: #FFFFFF;
+            background-color: #0b7840;
+            transition: 400ms;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- ***** Nav bar ***** -->
+        <div id="navbar_container"></div>
+    </header>
+    <div class="ClassForm">
+        <div class="Text">
+            <h2>S'inscrire</h2>
+            <p>Créer votre compte</p>
+        </div>
+        <form>
+            <div class="form-row ">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom"><br>
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom"><br>
+                <label for="email">Email</label>
+                <input type="email" id="email"><br>
+                <label for="telephone">Telephone</label>
+                <input pattern="[0-9]{10}" type="tel" id="telephone"><br>
+            </div>
+            <div class="form-row ">
+                <label for="adresse">Adresse</label>
+                <input type="text" id="adresse"><br>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Min. 6 caractères"><br>
+                <label for="motpasseverif">Confirme</label>
+                <input type="password" id="motpasseverif"><br>
+            </div>
+            <input type="submit" value="S'inscrire" id="envoyer">
+        </form>
+    </div>
+
+    <!-- div pour le message -->
+    <div id="glob">
+        <div id="content">
+            <h2 id="message">message</h2>
+            <ul id="errors">
+            </ul>
+            <div id="btn">
+                <button>event</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="../../js/authentification/verifer_password.js"></script> -->
+    <!-- <script src="../../js/nav_bar.js"></script> -->
+    <script type="module" src="../../js/authentification/inscrire.js"></script>
+</body>
+
+</html>
