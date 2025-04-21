@@ -14,7 +14,6 @@ body {
 
 main {
     padding: 20px;
-<<<<<<< HEAD
     height: max-content;
 }
 .filter-bar {
@@ -37,6 +36,4 @@ main {
     color: white;
     border: none;
     cursor: pointer;
-=======
->>>>>>> 042e32ad1b3c86715dbe1e416d61c48447b6aeda
 }
