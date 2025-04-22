@@ -1,6 +1,6 @@
 import { baseUrl } from "../../apis/api.js";
 // **** fonction pour ajouter les voitures à la page ""des voitures""
-function displayVoitures() {
+function displayVoitures(voitures) {
   let sectionsCards = document.querySelector(".cars-cards");
 
   let content = "";
@@ -50,11 +50,12 @@ function displayVoitures() {
 
 // **** appel à la fonction pour ajouter les voitures à la page ""des voitures""
 document.addEventListener("DOMContentLoaded", function () {
-  // Vérifier périodiquement si les données sont disponibles
+  // Vérifier périodiquement si les voitures sont disponibles
   const checkData = setInterval(() => {
-    if (localStorage.getItem("voitures")) {
+    const voitures = JSON.parse(localStorage.getItem("voitures")) // sélectionner les voitures enregistrer dans localStorage avec le fichier /page_accueil/get_voitures.js
+    if (voitures) {
       clearInterval(checkData);
-      displayVoitures();
+      displayVoitures(voitures);
     }
   }, 10); // Vérifie toutes les 10ms
 });

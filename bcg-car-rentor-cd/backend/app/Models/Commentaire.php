@@ -12,5 +12,11 @@ class Commentaire extends Model
     protected $fillable = [
         "contenu",
         "note",
+        "user_id"
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

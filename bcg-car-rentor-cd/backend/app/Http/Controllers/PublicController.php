@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Commentaire;
 use App\Models\Reservation;
 use App\Models\Voiture;
 use Exception;
@@ -54,6 +55,37 @@ class PublicController extends Controller
             return response()->json([
                 "success" => false,
                 "message" => "Échec lors de la récupération des voitures",
+                "errors" => $e->getMessage()
+            ], 500);
+        }
+    }
+
+    /************ Retourne tous les commentaires *************/
+    public function indexCommentaires()
+    {
+        try {
+            $commentaires = Commentaire::OrderBy("id", "desc")->with("user")->get();
+            $tousCommentaires = [];
+
+            foreach ($commentaires as $commentaire) {
+                $formCommentaire = [
+                    "id" => $commentaire->id,
+                    "contenu" => $commentaire->contenu,
+                    "note" => $commentaire->note,
+                    "nom" => $commentaire->user->nom,
+                    "prenom" => $commentaire->user->prenom
+                ];
+
+                array_push($tousCommentaires, $formCommentaire);
+            }
+            return response()->json([
+                "success" => true,
+                "data" => $tousCommentaires
+            ], 201);
+        } catch (Exception $e) {
+            return response()->json([
+                "success" => false,
+                "message" => "Échec lors de la récupération des commentaires",
                 "errors" => $e->getMessage()
             ], 500);
         }

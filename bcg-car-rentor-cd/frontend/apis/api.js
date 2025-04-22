@@ -8,6 +8,7 @@ export const MODIFIER_PROFILE_API = `${baseUrl}api/auth/modifierProfile`;
 
 /******* api public *******/
 export const INDEX_VOITURES = `${baseUrl}api/public/voitures/index`;
+export const INDEX_COMMENTAIRES = `${baseUrl}api/public/commentaires/index`
 
 /******* api admin *******/
 /*** api voiture ***/

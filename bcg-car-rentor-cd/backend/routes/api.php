@@ -30,6 +30,7 @@ Route::prefix("auth/")->controller(AuthentificationController::class)->group(fun
 /***************** Routes publics *******************/
 Route::prefix("public")->controller(PublicController::class)->group(function () {
     Route::get("voitures/index", "indexVoiture");
+    Route::get("commentaires/index", "indexCommentaires");
 });
 
 
