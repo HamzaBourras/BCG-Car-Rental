@@ -28,7 +28,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 85%;
-    height: 85%;
+    height: max-content;
     padding: 20px;
     padding-right: 0;
     background-color: rgba(128, 128, 128, 0.71);
@@ -36,11 +36,11 @@ body {
     border-radius: 10px;
     flex-wrap: wrap;
 }
-form{
+.ClassForm .SousForm form{
     width: 350px;
     margin-left: 20px;
 }
-form input{
+.ClassForm .SousForm form input{
     height: 30px;
     margin: 10px auto;
     border-radius: 4px;
@@ -49,19 +49,20 @@ form input{
     transition: 0.3s;
     padding: 0 5px;
 }
-form input:hover{
+.ClassForm .SousForm form input:hover{
     background-color: rgba(255, 255, 255, 0.685);
 }
-.text{
+.ClassForm .SousForm .text{
     margin-bottom: 40px;
     position: absolute;
     bottom: 220px;
 }
-.image{
-    height: 400px;
-    width: 500px;
+.ClassForm .image{
+    height: 300px;
+    width: 400px;
+    flex-shrink: 0;
 }
-.imageG{
+.ClassForm .image .imageG{
     width: 100%;
     margin-top: 20px;
 }
@@ -71,7 +72,7 @@ form input:hover{
 }
 
 #email{
-    transform: translateX(33px);
+    transform: translateX(36px);
 }
 
 #envoyer{
@@ -86,15 +87,16 @@ form input:hover{
     background-color: black;
     color: white;
 }
-.SousForm{
+.ClassForm .SousForm{
     position: relative;
+    margin-top: 60px;
 }
-.SousForm a{
+.ClassForm .SousForm form a{
     margin-top: 20px;
     color: rgb(13, 43, 77);
 }
 
-.SousForm button{
+.ClassForm .SousForm button{
     cursor: pointer;
     border: none;
     text-align: center;
@@ -112,9 +114,9 @@ form input:hover{
     margin-top: 10px;
 }
 @media (max-width:1016px) {
-    .image{
-        height: 400px;
-        width: 400px;
+    .ClassForm .image{
+        height: 500px;
+        width: 350px;
     }
     hr{
         width: 100%;
@@ -123,43 +125,50 @@ form input:hover{
         display: flex;
         justify-content: center;
         width: 80%;
+        height: 100%;
         padding-top: 40px;
     }
-    .imageG{
-        margin-top: 30px;
+    .ClassForm .image .imageG{
+        margin-top: 0;
     }
-    .SousForm{
-        margin-top: 20px;
+    .ClassForm .SousForm{
+        margin-top: 10px;
         height: 200px;
     }
-    .text{
+    .ClassForm .SousForm .text{
         margin-bottom: -25px;
+    }
+    .ClassForm .SousForm form input{
+        height: 25px;
+        width: 70%;
+    }
+    .ClassForm .SousForm button{
+        height: 25px;
+        width: 50%;
+        margin-left: 87px;
+    }
+    #envoyer{
+        margin-left: 68px;
+        width: 53%;
     }
 }
 
 @media (max-width:673px) {
-    form input{
+    .ClassForm .SousForm form input{
         width: 60%;
     }
-    .image{
-        flex-shrink: 0;
-        width: 300px;
-    }
-    button{
+    .ClassForm .SousForm button{
         width: 50%;
     }
     #envoyer{
         width: 53%;
-    }
-    .imageG{
-        margin-top: 60px;
     }
 
     hr{
         width: 60%;
         margin-left: 70px;
     }
-    .text{
+    .ClassForm .SousForm .text{
         font-size: 14px;
     }
     .ClassForm{
@@ -168,13 +177,64 @@ form input:hover{
 }
 
 @media (max-width:403px){
-    .text{
+    .ClassForm .SousForm form input{
+        width: 50%;
+    }
+    .ClassForm .SousForm .text{
         margin-left: 30px;
+    }
+    *{
+        font-size: 12px;
     }
     label{
         margin-left: 15px;
     }
-    a{
+    .ClassForm .SousForm form a{
         margin-left: 15px;
+    }
+    .ClassForm .image{
+        width: 300px;
+    }
+    .ClassForm .SousForm button{
+        width: 44%;
+        margin-left: 100px;
+    }
+    #envoyer{
+        width: 47%;
+        margin-left: 80px;
+    }
+}
+
+@media (max-width:336px){
+    .ClassForm .image{
+        width: 250px;
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+    .ClassForm .SousForm .text{
+        margin-left: 50px;
+    }
+    .ClassForm .SousForm form .P{
+        margin-left: 40px;
+    }
+    .ClassForm .SousForm form .E{
+        margin-left: 40px;
+    }
+    #password{
+        transform: translateX(15px);
+    }
+    .ClassForm .SousForm form a{
+        margin-left: 40px;
+    }
+    .ClassForm .SousForm form input{
+        width: 43%;
+    }
+    .ClassForm .SousForm button{
+        width: 42%;
+        margin-left: 100px;
+    }
+    #envoyer{
+        width: 44%;
+        margin-left: 80px;
     }
 }
