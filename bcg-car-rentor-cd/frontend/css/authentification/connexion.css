@@ -11,10 +11,11 @@ body {
     background-size: 100% 1215px;
     background-repeat: no-repeat;
     background-color: black;
+    
 }
 .container {
     padding: 20px;
-    height: 85vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +28,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 85%;
+    width: 80%;
     height: max-content;
     padding: 20px;
     padding-right: 0;
@@ -55,26 +56,22 @@ body {
 .ClassForm .SousForm .text{
     margin-bottom: 40px;
     position: absolute;
-    bottom: 220px;
+    bottom: 230px;
 }
 .ClassForm .image{
     height: 300px;
     width: 400px;
+    margin-top: 30px;
     flex-shrink: 0;
 }
 .ClassForm .image .imageG{
     width: 100%;
-    margin-top: 20px;
+    transform: translateX(-30PX);
+    
 }
-
-#password{
-    transform: translateX(10px);
+label{
+    display: block;
 }
-
-#email{
-    transform: translateX(36px);
-}
-
 #envoyer{
     margin-left: 54px;
     margin-top: 20px;
@@ -90,6 +87,7 @@ body {
 .ClassForm .SousForm{
     position: relative;
     margin-top: 60px;
+    transform: translateX(30PX);
 }
 .ClassForm .SousForm form a{
     margin-top: 20px;
@@ -117,6 +115,7 @@ body {
     .ClassForm .image{
         height: 500px;
         width: 350px;
+        transform: translateY(50px);
     }
     hr{
         width: 100%;
@@ -128,11 +127,9 @@ body {
         height: 100%;
         padding-top: 40px;
     }
-    .ClassForm .image .imageG{
-        margin-top: 0;
-    }
     .ClassForm .SousForm{
         margin-top: 10px;
+        transform: translateY(-70px);
         height: 200px;
     }
     .ClassForm .SousForm .text{
@@ -153,88 +150,85 @@ body {
     }
 }
 
-@media (max-width:673px) {
-    .ClassForm .SousForm form input{
-        width: 60%;
+@media (max-width:980px) {
+    .ClassForm .image{
+        transform: translateY(25px);
     }
-    .ClassForm .SousForm button{
+    .ClassForm .SousForm{
+        transform: translateY(20px);
+    }
+}
+
+
+@media (max-width:596px){
+    #password{
         width: 50%;
     }
-    #envoyer{
-        width: 53%;
+    #email{
+        width: 50%;
     }
-
     hr{
-        width: 60%;
-        margin-left: 70px;
-    }
-    .ClassForm .SousForm .text{
-        font-size: 14px;
-    }
-    .ClassForm{
-        width: 100%;
-    }
-}
-
-@media (max-width:403px){
-    .ClassForm .SousForm form input{
         width: 50%;
+        transform: translateX(80PX);
     }
     .ClassForm .SousForm .text{
-        margin-left: 30px;
-    }
-    *{
-        font-size: 12px;
-    }
-    label{
-        margin-left: 15px;
-    }
-    .ClassForm .SousForm form a{
-        margin-left: 15px;
-    }
-    .ClassForm .image{
-        width: 300px;
-    }
-    .ClassForm .SousForm button{
-        width: 44%;
-        margin-left: 100px;
-    }
-    #envoyer{
-        width: 47%;
-        margin-left: 80px;
+        font-size: 13PX;
     }
 }
-
-@media (max-width:336px){
-    .ClassForm .image{
-        width: 250px;
-        margin-top: 20px;
-        margin-right: 20px;
+@media (max-width:506px){
+    .ClassForm .SousForm form a{
+        margin-left: 30PX;
     }
     .ClassForm .SousForm .text{
-        margin-left: 50px;
+        transform: translateX(40px);
     }
-    .ClassForm .SousForm form .P{
-        margin-left: 40px;
-    }
-    .ClassForm .SousForm form .E{
-        margin-left: 40px;
+    .lp{
+        transform: translateX(30PX);
     }
     #password{
-        transform: translateX(15px);
+        transform: translateX(30PX);
+    }
+    .le{
+        transform: translateX(30PX);
+    }
+    #email{
+        transform: translateX(30PX);
+    }
+    .ClassForm .image .imageG{
+        width: 90%;
+        transform: translateX(10PX);
+    }
+    .ClassForm .image{
+        transform: translateY(30PX);
+    }
+}
+@media (max-width:443px){
+    .ClassForm .SousForm .text{
+        font-size: 10px;
+        transform: translateX(65px);
+    }
+    .ClassForm .image .imageG{
+        width: 70%;
+        transform: translateX(45PX);
+    }
+    .ClassForm .image{
+        transform: translateY(60PX);
+    }
+    .lp{
+        transform: translateX(60PX);
+    }
+    #password{
+        transform: translateX(60PX);
+        width: 40%;
+    }
+    .le{
+        transform: translateX(60PX);
+    }
+    #email{
+        transform: translateX(60PX);
+        width: 40%;
     }
     .ClassForm .SousForm form a{
-        margin-left: 40px;
-    }
-    .ClassForm .SousForm form input{
-        width: 43%;
-    }
-    .ClassForm .SousForm button{
-        width: 42%;
-        margin-left: 100px;
-    }
-    #envoyer{
-        width: 44%;
-        margin-left: 80px;
+        margin-left: 60PX;
     }
 }
