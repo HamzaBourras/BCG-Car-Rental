@@ -14,26 +14,30 @@
     font-weight: bold;
 }
 
-.about-us .red {
-    color: red;
-    font-size: 2rem;
-    font-weight: 700;
-    
-}
 
 .desc-logo {
     display: flex;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 30px 30px 30px 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+
 }
 .about-us-desc {
     flex: 1;
     width: 50%;
     padding-right: 30px;
-    /* background: forestgreen; */
 }
 
 .desc-logo .about-us-desc .p1 {
-    font-size: 1.4rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+.desc-logo .about-us-desc .p2 {
+    font-size: 0.9rem;
+    font-style: italic;
     margin: 10px 0;
 }
 
