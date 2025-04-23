@@ -14,16 +14,15 @@
     font-weight: bold;
 }
 
-
 .desc-logo {
     display: flex;
-    border: 1px solid white;
-    border-radius: 10px;
+    border-radius: 30px;
+    border-top: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
     padding: 30px 30px 30px 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin: 0 auto;
-
 }
+  
+
 .about-us-desc {
     flex: 1;
     width: 50%;
