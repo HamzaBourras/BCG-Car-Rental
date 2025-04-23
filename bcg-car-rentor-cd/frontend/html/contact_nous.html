@@ -28,11 +28,16 @@
 
       <!-- ***** main section (text,button,image) ***** -->
       <section>
+
+        <div class="map-container">
+          <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26554.182799884402!2d-7.3662464000000005!3d33.701888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sma!4v1745396541480!5m2!1sen!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
         <div class="contact-container">
           <div class="contact-form">
             <h2>Contacter nous</h2>
             <form>
-              <div class="form-group">
+              <div class="form-group1">
                 <input type="text" placeholder="Votre prénom ..." required />
                 <input type="text" placeholder="Votre nom ..." required />
               </div>
@@ -45,27 +50,36 @@
                 />
               </div>
               <textarea placeholder="Votre message ici ..." required></textarea>
-              <button type="submit">Envoyer</button>
+              <button type="submit" class="envoyer">Envoyer</button>
             </form>
           </div>
 
           <div class="contact-info">
-            <div class="contacts-info">
+            <h2 class="card-title">Contact Us Here !</h2>
+            <div class="card-content">
               <div class="info">
-                <i class="fa-solid fa-envelope"></i>
-                <span>bcgcarrental@business.com</span>
+                <a href="mailto:bcgcarrental@business.com" target="_blank">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span>bcgcarrental@business.com</span>
+                </a>
               </div>
               <div class="info">
-                <i class="fa-solid fa-phone"></i>
-                <span>0500255526</span>
+                <a href="tel:+212500255526" target="_blank">
+                  <i class="fa-solid fa-phone"></i>
+                  <span>0500255526</span>
+                </a>
               </div>
               <div class="info">
-                <i class="fa-solid fa-mobile-screen"></i>
-                <span>0615222666</span>
+                <a href="http://wa.me/0615222666" target="_blank">
+                  <i class="fa-solid fa-mobile-screen"></i>
+                  <span>0615222666</span>
+                </a>
               </div>
               <div class="info">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>0615222666</span>
+                <a href="http://wa.me/0615222666" target="_blank">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  <span>0615222666</span>
+                </a>
               </div>
               <div class="info">
                 <i class="fa-solid fa-location-dot"></i>

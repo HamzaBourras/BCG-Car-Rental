@@ -8,7 +8,6 @@
 
 body {
     scroll-behavior: smooth;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%), url('../../images/main-bg.png');
     background-size: 100% 1215px;
     background-repeat: no-repeat;
     background-color: black;
@@ -19,6 +18,20 @@ header iframe {
     overflow: hidden;
 }
 
+.map-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.map-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: brightness(0.6) grayscale(0.8);
+}
+
 .contact-container {
     display: flex;
     justify-content: space-between;
@@ -26,20 +39,98 @@ header iframe {
     color: white;
 }
 
-.contact-form,
-.contact-info {
-    background: white;
-    color: black;
+.contact-form {
+    background: black;
+    position: absolute;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    color: whitesmoke;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 45%;
+    top: 15%;
+    right: 40px;
+    max-width: 90%;
 }
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    background: black;
+    position: absolute;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    width: 24%;
+    height: 200px;
+    top: 64%;
+    right: 40px;
+    max-width: 90%;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+.contact-info:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  }
+
+.info {
+    margin: 10px 0;
+}
+i {
+    margin: 0 10px;
+}
+
+.card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    background: #000;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    color: whitesmoke;
+    border-radius: 10px;
+    line-height: 1.4;
+}
+.contact-info:hover .card-content {
+    transform: rotateX(0deg);
+}
+.card-title {
+    margin: auto auto;
+    top: 50%;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
 
 h2,h3 {
     margin-bottom: 15px;
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+}
 .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.form-group1 {
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
@@ -53,56 +144,47 @@ textarea {
     border-radius: 5px;
 
 }
-textarea {
-    width: 100%;
-    max-width: 500px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    height: 100px;
-}
 
-button {
+.envoyer {
     background: #2b79c2;
     color: white;
     padding: 10px 15px;
-    border: none;
     cursor: pointer;
-    border-radius: 5px;
+    margin: 20px 0 0 0;
+    width: 30%;
+    background: transparent;
+    outline: none;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.3s; 
 }
+.envoyer:hover {
+    background: whitesmoke;
+    color: black;
+    box-shadow: 3px 2px 15px -5px rgb(255, 255, 255);
+}
+.envoyer:active {
+    transform: translateY(1px);
+    background: #d5d5d5;
+}
+
+/* width: auto;
+    height: auto;
+    padding: 10px 30px;
+    background: transparent;
+    outline: none;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 12px 12px;
+    transition: 0.3s; */
 
 button:hover {
     background: #1a5a99;
 }
 
-
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    column-gap: 30px;
-    gap: 20px;                         /* Adjust the space between columns */
-    margin-bottom: 10px;
-}
-
-.contact-info a {
-    text-decoration: none;
-}
-
-.contact-info i {
-    color: black;
-}
-
-.contact-info span {
-    color: black;
-    
-}
-/* 
-nav {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 15px 0;
-    padding-right: 15px;
-}
- */
