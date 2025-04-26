@@ -1,43 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Connexion</title>
     <link rel="stylesheet" href="../../css/page_accueil/nav_bar.css">
     <link rel="stylesheet" href="../../css/authentification/connexion.css">
     <link rel="stylesheet" href="/frontend/fontawesome-free-6.7.2-web/css/all.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- style du div du message -->
+    <style>
+        #glob {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            background-color: rgba(58, 58, 58, 0.811);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #glob #content {
+            position: relative;
+            width: 50%;
+            height: max-content;
+            min-height: 100px;
+            background-color: rgba(255, 255, 255, 0.908);
+            border-radius: 15px;
+            padding: 10px 20px;
+        }
+
+        #glob #content #message {
+            font-size: 26px;
+            text-transform: uppercase;
+        }
+
+        #glob #content #btn {
+            text-align: end;
+        }
+
+        #glob #content #btn button {
+            border-radius: 8px;
+            box-sizing: border-box;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            list-style: none;
+            margin: 10px;
+            outline: none;
+            padding: 8px 16px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: baseline;
+            touch-action: manipulation;
+        }
+
+        #glob #content #errors {
+            padding: 5px 10%;
+        }
+
+        #glob #content #errors li {
+            margin: 4px 0;
+            color: #ff1919;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .danger {
+            border: 2px solid #c71414;
+            color: #c71414;
+        }
+
+        .danger:hover {
+            color: #FFFFFF;
+            background-color: #c71414;
+            transition: 400ms;
+        }
+
+        .success {
+            border: 2px solid #0b7840;
+            color: #0b7840;
+        }
+
+        .success:hover {
+            color: #FFFFFF;
+            background-color: #0b7840;
+            transition: 400ms;
+        }
+    </style>
 </head>
+
 <body>
     <header>
-      <!-- ***** Nav bar ***** -->
-      <div id="navbar_container" ></div>
+        <!-- ***** Nav bar ***** -->
+        <div id="navbar_container"></div>
     </header>
-    <div class="container" >
+    <div class="container">
         <div class="ClassForm">
-        <div class="SousForm">
-            <div class="text">
-                <h2>Se connecter</h2>
-                <p>si vous avez un compte,<a href="./inscription.html">veuillez vous connecter</a></p>
+            <div class="SousForm">
+                <div class="text">
+                    <h2>Se connecter</h2>
+                    <p>si vous n' avez pas un compte,<a href="./inscription.html">veuillez vous inscrire</a></p>
+                </div>
+                <hr class="HR">
+                <form>
+                    <label class="le" for="email">Email</label>
+                    <input type="text" id="email"><br>
+                    <label class="lp" for="password">Password</label>
+                    <input minlength="6" type="password" id="password" placeholder="Min. 6 caractères"><br>
+                    <a href="#" style="white-space: pre;">Mot de passe oublier?</a><br>
+                    <input type="submit" value="connecter" id="envoyer">
+                </form>
+                <hr>
+                <button
+                    style="background-color: white; padding-top: 0; display: flex; align-items: center;white-space: pre;"
+                    type="submit"><img src="../../images/Google-Company-logo.jpg" style="width: 20px;" alt=""> connecter
+                    avec google</button>
             </div>
-            <hr class="HR">
-            <form  action="" method="post">
-                <label class="le" for="email" >Email</label>
-                <input type="email" id="email" required><br>
-                <label class="lp" for="password" >Password</label>
-                <input minlength="6" type="password" id="password" required placeholder="Min. 6 caractères"><br>
-                <a href="#" style="white-space: pre;">Mot de passe oublier?</a><br>
-                <input type="submit" value="connecter" id="envoyer">
-            </form>
-            <hr>
-            <button style="background-color: white; padding-top: 0; display: flex; align-items: center;white-space: pre;" type="submit"><img src="../../images/Google-Company-logo.jpg" style="width: 20px;" alt="">  connecter avec google</button>
-        </div>
-        <div class="image">
-            <img class="imageG" src="../../images/homme-acheter-une-nouvelle-voiture-12433183-10130716.webp" alt="">
+            <div class="image">
+                <img class="imageG" src="../../images/homme-acheter-une-nouvelle-voiture-12433183-10130716.webp" alt="">
+            </div>
         </div>
     </div>
+    <!-- div pour le message -->
+    <div id="glob">
+        <div id="content">
+            <h2 id="message">message</h2>
+            <ul id="errors">
+            </ul>
+            <div id="btn">
+                <button>event</button>
+            </div>
+        </div>
     </div>
+
     <script src="../../js/nav_bar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../../js/authentification/connexion.js"></script>
 </body>
+
 </html>

@@ -35,17 +35,20 @@ const sendData = {
       // Traitement réponse réussie
       this.message = response.data?.message;
       this.returnData = response.data?.data;
+      this.token = response.data?.token;
       this.success = response.data?.success;
     } catch (error) {
       // s'il y a des erreurs de validation
       if (error.response?.status === 422) {
+        this.success = false;
         this.errors = error.response.data?.errors;
         this.message = "Erreurs de validation";
       } else {
+        this.success = false;
         this.message = error.response?.data?.message;
         this.errors = error.response?.data?.errors;
       }
-      this.success = error.response?.data?.success;
+      // this.success = error.response?.data?.success;
       throw error; // Important pour que le catch dans inscrire.js soit déclenché
     }
   },

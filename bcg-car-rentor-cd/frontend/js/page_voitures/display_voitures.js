@@ -4,7 +4,6 @@ function displayVoitures(voitures) {
   let sectionsCards = document.querySelector(".cars-cards");
 
   let content = "";
-  let voitures = JSON.parse(localStorage.getItem("voitures")) // sélectionner les voitures enregistrer dans localStorage avec le fichier /page_accueil/get_voitures.js
 
   voitures.forEach((voiture) => {
     content += `

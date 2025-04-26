@@ -32,7 +32,7 @@ class AuthentificationController extends Controller
             ], 201);
         } catch (Exception $e) {
             return response()->json([
-                "status" => false,
+                "success" => false,
                 "message" => "Erreur lors de l'inscription",
                 "errors" => $e->getMessage()
             ], 500);
