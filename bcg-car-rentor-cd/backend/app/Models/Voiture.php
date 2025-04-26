@@ -19,6 +19,7 @@ class Voiture extends Model
         'couleur',
         'type_carburant',
         'kilometrage',
+        'climat',
         'image',
     ];
 

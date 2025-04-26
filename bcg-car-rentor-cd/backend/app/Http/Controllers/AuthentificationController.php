@@ -84,8 +84,6 @@ class AuthentificationController extends Controller
     /***** Deconnexion *****/
     public function deconnecter(int $user_id)
     {
-
-
         try {
             PersonalAccessToken::where("tokenable_id", $user_id)->delete();
             return response()->json([
