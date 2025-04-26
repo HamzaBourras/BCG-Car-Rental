@@ -13,6 +13,10 @@ body {
     background-color: black; 
 }
 
+.filters {
+    width: 100%;
+}
+
 .filters .find-car {
     font-size: 2.8rem;
     text-align: center;
@@ -22,11 +26,15 @@ body {
 }
 
 .filter-bar {
+    /* background-color: red; */
     display: flex;
+    justify-content: space-between;
     gap: 1rem;
-    margin: 1px;
+    margin: auto;
+    margin-bottom: 40px;
     align-items: center;
     flex-wrap: wrap;
+    width: 70%;
 }
 
 .filter-bar select,
@@ -36,6 +44,7 @@ body {
     border-radius: 10px;
     outline: none;
     border: none;
+    width: 25%;
 }
 .filter-bar button {
     width: auto;
