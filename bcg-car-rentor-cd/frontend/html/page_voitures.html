@@ -26,19 +26,16 @@
     <div class="best-deals" style="background: none;">
       <!-- ** section des inputs des filtres ** -->
       <section class="filters">
-        <h2 class="find-car">FIND YOUR CAR</h2>
+        <h2 class="find-car">TROUVEZ VOTRE VOITURE</h2>
         <div class="filter-bar">
-          <select name="model" class="filter-input">
-            <option value="">Select Model</option>
-            <option value="audi">Audi</option>
-            <option value="bmw">BMW</option>
-            <option value="kia">Kia</option>
+          <select name="marque" id="marque" class="filter-input">
           </select>
 
-          <input type="number" class="filter-input" placeholder="Min Price" min="0">
-          <input type="number" class="filter-input" placeholder="Max Price" min="0">
+          <input type="number" class="filter-input" placeholder="Min prix" id="prix_min" min="0">
+          <input type="number" class="filter-input" placeholder="Max prix" id="prix_max" min="0">
 
-          <button class="filter-btn">Search</button>
+          <!-- <button class="filter-btn" id="search-btn">chercher</button> -->
+          <button class="filter-btn" id="reset-btn">Rséinitialiser</button>
         </div>
 
       </section>

@@ -39,7 +39,7 @@ Route::prefix("admin")->middleware("auth:sanctum")->group(function () {
     Route::prefix("voitures")->controller(VoitureController::class)->group(function () {
         Route::get("index", "indexVoiture");
         Route::post("store", "storeVoiture");
-        Route::put("edit/{voiture_id}", "editVoiture");
+        Route::post("edit/{voiture_id}", "editVoiture");
         Route::delete("destroy/{voiture_id}", "destroyVoiture");
     });
 });
