@@ -6,7 +6,10 @@
 }
 
 body {
-  background-color: black;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%), url('../../images/main-bg.png');
+	background-size: 100% 1215px;
+  background-repeat: no-repeat;
+  background-color: black; 
   color: whitesmoke;
   line-height: 1.5;
 }
@@ -21,17 +24,18 @@ a {
 	overflow: hidden;
 }
 
+
+/* Sidebare styles */
 .sidebar {
 	display: flex;
 	flex-direction: column;
 	width: 20%;
-	height: 100%;
+	height: max-content;
 	background: #232323;
 	border-right: 1px solid whitesmoke;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 	transition: all 0.3s ease;
 }
-
 .logo {
 	padding: 15px;
 	display: flex;
@@ -49,6 +53,7 @@ a {
 	color: rgb(208, 208, 208);
 }
 
+/* Navigation menu styles */
 .nav-menu {
 	padding: 20px 0;
 	flex-grow: 1;
@@ -74,5 +79,30 @@ a {
 	font-size: 1.2rem;
 }
 .nav-menu li a:hover {
+	background-color: rgb(18, 18, 18);
+}
+
+/* User-profile styles  */
+.user-profile {
+	padding: 15px 20px;
+	border-top: 1px solid var(--border-color);
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 80%;
+}
+.user-profile a {
+	display: flex;
+	align-items: center;
+	padding: 12px 15px;
+	color: whitesmoke;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+}
+.user-profile a i {
+	margin-right: 12px;
+	font-size: 1.2rem;
+}
+.user-profile a:hover {
 	background-color: rgb(18, 18, 18);
 }
