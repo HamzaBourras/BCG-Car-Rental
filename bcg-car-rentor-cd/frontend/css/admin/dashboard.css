@@ -20,8 +20,10 @@ a {
 }
 
 .dashboard-container {
-  display: flex;
+  	display: flex;
 	overflow: hidden;
+	/* background-color: red; */
+	height: 100vh;
 }
 
 
