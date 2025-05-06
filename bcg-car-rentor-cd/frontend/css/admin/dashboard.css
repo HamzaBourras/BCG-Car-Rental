@@ -32,7 +32,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	width: 20%;
-	height: max-content;
+	height: 100%;
 	background: #232323;
 	border-right: 1px solid whitesmoke;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
