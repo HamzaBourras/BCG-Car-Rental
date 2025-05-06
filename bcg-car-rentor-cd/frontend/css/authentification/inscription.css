@@ -107,6 +107,23 @@ input::placeholder {
     transition: background-color 0.3s;
 }
 
+#lien-conn {
+    margin: 20px 0 0px 0;
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: end;
+}
+#lien-conn a {
+    margin-left: 5px;
+    text-decoration: underline;
+    font-weight: 500;
+    color: rgb(0, 191, 255);
+}
+#lien-conn a:hover {
+    color: rgb(0, 149, 255);
+    transition: 0.1s;
+}
+
 .submit-btn:hover {
     background-color: #f0f0f0;
 }
@@ -115,7 +132,7 @@ input::placeholder {
 @media (max-width: 768px) {
     .form-row {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
     }
     
     .form-group {
