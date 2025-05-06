@@ -21,7 +21,7 @@ form.addEventListener("submit", async function (e) {
     formData.telephone = document.querySelector("#telephone").value
     formData.adresse = document.querySelector("#adresse").value
     formData.password = document.querySelector("#password").value
-    formData.motpasseverif = document.querySelector("#motpasseverif").value
+    formData.motpasseverif = document.querySelector("#confirm-password").value
 
     try {
         await sendData.postData(INSCRIRE_API, formData, "post", null, false);

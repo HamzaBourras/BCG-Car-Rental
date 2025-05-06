@@ -38,6 +38,7 @@
         #glob #content #message {
             font-size: 26px;
             text-transform: uppercase;
+            color: black;
         }
 
         #glob #content #btn {
@@ -102,32 +103,61 @@
         <!-- ***** Nav bar ***** -->
         <div id="navbar_container"></div>
     </header>
-    <div class="ClassForm">
-        <div class="Text">
-            <h2>S'inscrire</h2>
+    <div class="container">
+        <div class="form-header">
+            <h1>S'inscrire</h1>
             <p>Créer votre compte</p>
         </div>
-        <form>
-            <div class="form-row ">
-                <label for="nom">Nom</label>
-                <input type="text" id="nom"><br>
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom"><br>
-                <label for="email">Email</label>
-                <input type="email" id="email"><br>
-                <label for="telephone">Telephone</label>
-                <input pattern="[0-9]{10}" type="tel" id="telephone"><br>
-            </div>
-            <div class="form-row ">
-                <label for="adresse">Adresse</label>
-                <input type="text" id="adresse"><br>
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Min. 6 caractères"><br>
-                <label for="motpasseverif">Confirme</label>
-                <input type="password" id="motpasseverif"><br>
-            </div>
-            <input type="submit" value="S'inscrire" id="envoyer">
-        </form>
+        <div class="form-container">
+            <form action="#" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adresse">Adresse</label>
+                        <input type="text" id="adresse" name="adresse" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="min 8 caractères" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">Confirme</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <button type="submit" class="submit-btn">S'inscrire</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <!-- div pour le message -->
@@ -143,7 +173,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../../js/nav_bar.js"></script>
+    <!-- <script src="../../js/nav_bar.js"></script> -->
     <script type="module" src="../../js/authentification/inscrire.js"></script>
     <!-- <script src="../../js/authentification/verifer_password.js"></script> -->
 </body>
