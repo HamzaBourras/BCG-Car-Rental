@@ -37,7 +37,6 @@
 			</div>
 		</div>
 		<div class="main">
-			<h1>Bienvenue dans le tableau de bord</h1>
 			<header class="dashboard-header">
 				<div class="search-container">
 					<i class="fas fa-search"></i>
@@ -46,19 +45,88 @@
 				<div class="header-right">
 					<div class="notification">
 						<i class="fa-solid fa-bell"></i>
+						<span class="notification-count">3</span>
 					</div>
 					<div class="message">
 						<i class="fa-solid fa-message"></i>
+						<span class="message-count">5</span>
 					</div>
 					<div class="profil">
-						<i class="fa-solid fa-user"></i>
-						<i class="fas fa-chevron-down"></i>
+						<a href="#" class="dropdown-toggle">
+							<i class="fa-solid fa-user"></i>
+							<i class="fas fa-chevron-down"></i>
+						</a>
 					</div>
 				</div>
 			</header>
 
 			<div class="dashboard-content">
+				<h1>Bienvenue dans le tableau de bord</h1>
+				<div class="stats-cards">
+					
+					<div class="stat-card">
+						<div class="stat-card-content">
+							<div class="stat-card-info">
+									<h3>Total Vehicles</h3>
+									<h2>124</h2>
+							</div>
+							<div class="stat-card-icon vehicle-icon">
+									<i class="fas fa-car"></i>
+							</div>
+						</div>
+						<div class="stat-footer">
+							<a href="#">View details</a>
+						</div>
+					</div>
 
+					<div class="stat-card">
+						<div class="stat-card-content">
+								<div class="stat-card-info">
+										<h3>Active Rentals</h3>
+										<h2>87</h2>
+								</div>
+								<div class="stat-card-icon rental-icon">
+										<i class="fas fa-key"></i>
+								</div>
+						</div>
+						<div class="stat-footer">
+								<a href="#">View details</a>
+						</div>
+					</div>
+
+					<div class="stat-card">
+						<div class="stat-card-content">
+							<div class="stat-card-info">
+								<h3>New Customers</h3>
+								<h2>43</h2>
+								<p><span class="gain">+15%</span> from last month</p>
+							</div>
+							<div class="stat-card-icon customer-icon">
+								<i class="fas fa-user-plus"></i>
+							</div>
+						</div>
+						<div class="stat-footer">
+							<a href="#">View details</a>
+						</div>
+					</div>
+
+					<div class="stat-card">
+						<div class="stat-card-content">
+							<div class="stat-card-info">
+								<h3>Revenue</h3>
+								<h2>$78,450</h2>
+								<p><span class="loss">-3%</span> from last month</p>
+							</div>
+							<div class="stat-card-icon revenue-icon">
+								<i class="fas fa-dollar-sign"></i>
+							</div>
+						</div>
+						<div class="stat-footer">
+								<a href="#">View details</a>
+						</div>
+				</div>
+
+				</div>
 			</div>
 
 		</div>
