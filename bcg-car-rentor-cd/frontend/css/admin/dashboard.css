@@ -32,14 +32,9 @@ a {
 	display: flex;
 	flex-direction: column;
 	width: 20%;
-<<<<<<< HEAD
 	height: 100vh;
 	overflow: hidden;
 	background: #000000;
-=======
-	height: 100%;
-	background: #232323;
->>>>>>> 144eaeac0bf63995115d17f425a2e39d87591ffc
 	border-right: 1px solid whitesmoke;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 	transition: all 0.3s ease;
