@@ -26,11 +26,19 @@ class VoitureFactory extends Factory
             'couleur' => $this->faker->safeColorName,
             'type_carburant' => $this->faker->randomElement(['Essence', 'Diesel', 'Électrique', 'Hybride']),
             'kilometrage' => $this->faker->numberBetween(1000, 200000),
+            // 'image' => $this->faker->randomElement([
+            //     'images_voitures/Renault Clio 5.jpg' . $this->faker->numberBetween(1000, 200000),
+            //     'images_voitures/ferrari_2024.webp' . $this->faker->numberBetween(1000, 200000),
+            //     'images_voitures/mercedess_2024.jpg' . $this->faker->numberBetween(1000, 200000),
+            //     'images_voitures/Dacia-Spring.png' . $this->faker->numberBetween(1000, 200000)
+            // ]),
             'image' => $this->faker->randomElement([
-                'images_voitures/Renault Clio 5.jpg',
-                'images_voitures/fiat-maroc-500.png',
+                'images_voitures/Renault_Clio_5.webp',
+                'images_voitures/ferrari_2024.webp',
+                'images_voitures/mercedess_2024.jpg',
                 'images_voitures/Dacia-Spring.png'
             ]),
+            'climat' => $this->faker->randomElement([0, 1])
         ];
     }
 }

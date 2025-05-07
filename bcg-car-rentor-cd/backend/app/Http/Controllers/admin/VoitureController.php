@@ -140,7 +140,7 @@ class VoitureController extends Controller
             $ancienImage = Voiture::where('id', $voiture_id)->first();
             $ancienImageName = $ancienImage->image;
             if ($ancienImageName && Storage::exists("public/" . $ancienImageName)) {
-                Storage::delete("public/" . $ancienImageName);
+                // Storage::delete("public/" . $ancienImageName);
             }
 
 

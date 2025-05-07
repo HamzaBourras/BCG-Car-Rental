@@ -22,9 +22,9 @@ function displayVoitures(voitures) {
   voitures.forEach((voiture) => {
     content += `
       <div class="car-card">
-        <img src="${baseUrl + voiture.image}" alt="${voiture.marque} ${voiture.marquee
+        <img src="${baseUrl + voiture.image}" alt="${voiture.marque} ${voiture.modele
       } " class="car-image">
-        <h2>${voiture.marque} ${voiture.marquee}</h2>
+        <h2>${voiture.marque} ${voiture.modele}</h2>
         <p class="price">A PARTIR DE ${voiture.prix_jour}dh/jour</p>
 
         <!-- Car options (Seats, Diesel, Climatiseur) -->

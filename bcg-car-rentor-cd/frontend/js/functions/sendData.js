@@ -17,20 +17,25 @@ const sendData = {
       }
       // s'il y a un fichier
       if (hasFile) {
-        config.headers["Content-Type"] = "multipart/form-data";
+        // Axios le fera automatiquement avec la bonne boundary
+        delete config.headers["Content-Type"]; // Laisser Axios gérer cela
       } else {
         config.headers["Content-Type"] = "application/json";
       }
 
+      // vérifier si le token est disponible pour l'ajouter à la requete
+      const token = JSON.parse(localStorage.getItem("token"));
+      if (token) {
+        config.headers["Authorization"] = `Bearer ${token}`;
+      }
+
       // envoi de la requete
-      // const response = await axios[method](apiUrl, formData, config);
       const response = await axios({
         method,
         url: apiUrl,
         data: formData,
         headers: config.headers
       });
-
 
       // Traitement réponse réussie
       this.message = response.data?.message;

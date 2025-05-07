@@ -9,40 +9,40 @@ function displayVoitures(voitures) {
   voitures.forEach((voiture) => {
     if (number <= 3) {
       content += `
-      <div class="car-card">
-        <img src="${baseUrl + voiture.image}" alt="${voiture.marque} ${voiture.modele
+    <div class="car-card">
+      <img src="${baseUrl + voiture.image}" alt="${voiture.marque} ${voiture.modele
         } " class="car-image">
-        <h2>${voiture.marque} ${voiture.modele}</h2>
-        <p class="price">A PARTIR DE ${voiture.prix_jour}dh/jour</p>
+      <h2>${voiture.marque} ${voiture.modele}</h2>
+      <p class="price">A PARTIR DE ${voiture.prix_jour}dh/jour</p>
 
-        <!-- Car options (Seats, Diesel, Climatiseur) -->
-        <div class="car-options">
-          <div class="seat-option">
-            <img src="../images/Options/seat.png" alt="">
-            <span>${voiture.nombre_place} Places</span>
-          </div>
-          <div class="diesel-option">
-            <img src="../images/Options/diesel.png" alt="">
-            <span>${voiture.type_carburant}</span>
-          </div>
-          <div class="climat-option">
-            <img src="../images/Options/clim2.png" alt="">
-            <span>${voiture.climat ? "oui" : "non"}</span>
-          </div>
+      <!-- Car options (Seats, Diesel, Climatiseur) -->
+      <div class="car-options">
+        <div class="seat-option">
+          <img src="../images/Options/seat.png" alt="">
+          <span>${voiture.nombre_place} Places</span>
         </div>
-
-        <!-- Reservation Button and WhatsApp (or phone) Icon -->
-        <div class="reservation">
-          <button class="reservation-btn">
-            <span>Reservation</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
-          <button href="https://wa.me/YOUR_NUMBER" class="whatsapp-btn" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-          </button>
+        <div class="diesel-option">
+          <img src="../images/Options/diesel.png" alt="">
+          <span>${voiture.type_carburant}</span>
+        </div>
+        <div class="climat-option">
+          <img src="../images/Options/clim2.png" alt="">
+          <span>${voiture.climat ? "oui" : "non"}</span>
         </div>
       </div>
-      `;
+
+      <!-- Reservation Button and WhatsApp (or phone) Icon -->
+      <div class="reservation">
+        <button class="reservation-btn">
+          <span>Reservation</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button href="https://wa.me/YOUR_NUMBER" class="whatsapp-btn" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+        </button>
+      </div>
+    </div>
+    `;
     }
     number++;
   });
