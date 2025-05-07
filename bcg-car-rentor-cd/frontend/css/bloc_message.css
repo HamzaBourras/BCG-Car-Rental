@@ -1,0 +1,101 @@
+
+#glob {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.721);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#content {
+    position: relative;
+    width: 50%;
+    max-width: 600px;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+#glob #content #message {
+    font-size: 26px;
+    text-transform: uppercase;
+    color: black;
+}
+
+#glob #content #btn {
+    text-align: end;
+}
+
+#glob #content #btn button {
+    border-radius: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    margin: 10px;
+    outline: none;
+    padding: 8px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: baseline;
+    touch-action: manipulation;
+}
+
+#glob #content #errors {
+    padding: 5px 10%;
+}
+
+#glob #content #errors li {
+    margin: 4px 0;
+    color: #ff1919;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.danger {
+    border: 2px solid #c71414;
+    color: #c71414;
+}
+
+.danger:hover {
+    color: #FFFFFF;
+    background-color: #c71414;
+    transition: 400ms;
+}
+
+.success {
+    border: 2px solid #0b7840;
+    color: #0b7840;
+}
+
+.success:hover {
+    color: #FFFFFF;
+    background-color: #0b7840;
+    transition: 400ms;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

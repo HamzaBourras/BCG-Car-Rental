@@ -85,6 +85,8 @@ function setupEventListeners() {
 
     });
   });
+
+
 }
 
 
@@ -98,8 +100,8 @@ async function supprimerVoiture(voiture_id) {
       //affichage message succès
       displayMessage(null, sendData.message);
       const voituresS = await getVoitures()  // appel à la fct pour recevoir les voitures après la modification
-
       displayVoituresAdmin(voituresS)
+
     }
   } catch (error) {
     // affichage des erreurs du message
@@ -116,7 +118,51 @@ function modifierVoiture(voiture_id) {
 
 
 //**** fct pour ajouter une voiture ****/
-function ajouterVoiture() {
+const form = document.querySelector("#vehiculeForm")
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  await ajouterVoiture()  // appeler à la fct pour ajouter une voiture
+})
+
+const formData = new FormData(); // Utilisez FormData pour les fichiers
+
+
+async function ajouterVoiture() {
+
+  formData.append('modele', document.querySelector("#modele").value);
+  formData.append('marque', document.querySelector("#marque").value);
+  formData.append('matricule', document.querySelector("#matricule").value);
+  formData.append('nombre_place', document.querySelector("#nombre_place").value);
+  formData.append('prix_jour', document.querySelector("#prix_jour").value);
+  formData.append('vitesse_max', document.querySelector("#vitesse_max").value);
+  formData.append('couleur', document.querySelector("#couleur").value);
+  formData.append('type_carburant', document.querySelector("#type_carburant").value);
+  formData.append('kilometrage', document.querySelector("#kilometrage").value);
+  formData.append('climat', document.querySelector("#climat").value == "oui" ? 1 : 0);
+  const imageInput = document.querySelector("#image"); // votre input de type file
+  const imageFile = imageInput.files[0]; // le fichier réel
+  formData.append('image', imageFile);
+
+
+  try {
+    await sendData.postData(ADMIN_STORE_VOITURES, formData, "post", null, true)
+    if (sendData.success === true) {
+      //affichage message succès
+      displayMessage(null, sendData.message);
+      const voituresS = await getVoitures()  // appel à la fct pour recevoir les voitures après la modification
+      displayVoituresAdmin(voituresS)
+
+      document.getElementById("resetBtn").click()  // pour vider tous les inputs
+      document.getElementById("annulerBtn").click() // pour cacher le formulaire 
+
+    }
+  } catch (error) {
+    console.log(sendData.errors);
+
+    // affichage des erreurs du message
+    if (sendData.success === false)
+      displayMessage(sendData.errors, sendData.message)
+  }
 
 }
 
@@ -136,11 +182,12 @@ function displayMessage(errors, message) {
   messageC.textContent = message
   if (sendData.success == true) {  // dans ce cas il n ' y a pas des erreurs on veut juste afficher un message
     btnC.textContent = "fermer"
+    btnC.classList.remove("danger")
     btnC.classList.add("success")
   }
   else {
-    console.log(errors);
     btnC.textContent = "réssayer"
+    btnC.classList.remove("success")
     btnC.classList.add("danger")
     let content = ``
     for (const key in errors) {

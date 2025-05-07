@@ -17,8 +17,7 @@ const sendData = {
       }
       // s'il y a un fichier
       if (hasFile) {
-        // Axios le fera automatiquement avec la bonne boundary
-        delete config.headers["Content-Type"]; // Laisser Axios gérer cela
+        config.headers["Content-Type"] = "multipart/form-data";
       } else {
         config.headers["Content-Type"] = "application/json";
       }
@@ -36,6 +35,8 @@ const sendData = {
         data: formData,
         headers: config.headers
       });
+
+
 
       // Traitement réponse réussie
       this.message = response.data?.message;

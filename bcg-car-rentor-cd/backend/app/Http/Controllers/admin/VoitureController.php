@@ -75,10 +75,13 @@ class VoitureController extends Controller
                 "type_carburant" => $request->type_carburant,
                 "kilometrage" => $request->kilometrage,
                 "climat" => $request->climat,
-                "image" => $cheminImage
+                "image" => $cheminImage,
+                // "image" => $request->file('image')
             ]);
 
+
             return response()->json([
+                // "data" => $vt,
                 "success" => true,
                 "message" => "Voiture ajoutée avec succès",
             ], 200);

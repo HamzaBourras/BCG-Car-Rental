@@ -6,95 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>voitures</title>
     <link rel="stylesheet" href="../../css/admin/voitures.css">
+    <link rel="stylesheet" href="../../css/admin/formulaire_voiture.css">
+    <link rel="stylesheet" href="../../css/bloc_message.css">
     <link rel="stylesheet" href="../../fontawesome-free-6.7.2-web/css/all.css" />
     <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <!-- style du div du message -->
-    <style>
-        #glob {
-            display: none;
-            width: 100%;
-            height: 100vh;
-            position: absolute;
-            left: 0%;
-            top: 0%;
-            background-color: rgba(58, 58, 58, 0.811);
-            justify-content: center;
-            align-items: center;
-        }
 
-        #glob #content {
-            position: relative;
-            width: 50%;
-            height: max-content;
-            min-height: 100px;
-            background-color: rgba(255, 255, 255, 0.908);
-            border-radius: 15px;
-            padding: 10px 20px;
-        }
-
-        #glob #content #message {
-            font-size: 26px;
-            text-transform: uppercase;
-            color: black;
-        }
-
-        #glob #content #btn {
-            text-align: end;
-        }
-
-        #glob #content #btn button {
-            border-radius: 8px;
-            box-sizing: border-box;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 20px;
-            list-style: none;
-            margin: 10px;
-            outline: none;
-            padding: 8px 16px;
-            position: relative;
-            text-align: center;
-            text-decoration: none;
-            vertical-align: baseline;
-            touch-action: manipulation;
-        }
-
-        #glob #content #errors {
-            padding: 5px 10%;
-        }
-
-        #glob #content #errors li {
-            margin: 4px 0;
-            color: #ff1919;
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        .danger {
-            border: 2px solid #c71414;
-            color: #c71414;
-        }
-
-        .danger:hover {
-            color: #FFFFFF;
-            background-color: #c71414;
-            transition: 400ms;
-        }
-
-        .success {
-            border: 2px solid #0b7840;
-            color: #0b7840;
-        }
-
-        .success:hover {
-            color: #FFFFFF;
-            background-color: #0b7840;
-            transition: 400ms;
-        }
-    </style>
 </head>
 
 <body>
@@ -105,12 +23,109 @@
         <div class="">
             <header></header>
             <div>
-                <div id="ajouter"><button onclick="ajouterVoiture()"> <i class="fa fa-plus"></i> Ajouter</button></div>
+                <div id="ajouter"><button id="ajouterBtn"> <i class="fa fa-plus"></i> Ajouter</button></div>
                 <main class="main-content" id="main-content">
 
                 </main>
             </div>
         </div>
+    </div>
+
+    <!-- div du formulaire d'ajout de voiture -->
+    <div class="container_formulaire">
+        <div class="titre">
+            <h1>Enregistrement de véhicule</h1>
+            <button type="button" id="annulerBtn" class="btn-annuler">Annuler</button>
+        </div>
+        <form id="vehiculeForm">
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="modele">Modèle:</label>
+                    <input type="text" id="modele" name="modele" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="marque">Marque:</label>
+                    <input type="text" id="marque" name="marque" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="matricule">Matricule:</label>
+                    <input type="text" id="matricule" name="matricule" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="nombre_place">Nombre de places:</label>
+                    <input type="number" id="nombre_place" name="nombre_place" min="1" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="prix_jour">Prix par jour (dh):</label>
+                    <input type="number" id="prix_jour" name="prix_jour" min="0" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="vitesse_max">Vitesse maximale (km/h):</label>
+                    <input type="number" id="vitesse_max" name="vitesse_max" min="0" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="couleur">Couleur:</label>
+                    <input type="text" id="couleur" name="couleur" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="type_carburant">Type de carburant:</label>
+                    <select id="type_carburant" name="type_carburant" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="essence">Essence</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="électrique">Électrique</option>
+                        <option value="hybride">Hybride</option>
+                        <option value="gpl">GPL</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="kilometrage">Kilométrage:</label>
+                    <input type="number" id="kilometrage" name="kilometrage" min="0" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="climat">Climatisation:</label>
+                    <select id="climat" name="climat" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="oui">Oui</option>
+                        <option value="non">Non</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <label for="image">Image du véhicule:</label>
+                    <div class="custom-file-input">
+                        <input type="file" id="image" name="image" accept="image/*" required>
+                        <label for="image" class="file-label">Choisir un fichier</label>
+                        <span class="file-name">Aucun fichier sélectionné</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit" id="enregistrerBtn" class="btn-submit">Enregistrer</button>
+                <button type="reset" id="resetBtn" class="btn-reset">Réinitialiser</button>
+                <button type="button" id="annulerBtn" class="btn-annuler">Annuler</button>
+            </div>
+        </form>
     </div>
 
     <!-- div pour le message -->
@@ -127,6 +142,29 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="../../js/admin/voitures.js"></script>
     <script type="module" src="../../js/page_accueil/get_voitures.js"></script>
+
+    <script>
+        // script pour afficher le nom du fichier sélectionné
+        document.getElementById('image').addEventListener('change', function (e) {
+            var fileName = '';
+            if (this.files && this.files.length > 0) {
+                fileName = this.files[0].name;
+            }
+            var fileNameSpan = this.nextElementSibling.nextElementSibling;
+            fileNameSpan.textContent = fileName || 'Aucun fichier sélectionné';
+        });
+
+        document.querySelector("#ajouterBtn").addEventListener("click", function () {
+            document.querySelector(".container_formulaire").style.display = "block"  // afficher la formulaire lorsque je clique sur le button
+        })
+
+        // annuler l'affichage de la formulaire lorsque je clique sur le button annuler
+        document.querySelectorAll("#annulerBtn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                document.querySelector(".container_formulaire").style.display = "none"
+            })
+        })
+    </script>
 </body>
 
 </html>

@@ -32,7 +32,7 @@ class VoitureRequest extends FormRequest
             'type_carburant' => 'required|in:essence,diesel,hybride,électrique',
             'kilometrage' => 'required|integer|min:0',
             'climat' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048'
+            'image' => 'required|mimes:jpeg,png,jpg|max:2048'
         ];
     }
 
@@ -74,7 +74,7 @@ class VoitureRequest extends FormRequest
             'kilometrage.min' => 'Le kilométrage ne peut pas être négatif',
 
             'image.required' => 'L\'image de la voiture est obligatoire',
-            'image.image' => 'Le fichier doit être une image',
+            // 'image.image' => 'Le fichier doit être une image',
             'image.mimes' => 'L\'image doit être de type : jpeg, png ou jpg',
             'image.max' => 'L\'image ne doit pas dépasser 2Mo'
         ];
