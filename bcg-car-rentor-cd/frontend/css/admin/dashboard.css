@@ -97,7 +97,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-	background: #1e1e1e;
+	background: #161616;
 }
 
 /* Dashboard header */
@@ -146,7 +146,7 @@ a {
 }
 .notification i, .message i {
 	font-size: 1.2rem;
-	color: var(--text-light);
+	color: whitesmoke;
 }
 .notification-count, .message-count {
 	position: absolute;
@@ -185,7 +185,7 @@ a {
 	margin-bottom: 30px;
 }
 .stat-card {
-	background-color: rgb(90, 90, 90);
+	background-color: rgb(78, 78, 78);
 	color: whitesmoke;
 	border-radius: 10px;
 	overflow: hidden;
@@ -243,4 +243,65 @@ a {
 }
 .stat-footer a:hover {
 	text-decoration: underline;
+}
+
+/* Recent section */
+.recent-section {
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+.section-header {
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.section-header h3 {
+	font-size: 1rem;
+	font-weight: 600;
+
+}
+
+.view-all {
+	color: whitesmoke;
+	font-size: 14px;
+}
+.view-all:hover {
+	text-decoration: underline;
+}
+
+/* Table Styles */
+.table-container {
+	overflow-x: auto;
+	border-radius: 13px;
+	border-bottom: 1px solid whitesmoke;
+	border-top: 1px solid whitesmoke;
+}
+
+.data-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+	padding: 15px 20px;
+	text-align: left;
+}
+
+.data-table th {
+	font-weight: 600;
+	font-size: 0.9rem;
+	color: whitesmoke;
+	background-color: rgb(78, 78, 78);
+}
+
+.data-table td {
+	font-size: 14px;
+	color: black;
+}
+
+.data-table tr:last-child td {
+	border-bottom: none;
 }
