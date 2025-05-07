@@ -86,28 +86,9 @@ a {
 }
 
 /* User-profile styles  */
-.user-profile {
-	padding: 15px 20px;
-	border-top: 1px solid var(--border-color);
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	top: 80%;
-}
-.user-profile a {
-	display: flex;
-	align-items: center;
-	padding: 12px 15px;
-	color: whitesmoke;
-	border-radius: 8px;
-	transition: all 0.3s ease;
-}
-.user-profile a i {
-	margin-right: 12px;
-	font-size: 1.2rem;
-}
-.user-profile a:hover {
-	background-color: rgb(18, 18, 18);
+.user-profil {
+	margin-top: 220px;
+
 }
 
 /* Dashboard body */
@@ -204,7 +185,8 @@ a {
 	margin-bottom: 30px;
 }
 .stat-card {
-	background-color: rgb(160, 160, 160);
+	background-color: rgb(90, 90, 90);
+	color: whitesmoke;
 	border-radius: 10px;
 	overflow: hidden;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -212,7 +194,7 @@ a {
 }
 .stat-card:hover {
 	transform: translateY(-5px);
-	box-shadow: var(--hover-shadow);
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 .stat-card-content {
 	padding: 20px;
@@ -222,14 +204,13 @@ a {
 }
 .stat-card-info h3 {
 	font-size: 1rem;
-	color: var(--text-light);
+	color: whitesmoke;
 	margin-bottom: 8px;
 }
 .stat-card-info h2 {
 	font-size: 1.8rem;
 	font-weight: 700;
-	color: var(--text-white);
-	margin-bottom: 5px;
+	color: whitesmoke;
 }
 .stat-card-icon {
 	width: 50px;
@@ -239,29 +220,26 @@ a {
 	align-items: center;
 	justify-content: center;
 	color: var(--text-white);
-	font-size: 22px;
+	font-size: 1.5rem;
 }
 .vehicle-icon {
-	background-color: rgba(230, 57, 70, 0.2);
-	color: var(--primary-color);
+	background-color: rgba(0, 0, 0, 0.5);
 }
 .rental-icon {
-	background-color: rgba(76, 217, 100, 0.2);
-	color: var(--success-color);
+	background-color: rgba(0, 0, 0, 0.5);
 }
 .customer-icon {
-	background-color: rgba(255, 204, 0, 0.2);
-	color: var(--warning-color);
+	background-color: rgba(0, 0, 0, 0.5);
 }
 .revenue-icon {
-	background-color: rgba(255, 59, 48, 0.2);
-	color: var(--danger-color);
+	background-color: rgba(0, 0, 0, 0.5);
 }
 .stat-footer a {
-	color: var(--primary-color);
+	color: rgb(176, 235, 202);
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
+	margin: 0 20px 10px 0;
 }
 .stat-footer a:hover {
 	text-decoration: underline;
