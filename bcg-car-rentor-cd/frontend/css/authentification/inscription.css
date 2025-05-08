@@ -119,10 +119,10 @@ input::placeholder {
     margin-left: 5px;
     text-decoration: underline;
     font-weight: 500;
-    color: rgb(0, 191, 255);
+    color: rgb(0, 149, 255);
 }
 #lien-conn a:hover {
-    color: rgb(0, 149, 255);
+    color: rgb(0, 191, 255);
     transition: 0.1s;
 }
 

@@ -63,7 +63,7 @@ body {
 }
 
 .signup-link:hover {
-    color: #8a5dff;
+    color: rgb(0, 191, 255);
     text-decoration: underline;
 }
 
@@ -111,7 +111,7 @@ input:focus {
 }
 
 .forgot-password a:hover {
-    color: #8a5dff;
+    color: rgb(0, 191, 255);
     text-decoration: underline;
 }
 

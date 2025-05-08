@@ -4,7 +4,7 @@ fetch("../html/navbar1.html")
   .then((response) => response.text())
   .then((html) => {
     document.getElementById("navbar_container").innerHTML = html;
-    // document.body.classList.add("loaded"); // Affiche le contenu après le chargement de la page
+    document.body.classList.add("loaded"); // Affiche le contenu après le chargement de la page
     initResponsiveNavbar(); // appeler le script de responsive
   })
   .catch((error) => console.error("Error loading navbar:", error));

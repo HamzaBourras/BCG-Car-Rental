@@ -4,7 +4,7 @@ fetch("../../html/admin/sidebar.html")
     .then((response) => response.text())
     .then((html) => {
         document.getElementById("side").innerHTML = html;
-        // document.body.classList.add("loaded"); // Affiche le contenu après le chargement de la page
+        document.body.classList.add("loaded"); // Affiche le contenu après le chargement de la page
     })
     .catch((error) => console.error("Error loading side:", error));
 
@@ -13,6 +13,6 @@ fetch("../../html/admin/header.html")
     .then((response) => response.text())
     .then((html) => {
         document.getElementById("header").innerHTML = html;
-        // document.body.classList.add("loaded"); // Affiche le contenu après le chargement de la page
+        document.body.classList.add("loaded"); // Affiche le contenu après le chargement de la page
     })
     .catch((error) => console.error("Error loading side:", error));

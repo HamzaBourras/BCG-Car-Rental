@@ -5,6 +5,16 @@
     font-family: 'Exo', sans-serif;
 }
 
+ body:not(.loaded) {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    body.loaded {
+      visibility: visible;
+      opacity: 1;
+    }
+
 .nav {
     position: relative;
     width: 100%;
