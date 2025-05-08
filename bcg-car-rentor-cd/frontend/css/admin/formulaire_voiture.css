@@ -4,50 +4,50 @@
     display: none;
     position: absolute;
     left: 50%;
-    top: 5%;
+    top: 2%;
     transform: translateX(-50%);
-    max-width: 900px;
+    /* max-width: 1000px; */
+    width: 90%;
     margin: 0 auto;
-    background-color: rgba(128, 128, 128, 0.9);
+    padding: 20px 30px;
+    background-color: rgba(128, 128, 128, 0.95);
     /* background-color: red; */
-    width: 80%;
-    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.titre {
+.container_formulaire .titre {
     display: flex;
     justify-content: space-between;
     align-items: center;
     /* background-color: blue; */
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
-h1 {
+.container_formulaire .titre h1 {
     text-align: center;
     color: black;
 }
 
 /* Styles du formulaire */
-.form-group {
-    margin-bottom: 20px;
+#vehiculeForm .form-group {
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.form-group .form-field {
+#vehiculeForm .form-group .form-field {
     width: 48%;
 }
 
-label {
+#vehiculeForm .form-group .form-field label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
     color: white;
 }
 
-input[type="text"],
+#vehiculeForm .form-group .form-field input[type="text"],
 input[type="number"],
 select {
     width: 100%;
@@ -58,26 +58,21 @@ select {
     transition: border-color 0.3s;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus,
-select:focus {
+#vehiculeForm .form-group .form-field input[type="text"]:focus,
+#vehiculeForm .form-group .form-fieldinput[type="number"]:focus,
+#vehiculeForm .form-group .form-field select:focus {
     border-color: #3498db;
     outline: none;
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
 }
 
-input[type="file"] {
-    width: 100%;
-    padding: 10px 0;
-}
-
-.radio-group {
+#vehiculeForm .form-group .form-field .radio-group {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.radio-group input[type="radio"] {
+#vehiculeForm .form-group .form-field .radio-group input[type="radio"] {
     margin-right: 5px;
 }
 
@@ -89,9 +84,7 @@ input[type="file"] {
     margin-top: 30px;
 }
 
-
-
-button {
+.form-buttons button,#annulerBtn {
     padding: 12px 24px;
     border: none;
     border-radius: 4px;
@@ -101,7 +94,7 @@ button {
     transition: background-color 0.3s;
 }
 
-.btn-submit {
+.form-buttons .btn-submit {
     background-color: #3b3b3b;
     color: white;
 }
@@ -132,6 +125,7 @@ button {
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
+    padding-top: 10px;
 }
 
 .custom-file-input input[type="file"] {
@@ -161,7 +155,7 @@ button {
 }
 
 .custom-file-input{
-    margin-left: 10px;
+    /* margin-left: 10px; */
     font-size: 14px;
     color: #666;
 }

@@ -8,7 +8,7 @@ import { getVoitures } from "../page_accueil/get_voitures.js"  // je veux l'appe
 
 // **** fonction pour ajouter les voitures à la page ""des voitures"" de l'admin
 function displayVoituresAdmin(voitures) {
-  let sectionsVoitures = document.querySelector("#main-content");
+  let sectionsVoitures = document.querySelector("#voitures-content");
 
   let content = "";
 

@@ -6,134 +6,100 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Admin dashboard</title>
 	<link rel="stylesheet" href="../../css/admin/dashboard.css">
-	<script src="https://kit.fontawesome.com/1381de1bb1.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="../../css/admin/sidebar_header.css">
+	<link rel="stylesheet" href="../../fontawesome-free-6.7.2-web/css/all.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
 </head>
 
 <body>
-	<div class="dashboard-container">
+	<div class="container">
 
-		<div class="sidebar">
-			<div class="logo">
-				<img src="../../images/logo2.png" class="logo-img" alt="">
-				<span>Panneau d'administration</span>
-			</div>
-			<nav class="nav-menu">
-				<ul>
-					<li><a href="#"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
-					<li><a href="#"><i class="fa-solid fa-car"></i> Voitures</a></li>
-					<li><a href="#"><i class="fa-solid fa-table-list"></i> Réservations</a></li>
-					<li><a href="#"><i class="fa-solid fa-users-line"></i> Clients</a></li>
-					<li class="user-profil">
-						<a href="#">
-							<i class="fa-solid fa-user"></i>
-							<span>Profil</span>
-						</a>
-					</li>
-					<li class="settings">
-						<a href="#">
-							<i class="fa-solid fa-gear"></i>
-							<span>Paramètres</span>
-						</a>
-					</li>
-				</ul>
-			</nav>
+
+		<!-- div sidebar -->
+		<div class="sidebar" id="side">
+
 		</div>
 		<div class="main">
-			<header class="dashboard-header">
-				<div class="search-container">
-					<i class="fas fa-search"></i>
-					<input type="text" placeholder="Rechercher...">
-				</div>
-				<div class="header-right">
-					<div class="notification">
-						<i class="fa-solid fa-bell"></i>
-						<span class="notification-count">3</span>
-					</div>
-					<div class="message">
-						<i class="fa-solid fa-message"></i>
-						<span class="message-count">5</span>
-					</div>
-					<div class="profil">
-						<a href="#" class="dropdown-toggle">
-							<i class="fa-solid fa-user"></i>
-							<i class="fas fa-chevron-down"></i>
-						</a>
-					</div>
-				</div>
+
+			<!-- div pour header -->
+			<header class="header" id="header">
+
 			</header>
 
-			<div class="dashboard-content">
-				<h1>Bienvenue dans le tableau de bord</h1>
-				<div class="stats-cards">
-					
-					<div class="stat-card">
-						<div class="stat-card-content">
-							<div class="stat-card-info">
-								<h3>Voitures totales</h3>
-								<h2>124</h2>
-							</div>
-							<div class="stat-card-icon vehicle-icon">
-									<i class="fas fa-car"></i>
-							</div>
-						</div>
-						<div class="stat-footer">
-							<a href="#">Voir plus</a>
-						</div>
-					</div>
+			<div class="content">
+				<div class="dashboard-content">
+					<h1>Bienvenue dans le tableau de bord</h1>
+					<div class="stats-cards">
 
-					<div class="stat-card">
-						<div class="stat-card-content">
+						<div class="stat-card">
+							<div class="stat-card-content">
+								<div class="stat-card-info">
+									<h3>Voitures totales</h3>
+									<h2>124</h2>
+								</div>
+								<div class="stat-card-icon vehicle-icon">
+									<i class="fas fa-car"></i>
+								</div>
+							</div>
+							<div class="stat-footer">
+								<a href="#">Voir plus</a>
+							</div>
+						</div>
+
+						<div class="stat-card">
+							<div class="stat-card-content">
 								<div class="stat-card-info">
 									<h3>Locations actives</h3>
 									<h2>87</h2>
 								</div>
 								<div class="stat-card-icon rental-icon">
-										<i class="fas fa-key"></i>
+									<i class="fas fa-key"></i>
 								</div>
-						</div>
-						<div class="stat-footer">
+							</div>
+							<div class="stat-footer">
 								<a href="#">Voir plus</a>
+							</div>
 						</div>
-					</div>
 
-					<div class="stat-card">
-						<div class="stat-card-content">
-							<div class="stat-card-info">
-								<h3>Nouveaux clients</h3>
-								<h2>43</h2>
+						<div class="stat-card">
+							<div class="stat-card-content">
+								<div class="stat-card-info">
+									<h3>Nouveaux clients</h3>
+									<h2>43</h2>
+								</div>
+								<div class="stat-card-icon customer-icon">
+									<i class="fas fa-user-plus"></i>
+								</div>
 							</div>
-							<div class="stat-card-icon customer-icon">
-								<i class="fas fa-user-plus"></i>
-							</div>
-						</div>
-						<div class="stat-footer">
-							<a href="#">Voir plus</a>
-						</div>
-					</div>
-
-					<div class="stat-card">
-						<div class="stat-card-content">
-							<div class="stat-card-info">
-								<h3>Revenu</h3>
-								<h2>$78,450</h2>
-							</div>
-							<div class="stat-card-icon revenue-icon">
-								<i class="fas fa-dollar-sign"></i>
-							</div>
-						</div>
-						<div class="stat-footer">
+							<div class="stat-footer">
 								<a href="#">Voir plus</a>
+							</div>
 						</div>
-					</div>
 
-				</div>
-				<div class="recent-section">
-					<div class="section-header">
-						<h3>Réservations récentes</h3>
-						<a href="#" class="view-all">Voir plus</a>
+						<div class="stat-card">
+							<div class="stat-card-content">
+								<div class="stat-card-info">
+									<h3>Revenu</h3>
+									<h2>$78,450</h2>
+								</div>
+								<div class="stat-card-icon revenue-icon">
+									<i class="fas fa-dollar-sign"></i>
+								</div>
+							</div>
+							<div class="stat-footer">
+								<a href="#">Voir plus</a>
+							</div>
+						</div>
+
 					</div>
-					<div class="table-container">
-						<table class="data-table">
+					<div class="recent-section">
+						<div class="section-header">
+							<h3>Réservations récentes</h3>
+							<a href="#" class="view-all">Voir plus</a>
+						</div>
+						<div class="table-container">
+							<table class="data-table">
 								<thead>
 									<tr>
 										<th>ID</th>
@@ -146,17 +112,18 @@
 									</tr>
 								</thead>
 								<tbody id="recent-bookings-table">
-										<!-- Table rows will be loaded by JavaScript -->
+									<!-- Table rows will be loaded by JavaScript -->
 								</tbody>
-						</table>
+							</table>
+						</div>
 					</div>
 				</div>
-
 			</div>
 
 		</div>
 
 	</div>
+	<script src="../../js/admin/sidebar_header.js"></script>
 </body>
 
 </html>

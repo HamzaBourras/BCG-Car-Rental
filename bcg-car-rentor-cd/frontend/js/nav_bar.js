@@ -1,6 +1,6 @@
 // script pour ajouter le navbar1.html en haut des pages
 
-fetch("/frontend/html/navbar1.html")
+fetch("../html/navbar1.html")
   .then((response) => response.text())
   .then((html) => {
     document.getElementById("navbar_container").innerHTML = html;

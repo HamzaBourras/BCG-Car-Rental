@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>voitures</title>
+    <link rel="stylesheet" href="../../css/admin/sidebar_header.css">
     <link rel="stylesheet" href="../../css/admin/voitures.css">
     <link rel="stylesheet" href="../../css/admin/formulaire_voiture.css">
     <link rel="stylesheet" href="../../css/bloc_message.css">
@@ -17,17 +18,24 @@
 
 <body>
     <div class="container">
-        <div class="sidebar">
+        <!-- div sidebar -->
+        <div class="sidebar" id="side">
 
         </div>
-        <div class="">
-            <header></header>
-            <div>
+        <div class="main">
+
+            <!-- div pour header -->
+            <header class="header" id="header">
+
+            </header>
+
+            <div class="content">
                 <div id="ajouter"><button id="ajouterBtn"> <i class="fa fa-plus"></i> Ajouter</button></div>
-                <main class="main-content" id="main-content">
+                <main class="voitures-content" id="voitures-content">
 
                 </main>
             </div>
+
         </div>
     </div>
 
@@ -141,6 +149,7 @@
             </div>
         </div>
     </div>
+    <script src="../../js/admin/sidebar_header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="../../js/admin/voitures.js"></script>
     <script type="module" src="../../js/page_accueil/get_voitures.js"></script>
