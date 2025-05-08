@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     color: white;
-    width: 76%;
+    width: 80%;
     margin: auto;
     padding-bottom: 40px;
 }
@@ -32,7 +32,7 @@
 .desc-logo .about-us-desc .p1 {
     font-size: 1.2rem;
     font-weight: 700;
-    margin: 10px 0;
+    margin: 20px 0 20px 0;
 }
 .desc-logo .about-us-desc .p2 {
     font-size: 0.9rem;
