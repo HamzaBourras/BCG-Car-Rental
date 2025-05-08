@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthentificationController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\admin\VoitureController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -35,17 +36,13 @@ Route::prefix("public")->controller(PublicController::class)->group(function () 
 
 
 /***************** Routes admin *******************/
-Route::prefix("admin")->middleware("auth:sanctum")->group(function () {
+Route::prefix("admin")->group(function () {
     Route::prefix("voitures")->controller(VoitureController::class)->group(function () {
         Route::get("index", "indexVoiture");
         Route::post("store", "storeVoiture");
         Route::post("edit/{voiture_id}", "editVoiture");
         Route::delete("destroy/{voiture_id}", "destroyVoiture");
     });
-});
 
-Route::get("test", function () {
-    return response()->json([
-        "data" => "hi world"
-    ]);
+    Route::get('/clients/index', [AdminController::class, 'indexClients']);
 });

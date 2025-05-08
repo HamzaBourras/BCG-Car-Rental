@@ -20,6 +20,7 @@
     gap: 40px 3%;
     flex-wrap: wrap;
     padding: 40px;
+    padding-top: 15px;
     /* background-color: blue; */
 }
 
@@ -98,7 +99,7 @@
     display: flex;
     align-items: center;
     justify-content: end;
-    padding: 25px 5% 0 0;
+    padding: 25px 5% 25px 0;
 }
 #ajouter button {
     display: flex;
@@ -111,15 +112,19 @@
     color: white;
     outline: none;
     border: none;
-    border-radius: 30px;
+    border-radius: 20px;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 700;
     transition: 0.3s;
     cursor: pointer;
     letter-spacing: 0.5px;
 }
 #ajouter button i {
     margin-right: 10px;
+}
+
+#ajouter button:hover {
+    background-color: rgb(1, 1, 206);
 }
 
 /* ====== Buttons de modification ====== */
@@ -148,27 +153,4 @@
     transition: 0.3s;
     cursor: pointer;
     letter-spacing: 0.5px;
-}
-
-
-/* pour scroll bar */
-/* width */
-::-webkit-scrollbar {
-    width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #a0a0a0;
-    border-radius: 3%;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #302020;
 }

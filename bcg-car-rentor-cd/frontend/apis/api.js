@@ -17,6 +17,9 @@ export const ADMIN_STORE_VOITURES = `${baseUrl}api/admin/voitures/store`;
 export const ADMIN_EDIT_VOITURES = `${baseUrl}api/admin/voitures/edit/`;
 export const ADMIN_DESTROY_VOITURES = `${baseUrl}api/admin/voitures/destroy/`;
 
+/*** api client ***/
+export const ADMIN_INDEX_CLIENTS = `${baseUrl}api/admin/clients/indexi`
+
 
 /******* apis client *******/
 /*** api commentaires ***/

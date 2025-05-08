@@ -61,7 +61,7 @@ a {
 	padding: 15px;
 	display: flex;
 	flex-direction: column;
-  border-bottom: 1px solid rgb(79, 79, 79);
+  	border-bottom: 1px solid rgb(79, 79, 79);
 	align-items: center;
 }
 .logo-img {
@@ -76,12 +76,16 @@ a {
 
 /* Navigation menu styles */
 .nav-menu {
-	padding: 20px 0;
+	padding: 0;
 	flex-grow: 1;
 }
 .nav-menu ul {
 	list-style: none;
-	margin-top: 10px;
+	padding: 20px 0 10px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
 }
 .nav-menu li {
 	padding: 0 20px;
@@ -101,12 +105,6 @@ a {
 }
 .nav-menu li a:hover {
 	background-color: rgb(47, 46, 46);
-}
-
-/* User-profile styles  */
-.user-profil {
-	margin-top: 220px;
-
 }
 
 
@@ -184,4 +182,23 @@ a {
 .dropdown-toggle {
 	display: flex;
 	align-items: center;
+}
+
+
+/* Scrollbar personnalisée pour le tbody */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
 }

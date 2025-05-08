@@ -1,0 +1,133 @@
+/* Modifications pour le tableau avec header fixe */
+.clients-content {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    max-width: 100%;
+    overflow: hidden;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed; /* Ajouté pour forcer le respect des largeurs */
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Définition des largeurs des colonnes */
+th:nth-child(1), td:nth-child(1) { width: 8%; }    /* ID */
+th:nth-child(2), td:nth-child(2) { width: 10%; }   /* Nom */
+th:nth-child(3), td:nth-child(3) { width: 10%; }   /* Prénom */
+th:nth-child(4), td:nth-child(4) { width: 12%; }   /* Téléphone */
+th:nth-child(5), td:nth-child(5) { width: 20%; }   /* Email */
+th:nth-child(6), td:nth-child(6) { width: 25%; }   /* Adresse */
+th:nth-child(7), td:nth-child(7) { width: 15%; }    /* Réservations */
+
+
+
+th,td {
+    padding: 0.75em 1em;
+    text-align: left;
+    border-bottom: 0.1em solid #333;
+    background-color: var(--card-color);
+    white-space: normal;
+    overflow: visible;
+    word-break: break-word;
+}
+
+td:hover {
+    z-index: 20;
+    position: relative;
+    background-color: var(--card-color);
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ddd;
+    position: sticky;
+    top: 0;
+}
+
+tbody {
+    display: block;
+    overflow-y: auto;
+    max-height: calc(80vh - 120px);
+}
+
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* Styles existants conservés */
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Scrollbar personnalisée pour le tbody */
+tbody::-webkit-scrollbar {
+    width: 8px;
+}
+
+tbody::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+tbody::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+tbody::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Adaptation responsive */
+@media (max-width: 600px) {
+    /* Vos styles responsive existants */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    th {
+        display: none;
+    }
+    
+    td {
+        position: relative;
+        padding-left: 50%;
+        width: 100% !important;
+        white-space: normal !important;
+        text-overflow: clip !important;
+    }
+    
+    td::before {
+        position: absolute;
+        top: 0;
+        left: 1em;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #bbb;
+    }
+    
+    td:nth-child(1)::before { content: "ID"; }
+    td:nth-child(2)::before { content: "Nom"; }
+    td:nth-child(3)::before { content: "Prénom"; }
+    td:nth-child(4)::before { content: "Téléphone"; }
+    td:nth-child(5)::before { content: "Email"; }
+    td:nth-child(6)::before { content: "Adresse"; }
+    td:nth-child(7)::before { content: "Réservations"; }
+}
