@@ -1,7 +1,7 @@
 import getData from "../functions/getData.js";
 import { INDEX_COMMENTAIRES } from "../../apis/api.js";
 
-async function getCommentaires(params) {
+async function getCommentaires() {
 
     try {
         await getData.getD(INDEX_COMMENTAIRES)

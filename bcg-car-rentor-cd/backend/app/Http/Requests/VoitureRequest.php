@@ -21,6 +21,11 @@ class VoitureRequest extends FormRequest
      */
     public function rules(): array
     {
+        $url = $this->url();
+
+        if (strpos($url, 'api/admin/voitures/store') !== false) {
+            return ['image' => 'required'];
+        }
         return [
             'modele' => 'required|string|max:50',
             'marque' => 'required|string|max:50',
@@ -32,7 +37,7 @@ class VoitureRequest extends FormRequest
             'type_carburant' => 'required|in:essence,diesel,hybride,électrique',
             'kilometrage' => 'required|integer|min:0',
             'climat' => 'required',
-            'image' => 'required|mimes:jpeg,png,jpg|max:2048'
+            'image' => 'mimes:jpeg,png,jpg|max:2048'
         ];
     }
 

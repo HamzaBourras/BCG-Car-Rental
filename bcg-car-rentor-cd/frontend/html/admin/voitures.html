@@ -113,7 +113,7 @@
                 <div>
                     <label for="image">Image du véhicule:</label>
                     <div class="custom-file-input">
-                        <input type="file" id="image" name="image" accept="image/*" required>
+                        <input type="file" id="image" name="image" accept="image/*">
                         <label for="image" class="file-label">Choisir un fichier</label>
                         <span class="file-name">Aucun fichier sélectionné</span>
                     </div>
@@ -121,6 +121,8 @@
             </div>
 
             <div class="form-buttons">
+                <!-- je veux l'utiliser pour tester est ce que je veux ajouter ou bien modifier une voiture -->
+                <input type="text" value="" id="action" hidden>
                 <button type="submit" id="enregistrerBtn" class="btn-submit">Enregistrer</button>
                 <button type="reset" id="resetBtn" class="btn-reset">Réinitialiser</button>
                 <button type="button" id="annulerBtn" class="btn-annuler">Annuler</button>
@@ -154,7 +156,9 @@
             fileNameSpan.textContent = fileName || 'Aucun fichier sélectionné';
         });
 
+        // afficher le formulaire lorsque je clique sur le button ajouter
         document.querySelector("#ajouterBtn").addEventListener("click", function () {
+            document.getElementById("action").value = "ajouter"  // change la valeur de l'input de l'action
             document.querySelector(".container_formulaire").style.display = "block"  // afficher la formulaire lorsque je clique sur le button
         })
 
@@ -162,6 +166,7 @@
         document.querySelectorAll("#annulerBtn").forEach(btn => {
             btn.addEventListener("click", () => {
                 document.querySelector(".container_formulaire").style.display = "none"
+                document.getElementById("resetBtn").click()  // pour vider le form lorsque je clique sur annuler
             })
         })
     </script>

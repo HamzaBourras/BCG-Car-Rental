@@ -98,14 +98,19 @@ class VoitureController extends Controller
     public function editVoiture(Request $request, int $voiture_id)
     {
         try {
-            // supprimer l'ancien image de la voiture du dossier storage/images_voitures
+            $cheminImage = "";
             $ancienImage = Voiture::where('id', $voiture_id)->first();
             $ancienImageName = $ancienImage->image;
-            if ($ancienImageName && Storage::exists("public/" . $ancienImageName)) {
-                Storage::delete("public/" . $ancienImageName);
-            }
+            // supprimer l'ancien image de la voiture du dossier storage/images_voitures si le fichier à été envoyé
+            if ($request->file('image')) {
+                if ($ancienImageName && Storage::exists("public/" . $ancienImageName)) {
+                    Storage::delete("public/" . $ancienImageName);
+                }
 
-            $cheminImage = $request->file('image')->store('images_voitures', 'public');
+                $cheminImage = $request->file('image')->store('images_voitures', 'public');
+            } else {  // si l'aidmin va laisse l'ancien image
+                $cheminImage = $ancienImageName;
+            }
 
             Voiture::where(["id" => $voiture_id])->update([
                 "modele" => $request->modele,

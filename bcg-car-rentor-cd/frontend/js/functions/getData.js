@@ -1,7 +1,6 @@
 const getData = {
   returnData: null,
   token: null,
-  reponse: null,
   success: null,
   message: null,
   errors: null,
@@ -31,14 +30,12 @@ const getData = {
       const response = await axios.get(apiUrl, config);
 
       // Traitement réponse réussie
-      this.reponse = response;
       this.token = response.data?.token;
       this.message = response.data?.message;
       this.returnData = response.data?.data;
       this.success = response.data?.success;
       return 1;
     } catch (error) {
-      console.error("Erreur Axios complète :", error);
       this.success = error.response?.data?.success || false;
       this.errors = error.response?.data?.errors || error.message;
       throw error; // Important pour le try/catch externe

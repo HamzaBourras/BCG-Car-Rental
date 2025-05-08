@@ -65,24 +65,28 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ***************************************************************
+let voiture_id_S = null // l'id de la voiture à supprimer
+let voiture_id_M = null // l'id de la voiture à modifier
 
 // **** Configuration des écouteurs d'événements sur le buttons supprimer et modifier
 function setupEventListeners() {
   document.querySelectorAll('#supprimerBtn').forEach(btn => {
     btn.addEventListener('click', function () {
-      const voiture_id = this.getAttribute('data-voiture-id');
+      voiture_id_S = this.getAttribute('data-voiture-id');
       // demande la confirmation de l'admin
       const conf = confirm("voulez vous supprimer cette voiture")
       if (conf) {
         // Appeler la fonction de suppression
-        supprimerVoiture(voiture_id)
+        supprimerVoiture(voiture_id_S)
       }
     });
   });
 
   document.querySelectorAll('#modifierBtn').forEach(btn => {
     btn.addEventListener('click', function () {
-
+      voiture_id_M = this.getAttribute('data-voiture-id');
+      document.getElementById("action").value = "modifier"  // change la valeur de l'input de l'action
+      initialiseFormulaire(voiture_id_M)  // fct pour afficher les données de la voiture sélectionné sur les inputs
     });
   });
 
@@ -110,23 +114,48 @@ async function supprimerVoiture(voiture_id) {
   }
 }
 
+const formData = new FormData(); // Utilisez FormData pour les fichiers
 
 //**** fct pour modifier une voiture ****/
-function modifierVoiture(voiture_id) {
+async function modifierVoiture(voiture_id) {
+  formData.append('modele', document.querySelector("#modele").value);
+  formData.append('marque', document.querySelector("#marque").value);
+  formData.append('matricule', document.querySelector("#matricule").value);
+  formData.append('nombre_place', document.querySelector("#nombre_place").value);
+  formData.append('prix_jour', document.querySelector("#prix_jour").value);
+  formData.append('vitesse_max', document.querySelector("#vitesse_max").value);
+  formData.append('couleur', document.querySelector("#couleur").value);
+  formData.append('type_carburant', document.querySelector("#type_carburant").value);
+  formData.append('kilometrage', document.querySelector("#kilometrage").value);
+  formData.append('climat', document.querySelector("#climat").value == "oui" ? 1 : 0);
+
+  const imageInput = document.querySelector("#image"); // votre input de type file
+  const imageFile = imageInput.files[0]; // le fichier réel
+  if (imageFile) formData.append('image', imageFile);  // si l'admin à choisir une nouvelle image
+
+  try {
+    await sendData.postData(ADMIN_EDIT_VOITURES, formData, "post", voiture_id, true)
+    if (sendData.success === true) {
+      //affichage message succès
+      displayMessage(null, sendData.message);
+      const voituresS = await getVoitures()  // appel à la fct pour recevoir les voitures après la modification
+      displayVoituresAdmin(voituresS)
+
+      document.getElementById("resetBtn").click()  // pour vider tous les inputs
+      document.getElementById("annulerBtn").click() // pour cacher le formulaire 
+
+    }
+  } catch (error) {
+    console.log(sendData.errors);
+
+    // affichage des erreurs du message
+    if (sendData.success === false)
+      displayMessage(sendData.errors, sendData.message)
+  }
 
 }
 
-
 //**** fct pour ajouter une voiture ****/
-const form = document.querySelector("#vehiculeForm")
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  await ajouterVoiture()  // appeler à la fct pour ajouter une voiture
-})
-
-const formData = new FormData(); // Utilisez FormData pour les fichiers
-
-
 async function ajouterVoiture() {
 
   formData.append('modele', document.querySelector("#modele").value);
@@ -157,12 +186,40 @@ async function ajouterVoiture() {
 
     }
   } catch (error) {
-    console.log(sendData.errors);
 
     // affichage des erreurs du message
     if (sendData.success === false)
       displayMessage(sendData.errors, sendData.message)
   }
+
+}
+
+// **** lorsque je submit le formulaire, il est utilisé pour les deux actions modifier et ajouter
+const form = document.querySelector("#vehiculeForm")
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const action = document.getElementById("action").value
+  if (action == "ajouter") await ajouterVoiture()  // appeler à la fct pour ajouter une voiture
+  else if (action == "modifier") await modifierVoiture(voiture_id_M)
+})
+
+// **** fonction pour initialise le formulaire lorsque je clique sur modifier
+function initialiseFormulaire(voiture_id) {
+  const allVoitures = JSON.parse(localStorage.getItem("voitures")) // sélectionner les voitures enregistrer dans localStorage avec le fichier /page_accueil/get_voitures.js
+  const voitureSelected = allVoitures.filter(vt => vt.id == voiture_id)  // sélectionner la voiture à modifier
+  document.querySelector(".container_formulaire").style.display = "block"  // afficher la formulaire lorsque je clique sur le button modifier
+
+  document.querySelector("#modele").value = voitureSelected[0].modele
+  document.querySelector("#marque").value = voitureSelected[0].marque
+  document.querySelector("#matricule").value = voitureSelected[0].matricule
+  document.querySelector("#nombre_place").value = voitureSelected[0].nombre_place
+  document.querySelector("#prix_jour").value = voitureSelected[0].prix_jour
+  document.querySelector("#vitesse_max").value = voitureSelected[0].vitesse_max
+  document.querySelector("#couleur").value = voitureSelected[0].couleur
+  document.querySelector("#type_carburant").value = voitureSelected[0].type_carburant.toLowerCase()
+  document.querySelector("#kilometrage").value = voitureSelected[0].kilometrage
+  document.querySelector("#climat").value = voitureSelected[0].climat == 1 ? "oui" : "non"
+  document.querySelector("#image").required = false
 
 }
 

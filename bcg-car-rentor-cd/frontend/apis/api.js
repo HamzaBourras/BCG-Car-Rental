@@ -10,9 +10,13 @@ export const MODIFIER_PROFILE_API = `${baseUrl}api/auth/modifierProfile`;
 export const INDEX_VOITURES = `${baseUrl}api/public/voitures/index`;
 export const INDEX_COMMENTAIRES = `${baseUrl}api/public/commentaires/index`
 
-/******* api admin *******/
+/******* apis admin *******/
 /*** api voiture ***/
 export const ADMIN_INDEX_VOITURES = `${baseUrl}api/admin/voitures/index`;
 export const ADMIN_STORE_VOITURES = `${baseUrl}api/admin/voitures/store`;
 export const ADMIN_EDIT_VOITURES = `${baseUrl}api/admin/voitures/edit/`;
 export const ADMIN_DESTROY_VOITURES = `${baseUrl}api/admin/voitures/destroy/`;
+
+
+/******* apis client *******/
+/*** api commentaires ***/
