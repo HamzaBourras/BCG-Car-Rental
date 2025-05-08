@@ -13,7 +13,7 @@
 }
 
 .comments .comments-cards {
-    width: 76%;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 30px;
