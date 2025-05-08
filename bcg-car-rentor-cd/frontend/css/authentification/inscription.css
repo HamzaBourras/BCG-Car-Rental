@@ -33,6 +33,7 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 5px;
+    margin: 20px 0 10px 0;
 }
 
 .form-header p {
@@ -45,6 +46,7 @@ body {
     background-color: rgba(68, 68, 68, 0.8);
     border-radius: 8px;
     padding: 30px;
+    padding-top: 0;
 }
 
 .form-row {
@@ -126,6 +128,27 @@ input::placeholder {
 
 .submit-btn:hover {
     background-color: #f0f0f0;
+}
+
+/*** lien pour retour */
+#retour {
+    display: block;
+    width: 100%;
+    text-align: start;
+    padding: 20px 0px 10px 0;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    color: whitesmoke;
+    border-bottom: 1px solid white;
+}
+#retour a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+#retour i {
+    margin-right: 5px;
 }
 
 /* Media queries pour rendre le formulaire responsive */
