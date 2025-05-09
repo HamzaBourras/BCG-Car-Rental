@@ -1,11 +1,23 @@
-// script pour ajouter le header et le sidebar  et le script de connexion
+//===== script pour ajouter le header et le sidebar  et le script de connexion et de script des routes
+
+// ajouter le script de restrictions des routes au document
+// function loadRoutes() {
+//     return new Promise((resolve) => {
+
+//         const script = document.createElement('script')
+//         script.src = "/frontend/js/routes_config.js"
+//         script.onload = resolve;
+//         document.body.appendChild(script)
+//     });
+// }
 
 // Chargement simultané du header et du sidebar
 Promise.all([
     fetch("../../html/admin/header.html").then(res => res.text()),
     fetch("../../html/admin/sidebar.html").then(res => res.text())
 ])
-    .then(([headerHtml, sidebarHtml]) => {
+    .then(async ([headerHtml, sidebarHtml]) => {
+        // await loadRoutes() // attender que le script des routes etre ajouté
         // Insérer le header
         const headerElement = document.getElementById("header");
         if (headerElement) {

@@ -1,3 +1,4 @@
+// ajouter le script axios au document
 function loadAxios() {
   return new Promise((resolve) => {
     if (window.axios) return resolve();
