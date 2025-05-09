@@ -1,3 +1,15 @@
+// sendData.js
+function loadAxios() {
+  return new Promise((resolve) => {
+    if (window.axios) return resolve();
+
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js';
+    script.onload = resolve;
+    document.head.appendChild(script);
+  });
+}
+
 const sendData = {
   returnData: null,
   token: null,
@@ -6,6 +18,7 @@ const sendData = {
   errors: null,
 
   async postData(api, formData = null, method, idsRequete = null, hasFile = false) {
+    await loadAxios()
     // construire l'api complet
     const apiUrl = idsRequete ? `${api}${idsRequete}` : api;
     // Réinitialisation

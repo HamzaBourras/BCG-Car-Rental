@@ -1,4 +1,4 @@
-// script pour ajouter le header et le sidebar  et le script de connexion et le script axios
+// script pour ajouter le header et le sidebar  et le script de connexion
 
 // Chargement simultané du header et du sidebar
 Promise.all([
@@ -19,16 +19,11 @@ Promise.all([
 
         }
 
-        // Ajouter le script de déconnexion et axios
+        // Ajouter le script de déconnexion 
         const script = document.createElement('script');
         script.type = 'module';
         script.src = '../../js/authentification/deconnecter.js';
         document.body.appendChild(script);
-
-        const scriptAxios = document.createElement('script')
-        scriptAxios.type = 'module'
-        scriptAxios.src = 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'
-        document.body.appendChild(scriptAxios)
 
         // Marquer la page comme chargée
         document.body.classList.add("loaded");

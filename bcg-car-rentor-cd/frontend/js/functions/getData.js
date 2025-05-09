@@ -1,3 +1,14 @@
+function loadAxios() {
+  return new Promise((resolve) => {
+    if (window.axios) return resolve();
+
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js';
+    script.onload = resolve;
+    document.head.appendChild(script);
+  });
+}
+
 const getData = {
   returnData: null,
   token: null,
@@ -6,6 +17,7 @@ const getData = {
   errors: null,
 
   async getD(api, idsRequete = null) {
+    await loadAxios()
     // construire l'api complet
     const apiUrl = idsRequete ? `${api}${idsRequete}` : api;
 
