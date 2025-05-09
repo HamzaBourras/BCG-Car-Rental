@@ -1,0 +1,68 @@
+.content h2 {
+  font-size: 2rem;
+  color: whitesmoke;
+  margin: 30px 0 0 38px;
+}
+
+.table-container {
+  background-color: var(--card-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+  max-width: 100%;
+  overflow: hidden;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  /* Ajouté pour forcer le respect des largeurs */
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+th,
+td {
+  padding: 0.75em 1em;
+  text-align: left;
+  border-bottom: 0.1em solid #333;
+  background-color: var(--card-color);
+  white-space: normal;
+  overflow: visible;
+  word-break: break-word;
+}
+
+td:hover {
+  z-index: 20;
+  position: relative;
+  background-color: var(--card-color);
+}
+
+th {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: whitesmoke;
+  background-color: rgb(66, 66, 66);
+}
+
+tbody {
+  display: block;
+  overflow-y: auto;
+  max-height: calc(80vh - 120px);
+}
+
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}

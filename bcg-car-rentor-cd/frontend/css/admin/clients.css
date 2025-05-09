@@ -14,10 +14,10 @@
 table {
     margin-top: 20px;
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    table-layout: fixed; /* Ajouté pour forcer le respect des largeurs */
-}
+    border-collapse: collapse;
+    table-layout: fixed;
+     /* Ajouté pour forcer le respect des largeurs */
+} 
 
 thead {
     position: sticky;
@@ -53,10 +53,10 @@ td:hover {
 }
 
 th {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ddd;
-    position: sticky;
-    top: 0;
+    font-weight: 600;
+	font-size: 0.9rem;
+	color: whitesmoke;
+	background-color: rgb(66, 66, 66);
 }
 
 tbody {
