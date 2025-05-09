@@ -1,5 +1,6 @@
 // script pour ajouter le footer1.html en bas des pages
 
+
 fetch("../html/footer1.html")
   .then((response) => response.text())
   .then((html) => {

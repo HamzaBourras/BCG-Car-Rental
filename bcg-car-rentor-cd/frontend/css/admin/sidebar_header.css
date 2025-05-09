@@ -1,3 +1,6 @@
+/*=============== ce css est utilisé pour l'admin et le client */
+
+
 * {
   margin: 0;
   padding: 0;
@@ -193,7 +196,6 @@ a {
 	align-items: center;
 }
 
-
 /* Scrollbar personnalisée pour le tbody */
 ::-webkit-scrollbar {
     width: 8px;
@@ -211,3 +213,4 @@ a {
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.3);
 }
+

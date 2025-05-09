@@ -5,7 +5,7 @@ const sendData = {
   message: null,
   errors: null,
 
-  async postData(api, formData, method, idsRequete = null, hasFile = false) {
+  async postData(api, formData = null, method, idsRequete = null, hasFile = false) {
     // construire l'api complet
     const apiUrl = idsRequete ? `${api}${idsRequete}` : api;
     // Réinitialisation
