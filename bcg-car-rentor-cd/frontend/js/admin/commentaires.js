@@ -1,20 +1,14 @@
 import getData from "../functions/getData.js";
 import { INDEX_COMMENTAIRES } from "../../apis/api.js";
+import { getCommentaires } from "../page_accueil/get_display_commentaires.js";
 
-export async function getCommentaires() {
-
-    try {
-        await getData.getD(INDEX_COMMENTAIRES)
-        if (getData.success == true) {
-            localStorage.setItem("commentaires", JSON.stringify(getData.returnData))  // Enregistrer les commentaires sur localStorage
-
-        }
-    } catch (error) {
-        if (getData.success == false) {
-            console.log(getData.errors);
-        }
+// **** appel à la fonction pour recevoir tous les commentaires
+document.addEventListener("DOMContentLoaded", function () {
+    //vérifer si les commentaires ne sont pas déja récupérer
+    if (!localStorage.getItem("commentaires")) {
+        getCommentaires();
     }
-}
+});
 
 // **** appel à la fonction pour recevoir tous les commentaires
 document.addEventListener("DOMContentLoaded", function () {
@@ -34,14 +28,13 @@ function displayCommentaires(commentaires) {
     let numberOfStars = 0
     let numberOfCommentaires = 0
     commentaires.forEach(commentaire => {
-        if (numberOfCommentaires < 4) {
-            stars = ""
-            numberOfStars = 0
-            while (numberOfStars < commentaire.note) {
-                stars += `<i class="fa-solid fa-star"></i>`
-                numberOfStars++;
-            }
-            content += `
+        stars = ""
+        numberOfStars = 0
+        while (numberOfStars < commentaire.note) {
+            stars += `<i class="fa-solid fa-star"></i>`
+            numberOfStars++;
+        }
+        content += `
         <div class="comment-card">
         <div class="comment-card-header">
           <h2>${commentaire.prenom} ${commentaire.nom}</h2>
@@ -52,10 +45,12 @@ function displayCommentaires(commentaires) {
         <div class="comment">
           <p>${commentaire.contenu}</p>
         </div>
+        <div id="actions">
+        <button id="supprimer"><i class="fa-solid fa-trash"></i></button>
+        </div>
       </div>
         `
-        }
-        numberOfCommentaires++;
+
     });
 
     sectionsCommentaires.innerHTML = content

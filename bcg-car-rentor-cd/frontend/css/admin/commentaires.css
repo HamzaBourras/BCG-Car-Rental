@@ -1,0 +1,107 @@
+h1 {
+    color: white;
+    text-align: left;
+
+}
+.comments {
+    height: 80vh;
+    padding: 30px;
+}
+
+.comments .comments-cards {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+    height: 100%;
+    overflow: auto;
+    padding: 20px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.comments .comments-cards .comment-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #D9D9D9;
+    border: none;
+    color: #000;
+    border-radius: 15px;
+    padding: 1rem 1.5rem;
+    min-height: 140px;
+    /* height: max-content; */
+    overflow: hidden;
+}
+
+.comments .comments-cards .comment-card .comment-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .3rem;
+    margin-top: -.3rem;
+}
+.comments .comments-cards .comment-card .comment-card-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: max-content;
+    transition: transform 300ms ease;
+}
+.comments .comments-cards .comment-card:hover .comment-card-header h2 {
+    transform: translateX(0.15rem)
+}
+
+
+
+.comments .comments-cards .comment-card p {
+    font-size: 0.9rem;
+    color: #000;
+    align-items: center;
+    margin-bottom: .5rem;
+    transition: transform 300ms ease;
+}
+.comment-card::after {
+    position: absolute;
+    content: "";
+    width: 0.25rem;
+    inset: 0.7rem auto 0.7rem 0.65rem;
+    border-radius: 0.125rem;
+    background: black;
+    transition: transform 300ms ease;
+    z-index: 4;
+}
+.comments .comments-cards .comment-card:hover p {
+    transform: translateX(0.15rem)
+}
+
+.comment-card:hover:after {
+    transform: translateX(0.15rem)
+}
+
+/* pour le div contient les icons d'action */
+#actions {
+    padding: 5px 0;
+    display: flex;
+    justify-content: end;
+}
+#supprimer {
+    background-color: inherit;
+    border: none;
+    outline: none;
+}
+#supprimer i {
+    font-size: 13px;
+    color: white;
+    height: 27px;
+    width: 27px;
+    background-color: rgb(206, 1, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#supprimer i:hover {
+    background-color: rgb(255, 0, 0);
+}
