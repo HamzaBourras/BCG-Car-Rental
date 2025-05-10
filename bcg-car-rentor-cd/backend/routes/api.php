@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix("auth/")->controller(AuthentificationController::class)->group(function () {
     Route::post("inscrire", "inscrire");
     Route::post("connecter", "connecter");
-    Route::post("deconnecter/{user_id}", "deconnecter");
+    Route::post("deconnecter/{user_id}", "deconnecter")->middleware("auth:sanctum");;
     Route::post("modifierProfile/{user_id}", "modifierProfile")->middleware("auth:sanctum");
 });
 

@@ -1,8 +1,22 @@
-// script pour ajouter le navbar1.html en haut des pages
+//===== script pour ajouter le navbar1.html en haut des pages et le script des routes
+
+// ajouter le script de restrictions des routes au document
+// function loadRoutes() {
+//   return new Promise((resolve) => {
+
+//     const script = document.createElement('script')
+//     script.src = "/frontend/js/routes_config.js"
+//     script.onload = resolve;
+//     document.body.appendChild(script)
+//   });
+// }
+
 
 fetch("../html/navbar1.html")
   .then((response) => response.text())
   .then((html) => {
+    // await loadRoutes() // attender que le script des routes etre ajouté
+
     document.getElementById("navbar_container").innerHTML = html;
     document.body.classList.add("loaded"); // Affiche le contenu après le chargement de la page
     initResponsiveNavbar(); // appeler le script de responsive
