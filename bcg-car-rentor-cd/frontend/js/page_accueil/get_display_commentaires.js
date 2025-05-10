@@ -7,7 +7,7 @@ export async function getCommentaires() {
         await getData.getD(INDEX_COMMENTAIRES)
         if (getData.success == true) {
             localStorage.setItem("commentaires", JSON.stringify(getData.returnData))  // Enregistrer les commentaires sur localStorage
-
+            return getData.returnData
         }
     } catch (error) {
         if (getData.success == false) {

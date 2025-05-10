@@ -4,29 +4,29 @@ import { getCommentaires } from "../page_accueil/get_display_commentaires.js";
 
 // **** appel à la fonction pour recevoir tous les commentaires
 document.addEventListener("DOMContentLoaded", function () {
-    //vérifer si les commentaires ne sont pas déja récupérer
-    if (!localStorage.getItem("commentaires")) {
-        getCommentaires();
-    }
+  //vérifer si les commentaires ne sont pas déja récupérer
+  if (!localStorage.getItem("commentaires")) {
+    getCommentaires();
+  }
 });
 
 
 // **** fonction pour ajouter les commentaires à la page ""d'accueil""
 function displayCommentaires(commentaires) {
-    let sectionsCommentaires = document.querySelector(".comments-cards")
+  let sectionsCommentaires = document.querySelector(".comments-cards")
 
-    let content = ""
-    let stars = ""
-    let numberOfStars = 0
-    let numberOfCommentaires = 0
-    commentaires.forEach(commentaire => {
-        stars = ""
-        numberOfStars = 0
-        while (numberOfStars < commentaire.note) {
-            stars += `<i class="fa-solid fa-star"></i>`
-            numberOfStars++;
-        }
-        content += `
+  let content = ""
+  let stars = ""
+  let numberOfStars = 0
+  let numberOfCommentaires = 0
+  commentaires.forEach(commentaire => {
+    stars = ""
+    numberOfStars = 0
+    while (numberOfStars < commentaire.note) {
+      stars += `<i class="fa-solid fa-star"></i>`
+      numberOfStars++;
+    }
+    content += `
         <div class="comment-card">
         <div class="comment-card-header">
           <h2>${commentaire.prenom} ${commentaire.nom}</h2>
@@ -38,26 +38,26 @@ function displayCommentaires(commentaires) {
           <p>${commentaire.contenu}</p>
         </div>
         <div id="actions" >
-        <button id="modifier" ><i class="fa-solid fa-pen"></i></button>
-        <button id="supprimer" ><i class="fa-solid fa-trash"></i></button>
+        <button id="modifierBtn" ><i class="fa-solid fa-pen"></i></button>
+        <button id="supprimerBtn" ><i class="fa-solid fa-trash"></i></button>
         </div>
       </div>
         `
 
-    });
+  });
 
-    sectionsCommentaires.innerHTML = content
+  sectionsCommentaires.innerHTML = content
 }
 
 
 // **** appel à la fonction pour ajouter les commentaires à la page ""d'accueil""
 document.addEventListener("DOMContentLoaded", function () {
-    // Vérifier périodiquement si les voitures sont disponibles
-    const checkData = setInterval(() => {
-        const commentaires = JSON.parse(localStorage.getItem("commentaires")) // sélectionner les voitures enregistrer dans localStorage avec le fichier /page_accueil/get_voitures.js
-        if (commentaires) {
-            clearInterval(checkData);
-            displayCommentaires(commentaires);
-        }
-    }, 10); // Vérifie toutes les 10ms
+  // Vérifier périodiquement si les voitures sont disponibles
+  const checkData = setInterval(() => {
+    const commentaires = JSON.parse(localStorage.getItem("commentaires")) // sélectionner les voitures enregistrer dans localStorage avec le fichier /page_accueil/get_voitures.js
+    if (commentaires) {
+      clearInterval(checkData);
+      displayCommentaires(commentaires);
+    }
+  }, 10); // Vérifie toutes les 10ms
 });

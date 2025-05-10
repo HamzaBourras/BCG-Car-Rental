@@ -22,6 +22,7 @@ class ReservationFactory extends Factory
             'date_debut' => $this->faker->dateTimeBetween('-8 days', '-4 days'),
             'date_fin' => $this->faker->dateTimeBetween('-2 days', '+14 days'),
             'prix_total' => $this->faker->randomFloat(2, 50, 500),
+            'status' => $this->faker->boolean,
             'statut_paiement' => $this->faker->boolean,
         ];
     }

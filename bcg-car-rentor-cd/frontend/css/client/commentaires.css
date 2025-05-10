@@ -84,12 +84,12 @@ h1 {
     display: flex;
     justify-content: end;
 }
-#supprimer, #modifier {
+#supprimerBtn, #modifierBtn {
     background-color: inherit;
     border: none;
     outline: none;
 }
-#supprimer i, #modifier i {
+#supprimerBtn i, #modifierBtn i {
     margin: 0 5px;
     font-size: 13px;
     color: white;
@@ -102,16 +102,16 @@ h1 {
     cursor: pointer;
     transition: 0.5s;
 }
-#supprimer i {
+#supprimerBtn i {
     background-color: rgb(206, 1, 1);
 }
-#supprimer i:hover {
+#supprimerBtn i:hover {
     background-color: rgb(255, 0, 0);
 }
 
-#modifier i {
+#modifierBtn i {
     background-color: rgb(0, 0, 150);
 }
-#modifier i:hover {
+#modifierBtn i:hover {
     background-color: rgb(0,0,255);
 } 

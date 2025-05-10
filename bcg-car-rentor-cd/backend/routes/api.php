@@ -44,5 +44,8 @@ Route::prefix("admin")->group(function () {
         Route::delete("destroy/{voiture_id}", "destroyVoiture");
     });
 
-    Route::get('/clients/index', [AdminController::class, 'indexClients']);
+    Route::prefix("")->controller(AdminController::class)->group(function () {
+        Route::get('/clients/index', 'indexClients');
+        Route::delete("/commentaires/destroy/{commentaire_id}", "destroyCommentaire");
+    });
 });

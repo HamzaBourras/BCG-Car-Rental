@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use id;
 use Exception;
 use App\Models\User;
+use App\Models\Commentaire;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -39,6 +41,27 @@ class AdminController extends Controller
             return response()->json([
                 "success" => false,
                 "message" => "Échec lors de la récupération des clients",
+                "errors" => $e->getMessage()
+            ], 500);
+        }
+    }
+
+
+    /***** fct pour supprimer un commentaire */
+    public function destroyCommentaire(int $commentaire_id)
+    {
+        try {
+            Commentaire::where(["id" => $commentaire_id])->delete();
+
+            return response()->json([
+                "success" => true,
+                "message" => "commentaire supprimé avec succès",
+            ], 200);
+        } catch (\Exception $e) {
+            // Erreur générale
+            return response()->json([
+                "success" => false,
+                "massage" => "Erreur lors de suppression du commentaire",
                 "errors" => $e->getMessage()
             ], 500);
         }

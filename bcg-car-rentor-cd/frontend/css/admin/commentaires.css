@@ -84,12 +84,12 @@ h1 {
     display: flex;
     justify-content: end;
 }
-#supprimer {
+#supprimerBtn {
     background-color: inherit;
     border: none;
     outline: none;
 }
-#supprimer i {
+#supprimerBtn i {
     font-size: 13px;
     color: white;
     height: 27px;
@@ -102,6 +102,6 @@ h1 {
     cursor: pointer;
     transition: 0.5s;
 }
-#supprimer i:hover {
+#supprimerBtn i:hover {
     background-color: rgb(255, 0, 0);
 }

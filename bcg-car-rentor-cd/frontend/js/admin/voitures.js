@@ -74,7 +74,7 @@ function setupEventListeners() {
     btn.addEventListener('click', function () {
       voiture_id_S = this.getAttribute('data-voiture-id');
       // demande la confirmation de l'admin
-      const conf = confirm("voulez vous supprimer cette voiture")
+      const conf = confirm("voulez vous supprimer cette voiture ?")
       if (conf) {
         // Appeler la fonction de suppression
         supprimerVoiture(voiture_id_S)
