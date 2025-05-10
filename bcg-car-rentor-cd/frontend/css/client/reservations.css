@@ -1,0 +1,107 @@
+/* CSS pour la page des réservations */
+.content {
+    padding: 20px;
+}
+
+.content h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Exo', sans-serif;
+}
+
+.reservations-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.reservation-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reservation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.car-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.car-image {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.car-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.reservation-details {
+    margin-bottom: 15px;
+}
+
+.reservation-details p {
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-label {
+    font-weight: 500;
+    color: #666;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: right;
+    color: #ff4d4d;
+    margin-top: 10px;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.status-paid {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-unpaid {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    grid-column: 1 / -1;
+    color: #666;
+}
+
+.no-reservations {
+    text-align: center;
+    padding: 20px;
+    grid-column: 1 / -1;
+    color: #666;
+}

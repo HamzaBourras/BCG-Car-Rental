@@ -4,7 +4,7 @@ import { INDEX_VOITURES } from "../../apis/api.js";
 export async function getVoitures() {
 
   try {
-    await getData.getD(INDEX_VOITURES);
+    await getData.getD(INDEX_VOITURES,);
     if (getData.success == true) {
       localStorage.setItem("voitures", JSON.stringify(getData.returnData)) // Enregistrer les voitures dans localStorage
       return getData.returnData
