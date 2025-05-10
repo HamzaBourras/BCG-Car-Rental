@@ -66,3 +66,97 @@ tbody tr {
   width: 100%;
   table-layout: fixed;
 }
+
+.confirm-btn {
+  background: #0f6b12;
+  color: whitesmoke;
+  padding: 3px;
+  font-size: 0.8rem;
+  width: 80px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+.confirm-btn:hover {
+  background-color: #45a049;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+.confirm-btn:active {
+  background-color: #3d8b40;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+  transition: all 0.1s;
+}
+.confirm-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.delete-btn {
+  background: rgb(178, 13, 13);
+  color: whitesmoke;
+  padding: 3px;
+  font-size: 0.8rem;
+  width: 80px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+.delete-btn:hover {
+  background-color: #d84545;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+.delete-btn:active {
+  background-color: #3d8b40;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+  transition: all 0.1s;
+}
+.delete-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.7;
+  }
+  20% {
+    transform: scale(20, 20);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(50, 50);
+  }
+}
