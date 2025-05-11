@@ -4,7 +4,6 @@ import { getCommentaires } from "../page_accueil/get_display_commentaires.js";
 import { displayMessageErreurs } from "../display_message_erreurs.js"
 
 // **** appel à la fonction pour recevoir tous les commentaires
-
 document.addEventListener("DOMContentLoaded", function () {
     //vérifer si les commentaires ne sont pas déja récupérer
     if (!localStorage.getItem("commentaires")) {
