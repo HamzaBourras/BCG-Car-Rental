@@ -2,42 +2,128 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../../css/client/dashboard.css">
-    <link rel="stylesheet" href="../../css/admin/sidebar_header.css">
-    <link rel="stylesheet" href="../../fontawesome-free-6.7.2-web/css/all.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="../../css/client/dashboard.css">
+	<link rel="stylesheet" href="../../css/admin/sidebar_header.css">
+	<link rel="stylesheet" href="../../fontawesome-free-6.7.2-web/css/all.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
 
 
 </head>
 
 <body>
-    <div class="container">
+	<div class="container">
 
 
-        <!-- div sidebar -->
-        <div class="sidebar" id="side">
+		<!-- div sidebar -->
+		<div class="sidebar" id="side">
 
-        </div>
-        <div class="main">
+		</div>
+		<div class="main">
 
-            <!-- div pour header -->
-            <header class="header" id="header">
+			<!-- div pour header -->
+			<header class="header" id="header">
 
-            </header>
+			</header>
 
-            <div class="content">
+			<div class="content">
+				<div class="dashboard-content">
+					<h1>Bienvenue dans votre tableau de bord</h1>
+					<div class="stats-cards">
 
-            </div>
+						<div class="stat-card">
+							<div class="stat-card-content">
+								<div class="stat-card-info">
+									<h3>Réservations actives</h3>
+									<h2>3</h2>
+								</div>
+								<div class="stat-card-icon active-icon">
+									<i class="fa-solid fa-check"></i>
+								</div>
+							</div>
+							<div class="stat-footer">
+								<a href="#">Voir plus</a>
+							</div>
+						</div>
 
-        </div>
+						<div class="stat-card">
+							<div class="stat-card-content">
+								<div class="stat-card-info">
+									<h3>Réservations totales</h3>
+									<h2>87</h2>
+								</div>
+								<div class="stat-card-icon total-icon">
+									<i class="fa-solid fa-list-ul"></i>
+								</div>
+							</div>
+							<div class="stat-footer">
+								<a href="#">Voir plus</a>
+							</div>
+						</div>
 
-    </div>
-    <script src="/frontend//js/routes_config.js"></script>
-    <script src="../../js/client/sidebar_header.js"></script>
+						<div class="stat-card">
+							<div class="stat-card-content">
+								<div class="stat-card-info">
+									<h3>points de fidélité</h3>
+									<h2>43</h2>
+								</div>
+								<div class="stat-card-icon customer-icon">
+									<i class="fas fa-user-plus"></i>
+								</div>
+							</div>
+							<div class="stat-footer">
+								<a href="#">Voir plus</a>
+							</div>
+						</div>
+
+						<div class="stat-card">
+							<div class="stat-card-content">
+								<div class="stat-card-info">
+									<h3>points de fidélité</h3>
+									<h2>250</h2>
+								</div>
+								<div class="stat-card-icon points-icon">
+									<i class="fa-solid fa-star"></i>
+								</div>
+							</div>
+							<div class="stat-footer">
+								<a href="#">Voir plus</a>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="recent-section">
+						<div class="section-header">
+							<h3>Réservations récentes</h3>
+							<a href="#" class="view-all">Voir plus</a>
+						</div>
+						<div class="table-container">
+							<table class="data-table">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>Voiture</th>
+										<th>Date de départ</th>
+										<th>Date de retour</th>
+										<th>Statut</th>
+										<th>Montant</th>
+									</tr>
+								</thead>
+								<tbody id="recent-bookings-table">
+									<!-- Table rows will be loaded by JavaScript -->
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+				</div>
+			</div>
+				<script src="/frontend//js/routes_config.js"></script>
+				<script src="../../js/client/sidebar_header.js"></script>
 </body>
 
 </html>

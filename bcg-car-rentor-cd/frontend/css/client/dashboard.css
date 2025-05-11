@@ -1,0 +1,132 @@
+.dashboard-content {
+	padding: 30px;
+}
+.stats-cards {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+.stat-card {
+	background-color: rgb(78, 78, 78);
+	color: whitesmoke;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s ease;
+}
+.stat-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+.stat-card-content {
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.stat-card-info h3 {
+	font-size: 1rem;
+	color: whitesmoke;
+	margin-bottom: 8px;
+}
+.stat-card-info h2 {
+	font-size: 1.8rem;
+	font-weight: 700;
+	color: whitesmoke;
+}
+.stat-card-icon {
+	width: 50px;
+	height: 50px;
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--text-white);
+	font-size: 1.5rem;
+}
+.stat-footer a {
+	color: rgb(176, 235, 202);
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin: 0 20px 10px 0;
+}
+.stat-footer a:hover {
+	text-decoration: underline;
+}
+.active-icon {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.total-icon {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.customer-icon {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.points-icon {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.recent-section {
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+.section-header {
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.section-header h3 {
+	font-size: 1rem;
+	font-weight: 600;
+
+}
+
+.view-all {
+	color: whitesmoke;
+	font-size: 14px;
+}
+.view-all:hover {
+	text-decoration: underline;
+}
+
+/* Table Styles */
+.table-container {
+	overflow-x: auto;
+	border-radius: 13px;
+	border-bottom: 1px solid whitesmoke;
+	border-top: 1px solid whitesmoke;
+}
+
+.data-table {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+.data-table th, .data-table td {
+	padding: 15px 20px;
+	text-align: left;
+}
+
+.data-table th {
+	font-weight: 600;
+	font-size: 0.9rem;
+	color: whitesmoke;
+	background-color: rgb(78, 78, 78);
+}
+
+.data-table td {
+	font-size: 14px;
+	color: black;
+}
+
+.data-table tr:last-child td {
+	border-bottom: none;
+}
