@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modification de Commentaire</title>
+    <link rel="stylesheet" href="../../css/client/modifier.css">
+    <link rel="stylesheet" href="../../css/admin/sidebar_header.css">
+    <link rel="stylesheet" href="../../fontawesome-free-6.7.2-web/css/all.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- div sidebar -->
+        <div class="sidebar" id="side">
+        </div>
+        <div class="main">
+            <!-- div pour header -->
+            <header class="header" id="header">
+            </header>
+
+            <div class="content">
+                <div class="comments">
+                    <h1>Gestion des commentaires</h1>
+                    <div class="comments-cards">
+                        <!-- Les commentaires seront affichés ici -->
+                    </div>
+                </div>
+
+                <!-- Modal pour modifier le commentaire -->
+                <div id="modifierModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Modifier votre commentaire</h2>
+                        <form id="modifierForm">
+                            <input type="hidden" id="commentaireId">
+                            <div class="form-group">
+                                <label for="contenuCommentaire">Commentaire:</label>
+                                <textarea id="contenuCommentaire" rows="5"></textarea>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="button" id="annulerBtn">Annuler</button>
+                                <button type="submit" id="enregistrerBtn">Enregistrer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/frontend//js/routes_config.js"></script>
+    <script src="../../js/client/sidebar_header.js"></script>
+    <script type="module" src="../../js/client/commentaires.js"></script>
+    <script type="module" src="../../js/client/modifier.js"></script>
+</body>
+
+</html>
