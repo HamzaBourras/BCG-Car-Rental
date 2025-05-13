@@ -35,7 +35,16 @@ for (const key in routes) {
 
 // restrections de l'authentification
 if (currentKey === "auth" && !authuntified) window.location.href = "/frontend/html/authentification/connexion.html"
-if (currentKey === "public" && authuntified) window.history.go(-1)
+if (currentKey === "public" && authuntified) {
+    // à changer
+    if (currentUrl.includes("/frontend/html/admin/") || currentUrl.includes("/frontend/html/client/")) {
+        window.history.go(-1);
+    }
+    else {
+        if (userRole === "admin") window.location.href = "/frontend/html/admin/dashboard.html"
+        else if (userRole === "client") window.location.href = "/frontend/html/client/dashboard.html"
+    }
+}
 
 // restrection des roles 
 const role_in_url = currentUrl.split("/")[3]

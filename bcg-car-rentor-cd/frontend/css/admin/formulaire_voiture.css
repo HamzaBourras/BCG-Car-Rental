@@ -10,7 +10,7 @@
     width: 90%;
     margin: 0 auto;
     padding: 20px 30px;
-    background-color: rgba(128, 128, 128, 0.95);
+    background-color: rgba(68, 68, 68, 0.95);
     /* background-color: red; */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -26,7 +26,7 @@
 
 .container_formulaire .titre h1 {
     text-align: center;
-    color: black;
+    color: whitesmoke;
 }
 
 /* Styles du formulaire */
@@ -51,19 +51,26 @@
 input[type="number"],
 select {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
+    padding: 14px;
+    color: whitesmoke;
+    letter-spacing: 1px;
+    /* border: 1px solid #ddd; */
+    outline: none;
+    border: none;
     border-radius: 4px;
     font-size: 16px;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
+    background-color: #222;
 }
 
 #vehiculeForm .form-group .form-field input[type="text"]:focus,
-#vehiculeForm .form-group .form-fieldinput[type="number"]:focus,
+#vehiculeForm .form-group .form-field input[type="number"]:focus,
 #vehiculeForm .form-group .form-field select:focus {
-    border-color: #3498db;
+    /* border-color: #3498db; */
+    /* box-shadow: 0 0 5px rgba(52, 152, 219, 0.3); */
     outline: none;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+    /* background-color: #333; */
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
 }
 
 #vehiculeForm .form-group .form-field .radio-group {
@@ -95,7 +102,7 @@ select {
 }
 
 .form-buttons .btn-submit {
-    background-color: #3b3b3b;
+    background-color: #000000;
     color: white;
 }
 
