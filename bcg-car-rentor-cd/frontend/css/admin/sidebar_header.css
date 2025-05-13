@@ -63,7 +63,7 @@ a {
 	flex-direction: column;
 	width: 20%;
 	height: 100vh;
-	overflow: hidden;
+	overflow: auto;
 	background: #000000;
 	border-right: 1px solid whitesmoke;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);

@@ -24,12 +24,24 @@ class VoitureRequest extends FormRequest
         $url = $this->url();
 
         if (strpos($url, 'api/admin/voitures/store') !== false) {
-            return ['image' => 'required'];
+            return [
+                'modele' => 'required|string|max:50',
+                'marque' => 'required|string|max:50',
+                'matricule' => 'required|string|unique:voitures|max:20',
+                'nombre_place' => 'required|integer|min:2',
+                'prix_jour' => 'required|numeric|min:0',
+                'vitesse_max' => 'required|integer|',
+                'couleur' => 'required|string|max:30',
+                'type_carburant' => 'required|in:essence,diesel,hybride,électrique',
+                'kilometrage' => 'required|integer|min:0',
+                'climat' => 'required',
+                'image' => 'required|mimes:jpeg,png,jpg|max:2048'
+            ];
         }
         return [
             'modele' => 'required|string|max:50',
             'marque' => 'required|string|max:50',
-            'matricule' => 'required|string|unique:voitures|max:20',
+            'matricule' => 'required|string|max:20',
             'nombre_place' => 'required|integer|min:2',
             'prix_jour' => 'required|numeric|min:0',
             'vitesse_max' => 'required|integer|',

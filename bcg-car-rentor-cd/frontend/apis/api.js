@@ -28,6 +28,7 @@ export const CLIENT_INDEX_RESERVATIONS = `${baseUrl}api/client/reservations/inde
 export const CLIENT_STORE_RESERVATIONS = `${baseUrl}api/client/reservations/store/`;
 export const CLIENT_EDIT_RESERVATIONS = `${baseUrl}api/client/reservations/edit/`;
 export const CLIENT_DESTROY_RESERVATIONS = `${baseUrl}api/client/reservations/destroy/`;
+
 /*** api commentaires ***/
 export const CLIENT_INDEX_COMMENTAIRES = `${baseUrl}api/client/commentaires/index/`;
 export const CLIENT_STORE_COMMENTAIRES = `${baseUrl}api/client/commentaires/store/`;

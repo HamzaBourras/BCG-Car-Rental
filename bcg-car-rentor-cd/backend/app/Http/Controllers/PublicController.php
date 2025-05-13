@@ -72,6 +72,7 @@ class PublicController extends Controller
                     "id" => $commentaire->id,
                     "contenu" => $commentaire->contenu,
                     "note" => $commentaire->note,
+                    "user_id" => $commentaire->user->id,
                     "nom" => $commentaire->user->nom,
                     "prenom" => $commentaire->user->prenom
                 ];

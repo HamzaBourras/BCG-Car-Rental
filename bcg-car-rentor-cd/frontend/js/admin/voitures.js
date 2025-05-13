@@ -170,7 +170,7 @@ async function ajouterVoiture() {
   formData.append('climat', document.querySelector("#climat").value == "oui" ? 1 : 0);
   const imageInput = document.querySelector("#image"); // votre input de type file
   const imageFile = imageInput.files[0]; // le fichier réel
-  formData.append('image', imageFile);
+  if (imageFile) formData.append('image', imageFile);
 
 
   try {

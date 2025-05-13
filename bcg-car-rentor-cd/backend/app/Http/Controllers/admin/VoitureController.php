@@ -76,12 +76,10 @@ class VoitureController extends Controller
                 "kilometrage" => $request->kilometrage,
                 "climat" => $request->climat,
                 "image" => $cheminImage,
-                // "image" => $request->file('image')
             ]);
 
 
             return response()->json([
-                // "data" => $vt,
                 "success" => true,
                 "message" => "Voiture ajoutée avec succès",
             ], 200);
@@ -95,7 +93,7 @@ class VoitureController extends Controller
         }
     }
 
-    public function editVoiture(Request $request, int $voiture_id)
+    public function editVoiture(VoitureRequest $request, int $voiture_id)
     {
         try {
             $cheminImage = "";
