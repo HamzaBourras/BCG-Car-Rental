@@ -23,7 +23,7 @@ class CommentaireRequest extends FormRequest
     {
         return [
             "contenu" => "required|max:50",
-            "note" => "required|min:1|max:5",
+            "note" => "required|integer|min:1|max:5",
         ];
     }
 

@@ -1,5 +1,6 @@
 import sendData from "../functions/sendData.js";
 import { CLIENT_DESTROY_COMMENTAIRES } from "../../apis/api.js";
+import { CLIENT_EDIT_COMMENTAIRES } from "../../apis/api.js";
 import { getCommentaires } from "../page_accueil/get_display_commentaires.js";
 import { displayMessageErreurs } from "../display_message_erreurs.js"
 
@@ -80,12 +81,12 @@ function setupEventListeners() {
     });
   });
 
-  // document.querySelectorAll('#modifierBtn').forEach(btn => {
-  //   btn.addEventListener('click', function () {
-  //     commentaire_id_M = this.getAttribute('data-commentaire-id');
-  //     initialiseFormulaire(commentaire_id_M)  // fct pour afficher les données de la voiture sélectionné sur les inputs
-  //   });
-  // });
+  document.querySelectorAll('#modifierBtn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      commentaire_id_M = this.getAttribute('data-commentaire-id');
+      initialiseFormulaire(commentaire_id_M)  // fct pour afficher les données de la voiture sélectionné sur les inputs
+    });
+  });
 
 
 }
@@ -108,6 +109,50 @@ async function supprimerCommentaire(commentaire_id) {
   }
 }
 
+
+// fonction pour modifier un commentaire
+async function modifierCommentaire(commentaire_id) {
+  const formData = new FormData();
+  try {
+    formData.append("contenu", document.querySelector("#contenu").value)
+    formData.append("note", document.querySelector("#note").value)
+
+
+    await sendData.postData(CLIENT_EDIT_COMMENTAIRES, formData, "put", `${user_id}/${commentaire_id}`, false);
+    if (sendData.success === true) {
+      //affichage message succès
+      displayMessageErreurs(null, sendData.message, sendData.success);
+      const commenatairesM = await getCommentaires()  // appel à la fct pour recevoir les commentaires après la modification
+      displayCommentaires(commenatairesM)
+
+      document.getElementById("annulerBtnC").click() // pour cacher le formulaire 
+    }
+  } catch (error) {
+    // affichage des erreurs du message
+    if (sendData.success === false)
+      displayMessageErreurs(sendData.errors, sendData.message, sendData.success)
+  }
+}
+// appeler la méthode pour modifier un voiture lorsque je submit la formulaire
+const form = document.querySelector("#commentaire_form")
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  await modifierCommentaire(commentaire_id_M)
+})
+
+// **** fonction pour initialise le formulaire lorsque je clique sur modifier
+function initialiseFormulaire(commenataire_id) {
+  const allCommentaires = JSON.parse(localStorage.getItem("commentaires")) // sélectionner les voitures enregistrer dans localStorage avec le fichier /page_accueil/get_voitures.js
+  const commenataireSelected = allCommentaires.filter(cm => cm.id == commenataire_id)  // sélectionner la voiture à modifier
+  document.querySelector("#form_container").style.display = "flex"  // afficher la formulaire lorsque je clique sur le button modifier
+
+  if (commenataireSelected) {
+    document.querySelector("#contenu").value = commenataireSelected[0].contenu
+    document.querySelector("#note").value = commenataireSelected[0].note
+    document.querySelector("#note_span").textContent = commenataireSelected[0].note
+  }
+
+}
 
 // **** appel à la fonction pour ajouter les commentaires à la page ""d'accueil""
 document.addEventListener("DOMContentLoaded", function () {

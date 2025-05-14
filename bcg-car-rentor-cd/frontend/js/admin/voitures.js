@@ -146,7 +146,6 @@ async function modifierVoiture(voiture_id) {
 
     }
   } catch (error) {
-    console.log(sendData.errors);
 
     // affichage des erreurs du message
     if (sendData.success === false)
@@ -209,17 +208,19 @@ function initialiseFormulaire(voiture_id) {
   const voitureSelected = allVoitures.filter(vt => vt.id == voiture_id)  // sélectionner la voiture à modifier
   document.querySelector(".container_formulaire").style.display = "block"  // afficher la formulaire lorsque je clique sur le button modifier
 
-  document.querySelector("#modele").value = voitureSelected[0].modele
-  document.querySelector("#marque").value = voitureSelected[0].marque
-  document.querySelector("#matricule").value = voitureSelected[0].matricule
-  document.querySelector("#nombre_place").value = voitureSelected[0].nombre_place
-  document.querySelector("#prix_jour").value = voitureSelected[0].prix_jour
-  document.querySelector("#vitesse_max").value = voitureSelected[0].vitesse_max
-  document.querySelector("#couleur").value = voitureSelected[0].couleur
-  document.querySelector("#type_carburant").value = voitureSelected[0].type_carburant.toLowerCase()
-  document.querySelector("#kilometrage").value = voitureSelected[0].kilometrage
-  document.querySelector("#climat").value = voitureSelected[0].climat == 1 ? "oui" : "non"
-  document.querySelector("#image").required = false
+  if (voitureSelected) {
+    document.querySelector("#modele").value = voitureSelected[0].modele
+    document.querySelector("#marque").value = voitureSelected[0].marque
+    document.querySelector("#matricule").value = voitureSelected[0].matricule
+    document.querySelector("#nombre_place").value = voitureSelected[0].nombre_place
+    document.querySelector("#prix_jour").value = voitureSelected[0].prix_jour
+    document.querySelector("#vitesse_max").value = voitureSelected[0].vitesse_max
+    document.querySelector("#couleur").value = voitureSelected[0].couleur
+    document.querySelector("#type_carburant").value = voitureSelected[0].type_carburant.toLowerCase()
+    document.querySelector("#kilometrage").value = voitureSelected[0].kilometrage
+    document.querySelector("#climat").value = voitureSelected[0].climat == 1 ? "oui" : "non"
+    document.querySelector("#image").required = false
+  }
 
 }
 

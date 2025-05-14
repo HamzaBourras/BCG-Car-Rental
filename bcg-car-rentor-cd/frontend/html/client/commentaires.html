@@ -38,7 +38,49 @@
 
         </div>
 
+
     </div>
+
+    <!-- formulaire pour le commentaire -->
+    <div id="form_container">
+        <form id="commentaire_form">
+            <div class="form_group">
+                <!-- <label for="content">Commentaire : </label> -->
+                <textarea rows="5" cols="10" id="contenu"></textarea>
+            </div>
+            <div class="form_group">
+                <label for="note">Note : </label>
+                <div id="range_div">
+                    <input type="range" step="1" min="0" max="5" id="note" value="3">
+                    <span id="note_span">3</span>
+                </div>
+            </div>
+            <div class="form_btns">
+                <button id="enregistrerBtnC" type="submit"><i class="fa-solid fa-check"></i></button>
+                <button id="annulerBtnC" type="reset"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // pour afficher la valeur de l'input range
+        document.querySelector("#note").addEventListener('input', () => {
+            document.querySelector("#note_span").textContent = document.querySelector("#note").value
+        })
+
+        // pour cacher le formulaire
+        document.querySelector("#annulerBtnC").addEventListener('click', () => {
+            document.querySelector("#form_container").style.display = "none"
+        })
+
+        // ajouter au textarea d'etre focused par défaut
+        const textarea = document.querySelector("textarea"); // Sélectionne la première textarea
+        if (textarea) {
+            textarea.focus(); // Focalise l'élément
+            textarea.type
+        }
+    </script>
+
     <script src="/frontend//js/routes_config.js"></script>
     <script src="../../js/client/sidebar_header.js"></script>
     <script type="module" src="../../js/client/commentaires.js"></script>

@@ -24,6 +24,8 @@ const sendData = {
     // Réinitialisation
     this.resetChamps();
 
+
+
     try {
       const config = {
         headers: {}
