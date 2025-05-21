@@ -21,13 +21,16 @@ class VoitureController extends Controller
 
 
             foreach ($voitures as $voiture) {
-                $disponible = "disponible";
-                foreach ($voiture->reservations as $reservation) {  // parcourir les resevations pour vérifier 
-                    if ($reservation->date_fin > \Carbon\Carbon::now()) {      // la date_fin pour savoir la disponibilité
-                        $date = \Carbon\Carbon::parse($reservation->date_fin)->addDay()->format('Y-m-d');  // ajouté un jour à la date de fin
-                        $disponible = $disponible . " le " . $date;  // concatiner la variable disponible avec la date de disponibilité
-                    }
+                $periodes_reservee = [];
+                foreach ($voiture->reservations as $reservation) {  // parcourir les resevations pour construire les intervales ou la voiture est déja réservé
+                    $periode = [
+                        "debut" => $reservation->date_debut,
+                        "fin" => $reservation->date_fin
+                    ];
+
+                    array_push($periodes_reservee, $periode);
                 }
+
                 $formatVoiture = [
                     "id" => $voiture->id,
                     "matricule" => $voiture->matricule,
@@ -40,7 +43,7 @@ class VoitureController extends Controller
                     "type_carburant" => $voiture->type_carburant,
                     "kilometrage" => $voiture->kilometrage,
                     "climat" => $voiture->climat,
-                    "disponibilite" => $disponible,
+                    "periodes_reservee" => $periodes_reservee,  // il contient les intérvales de date où la voiture est déja resérvé
                     "image" => "storage/" . $voiture->image,
                 ];
 

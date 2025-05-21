@@ -7,9 +7,11 @@
     <title>Voitures</title>
     <link rel="stylesheet" href="../../css/client/voitures.css">
     <link rel="stylesheet" href="../../css/admin/sidebar_header.css">
+    <link rel="stylesheet" href="../../css/client/formulaire_reservation.css">
     <link rel="stylesheet" href="../../fontawesome-free-6.7.2-web/css/all.css" />
     <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body>
@@ -28,12 +30,87 @@
             </header>
 
             <div class="content">
+                <main class="voitures-content" id="voitures-content">
 
+                </main>
             </div>
 
         </div>
 
     </div>
+
+    <!-- formulaire de reservation -->
+    <div class="form-container" id="form-container">
+        <div class="form-wrapper">
+            <form action="#" method="post" id="reservation-form">
+                <div class="form-fields">
+                    <div class="form-group">
+                        <label for="date_debut">Date de début</label>
+                        <input type="datetime-local" id="date_debut" name="date_debut" required>
+                        <div class="error-message" id="date_debut_error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date_fin">Date de fin</label>
+                        <input type="datetime-local" id="date_fin" name="date_fin" required>
+                        <div class="error-message" id="date_fin_error"></div>
+                    </div>
+
+                    <div class="">
+                        <!-- pour afficher le message d'erreur sur la péride choisi -->
+                        <div class="error-message" id="periodes_reservee">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adresse_livraison">Adresse de livraison</label>
+                        <select id="adresse_livraison" name="adresse_livraison" required>
+                            <option value="" hidden selected>Sélectionnez une localisation </option>
+                            <option value="agence">à l' agence</option>
+                            <option value="client_adresse">votre adresse</option>
+                            <option value="autre">autre</option>
+                        </select>
+                        <input type="text" hidden id="adresse_livraison_U" placeholder="Entrez l'adresse de livraison">
+                    </div>
+
+                    <div class="form-group submit-group">
+                        <button type="submit" class="submit-btn" id="enregistrerRes">Réserver</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="image-container">
+                <button type="reset" id="annulerBtnR"><i class="fa-solid fa-xmark"></i></button>
+                <img src="https://cdn-icons-png.flaticon.com/512/4088/4088034.png" alt="Voiture de location"
+                    class="reservation-image">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // pour cacher le formulaire
+        document.querySelector(".image-container #annulerBtnR").addEventListener("click", () => {
+            document.querySelector("#form-container").style.display = "none"
+            document.querySelector("#form-container form").reset();
+        })
+        // pour afficher l'input text de localisation de livraison
+        const adresseSelect = document.querySelector("#adresse_livraison")
+        adresseSelect.addEventListener("input", (e) => {
+
+            if (adresseSelect.value == "autre") {
+                document.querySelector("#adresse_livraison_U").removeAttribute("hidden")
+                document.querySelector("#adresse_livraison_U").setAttribute("reqiured", "")
+            }
+            else {
+                document.querySelector("#adresse_livraison_U").setAttribute("hidden", "")
+                document.querySelector("#adresse_livraison_U").removeAttribute("reqiured")
+            }
+        })
+    </script>
+
+    <script type="module" src="../../js/client/valider_dates_reservation.js"></script>
+    <script type="module" src="../../js/client/voitures.js"></script>
     <script src="/frontend//js/routes_config.js"></script>
     <script src="../../js/client/sidebar_header.js"></script>
 </body>

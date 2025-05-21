@@ -5,6 +5,16 @@ import { ADMIN_EDIT_VOITURES } from "../../apis/api.js";
 import { ADMIN_DESTROY_VOITURES } from "../../apis/api.js";
 import sendData from '/frontend/js/functions/sendData.js'
 import { getVoitures } from "../page_accueil/get_voitures.js"  // je veux l'appeler après chaque modification
+import { displayMessageErreurs } from "../display_message_erreurs.js"
+
+
+// **** appel à la fonction pour recevoir tous les voitures
+document.addEventListener("DOMContentLoaded", function () {
+  //vérifer si les commentaires ne sont pas déja récupérer
+  if (!localStorage.getItem("voitures")) {
+    getVoitures();
+  }
+});
 
 // **** fonction pour ajouter les voitures à la page ""des voitures"" de l'admin
 function displayVoituresAdmin(voitures) {
@@ -37,7 +47,7 @@ function displayVoituresAdmin(voitures) {
     </div>
 
     <!-- Modification buttons -->
-    <div class="modification">
+    <div class="actions">
         <button id="modifierBtn" data-voiture-id="${voiture.id}" style="background-color:rgb(0, 92, 0);" onmouseover="this.style.backgroundColor='rgb(1, 139, 1)'" onmouseout="this.style.backgroundColor='rgb(0, 92, 0)'"  class="button" role="button">Modifier</button>
         <button id="supprimerBtn" data-voiture-id="${voiture.id}" style="background-color:rgb(159, 0, 0);" onmouseover="this.style.backgroundColor='rgb(206, 1, 1)'" onmouseout="this.style.backgroundColor='rgb(159, 0, 0)'"  class="button" role="button">Supprimer</button>
     </div>
@@ -102,7 +112,7 @@ async function supprimerVoiture(voiture_id) {
     await sendData.postData(ADMIN_DESTROY_VOITURES, {}, "delete", voiture_id, false);
     if (sendData.success === true) {
       //affichage message succès
-      displayMessage(null, sendData.message);
+      displayMessageErreurs(null, sendData.message, sendData.success);
       const voituresS = await getVoitures()  // appel à la fct pour recevoir les voitures après la modification
       displayVoituresAdmin(voituresS)
 
@@ -110,7 +120,7 @@ async function supprimerVoiture(voiture_id) {
   } catch (error) {
     // affichage des erreurs du message
     if (sendData.success === false)
-      displayMessage(sendData.errors, sendData.message)
+      displayMessageErreurs(sendData.errors, sendData.message, sendData.success)
   }
 }
 
@@ -137,7 +147,7 @@ async function modifierVoiture(voiture_id) {
     await sendData.postData(ADMIN_EDIT_VOITURES, formData, "post", voiture_id, true)
     if (sendData.success === true) {
       //affichage message succès
-      displayMessage(null, sendData.message);
+      displayMessageErreurs(null, sendData.message, sendData.success);
       const voituresS = await getVoitures()  // appel à la fct pour recevoir les voitures après la modification
       displayVoituresAdmin(voituresS)
 
@@ -149,7 +159,7 @@ async function modifierVoiture(voiture_id) {
 
     // affichage des erreurs du message
     if (sendData.success === false)
-      displayMessage(sendData.errors, sendData.message)
+      displayMessageErreurs(sendData.errors, sendData.message, sendData.success)
   }
 
 }
@@ -176,7 +186,7 @@ async function ajouterVoiture() {
     await sendData.postData(ADMIN_STORE_VOITURES, formData, "post", null, true)
     if (sendData.success === true) {
       //affichage message succès
-      displayMessage(null, sendData.message);
+      displayMessageErreurs(null, sendData.message, sendData.success);
       const voituresS = await getVoitures()  // appel à la fct pour recevoir les voitures après la modification
       displayVoituresAdmin(voituresS)
 
@@ -188,7 +198,7 @@ async function ajouterVoiture() {
 
     // affichage des erreurs du message
     if (sendData.success === false)
-      displayMessage(sendData.errors, sendData.message)
+      displayMessageErreurs(sendData.errors, sendData.message, sendData.success)
   }
 
 }
@@ -224,40 +234,3 @@ function initialiseFormulaire(voiture_id) {
 
 }
 
-// **** fonction pour afficher les erreurs et le message
-function displayMessage(errors, message) {
-  let globC = document.querySelector("#glob")
-  let messageC = document.querySelector("#message")
-  let errorsC = document.querySelector("#errors")
-  let btnC = document.querySelector("#btn button")
-
-  btnC.addEventListener("click", () => {  // ajouter un event au button pour fermer le div global
-    globC.style.display = "none";
-  });
-
-  globC.style.display = "flex"
-  errorsC.innerHTML = ""
-  messageC.textContent = message
-  if (sendData.success == true) {  // dans ce cas il n ' y a pas des erreurs on veut juste afficher un message
-    btnC.textContent = "fermer"
-    btnC.classList.remove("danger")
-    btnC.classList.add("success")
-  }
-  else {
-    btnC.textContent = "réssayer"
-    btnC.classList.remove("success")
-    btnC.classList.add("danger")
-    let content = ``
-    for (const key in errors) {
-      if (errors.hasOwnProperty(key)) {
-        // Pour chaque message d'erreur dans le tableau de cette propriété
-        for (const errorMessage of errors[key]) {
-          content += `<li>${errorMessage}</li>`;
-        }
-      }
-    }
-
-    errorsC.innerHTML = content
-
-  }
-}

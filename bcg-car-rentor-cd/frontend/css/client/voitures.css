@@ -1,0 +1,116 @@
+
+
+
+/* ====== CONTAINER FOR ALL CAR CARDS ====== */
+.voitures-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    overflow: auto;
+    width: 100%;
+    gap: 50px 3%;
+    flex-wrap: wrap;
+    padding: 40px;
+    /* padding-top: 40px; */
+    /* background-color: blue; */
+}
+
+/* ====== EACH CAR CARD ====== */
+.voitures-content .car-card {
+    background: #000;
+    border: 1px solid white;
+    color: #fff;
+    border-radius: 20px;
+    width: 350px;
+    height: max-content;
+    overflow: hidden;
+}
+
+
+/* Car image styling */
+.voitures-content .car-card .car-image {
+    width: 90%;
+    height: 200px;
+    border-radius: 10px;
+    margin: 5%;
+    /* object-fit: cover; */
+}
+
+/* Headings and paragraph inside card */
+.voitures-content .car-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0px 15px;
+    text-align: start;
+    min-height: 70px;
+}
+
+.voitures-content .car-card .price {
+    font-size: 0.85rem;
+    color: white;
+    text-align: start;
+    margin: 0 0 10px 15px;
+}
+
+
+/* ====== FEATURE ICONS (Seats, Diesel, Climatiseur) ====== */
+.voitures-content .car-card .car-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* gap: 65px; */
+    font-size: 0.75rem;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 5px 20px ;
+
+}
+.voitures-content .car-card .car-options .seat-option, .diesel-option, .climat-option {
+    display: flex;
+    /* width: 20px; */
+    height: 20px;
+    
+}
+.voitures-content .car-card .car-options .climat-option {
+    display: flex;
+    /* width: 33px; */
+    height: 33px;
+}
+.voitures-content .car-card .car-options .seat-option span, .diesel-option span, .climat-option span{
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    margin: 0 10%;
+}
+
+/* ====== Buttons de actions ====== */
+.voitures-content .car-card .actions {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+.voitures-content .car-card .actions #reserverBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4% 0px;
+    height: 35px;
+    width: 90%;
+    color: black;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.5s;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+/* === les styles du hover sont créé avec js

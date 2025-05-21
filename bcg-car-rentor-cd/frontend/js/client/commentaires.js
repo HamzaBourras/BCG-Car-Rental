@@ -25,7 +25,6 @@ function displayCommentaires(commentaires) {
   let stars = ""
   let numberOfStars = 0
   // filtrer les commentaires pour sélectionner seulement les commentaires du client connectés
-  const user_id = (JSON.parse(localStorage.getItem("userAuth"))).id
   const commentairesFiltree = commentaires.filter((com) => com.user_id == user_id)
 
   commentairesFiltree.forEach(commentaire => {
@@ -64,6 +63,20 @@ function displayCommentaires(commentaires) {
   // ajouter event click sur tous les buttons supprimer et modifier
   setupEventListeners();
 }
+
+
+// **** appel à la fonction pour ajouter les commentaires à la page ""d'accueil""
+document.addEventListener("DOMContentLoaded", function () {
+  // Vérifier périodiquement si les voitures sont disponibles
+  const checkData = setInterval(() => {
+    const commentaires = JSON.parse(localStorage.getItem("commentaires")) // sélectionner les voitures enregistrer dans localStorage avec le fichier /page_accueil/get_voitures.js
+    if (commentaires) {
+      clearInterval(checkData);
+      displayCommentaires(commentaires);
+    }
+  }, 10); // Vérifie toutes les 10ms
+});
+
 
 
 // **** Configuration des écouteurs d'événements sur le buttons supprimer et modifier
@@ -154,14 +167,3 @@ function initialiseFormulaire(commenataire_id) {
 
 }
 
-// **** appel à la fonction pour ajouter les commentaires à la page ""d'accueil""
-document.addEventListener("DOMContentLoaded", function () {
-  // Vérifier périodiquement si les voitures sont disponibles
-  const checkData = setInterval(() => {
-    const commentaires = JSON.parse(localStorage.getItem("commentaires")) // sélectionner les voitures enregistrer dans localStorage avec le fichier /page_accueil/get_voitures.js
-    if (commentaires) {
-      clearInterval(checkData);
-      displayCommentaires(commentaires);
-    }
-  }, 10); // Vérifie toutes les 10ms
-});

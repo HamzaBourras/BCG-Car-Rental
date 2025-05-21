@@ -1,12 +1,5 @@
 
 
-/* {
-    display: flex;
-    align-items: center;
-    margin-bottom: 100px;
-    background: #000;
-    flex-direction: column;
-} */
 
 /* ====== CONTAINER FOR ALL CAR CARDS ====== */
 .voitures-content {
@@ -127,8 +120,8 @@
     background-color: rgb(1, 1, 206);
 }
 
-/* ====== Buttons de modification ====== */
-.voitures-content .car-card .modification {
+/* ====== Buttons de actions ====== */
+.voitures-content .car-card .actions {
     /* background-color: red; */
     display: flex;
     align-items: center;
@@ -136,14 +129,13 @@
     padding: 20px 0;
 }
 
-.voitures-content .car-card .modification button {
+.voitures-content .car-card .actions button {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2% 0px;
     height: 35px;
     width: 120px;
-    /* background: red; */
     color: white;
     outline: none;
     border: none;

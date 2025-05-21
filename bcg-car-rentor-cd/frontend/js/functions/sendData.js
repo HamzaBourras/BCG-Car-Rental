@@ -58,6 +58,7 @@ const sendData = {
       this.returnData = response.data?.data;
       this.token = response.data?.token;
       this.success = response.data?.success;
+
     } catch (error) {
       // s'il y a des erreurs de validation
       if (error.response?.status === 422) {

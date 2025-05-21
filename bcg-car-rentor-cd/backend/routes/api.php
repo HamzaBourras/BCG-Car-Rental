@@ -5,6 +5,7 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\admin\VoitureController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\client\CommentaireController;
+use App\Http\Controllers\client\ReservationController;
 use App\Models\Commentaire;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,8 +24,8 @@ use Illuminate\Support\Facades\Route;
 /***************** Authentification *******************/
 
 Route::prefix("auth/")->controller(AuthentificationController::class)->group(function () {
-    Route::post("inscrire", "inscrire");
-    Route::post("connecter", "connecter");
+    Route::post("inscrire", "inscrire")->middleware("throttle:register");
+    Route::post("connecter", "connecter")->middleware("throttle:login");
     Route::post("deconnecter/{user_id}", "deconnecter")->middleware("auth:sanctum");;
     Route::post("modifierProfile/{user_id}", "modifierProfile")->middleware("auth:sanctum");
 });
@@ -60,5 +61,12 @@ Route::prefix("client")->group(function () {
         Route::post("store/{client_id}", "storeCommentaire");
         Route::put("edit/{client_id}/{commentaire_id}", "editCommentaire");
         Route::delete("destroy/{client_id}/{commentaire_id}", "destroyCommentaire");
+    });
+
+    Route::prefix("reservations")->controller(ReservationController::class)->group(function () {
+        Route::get("index/{client_id}", "indexReservation");
+        Route::post("store/{client_id}/{voiture_id}", "storeReservation");
+        Route::put("edit/{client_id}/{voiture_id}/{reservation_id}", "editReservation");
+        Route::delete("destroy/{client_id}/{voiture_id}/{reservation_id}", "destroyReservation");
     });
 });

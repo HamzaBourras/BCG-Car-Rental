@@ -22,7 +22,7 @@ class CommentaireRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "contenu" => "required|max:50",
+            "contenu" => "required|max:100",
             "note" => "required|integer|min:1|max:5",
         ];
     }
@@ -31,7 +31,7 @@ class CommentaireRequest extends FormRequest
     {
         return [
             "contenu.required" => "le contenu du commentaire est obligatoire",
-            "contenu.max" => "le commentaire ne doit pas dépasser 50 caractères",
+            "contenu.max" => "le commentaire ne doit pas dépasser 100 caractères",
 
             "note.required" => "la note du commentaire est obligatoire",
             "note.min" => "la note minimale du commentaire doit être au moins 1",

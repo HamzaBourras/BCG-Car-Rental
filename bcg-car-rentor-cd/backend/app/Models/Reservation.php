@@ -15,7 +15,8 @@ class Reservation extends Model
         'date_debut',
         'date_fin',
         'prix_total',
-        'status',
+        'statut',
+        'adresse_livraison',
         'statut_paiement',
     ];
 

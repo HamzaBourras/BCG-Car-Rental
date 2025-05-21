@@ -45,7 +45,6 @@ export async function displayMessageErreurs(errors, message, success) {
         btnC.classList.remove("success")
         btnC.classList.add("danger")
         let content = ``
-        console.log(errors);
         for (const key in errors) {
 
             if (errors.hasOwnProperty(key)) {

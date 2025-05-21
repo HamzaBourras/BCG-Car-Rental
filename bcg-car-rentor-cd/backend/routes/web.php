@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/test-time', function () {
+    return [
+        'php_timezone' => config('app.timezone'),
+        'php_now' => now()->format('Y-m-d H:i:s'),
+        'db_time' => DB::select('SELECT NOW() as now')[0]->now,
+        'carbon_parse' => Carbon::parse(DB::select('SELECT NOW() as now')[0]->now)
+            ->timezone('Africa/Casablanca')
+            ->format('Y-m-d H:i:s')
+    ];
 });
