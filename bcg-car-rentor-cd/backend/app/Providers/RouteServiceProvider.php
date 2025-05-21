@@ -36,5 +36,16 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
         });
+
+
+        // Limite pour les tentatives de connexion (5 essais/min par IP)
+        RateLimiter::for('login', function (Request $request) {
+            return Limit::perMinute(3)->by($request->ip());
+        });
+
+        // Limite pour les inscriptions (optionnel, contre les spammeurs)
+        RateLimiter::for('register', function (Request $request) {
+            return Limit::perHour(3)->by($request->ip());
+        });
     }
 }
