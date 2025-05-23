@@ -45,14 +45,20 @@ export async function displayMessageErreurs(errors, message, success) {
         btnC.classList.remove("success")
         btnC.classList.add("danger")
         let content = ``
-        for (const key in errors) {
+        if (typeof (errors) == "array") {
+            for (const key in errors) {
 
-            if (errors.hasOwnProperty(key)) {
-                // Pour chaque message d'erreur dans le tableau de cette propriété
-                for (const errorMessage of errors[key]) {
-                    content += `<li>${errorMessage}</li>`;
+                if (errors.hasOwnProperty(key)) {
+                    // Pour chaque message d'erreur dans le tableau de cette propriété
+                    for (const errorMessage of errors[key]) {
+                        content += `<li>${errorMessage}</li>`;
+                    }
                 }
             }
+        }
+
+        else {
+            content = content += `<li>${errors}</li>`;
         }
 
         errorsC.innerHTML = content

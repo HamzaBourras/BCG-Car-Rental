@@ -6,6 +6,7 @@ import { getVoitures } from "../page_accueil/get_voitures.js"  // je veux l'appe
 import { validateDateDebut } from "./valider_dates_reservation.js";
 import { validateDateFin } from "./valider_dates_reservation.js";
 import { displayMessageErreurs } from "../display_message_erreurs.js"
+import { getReservations } from "../admin/reservations.js";  // je veux l'appeler lorsque j'ajoute une nouvelle reservations
 
 const userAuth = JSON.parse(localStorage.getItem("userAuth"))
 
@@ -138,6 +139,7 @@ async function reserverVoiture(voiture_id) {
       await sendData.postData(CLIENT_STORE_RESERVATIONS, formData, "post", `${userAuth.id}/${voiture_id}`, false)
       if (sendData.success === true) {
         //affichage message succès
+        getReservations()
         displayMessageErreurs(null, sendData.message, sendData.success);
 
         document.querySelector(".image-container #annulerBtnR").click()  // pour cacher le formulaire

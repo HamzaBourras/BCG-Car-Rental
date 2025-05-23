@@ -33,11 +33,9 @@ const getData = {
       };
 
       // vérifier si le token est disponible pour l'ajouter à la requete
-      const token = localStorage.getItem("token");
+      const token = JSON.parse(localStorage.getItem("token"));
       if (token)
-        config.headers["Authorization"] = `Bearer ${localStorage.getItem(
-          "token"
-        )}`;
+        config.headers["Authorization"] = `Bearer ${token}`;
 
       // envoi de la requete
       const response = await axios.get(apiUrl, config);

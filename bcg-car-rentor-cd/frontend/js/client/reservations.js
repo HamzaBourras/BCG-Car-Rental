@@ -1,116 +1,94 @@
-import getData from "../functions/getData.js";
-import { CLIENT_RESERVATIONS } from "../../apis/api.js";
+import { baseUrl } from "../../apis/api.js";
+import { getReservations } from "../admin/reservations.js"
 
-// Éléments du DOM
-const reservationsContainer = document.getElementById('reservations-container');
+const userAuth = JSON.parse(localStorage.getItem("userAuth"))
 
-// Variables globales
-const voitures = JSON.parse(localStorage.getItem("voitures")) || [];
-const userInfo = JSON.parse(localStorage.getItem("user_info")) || null;
-
-// Fonction principale pour charger les réservations
-async function loadReservations() {
-    // Vérifier si l'utilisateur est connecté
-    if (!userInfo) {
-        window.location.href = '/frontend/pages/auth/connecter.html';
-        return;
+// **** appel à la fonction pour recevoir tous les voitures
+document.addEventListener("DOMContentLoaded", function () {
+    // vérifer si les commentaires ne sont pas déja récupérer
+    if (!localStorage.getItem("reservations")) {
+        getReservations();
     }
-    
-    try {
-        // Afficher un message de chargement
-        reservationsContainer.innerHTML = '<div class="loading">Chargement des réservations...</div>';
-        
-        // Récupérer les réservations
-        await getData.getD(CLIENT_RESERVATIONS);
-        
-        if (getData.success) {
-            displayReservations(getData.returnData);
-        } else {
-            showErrorMessage("Impossible de charger les réservations: " + (getData.message || "Erreur inconnue"));
-        }
-    } catch (error) {
-        console.error("Erreur lors du chargement des réservations:", error);
-        showErrorMessage("Une erreur est survenue lors du chargement des réservations.");
-    }
-}
+});
 
-// Afficher les réservations
-function displayReservations(reservations) {
-    // Vider le conteneur
-    reservationsContainer.innerHTML = '';
-    
-    if (!reservations || reservations.length === 0) {
-        reservationsContainer.innerHTML = '<div class="no-reservations">Vous n\'avez pas encore de réservations.</div>';
-        return;
-    }
 
-    // Trier les réservations par date de début (la plus récente en premier)
-    reservations.sort((a, b) => new Date(b.date_debut) - new Date(a.date_debut));
-    
-    // HTML pour les réservations
-    let reservationsHTML = '';
-    
-    // Générer le HTML pour chaque réservation
+// **** fct pour afficher les réservations du client
+function displayReservationsClient(reservations) {
+    let sectionsReservations = document.querySelector("#reservations-container");
+    sectionsReservations.innerHTML = '<div class="loading">Chargement des réservations...</div>'
+
+    let content = ""
+
     reservations.forEach(reservation => {
-        // Trouver les détails de la voiture associée à cette réservation
-        const voiture = voitures.find(v => v.id === reservation.voiture_id) || {
-            modele: 'Modèle inconnu',
-            marque: 'Marque inconnue',
-            image: '../../images/default-car.jpg'
-        };
-        
-        // Formater les dates
-        const dateDebut = new Date(reservation.date_debut).toLocaleDateString('fr-FR', {
-            day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'
-        });
-        const dateFin = new Date(reservation.date_fin).toLocaleDateString('fr-FR', {
-            day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'
-        });
-        
         // Calculer la durée
         const start = new Date(reservation.date_debut);
         const end = new Date(reservation.date_fin);
         const diffTime = Math.abs(end - start);
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         const duration = diffDays === 1 ? '1 jour' : `${diffDays} jours`;
-        
-        // Déterminer le statut de paiement
-        const statusClass = reservation.statut_paiement === 1 ? 'status-paid' : 'status-unpaid';
-        const statusText = reservation.statut_paiement === 1 ? 'Payé' : 'Non payé';
-        
-        // Ajouter le HTML de cette réservation
-        reservationsHTML += `
-            <div class="reservation-card">
+
+        // gérer l'affichage des buttons de modifier et supprimer
+        let content2 = ""  // pour affichage des buttons ou bien statut de paiement
+        if (reservation.statut == null) {
+            content2 = `
+                <!-- Modification buttons -->
+                <div class="actions">
+                    <button id="modifierBtnR" data-reservation-id="${reservation.id}" style="background-color:rgb(0, 92, 0);" onmouseover="this.style.backgroundColor='rgb(1, 139, 1)'" onmouseout="this.style.backgroundColor='rgb(0, 92, 0)'"  class="button" role="button">Modifier</button>
+                    <button id="supprimerBtnR" data-reservation-id="${reservation.id}" style="background-color:rgb(159, 0, 0);" onmouseover="this.style.backgroundColor='rgb(206, 1, 1)'" onmouseout="this.style.backgroundColor='rgb(159, 0, 0)'"  class="button" role="button">Supprimer</button>
+                </div>
+            `
+        }
+
+        // gérer l'affichage de statut du paiement
+        if (reservation.statut == 1) {
+            const statusClass = reservation.statut_paiement === 1 ? 'status-paid' : 'status-unpaid';
+            const statusText = reservation.statut_paiement === 1 ? 'Payé' : 'Non payé';
+
+            content2 = `<div class="paiement" >
+                <div class="statusPaiement ${statusClass}">${statusText}</div>
+            </div>`
+        }
+        else if (reservation.statut == 0) {
+            content2 = `
+                <div class="reservation-status refused">
+                    <div class="status-text">Refusé</div>
+                </div>
+            `
+        }
+
+        content += `
+        <div class="reservation-card">
                 <div class="car-info">
-                    <img class="car-image" src="${voiture.image || '../../images/default-car.jpg'}" alt="${voiture.marque} ${voiture.modele}">
-                    <h3 class="car-name">${voiture.marque} ${voiture.modele}</h3>
+                    <img class="car-image" src="${baseUrl + reservation.voiture_image}" alt="${reservation.voiture_marque} ${reservation.voiture_modele}">
+                    <h3 class="car-name">${reservation.voiture_marque} ${reservation.voiture_modele}</h3>
                 </div>
                 <div class="reservation-details">
-                    <p><span class="date-label">Début:</span> <span>${dateDebut}</span></p>
-                    <p><span class="date-label">Fin:</span> <span>${dateFin}</span></p>
+                    <p><span class="date-label">Début:</span> <span>${reservation.date_debut}</span></p>
+                    <p><span class="date-label">Fin:</span> <span>${reservation.date_fin}</span></p>
                     <p><span class="date-label">Durée:</span> <span>${duration}</span></p>
                 </div>
-                <div class="price">${reservation.prix_total} €</div>
-                <div class="status ${statusClass}">${statusText}</div>
+                <div class="price">${reservation.prix_total} DH</div>
+
+                <!-- pour affichage des buttons ou bien statut de paiement -->
+                ${content2}
+                
             </div>
-        `;
+        `
     });
-    
-    // Insérer tout le HTML dans le conteneur
-    reservationsContainer.innerHTML = reservationsHTML;
+
+    sectionsReservations.innerHTML = content
 }
 
-// Afficher un message d'erreur
-function showErrorMessage(message) {
-    reservationsContainer.innerHTML = `
-        <div class="error-message">
-            <p>${message}</p>
-            <button id="retry-button">Réessayer</button>
-        </div>
-    `;
-    
-    document.getElementById('retry-button').addEventListener('click', loadReservations);
-}
 
-// Charger les réservations au chargement de la page
-document.addEventListener('DOMContentLoaded', loadReservations);
+// **** appel à la fonction pour ajouter les reservations à la page 
+document.addEventListener("DOMContentLoaded", function () {
+    // Vérifier périodiquement si les voitures sont disponibles
+    const checkData = setInterval(() => {
+        const reservations = JSON.parse(localStorage.getItem("reservations")) // sélectionner les voitures enregistrer dans localStorage avec le fichier /admin/reservations.js
+        if (reservations) {
+            const reservationsClient = reservations.filter(reser => reser.client_id == userAuth.id)
+            clearInterval(checkData);
+            displayReservationsClient(reservations);
+        }
+    }, 10); // Vérifie toutes les 10ms
+});

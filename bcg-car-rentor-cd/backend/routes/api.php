@@ -39,12 +39,16 @@ Route::prefix("public")->controller(PublicController::class)->group(function () 
 
 
 /***************** Routes admin *******************/
-Route::prefix("admin")->middleware("auth:sanctum")->group(function () {
+Route::prefix("admin")->group(function () {
     Route::prefix("voitures")->controller(VoitureController::class)->group(function () {
         Route::get("index", "indexVoiture");
         Route::post("store", "storeVoiture");
         Route::post("edit/{voiture_id}", "editVoiture");
         Route::delete("destroy/{voiture_id}", "destroyVoiture");
+    });
+
+    Route::prefix("reservations")->controller(\App\Http\Controllers\admin\ReservationController::class)->group(function () {
+        Route::get("index", "indexReservations");
     });
 
     Route::prefix("")->controller(AdminController::class)->group(function () {
@@ -54,8 +58,8 @@ Route::prefix("admin")->middleware("auth:sanctum")->group(function () {
 });
 
 
-/***************** Routes admin *******************/
-Route::prefix("client")->group(function () {
+/***************** Routes client *******************/
+Route::prefix("client")->middleware("auth:sanctum")->group(function () {
     Route::prefix("commentaires")->controller(CommentaireController::class)->group(function () {
         Route::get("index/{client_id}", "indexCommentaire");
         Route::post("store/{client_id}", "storeCommentaire");
@@ -63,8 +67,8 @@ Route::prefix("client")->group(function () {
         Route::delete("destroy/{client_id}/{commentaire_id}", "destroyCommentaire");
     });
 
-    Route::prefix("reservations")->controller(ReservationController::class)->group(function () {
-        Route::get("index/{client_id}", "indexReservation");
+    Route::prefix("reservations")->controller(\App\Http\Controllers\client\ReservationController::class)->group(function () {
+        Route::get("index/{client_id}", "indexReservations");
         Route::post("store/{client_id}/{voiture_id}", "storeReservation");
         Route::put("edit/{client_id}/{voiture_id}/{reservation_id}", "editReservation");
         Route::delete("destroy/{client_id}/{voiture_id}/{reservation_id}", "destroyReservation");

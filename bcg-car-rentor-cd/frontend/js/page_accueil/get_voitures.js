@@ -1,5 +1,6 @@
 import getData from "../functions/getData.js";
 import { INDEX_VOITURES } from "../../apis/api.js";
+import { displayMessageErreurs } from "../display_message_erreurs.js"
 
 export async function getVoitures() {
 
@@ -11,7 +12,7 @@ export async function getVoitures() {
     }
   } catch (err) {
     if (getData.success == false) {
-      console.log(getData.errors);
+      displayMessageErreurs(sendData.errors, sendData.message, sendData.success)
     }
   }
 }

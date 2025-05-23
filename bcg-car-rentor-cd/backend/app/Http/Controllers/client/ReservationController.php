@@ -13,11 +13,11 @@ class ReservationController extends Controller
 {
     //
 
-    public function indexReservation(int $client_id)
+    public function indexReservations(int $client_id)
     {
 
         try {
-            $reservations = Reservation::OrderBy("id", "desc")->with("user", "voiture")->get();
+            $reservations = Reservation::OrderBy("id", "desc")->where("user_id", $client_id)->with("user", "voiture")->get();
             $tousReservations = [];
 
             foreach ($reservations as $reservation) {
