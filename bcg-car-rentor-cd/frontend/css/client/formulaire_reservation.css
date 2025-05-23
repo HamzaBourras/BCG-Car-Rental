@@ -30,6 +30,7 @@
 /* Styles pour le formulaire */
 
 .form-wrapper {
+    position: relative;
     display: flex;
     gap: 30px;
     background-color: rgba(68, 68, 68, 0.95);
@@ -99,9 +100,9 @@ input::placeholder {
 
 .reservation-image {
     max-width: 90%;
-    height: auto;
+    height: 80%;
     border-radius: 5px;
-    object-fit: cover;
+    object-fit: fill;
     align-self: center;
 }
 
@@ -132,6 +133,9 @@ input::placeholder {
 }
 
 #annulerBtnR i {
+    position: absolute;
+    top: 15px;
+    right: 15px;
     display: flex;
     align-items: center;
     justify-content: center;

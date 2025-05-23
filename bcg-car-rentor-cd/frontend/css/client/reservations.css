@@ -82,6 +82,8 @@
     margin-top: 10px;
 }
 
+/* pour les buttons et le statut de paiment */
+
 .paiement, .refused {
     display: flex;
     align-items: center;

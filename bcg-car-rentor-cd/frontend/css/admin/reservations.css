@@ -30,6 +30,14 @@ thead {
   z-index: 10;
 }
 
+th:nth-child(1), td:nth-child(1) { width: 8%; }    /* ID */
+th:nth-child(2), td:nth-child(2) { width: 16%; }   /* Nom */
+th:nth-child(3), td:nth-child(3) { width: 16%; }   /* Prénom */
+th:nth-child(4), td:nth-child(4) { width: 16%; }   /* Téléphone */
+th:nth-child(5), td:nth-child(5) { width: 16%; }   /* Email */
+th:nth-child(6), td:nth-child(6) { width: 16%; }   /* Adresse */
+th:nth-child(7), td:nth-child(7) { width: 10%; }    /* Réservations */
+
 th,
 td {
   padding: 0.75em 1em;
@@ -107,7 +115,7 @@ tbody tr {
   transform-origin: 50% 50%;
 }
 
-.delete-btn {
+.delete-btn, .refused .status-text  {
   background: rgb(178, 13, 13);
   color: whitesmoke;
   padding: 3px;
@@ -145,6 +153,53 @@ tbody tr {
   transform: scale(1, 1) translate(-50%, -50%);
   transform-origin: 50% 50%;
 }
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  grid-column: 1 / -1;
+  color: #666;
+}
+
+.no-reservations {
+  text-align: center;
+  padding: 20px;
+  grid-column: 1 / -1;
+  color: #666;
+}
+
+
+.paiement, .refused {
+  width: max-content;
+}
+
+.refused .status-text {
+  padding: 5px;
+  font-weight: 600;
+} 
+
+.reservation-status.refused .status-text::before {
+  content: "✕";
+  margin-right: 5px;
+}
+
+.statusPaiement {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  width: 80px;
+}
+
+.status-paid {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+
 
 @keyframes ripple {
   0% {

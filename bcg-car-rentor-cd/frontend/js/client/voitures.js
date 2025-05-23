@@ -88,6 +88,11 @@ function setupEventListeners() {
       voiture_id_R = this.getAttribute('data-voiture-id');
       document.querySelector("#form-container").style.display = "flex"  // afficher le formulaire
 
+      const voitures = JSON.parse(localStorage.getItem("voitures"))
+      const voitureSelected = voitures.filter(vt => vt.id == voiture_id_R)
+      const image = document.querySelector("#image");
+      image.src = baseUrl + voitureSelected[0].image // pour afficher l'image de la voiture
+
     });
   });
 

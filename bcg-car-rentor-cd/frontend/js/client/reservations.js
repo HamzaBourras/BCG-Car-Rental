@@ -17,6 +17,11 @@ function displayReservationsClient(reservations) {
     let sectionsReservations = document.querySelector("#reservations-container");
     sectionsReservations.innerHTML = '<div class="loading">Chargement des réservations...</div>'
 
+    if (!reservations || reservations.length === 0) {
+        sectionsReservations.innerHTML = '<div class="no-reservations">Vous n\'avez pas encore de réservations.</div>';
+        return;
+    }
+
     let content = ""
 
     reservations.forEach(reservation => {
@@ -42,7 +47,7 @@ function displayReservationsClient(reservations) {
         // gérer l'affichage de statut du paiement
         if (reservation.statut == 1) {
             const statusClass = reservation.statut_paiement === 1 ? 'status-paid' : 'status-unpaid';
-            const statusText = reservation.statut_paiement === 1 ? 'Payé' : 'Non payé';
+            const statusText = reservation.statut_paiement === 1 ? 'Payée' : 'Non payée';
 
             content2 = `<div class="paiement" >
                 <div class="statusPaiement ${statusClass}">${statusText}</div>
@@ -51,7 +56,7 @@ function displayReservationsClient(reservations) {
         else if (reservation.statut == 0) {
             content2 = `
                 <div class="reservation-status refused">
-                    <div class="status-text">Refusé</div>
+                    <div class="status-text">Refusée</div>
                 </div>
             `
         }
@@ -88,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (reservations) {
             const reservationsClient = reservations.filter(reser => reser.client_id == userAuth.id)
             clearInterval(checkData);
-            displayReservationsClient(reservations);
+            displayReservationsClient(reservationsClient);
         }
     }, 10); // Vérifie toutes les 10ms
 });

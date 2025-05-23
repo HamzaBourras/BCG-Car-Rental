@@ -35,6 +35,7 @@ class ReservationController extends Controller
                     "client_id" => $reservation->user_id,
                     "nom_client" => $reservation->user->nom,
                     "prenom_client" => $reservation->user->prenom,
+                    "voiture_matricule" => $reservation->voiture->matricule,
                     "voiture_id" => $reservation->voiture_id,
                     "voiture_marque" => $reservation->voiture->marque,
                     "voiture_modele" => $reservation->voiture->modele,
