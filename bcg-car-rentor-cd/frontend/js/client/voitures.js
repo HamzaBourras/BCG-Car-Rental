@@ -3,10 +3,12 @@ import { baseUrl } from "../../apis/api.js";
 import sendData from '/frontend/js/functions/sendData.js'
 import { CLIENT_STORE_RESERVATIONS } from "../../apis/api.js";
 import { getVoitures } from "../page_accueil/get_voitures.js"  // je veux l'appeler pour récupérer les voitures s'ils ne sont pas d'ja récupérer
-import { validateDateDebut } from "./valider_dates_reservation.js";
-import { validateDateFin } from "./valider_dates_reservation.js";
+import { verifierDates } from "./valider_dates_reservation.js"; // pour vérifier si la période de réservation est disponible
 import { displayMessageErreurs } from "../display_message_erreurs.js"
-import { getReservations } from "../admin/reservations.js";  // je veux l'appeler lorsque j'ajoute une nouvelle reservations
+import { getReservations } from "../admin/get_reservation.js";  // je veux l'appeler lorsque j'ajoute une nouvelle reservations
+
+console.log(("script voitures client"));
+
 
 const userAuth = JSON.parse(localStorage.getItem("userAuth"))
 
@@ -145,6 +147,7 @@ async function reserverVoiture(voiture_id) {
       if (sendData.success === true) {
         //affichage message succès
         getReservations()
+        getVoitures() // pour mettre à jour les voitures
         displayMessageErreurs(null, sendData.message, sendData.success);
 
         document.querySelector(".image-container #annulerBtnR").click()  // pour cacher le formulaire
@@ -161,42 +164,11 @@ async function reserverVoiture(voiture_id) {
 }
 
 
-// ** fct pour vérifier la date de reservation avec les périodes de disponibilité de la voiture
-function verifierDates(periodes_reservee) {
-  const reservationErreur = document.querySelector("#periodes_reservee")
-  reservationErreur.textContent = ""
-  const debutInput = document.getElementById("date_debut")
-  const finInput = document.getElementById("date_fin")
-  let isReserved = false
-
-  const dateDebut = new Date(debutInput.value)
-  const dateFin = new Date(finInput.value)
-
-
-  // Trier les périodes réservées par date de début pour permettre une recherche binaire
-  periodes_reservee.sort((a, b) => new Date(a.debut) - new Date(b.debut));
-
-  if (validateDateDebut() && validateDateFin()) {  // ces deux fcts existe dans le fichier valider_dates_reservations.js
-    isReserved = periodes_reservee.some(periode =>
-      dateDebut >= new Date(periode.debut) && dateDebut <= new Date(periode.fin) ||
-      dateFin >= new Date(periode.debut) && dateFin <= new Date(periode.fin) ||
-      dateDebut <= new Date(periode.debut) && dateFin >= new Date(periode.fin)
-    );
-  }
-
-  if (isReserved) {
-    reservationErreur.textContent = "la période que vous avez choisi est déja réservé. Choisissez une autre période"
-  }
-
-  return isReserved
-}
-
-
 
 
 
 // fct pour valider enregistrer la reservation on clique sur le button submit
-const form = document.querySelector("#form-container form")
+const form = document.querySelector("#form-container #reservation-form1")
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 

@@ -31,12 +31,13 @@ thead {
 }
 
 th:nth-child(1), td:nth-child(1) { width: 8%; }    /* ID */
-th:nth-child(2), td:nth-child(2) { width: 16%; }   /* Nom */
+th:nth-child(2), td:nth-child(2) { width: 14%; }   /* Nom */
 th:nth-child(3), td:nth-child(3) { width: 16%; }   /* Prénom */
-th:nth-child(4), td:nth-child(4) { width: 16%; }   /* Téléphone */
-th:nth-child(5), td:nth-child(5) { width: 16%; }   /* Email */
-th:nth-child(6), td:nth-child(6) { width: 16%; }   /* Adresse */
-th:nth-child(7), td:nth-child(7) { width: 10%; }    /* Réservations */
+th:nth-child(4), td:nth-child(4) { width: 14%; }   /* Prénom */
+th:nth-child(5), td:nth-child(5) { width: 14%; }   /* Téléphone */
+th:nth-child(6), td:nth-child(6) { width: 14%; }   /* Email */
+th:nth-child(7), td:nth-child(7) { width: 10%; }   /* Adresse */
+th:nth-child(8), td:nth-child(8) { width: 10%; }    /* Réservations */
 
 th,
 td {

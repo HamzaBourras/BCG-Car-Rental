@@ -61,4 +61,39 @@ dateFinInput.addEventListener('change', validateDateFin);
 dateDebutInput.addEventListener('change', validateDateDebut);
 
 
+// ** fct pour vérifier la date de reservation avec les périodes de disponibilité de la voiture
+export function verifierDates(periodes_reservee) {
+    const reservationErreur = document.querySelector("#periodes_reservee")
+    reservationErreur.textContent = ""
+    const debutInput = document.getElementById("date_debut")
+    const finInput = document.getElementById("date_fin")
+    let isReserved = false
+    let erreurDates = false
 
+    const dateDebut = new Date(debutInput.value)
+    const dateFin = new Date(finInput.value)
+
+
+    // Trier les périodes réservées par date de début pour permettre une recherche binaire
+    periodes_reservee.sort((a, b) => new Date(a.debut) - new Date(b.debut));
+
+    if (validateDateDebut() && validateDateFin()) {  // ces deux fcts existe dans le fichier valider_dates_reservations.js
+        isReserved = periodes_reservee.some(periode =>
+            dateDebut >= new Date(periode.debut) && dateDebut <= new Date(periode.fin) ||
+            dateFin >= new Date(periode.debut) && dateFin <= new Date(periode.fin) ||
+            dateDebut <= new Date(periode.debut) && dateFin >= new Date(periode.fin)
+        );
+    }
+    else {
+        reservationErreur.textContent = "Choisissez des dates valides"
+        isReserved = true  // pour ne pas envoyer le formulaire
+        erreurDates = true
+    }
+
+    if (isReserved && !erreurDates) {
+        reservationErreur.textContent = "la période que vous avez choisi est déja réservé. Choisissez une autre période"
+    }
+
+
+    return isReserved
+}

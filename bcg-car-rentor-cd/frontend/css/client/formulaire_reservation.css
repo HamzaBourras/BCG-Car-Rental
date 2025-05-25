@@ -100,7 +100,7 @@ input::placeholder {
 
 .reservation-image {
     max-width: 90%;
-    height: 80%;
+    height: 70%;
     border-radius: 5px;
     object-fit: fill;
     align-self: center;

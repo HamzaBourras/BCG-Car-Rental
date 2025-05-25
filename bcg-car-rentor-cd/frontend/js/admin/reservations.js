@@ -1,24 +1,9 @@
-import getData from "../functions/getData.js";
-import { ADMIN_INDEX_RESERVATIONS } from "../../apis/api.js";
-import { displayMessageErreurs } from "../display_message_erreurs.js";
+import { getReservations } from "./get_reservation.js";
 
-// fct pour recevoir les reservations du client
-export async function getReservations() {
-    try {
-        await getData.getD(ADMIN_INDEX_RESERVATIONS);
-        if (getData.success == true) {
-            localStorage.setItem("reservations", JSON.stringify(getData.returnData)) // Enregistrer les voitures dans localStorage
-            return getData.returnData
-        }
-    } catch (err) {
-        if (getData.success == false) {
-            displayMessageErreurs(getData.errors, getData.message, getData.success)
-        }
-    }
-}
-
+console.log("script reservations admin");
 
 function displayReservationsAdmin(reservations) {
+
     let tbodyReservations = document.querySelector(".data-table tbody")
     tbodyReservations.innerHTML = '<div class="loading">Chargement des réservations...</div>'
 
@@ -70,6 +55,7 @@ function displayReservationsAdmin(reservations) {
 								<td>${index++}</td>
 								<td>${reservation.nom_client} ${reservation.prenom_client} </td>
 								<td>${reservation.voiture_matricule}</td>
+								<td>${reservation.adresse_livraison}</td>
 								<td>${reservation.date_debut}</td>
 								<td>${reservation.date_fin}</td>
 								<td>${reservation.prix_total} DH</td>
@@ -86,10 +72,11 @@ function displayReservationsAdmin(reservations) {
 
 // **** appel à la fonction pour recevoir tous les voitures
 document.addEventListener("DOMContentLoaded", function () {
+
     //vérifer si les voitures ne sont pas déja récupérer
-    // if (!localStorage.getItem("reservations")) {
-    getReservations();
-    // }
+    if (!localStorage.getItem("reservations")) {
+        getReservations();
+    }
 
     const checkData = setInterval(() => {
         const reservations = JSON.parse(localStorage.getItem("reservations")) // sélectionner les voitures enregistrer dans localStorage avec le fichier /admin/reservations.js

@@ -7,6 +7,8 @@ import sendData from '/frontend/js/functions/sendData.js'
 import { getVoitures } from "../page_accueil/get_voitures.js"  // je veux l'appeler après chaque modification
 import { displayMessageErreurs } from "../display_message_erreurs.js"
 
+console.log("script voitures admin");
+
 
 // **** appel à la fonction pour recevoir tous les voitures
 document.addEventListener("DOMContentLoaded", function () {

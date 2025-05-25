@@ -1,16 +1,26 @@
+import sendData from '/frontend/js/functions/sendData.js'
 import { baseUrl } from "../../apis/api.js";
-import { getReservations } from "../admin/reservations.js"
+import { getReservations } from "../admin/get_reservation.js"
+import { verifierDates } from "./valider_dates_reservation.js";
+import { CLIENT_EDIT_RESERVATIONS } from "../../apis/api.js";
+import { displayMessageErreurs } from '../display_message_erreurs.js';
+
 
 const userAuth = JSON.parse(localStorage.getItem("userAuth"))
 
 // **** appel à la fonction pour recevoir tous les voitures
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
     // vérifer si les commentaires ne sont pas déja récupérer
     if (!localStorage.getItem("reservations")) {
-        getReservations();
+        await getReservations();
     }
 });
 
+
+
+// ***************************************************************
+let reservation_id_S = null // l'id de la voiture à supprimer
+let reservation_id_M = null // l'id de la voiture à modifier
 
 // **** fct pour afficher les réservations du client
 function displayReservationsClient(reservations) {
@@ -82,8 +92,152 @@ function displayReservationsClient(reservations) {
     });
 
     sectionsReservations.innerHTML = content
+
+    // Ajouter les écouteurs d'événements après l'insertion dans le DOM
+    setupEventListeners();
 }
 
+
+// **** Configuration des écouteurs d'événements sur le buttons supprimer et modifier
+function setupEventListeners() {
+    document.querySelectorAll('#supprimerBtnR').forEach(btn => {
+        btn.addEventListener('click', function () {
+            reservation_id_S = this.getAttribute('data-reservation-id');
+            // demande la confirmation de l'admin
+            const conf = confirm("voulez vous supprimer cette reservation ?")
+            if (conf) {
+                // Appeler la fonction de suppression
+                supprimerReservation(voiture_id_S)
+            }
+        });
+    });
+
+    document.querySelectorAll('#modifierBtnR').forEach(btn => {
+        btn.addEventListener('click', function () {
+            reservation_id_M = this.getAttribute('data-reservation-id');
+            initialiseFormulaire(reservation_id_M)  // fct pour afficher les données de la voiture sélectionné sur les inputs
+        });
+    });
+
+
+}
+
+// **** fct pour initialiser la formulaire
+function initialiseFormulaire(reservation_id) {
+    const reservations = JSON.parse(localStorage.getItem("reservations"))
+    const reservationSelected = reservations.filter(resr => resr.id == reservation_id)
+
+    document.querySelector("#form-container").style.display = "flex"  // afficher la formulaire
+    document.querySelector("#adresse_livraison_U").setAttribute("hidden", "")  // cacher l'input de l'adresse de livraison autre
+    document.querySelector("#adresse_livraison_U").removeAttribute("reqiured")
+
+    const dateStrD = reservationSelected[0].date_debut; // "22-05-2025 19:59"
+    const [dD, mD, yD] = dateStrD.split(' ')[0].split('-');
+    const [HD, MD] = dateStrD.split(' ')[1].split(':');
+    document.querySelector("#date_debut").value = `${yD}-${mD}-${dD}T${HD}:${MD}`;
+
+    const dateStrF = reservationSelected[0].date_fin; // "22-05-2025 19:59"
+    const [dF, mF, yF] = dateStrF.split(' ')[0].split('-');
+    const [HF, MF] = dateStrF.split(' ')[1].split(':');
+    document.querySelector("#date_fin").value = `${yF}-${mF}-${dF}T${HF}:${MF}`;
+
+    document.querySelector("#image").src = baseUrl + reservationSelected[0].voiture_image
+
+    const adresse_livraison = reservationSelected[0].adresse_livraison
+    const adresseLivraisonSelect = document.querySelector("#adresse_livraison")
+    const adresseLivraisonAutreInput = document.querySelector("#adresse_livraison_U")
+    const adresse_user = userAuth.adresse
+
+    if (adresse_livraison == "agence") adresseLivraisonSelect.value = "agence"
+    else if (adresse_livraison == adresse_user) adresseLivraisonSelect.value = "client_adresse"
+    else {
+        adresseLivraisonSelect.value = "autre"
+        adresseLivraisonAutreInput.value = adresse_livraison
+
+        document.querySelector("#adresse_livraison_U").removeAttribute("hidden")
+        document.querySelector("#adresse_livraison_U").setAttribute("reqiured", "")
+    }
+
+
+}
+
+
+// **** fct pour modifier la réservation
+async function modifierReservation(reservation_id) {
+
+    const reservations = JSON.parse(localStorage.getItem("reservations"))
+    const reservationSelected = reservations.filter(resr => resr.id == reservation_id)
+    const voiture_id = reservationSelected[0].voiture_id
+
+    const formData = new FormData()
+    const dateDebut = document.querySelector("#date_debut").value
+    const dateFin = document.querySelector("#date_fin").value
+    const adresseLivraisonSelect = document.querySelector("#adresse_livraison")
+    const adresseLivraisonAutreInput = document.querySelector("#adresse_livraison_U")
+
+    const allVoitures = JSON.parse(localStorage.getItem("voitures"))
+    const voitureSelected = allVoitures.filter(vt => vt.id == voiture_id)
+
+    const isReserved = verifierDates(voitureSelected[0].periodes_reservee) // vérifer si la période sélectionné est disponible
+
+    if (!isReserved) {
+        // calculer le prix total
+        let nombre_jours = ((new Date(dateFin) - new Date(dateDebut)) / (1000 * 60 * 60 * 24))
+        const prix_total = nombre_jours * voitureSelected[0].prix_jour
+
+        // crée l'adresse de livraison selon le choix del'utilisateur
+        let adresse_livraison = ""
+        if (adresseLivraisonSelect.value == "autre") adresse_livraison = adresseLivraisonAutreInput.value
+        else if (adresseLivraisonSelect.value == "client_adresse") adresse_livraison = userAuth.adresse
+        else adresse_livraison = adresseLivraisonSelect.value
+
+        // formater les deux dates pour etre compatible avec la validation PHP
+        // const dateDebutToSend = formatDateForBackend(dateDebut, timezone);
+        // const dateFinToSend = formatDateForBackend(dateFin, timezone);
+        const dateDebutToSend = dateDebut.replace("T", " ");
+        const dateFinToSend = dateFin.replace("T", " ");
+
+        formData.append("date_debut", dateDebutToSend)
+        formData.append("date_fin", dateFinToSend)
+        formData.append("prix_total", Number.parseFloat(prix_total))
+        formData.append("adresse_livraison", adresse_livraison)
+
+
+        // const formDataObj = Object.fromEntries(formData.entries());
+        // console.log("FormData complet:", formDataObj);
+
+        // envoyer la réservation
+        try {
+            await sendData.postData(CLIENT_EDIT_RESERVATIONS, formData, "put", `${userAuth.id}/${voiture_id}/${reservation_id}`, false)
+            if (sendData.success === true) {
+
+                //affichage message succès
+                displayMessageErreurs(null, sendData.message, sendData.success);
+                const reservations = await getReservations()
+                const reservationsClient = reservations.filter(reser => reser.client_id == userAuth.id)
+                displayReservationsClient(reservationsClient);
+
+                document.querySelector(".image-container #annulerBtnR").click()  // pour cacher le formulaire
+
+            }
+        } catch (error) {
+
+            // affichage des erreurs du message
+            if (sendData.success === false)
+                displayMessageErreurs(sendData.errors, sendData.message, sendData.success)
+        }
+
+    }
+
+}
+
+// fct pour valider enregistrer la reservation on clique sur le button submit
+const form = document.querySelector("#form-container #reservation-form2")
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    await modifierReservation(reservation_id_M)
+})
 
 // **** appel à la fonction pour ajouter les reservations à la page 
 document.addEventListener("DOMContentLoaded", function () {
