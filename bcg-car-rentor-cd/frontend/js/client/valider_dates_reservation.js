@@ -1,4 +1,22 @@
+// **** fct pour calculer le nombre de jours entre deux dates
+export function calculateDaysBetweenDates(dateD, dateF) {
+    const dateDebut = dateD.replace("T", " ");
+    const dateFin = dateF.replace("T", " ");
+    // Parsing des dates
+    const [dayStart, monthStart, yearStart] = dateDebut.split(' ')[0].split('-').map(Number);
+    const [hoursStart, minutesStart] = dateDebut.split(' ')[1].split(':').map(Number);
+    const startDate = new Date(yearStart, monthStart - 1, dayStart, hoursStart, minutesStart);
 
+    const [dayEnd, monthEnd, yearEnd] = dateFin.split(' ')[0].split('-').map(Number);
+    const [hoursEnd, minutesEnd] = dateFin.split(' ')[1].split(':').map(Number);
+    const endDate = new Date(yearEnd, monthEnd - 1, dayEnd, hoursEnd, minutesEnd);
+
+    // Calcul de la différence en jours (arrondi à l'inférieur pour compter les jours pleins)
+    const diffTime = endDate.getTime() - startDate.getTime();
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    return diffDays;
+}
 
 // Récupérer les éléments du formulaire
 const dateDebutInput = document.getElementById('date_debut');
@@ -73,7 +91,6 @@ export function verifierDates(periodes_reservee) {
     const dateDebut = new Date(debutInput.value)
     const dateFin = new Date(finInput.value)
 
-
     // Trier les périodes réservées par date de début pour permettre une recherche binaire
     periodes_reservee.sort((a, b) => new Date(a.debut) - new Date(b.debut));
 
@@ -88,6 +105,15 @@ export function verifierDates(periodes_reservee) {
         reservationErreur.textContent = "Choisissez des dates valides"
         isReserved = true  // pour ne pas envoyer le formulaire
         erreurDates = true
+    }
+
+    let nbr_jours = calculateDaysBetweenDates(debutInput.value, finInput.value)
+    if (nbr_jours == 0) {
+        dateFinError.textContent = 'La durée de la réservation doit être d\'au moins 1 jour';
+        dateFinInput.classList.add('input-error');
+        isReserved = true  // pour ne pas envoyer le formulaire
+        erreurDates = true
+
     }
 
     if (isReserved && !erreurDates) {

@@ -22,6 +22,10 @@ export const ADMIN_INDEX_CLIENTS = `${baseUrl}api/admin/clients/index/`;
 export const ADMIN_DESTROY_COMMENTAIRES = `${baseUrl}api/admin/commentaires/destroy/`;
 /*** api reservations ***/
 export const ADMIN_INDEX_RESERVATIONS = `${baseUrl}api/admin/reservations/index/`;
+export const ADMIN_EDIT_STATUT_RESERVATIONS = `${baseUrl}api/admin/reservations/editStatut/`;
+export const ADMIN_EDIT_PAIEMENT_RESERVATIONS = `${baseUrl}api/admin/reservations/editPaiement/`;
+export const ADMIN_DESTROY_RESERVATIONS = `${baseUrl}api/admin/reservations/destroy/`;
+
 
 
 /******* apis client *******/

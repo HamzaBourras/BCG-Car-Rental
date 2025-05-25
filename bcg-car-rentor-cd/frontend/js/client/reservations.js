@@ -2,6 +2,7 @@ import sendData from '/frontend/js/functions/sendData.js'
 import { baseUrl } from "../../apis/api.js";
 import { getReservations } from "../admin/get_reservation.js"
 import { verifierDates } from "./valider_dates_reservation.js";
+import { calculateDaysBetweenDates } from "./valider_dates_reservation.js";
 import { CLIENT_EDIT_RESERVATIONS } from "../../apis/api.js";
 import { CLIENT_DESTROY_RESERVATIONS } from '../../apis/api.js';
 import { displayMessageErreurs } from '../display_message_erreurs.js';
@@ -12,9 +13,9 @@ const userAuth = JSON.parse(localStorage.getItem("userAuth"))
 // **** appel à la fonction pour recevoir tous les voitures
 document.addEventListener("DOMContentLoaded", async function () {
     // vérifer si les commentaires ne sont pas déja récupérer
-    if (!localStorage.getItem("reservations")) {
-        await getReservations();
-    }
+    // if (!localStorage.getItem("reservations")) {
+    await getReservations();
+    // }
 });
 
 
@@ -37,22 +38,24 @@ function displayReservationsClient(reservations) {
 
     reservations.forEach(reservation => {
         // Calculer la durée
-        const start = new Date(reservation.date_debut);
-        const end = new Date(reservation.date_fin);
-        const diffTime = Math.abs(end - start);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        const duration = diffDays === 1 ? '1 jour' : `${diffDays} jours`;
+        let diffDays = calculateDaysBetweenDates(reservation.date_debut, reservation.date_fin);
+        const duration = diffDays === 1 ? "1 jour" : `${diffDays} jours`;
 
         // gérer l'affichage des buttons de modifier et supprimer
         let content2 = ""  // pour affichage des buttons ou bien statut de paiement
+        let expiree = ""   // pour vérifier si la réservation est expirée
+        if (reservation.expiree == true) {
+            expiree = `
+                <p class="expiree">Expirée</p>
+            `}
         if (reservation.statut == null) {
             content2 = `
-                <!-- Modification buttons -->
-                <div class="actions">
-                    <button id="modifierBtnR" data-reservation-id="${reservation.id}" style="background-color:rgb(0, 92, 0);" onmouseover="this.style.backgroundColor='rgb(1, 139, 1)'" onmouseout="this.style.backgroundColor='rgb(0, 92, 0)'"  class="button" role="button">Modifier</button>
-                    <button id="supprimerBtnR" data-reservation-id="${reservation.id}" style="background-color:rgb(159, 0, 0);" onmouseover="this.style.backgroundColor='rgb(206, 1, 1)'" onmouseout="this.style.backgroundColor='rgb(159, 0, 0)'"  class="button" role="button">Supprimer</button>
-                </div>
-            `
+                    <!-- Modification buttons -->
+                    <div class="actions">
+                        <button id="modifierBtnR" data-reservation-id="${reservation.id}" style="background-color:rgb(0, 92, 0);" onmouseover="this.style.backgroundColor='rgb(1, 139, 1)'" onmouseout="this.style.backgroundColor='rgb(0, 92, 0)'"  class="button" role="button">Modifier</button>
+                        <button id="supprimerBtnR" data-reservation-id="${reservation.id}" style="background-color:rgb(159, 0, 0);" onmouseover="this.style.backgroundColor='rgb(206, 1, 1)'" onmouseout="this.style.backgroundColor='rgb(159, 0, 0)'"  class="button" role="button">Supprimer</button>
+                    </div>
+                `
         }
 
         // gérer l'affichage de statut du paiement
@@ -61,16 +64,17 @@ function displayReservationsClient(reservations) {
             const statusText = reservation.statut_paiement === 1 ? 'Payée' : 'Non payée';
 
             content2 = `<div class="paiement" >
-                <div class="statusPaiement ${statusClass}">${statusText}</div>
-            </div>`
+                    <div class="statusPaiement ${statusClass}">${statusText}</div>
+                </div>`
         }
         else if (reservation.statut == 0) {
             content2 = `
-                <div class="reservation-status refused">
-                    <div class="status-text">Refusée</div>
-                </div>
-            `
+                    <div class="reservation-status refused">
+                        <div class="status-text">Refusée</div>
+                    </div>
+                `
         }
+
 
         content += `
         <div class="reservation-card">
@@ -83,7 +87,7 @@ function displayReservationsClient(reservations) {
                     <p><span class="date-label">Fin:</span> <span>${reservation.date_fin}</span></p>
                     <p><span class="date-label">Durée:</span> <span>${duration}</span></p>
                 </div>
-                <div class="price">${reservation.prix_total} DH</div>
+                <div class="price" >${expiree} ${reservation.prix_total} DH</div>
 
                 <!-- pour affichage des buttons ou bien statut de paiement -->
                 ${content2}

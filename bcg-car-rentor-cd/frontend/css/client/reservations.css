@@ -15,7 +15,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2%;
+    gap: 5% 2%;
     padding: 20px;
     padding-bottom: 40px;
 }
@@ -69,12 +69,11 @@
     justify-content: space-between;
 }
 
-.date-label {
-    /* font-weight: 00; */
-    /* color: whitesmoke; */
-}
+
 
 .price {
+    display: flex;
+    justify-content: space-between;
     font-size: 1.2rem;
     font-weight: bold;
     text-align: right;
@@ -142,6 +141,24 @@
     padding: 20px;
     grid-column: 1 / -1;
     color: #666;
+}
+
+/* pour le span de l'expiration */
+.expiree {
+  display:inline-block;
+  background: rgb(178, 13, 13);
+  color: whitesmoke;
+  padding: 5px;
+  font-size: 0.8rem;
+  width: max-content;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
+.expiree::after {
+    content: "✕";
+    margin-left: 5px;
 }
 
 /*** buttons de supprimer et modifier */

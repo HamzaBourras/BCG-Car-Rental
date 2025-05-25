@@ -49,6 +49,9 @@ Route::prefix("admin")->group(function () {
 
     Route::prefix("reservations")->controller(\App\Http\Controllers\admin\ReservationController::class)->group(function () {
         Route::get("index", "indexReservations");
+        Route::put("editStatut/{reservation_id}", "editStatutReservation");
+        Route::put("editPaiement/{reservation_id}", "editPaiementReservation");
+        Route::delete("destroy/{reservation_id}", "destroyReservation");
     });
 
     Route::prefix("")->controller(AdminController::class)->group(function () {

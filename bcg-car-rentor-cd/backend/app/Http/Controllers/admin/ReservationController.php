@@ -29,6 +29,10 @@ class ReservationController extends Controller
                     ->setTimezone(config('app.timezone'))
                     ->format('d-m-Y H:i');
 
+                $expiree = Carbon::parse($reservation->date_fin)
+                    ->setTimezone(config('app.timezone'))
+                    ->isPast() ? true : false;
+
                 $formReservation = [
                     "id" => $reservation->id,
                     "client_id" => $reservation->user_id,
@@ -45,7 +49,7 @@ class ReservationController extends Controller
                     "statut_paiement" => $reservation->statut_paiement,
                     "statut" => $reservation->statut,
                     "adresse_livraison" => $reservation->adresse_livraison,
-                    "timezone" => config('app.timezone')
+                    "expiree" => $expiree,
                 ];
 
                 array_push($tousReservations, $formReservation);
@@ -58,6 +62,73 @@ class ReservationController extends Controller
             return response()->json([
                 "success" => false,
                 "message" => "Échec lors de la récupération des reservations",
+                "errors" => $e->getMessage()
+            ], 500);
+        }
+    }
+
+
+
+    public function editStatutReservation(Request $request, $reservation_id)
+    {
+        try {
+            $reservation = Reservation::findOrFail($reservation_id);
+            $reservation->statut = $request->statut;
+            $reservation->save();
+
+            $message = $request->statut === 1 ? 'Réservation confirméé avec succès' : 'Réservation annulée avec succès';
+
+            return response()->json([
+                "success" => true,
+                "message" => $message,
+                "data" => $reservation
+            ], 200);
+        } catch (Exception $e) {
+            return response()->json([
+                "success" => false,
+                "message" => "Échec lors de la mise à jour du statut de la réservation",
+                "errors" => $e->getMessage()
+            ], 500);
+        }
+    }
+
+    public function editPaiementReservation($reservation_id)
+    {
+        try {
+            $reservation = Reservation::findOrFail($reservation_id);
+            $reservation->statut_paiement = 1;  // parce que l'admin confirme le paiement seulemnt, par défaut le statut de paiement est 0
+            $reservation->save();
+
+
+            return response()->json([
+                "success" => true,
+                "message" => "Paiement confirmé avec succès",
+                "data" => $reservation
+            ], 200);
+        } catch (Exception $e) {
+            return response()->json([
+                "success" => false,
+                "message" => "Échec lors de la mise à jour du statut de paiement de la réservation",
+                "errors" => $e->getMessage()
+            ], 500);
+        }
+    }
+
+
+    public function destroyReservation($reservation_id)
+    {
+        try {
+            $reservation = Reservation::findOrFail($reservation_id);
+            $reservation->delete();
+
+            return response()->json([
+                "success" => true,
+                "message" => "Réservation supprimée avec succès"
+            ], 200);
+        } catch (Exception $e) {
+            return response()->json([
+                "success" => false,
+                "message" => "Échec lors de la suppression de la réservation",
                 "errors" => $e->getMessage()
             ], 500);
         }
