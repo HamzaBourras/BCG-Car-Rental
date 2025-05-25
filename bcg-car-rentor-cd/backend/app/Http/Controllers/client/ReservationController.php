@@ -131,7 +131,6 @@ class ReservationController extends Controller
                 "message" => "Résrvation supprimé avec succès",
             ], 200);
         } catch (Exception $e) {
-            // Erreur générale
             return response()->json([
                 "success" => false,
                 "massage" => "Erreur lors de la suppression de la réservation",

@@ -3,6 +3,7 @@ import { baseUrl } from "../../apis/api.js";
 import { getReservations } from "../admin/get_reservation.js"
 import { verifierDates } from "./valider_dates_reservation.js";
 import { CLIENT_EDIT_RESERVATIONS } from "../../apis/api.js";
+import { CLIENT_DESTROY_RESERVATIONS } from '../../apis/api.js';
 import { displayMessageErreurs } from '../display_message_erreurs.js';
 
 
@@ -107,7 +108,7 @@ function setupEventListeners() {
             const conf = confirm("voulez vous supprimer cette reservation ?")
             if (conf) {
                 // Appeler la fonction de suppression
-                supprimerReservation(voiture_id_S)
+                supprimerReservation(reservation_id_S)
             }
         });
     });
@@ -229,6 +230,30 @@ async function modifierReservation(reservation_id) {
 
     }
 
+}
+
+// **** fct pour supprimer la réservation
+async function supprimerReservation(reservation_id) {
+    const reservations = JSON.parse(localStorage.getItem("reservations"))
+    const reservationSelected = reservations.filter(resr => resr.id == reservation_id)
+    const voiture_id = reservationSelected[0].voiture_id
+
+    try {
+        await sendData.postData(CLIENT_DESTROY_RESERVATIONS, null, "delete", `${userAuth.id}/${voiture_id}/${reservation_id}`, false)
+        if (sendData.success === true) {
+            //affichage message succès
+            displayMessageErreurs(null, sendData.message, sendData.success);
+            const reservations = await getReservations()
+            const reservationsClient = reservations.filter(reser => reser.client_id == userAuth.id)
+            displayReservationsClient(reservationsClient);
+
+        }
+    } catch (error) {
+
+        // affichage des erreurs du message
+        if (sendData.success === false)
+            displayMessageErreurs(sendData.errors, sendData.message, sendData.success)
+    }
 }
 
 // fct pour valider enregistrer la reservation on clique sur le button submit
