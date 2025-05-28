@@ -33,7 +33,7 @@ function displayVoitures(voitures) {
 
       <!-- Reservation Button and WhatsApp (or phone) Icon -->
       <div class="reservation">
-        <button class="reservation-btn">
+        <button onclick="window.location.href = '/frontend/html/authentification/connexion.html' " class="reservation-btn">
           <span>Reservation</span>
           <i class="fa-solid fa-arrow-right"></i>
         </button>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reçu de Réservation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9fafb;
+            padding: 20px;
+        }
+
+        .receipt-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .receipt-header {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-placeholder {
+            width: 120px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px dashed rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .receipt-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .receipt-subtitle {
+            opacity: 0.9;
+        }
+
+        .reservation-info {
+            text-align: right;
+        }
+
+        .reservation-number {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .reservation-number p:first-child {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .reservation-number p:last-child {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .issue-date {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .receipt-body {
+            padding: 2rem;
+        }
+
+        .receipt-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: #1e40af;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .info-row {
+            display: flex;
+            margin-bottom: 12px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #374151;
+            min-width: 140px;
+        }
+
+        .info-value {
+            color: #111827;
+            flex: 1;
+        }
+
+        .details-section {
+            margin-top: 2rem;
+        }
+
+        .price-highlight {
+            background: #fef3c7;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+            margin: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .price-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d97706;
+        }
+
+        .electronic-stamp {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border: 3px solid #1e40af;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle, rgba(30, 64, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%);
+            margin: 2rem auto;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: #1e40af;
+            transform: rotate(-5deg);
+        }
+
+        .stamp-text {
+            line-height: 1.2;
+        }
+
+        .stamp-year {
+            font-size: 10px;
+            margin-top: 8px;
+        }
+
+        .agency-footer {
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+        }
+
+        .agency-title {
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .agency-contact {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+
+        .agency-disclaimer {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #d1d5db;
+        }
+
+        .disclaimer-text {
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 768px) {
+            .receipt-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .reservation-info {
+                text-align: center;
+                margin-top: 1rem;
+            }
+
+            .receipt-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .receipt-container {
+                box-shadow: none;
+                max-width: none;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="receipt-container">
+        <!-- En-tête -->
+        <div class="receipt-header">
+            <div class="logo-section">
+                <div class="logo-placeholder">
+                    LOGO AGENCE
+                </div>
+                <h1 class="receipt-title">REÇU DE RÉSERVATION</h1>
+                <p class="receipt-subtitle">Location de véhicules</p>
+            </div>
+            <div class="reservation-info">
+                <div class="reservation-number">
+                    <p>N° de réservation</p>
+                    <p id="reservationNumber">RES-2024-001</p>
+                </div>
+                <p class="issue-date">Date d'émission : <span id="issueDate"></span></p>
+            </div>
+        </div>
+
+        <!-- Corps du reçu -->
+        <div class="receipt-body">
+            <div class="receipt-grid">
+                <!-- Informations Client -->
+                <div>
+                    <h2 class="section-title">👤 INFORMATIONS CLIENT</h2>
+                    <div class="info-row">
+                        <span class="info-label">Nom :</span>
+                        <span class="info-value" id="clientName">DUPONT</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Prénom :</span>
+                        <span class="info-value" id="clientFirstName">Jean</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Email :</span>
+                        <span class="info-value" id="clientEmail">jean.dupont@email.com</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Téléphone :</span>
+                        <span class="info-value" id="clientPhone">06 12 34 56 78</span>
+                    </div>
+                </div>
+
+                <!-- Informations Véhicule -->
+                <div>
+                    <h2 class="section-title">🚗 VÉHICULE RÉSERVÉ</h2>
+                    <div class="info-row">
+                        <span class="info-label">Marque :</span>
+                        <span class="info-value" id="carBrand">BMW</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Modèle :</span>
+                        <span class="info-value" id="carModel">X5</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Matricule :</span>
+                        <span class="info-value" id="carPlate">123456 ب 01</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Détails de la Réservation -->
+            <div class="details-section">
+                <h2 class="section-title">📅 DÉTAILS DE LA RÉSERVATION</h2>
+                <div class="receipt-grid">
+                    <div>
+                        <div class="info-row">
+                            <span class="info-label">Date de début :</span>
+                            <span class="info-value" id="startDate">15 janvier 2024</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Date de fin :</span>
+                            <span class="info-value" id="endDate">20 janvier 2024</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-row">
+                            <span class="info-label">Livraison :</span>
+                            <span class="info-value" id="deliveryAddress">123 Avenue Mohammed V, Casablanca</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prix Total -->
+            <div class="price-highlight">
+                <span class="price-label">PRIX TOTAL :</span>
+                <span class="price-value" id="totalPrice">1500 DH</span>
+            </div>
+
+            <!-- Cachet Électronique -->
+            <div class="electronic-stamp">
+                <div class="stamp-text">
+                    <div>AGENCE</div>
+                    <div>CERTIFIÉE</div>
+                    <div class="stamp-year" id="stampYear">2024</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pied de page Agence -->
+        <div class="agency-footer">
+            <h3 class="agency-title">AGENCE DE LOCATION AUTOMOBILE</h3>
+            <p class="agency-contact">📍 123 Avenue Mohammed V, Casablanca 20000, Maroc</p>
+            <p class="agency-contact">📞 +212 5 22 XX XX XX | 📧 contact@agence-location.ma</p>
+            <p class="agency-contact">🌐 www.agence-location.ma</p>
+            <div class="agency-disclaimer">
+                <p class="disclaimer-text">
+                    Ce reçu fait foi de votre réservation. Veuillez le présenter lors de la prise en charge du véhicule.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Définir la date d'émission actuelle
+        document.getElementById('issueDate').textContent = new Date().toLocaleDateString('fr-FR');
+        // Définir l'année du cachet
+        document.getElementById('stampYear').textContent = new Date().getFullYear();
+
+        // Fonction pour imprimer/sauvegarder en PDF
+        function printReceipt() {
+            window.print();
+        }
+
+        // Ajouter un bouton d'impression (optionnel)
+        document.addEventListener('DOMContentLoaded', function () {
+            const printButton = document.createElement('button');
+            printButton.textContent = '📄 Télécharger PDF';
+            printButton.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #1e40af;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: bold;
+                z-index: 1000;
+            `;
+            printButton.onclick = printReceipt;
+            document.body.appendChild(printButton);
+
+            // Cacher le bouton lors de l'impression
+            const style = document.createElement('style');
+            style.textContent = '@media print { button { display: none !important; } }';
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+
+</html>

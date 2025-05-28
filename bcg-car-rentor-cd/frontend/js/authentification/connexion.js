@@ -3,8 +3,6 @@ import { CONNEXION_API } from "../../apis/api.js";
 import sendData from '/frontend/js/functions/sendData.js'
 
 
-
-
 const formData = {
     "email": "",
     "password": "",

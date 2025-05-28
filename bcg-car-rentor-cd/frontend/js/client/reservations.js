@@ -44,12 +44,20 @@ function displayReservationsClient(reservations) {
         // gérer l'affichage des buttons de modifier et supprimer
         let content2 = ""  // pour affichage des buttons ou bien statut de paiement
         let expiree = ""   // pour vérifier si la réservation est expirée
+        let recuBtn = "" // pour afficher le button reçu
+        if (reservation.statut == 1 && reservation.statut_paiement == 0) {
+            recuBtn += `
+            <button id="recuBtnR" data-reservation-id="${reservation.id}" role="button"> <span>Reçu</span> <i class="fa-solid fa-circle-down"></i></button>
+            
+            `
+
+        }
         if (reservation.expiree == true) {
             expiree = `
                 <p class="expiree">Expirée</p>
             `}
         if (reservation.statut == null) {
-            content2 = `
+            content2 += `
                     <!-- Modification buttons -->
                     <div class="actions">
                         <button id="modifierBtnR" data-reservation-id="${reservation.id}" style="background-color:rgb(0, 92, 0);" onmouseover="this.style.backgroundColor='rgb(1, 139, 1)'" onmouseout="this.style.backgroundColor='rgb(0, 92, 0)'"  class="button" role="button">Modifier</button>
@@ -63,12 +71,12 @@ function displayReservationsClient(reservations) {
             const statusClass = reservation.statut_paiement === 1 ? 'status-paid' : 'status-unpaid';
             const statusText = reservation.statut_paiement === 1 ? 'Payée' : 'Non payée';
 
-            content2 = `<div class="paiement" >
+            content2 += `<div class="paiement" >
                     <div class="statusPaiement ${statusClass}">${statusText}</div>
                 </div>`
         }
         else if (reservation.statut == 0) {
-            content2 = `
+            content2 += `
                     <div class="reservation-status refused">
                         <div class="status-text">Refusée</div>
                     </div>
@@ -90,7 +98,7 @@ function displayReservationsClient(reservations) {
                 <div class="price" >${expiree} ${reservation.prix_total} DH</div>
 
                 <!-- pour affichage des buttons ou bien statut de paiement -->
-                ${content2}
+                ${content2} ${recuBtn}
                 
             </div>
         `

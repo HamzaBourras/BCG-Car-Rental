@@ -1,0 +1,96 @@
+/* Reset et polices */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+/* Conteneur principal */
+.receipt-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* En-tête */
+.receipt-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+}
+
+.logo {
+    align-self: end;
+    height: 110px;
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+.receipt-number {
+    color: #666;
+    font-size: 16px;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.section h2 {
+    color: #2c3e50;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Grille d'informations */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Cachet électronique */
+.stamp {
+    text-align: right;
+    margin: 30px 0;
+}
+
+.stamp img {
+    opacity: 0.7;
+    width: 100px;
+}
+
+/* Pied de page */
+.receipt-footer {
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* Bouton PDF */
+#download-pdf {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#download-pdf:hover {
+    background: #1a252f;
+}
