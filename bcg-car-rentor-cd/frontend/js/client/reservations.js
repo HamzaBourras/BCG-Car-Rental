@@ -45,7 +45,7 @@ function displayReservationsClient(reservations) {
         let content2 = ""  // pour affichage des buttons ou bien statut de paiement
         let expiree = ""   // pour vérifier si la réservation est expirée
         let recuBtn = "" // pour afficher le button reçu
-        if (reservation.statut == 1 && reservation.statut_paiement == 0) {
+        if (reservation.statut == 1 && reservation.statut_paiement == 0 && reservation.expiree == 0) {
             recuBtn += `
             <button id="recuBtnR" data-reservation-id="${reservation.id}" role="button"> <span>Reçu</span> <i class="fa-solid fa-circle-down"></i></button>
             
@@ -56,7 +56,7 @@ function displayReservationsClient(reservations) {
             expiree = `
                 <p class="expiree">Expirée</p>
             `}
-        if (reservation.statut == null) {
+        if (reservation.statut == null && reservation.expiree == 0) {
             content2 += `
                     <!-- Modification buttons -->
                     <div class="actions">
@@ -132,6 +132,11 @@ function setupEventListeners() {
         });
     });
 
+    document.querySelector('#recuBtnR').addEventListener("click", function () {
+        const reservation_id = this.getAttribute('data-reservation-id');
+        recuReservation(reservation_id);
+
+    });
 
 }
 
@@ -288,3 +293,32 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }, 10); // Vérifie toutes les 10ms
 });
+
+
+
+// **** fct pour enregistrer les informations et le redirige vers la page du reçu de la réservation
+function recuReservation(reservation_id) {
+    const reservations = JSON.parse(localStorage.getItem("reservations"))
+    const reservationSelected = reservations.filter(resr => resr.id == reservation_id)
+
+    if (reservationSelected.length > 0) {
+        const recuInfos = {
+            reservation_numero: reservationSelected[0].id,
+            reservation_date_emession: reservationSelected[0].date_emession,
+            client_nom: userAuth.nom,
+            client_prenom: userAuth.prenom,
+            client_email: userAuth.email,
+            telephone: userAuth.telephone,
+            voiture_marque: reservationSelected[0].voiture_marque,
+            voiture_modele: reservationSelected[0].voiture_modele,
+            voiture_matricule: reservationSelected[0].voiture_matricule,
+            reservation_date_debut: reservationSelected[0].date_debut,
+            reservation_date_fin: reservationSelected[0].date_fin,
+            reservation_adresse_livraison: reservationSelected[0].adresse_livraison,
+            reservation_prix_total: reservationSelected[0].prix_total
+        };
+
+        localStorage.setItem("recuInfos", JSON.stringify(recuInfos));
+        window.location.href = "/frontend/html/client/reservation_recu"; // Rediriger vers la page de reçu
+    }
+}
