@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="stylesheet" href="../../css/authentification/profile.css">
+    <link rel="stylesheet" href="../../css/admin/sidebar_header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../fontawesome-free-6.7.2-web/css/all.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+
+        <!-- div sidebar -->
+        <div class="sidebar" id="side">
+
+        </div>
+        <div class="main">
+
+            <!-- div pour header -->
+            <header class="header" id="header">
+
+            </header>
+
+            <div class="content">
+                <div class="profile">
+                    <div class="profile-container">
+                        <h1>Profil</h1>
+                        <h2>Gérer votre compte</h2>
+
+                        <div class="profile-form">
+                            <div class="profile-image-container">
+                                <div class="profile-image" id="profile-image">
+                                    <i class="fa-solid fa-plus" id="upload-icon"></i>
+                                </div>
+                                <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nom">Nom</label>
+                                    <input type="text" id="nom" class="form-control" placeholder="Nom">
+                                </div>
+                                <div class="form-group">
+                                    <label for="adresse">Adresse</label>
+                                    <input type="text" id="adresse" class="form-control" placeholder="Adresse">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="prenom">Prénom</label>
+                                    <input type="text" id="prenom" class="form-control" placeholder="Prénom">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" class="form-control" placeholder="Password">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-password">Confirme</label>
+                                    <input type="password" id="confirm-password" class="form-control"
+                                        placeholder="Confirmer le mot de passe">
+                                </div>
+                            </div>
+
+                            <div class="form-row full-width">
+                                <div class="form-group">
+                                    <label for="telephone">Téléphone</label>
+                                    <input type="tel" id="telephone" class="form-control" placeholder="Téléphone">
+                                </div>
+                            </div>
+
+                            <div class="buttons">
+                                <button type="button" class="btn btn-cancel" id="annuler">Annuler</button>
+                                <button type="button" class="btn btn-save" id="enregistrer">Enregistrer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script src="../../js/authentification/profile.js"></script>
+    <script src="/frontend//js/routes_config.js"></script>
+    <script src="../../js/client/sidebar_header.js"></script>
+</body>
+
+</html>

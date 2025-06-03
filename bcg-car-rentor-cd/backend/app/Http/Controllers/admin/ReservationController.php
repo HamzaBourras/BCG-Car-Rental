@@ -31,7 +31,7 @@ class ReservationController extends Controller
 
                 $expiree = Carbon::parse($reservation->date_fin)
                     ->setTimezone(config('app.timezone'))
-                    ->isPast() ? true : false;
+                    ->isPast() && $reservation->statut == null ? true : false;
 
                 $formReservation = [
                     "id" => $reservation->id,
