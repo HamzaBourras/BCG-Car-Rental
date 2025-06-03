@@ -319,6 +319,6 @@ function recuReservation(reservation_id) {
         };
 
         localStorage.setItem("recuInfos", JSON.stringify(recuInfos));
-        window.location.href = "/frontend/html/client/reservation_recu"; // Rediriger vers la page de reçu
+        window.open("/frontend/html/client/reservation_recu", "_blank");
     }
 }
