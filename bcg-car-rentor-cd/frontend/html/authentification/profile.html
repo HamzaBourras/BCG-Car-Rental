@@ -15,17 +15,13 @@
 
 <body>
     <div class="container">
-
-
         <!-- div sidebar -->
         <div class="sidebar" id="side">
-
         </div>
-        <div class="main">
 
+        <div class="main">
             <!-- div pour header -->
             <header class="header" id="header">
-
             </header>
 
             <div class="content">
@@ -34,52 +30,78 @@
                         <h1>Profil</h1>
                         <h2>Gérer votre compte</h2>
 
-                        <div class="profile-form">
-                            <div class="profile-image-container">
-                                <div class="profile-image" id="profile-image">
-                                    <i class="fa-solid fa-plus" id="upload-icon"></i>
+                        <!-- Section du haut - Image, nom et inputs nom/prénom -->
+                        <div class="profile-top">
+                            <div class="profile-top-left">
+                                <div class="profile-image-container">
+                                    <div class="profile-image" id="profile-image">
+                                        <i class="fa-solid fa-user" id="upload-icon"></i>
+                                    </div>
+                                    <div class="image-upload-overlay"
+                                        onclick="document.getElementById('image-upload').click()">
+                                        <i class="fa-solid fa-camera"></i>
+                                    </div>
+                                    <input type="file" id="image-upload" accept="image/*">
                                 </div>
-                                <input type="file" id="image-upload" accept="image/*" style="display: none;">
-                            </div>
 
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="nom">Nom</label>
-                                    <input type="text" id="nom" class="form-control" placeholder="Nom">
-                                </div>
-                                <div class="form-group">
-                                    <label for="adresse">Adresse</label>
-                                    <input type="text" id="adresse" class="form-control" placeholder="Adresse">
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="prenom">Prénom</label>
-                                    <input type="text" id="prenom" class="form-control" placeholder="Prénom">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" id="password" class="form-control" placeholder="Password">
+                                <div class="user-info">
+                                    <div class="user-name" id="display-name">John Doe</div>
+                                    <div class="user-email" id="display-email">john.doe@example.com</div>
                                 </div>
                             </div>
 
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" id="email" class="form-control" placeholder="Email">
+                            <div class="profile-top-right">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="nom">Nom</label>
+                                        <input type="text" id="nom" class="form-control" placeholder="Votre nom">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="prenom">Prénom</label>
+                                        <input type="text" id="prenom" class="form-control" placeholder="Votre prénom">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="confirm-password">Confirme</label>
-                                    <input type="password" id="confirm-password" class="form-control"
-                                        placeholder="Confirmer le mot de passe">
+                            </div>
+                        </div>
+
+                        <!-- Section du bas - Formulaire complet -->
+                        <div class="profile-bottom">
+                            <div class="form-section">
+                                <div class="form-section-title">Contact</div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" class="form-control"
+                                            placeholder="votre.email@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telephone">Téléphone</label>
+                                        <input type="tel" id="telephone" class="form-control"
+                                            placeholder="+212 6XX XX XX XX">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="adresse">Adresse</label>
+                                        <input type="text" id="adresse" class="form-control"
+                                            placeholder="Votre adresse complète">
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="form-row full-width">
-                                <div class="form-group">
-                                    <label for="telephone">Téléphone</label>
-                                    <input type="tel" id="telephone" class="form-control" placeholder="Téléphone">
+                            <div class="form-section">
+                                <div class="form-section-title">Sécurité</div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="password">Nouveau mot de passe</label>
+                                        <input type="password" id="password" class="form-control"
+                                            placeholder="••••••••">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirm-password">Confirmer le mot de passe</label>
+                                        <input type="password" id="confirm-password" class="form-control"
+                                            placeholder="••••••••">
+                                    </div>
                                 </div>
                             </div>
 
@@ -91,10 +113,7 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
-
     </div>
 
     <script src="../../js/authentification/profile.js"></script>
