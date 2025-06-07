@@ -1,5 +1,5 @@
 //===== script pour ajouter le header et le sidebar  et le script de connexion et de script des routes
-
+import { baseUrl } from "../../apis/api.js";
 // ajouter le script de restrictions des routes au document
 // function loadRoutes() {
 //     return new Promise((resolve) => {
@@ -43,6 +43,12 @@ Promise.all([
         scriptAxios.type = 'module'
         scriptAxios.src = 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'
         document.body.appendChild(scriptAxios)
+
+
+        // afficher le nom du user et son image dans le header
+        let userData = JSON.parse(localStorage.getItem('userAuth'));
+        document.querySelector("#userImageHeader").setAttribute("src", baseUrl + userData.image)
+        document.querySelector("#userNameHeader").textContent = `${userData.nom} ${userData.prenom}`.toLocaleUpperCase()
 
         // Marquer la page comme chargée
         document.body.classList.add("loaded");

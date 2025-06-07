@@ -13,9 +13,9 @@ const formData = {
 form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    window.history.replaceState(null, null, window.location.href); // pour éviter de revenir à la page de connexion en appuyant sur le bouton retour du navigateur
 
     if (userAuth) {  // si l'utilisateur est déjà connecté on le redirige vers son dashboard
+        window.history.replaceState(null, null, window.location.href); // pour éviter de revenir à la page de connexion en appuyant sur le bouton retour du navigateur
         if (userAuth.role === "admin") {
             window.location.href = "/frontend/html/admin/dashboard.html";
         } else if (userAuth.role === "client") {
