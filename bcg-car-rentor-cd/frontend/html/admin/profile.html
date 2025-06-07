@@ -34,8 +34,9 @@
                         <div class="profile-top">
                             <div class="profile-top-left">
                                 <div class="profile-image-container">
-                                    <div class="profile-image" id="profile-image">
-                                        <i class="fa-solid fa-user" id="upload-icon"></i>
+                                    <div class="profile-image" id="profile-image"
+                                        onclick="document.getElementById('image-upload').click()">
+                                        <i class="fa-solid fa-plus" id="upload-icon"></i>
                                     </div>
                                     <div class="image-upload-overlay"
                                         onclick="document.getElementById('image-upload').click()">
@@ -116,7 +117,7 @@
         </div>
     </div>
 
-    <script src="../../js/authentification/profile.js"></script>
+    <script type="module" src="../../js/authentification/profile.js"></script>
     <script src="/frontend/js/routes_config.js"></script>
     <script type="module" src="../../js/client/sidebar_header.js"></script>
 </body>

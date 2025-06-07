@@ -30,8 +30,6 @@ h1 {
     border-radius: 15px;
     padding: 1rem 1.5rem;
     height: 140px;
-    /* height: max-content; */
-    overflow: hidden;
 }
 
 .comments .comments-cards .comment-card .comment-card-header {
@@ -81,8 +79,9 @@ h1 {
 /* pour le div contient les icons d'action */
 #actions {
     padding: 5px 0;
-    display: flex;
-    justify-content: end;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
 }
 #supprimerBtn, #modifierBtn {
     background-color: inherit;

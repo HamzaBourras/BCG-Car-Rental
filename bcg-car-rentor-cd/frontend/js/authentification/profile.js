@@ -52,7 +52,7 @@ function initialiseProfile(userData) {
     confirmPassword.value = '';
 
     // Afficher l'image de profil si elle existe
-    if (userData.image) {
+    if (userData.image && userData.image !== "storage/") {
         const img = document.createElement('img');
         img.src = baseUrl + userData.image;
         image.innerHTML = '';

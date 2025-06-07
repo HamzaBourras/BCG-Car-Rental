@@ -47,8 +47,12 @@ Promise.all([
 
         // afficher le nom du user et son image dans le header
         let userData = JSON.parse(localStorage.getItem('userAuth'));
-        document.querySelector("#userImageHeader").setAttribute("src", baseUrl + userData.image)
-        document.querySelector("#userNameHeader").textContent = `${userData.nom} ${userData.prenom}`.toLocaleUpperCase()
+        const image = document.querySelector("#userImageHeader")
+        const username = document.querySelector("#userNameHeader")
+        if (!image.hasAttribute("src") && userData.image && userData.image !== "storage/") image.setAttribute("src", baseUrl + userData.image)
+        else image.setAttribute("src", "../../images/avatar_profil.png")
+        if (username.textContent == "") username.textContent = `${userData.nom} ${userData.prenom}`.toLocaleUpperCase()
+
 
         // Marquer la page comme chargée
         document.body.classList.add("loaded");

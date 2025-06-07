@@ -1,3 +1,4 @@
+import { baseUrl } from "../../apis/api.js";
 //===== script pour ajouter le header et le sidebar  et le script de connexion et de script des routes
 
 // ajouter le script de restrictions des routes au document
@@ -36,6 +37,15 @@ Promise.all([
         script.type = 'module';
         script.src = '../../js/authentification/deconnecter.js';
         document.body.appendChild(script);
+
+        // afficher le nom du user et son image dans le header
+        let userData = JSON.parse(localStorage.getItem('userAuth'));
+        const image = document.querySelector("#userImageHeader")
+        const username = document.querySelector("#userNameHeader")
+        if (!image.hasAttribute("src") && userData.image && userData.image !== "storage/") image.setAttribute("src", baseUrl + userData.image)
+        else image.setAttribute("src", "../../images/avatar_profil.png")
+        if (username.textContent == "") username.textContent = `${userData.nom} ${userData.prenom}`.toLocaleUpperCase()
+
 
         // Marquer la page comme chargée
         document.body.classList.add("loaded");
