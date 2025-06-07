@@ -2,6 +2,7 @@ const form = document.querySelector("form");
 import { CONNEXION_API } from "../../apis/api.js";
 import sendData from '/frontend/js/functions/sendData.js'
 
+const userAuth = JSON.parse(localStorage.getItem("userAuth"))
 
 const formData = {
     "email": "",
@@ -12,33 +13,47 @@ const formData = {
 form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    formData.email = document.querySelector("#email").value
-    formData.password = document.querySelector("#password").value
+    window.history.replaceState(null, null, window.location.href); // pour éviter de revenir à la page de connexion en appuyant sur le bouton retour du navigateur
 
-    try {
-        await sendData.postData(CONNEXION_API, formData, "post", null, false);
-        if (sendData.success === true) {
-            //affichage message succès
-            // displayMessage(null, sendData.message);
+    if (userAuth) {  // si l'utilisateur est déjà connecté on le redirige vers son dashboard
+        if (userAuth.role === "admin") {
+            window.location.href = "/frontend/html/admin/dashboard.html";
+        } else if (userAuth.role === "client") {
+            window.location.href = "/frontend/html/client/dashboard.html";
+        }
+        return;
 
-            //stocker le token et le user
-            localStorage.setItem("token", JSON.stringify(sendData.token))
-            localStorage.setItem("userAuth", JSON.stringify(sendData.returnData))
+    }
 
-            //rediriger vers le dashboard selen le role de l'utilisateur
-            const userRole = sendData.returnData.role
-            if (userRole == "admin") {
-                window.location.href = "../../html/admin/dashboard.html"
-            } else if (userRole == "client") {
-                window.location.href = "../../html/client/dashboard.html"
+    else {
+        formData.email = document.querySelector("#email").value
+        formData.password = document.querySelector("#password").value
+
+        try {
+            await sendData.postData(CONNEXION_API, formData, "post", null, false);
+            if (sendData.success === true) {
+                //affichage message succès
+                // displayMessage(null, sendData.message);
+
+                //stocker le token et le user
+                localStorage.setItem("token", JSON.stringify(sendData.token))
+                localStorage.setItem("userAuth", JSON.stringify(sendData.returnData))
+
+                //rediriger vers le dashboard selen le role de l'utilisateur
+                const userRole = sendData.returnData.role
+                if (userRole == "admin") {
+                    window.location.href = "../../html/admin/dashboard.html"
+                } else if (userRole == "client") {
+                    window.location.href = "../../html/client/dashboard.html"
+                }
+
             }
 
+        } catch (error) {
+            // affichage des erreurs du message
+            if (sendData.success === false) displayMessage(sendData.errors, sendData.message)
+
         }
-
-    } catch (error) {
-        // affichage des erreurs du message
-        if (sendData.success === false) displayMessage(sendData.errors, sendData.message)
-
     }
 
 

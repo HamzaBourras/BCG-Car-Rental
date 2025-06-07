@@ -45,7 +45,7 @@ export async function displayMessageErreurs(errors, message, success) {
         btnC.classList.remove("success")
         btnC.classList.add("danger")
         let content = ``
-        if (typeof (errors) == "array") {
+        if (typeof (errors) == "array" || typeof (errors) == "object") {
             for (const key in errors) {
 
                 if (errors.hasOwnProperty(key)) {

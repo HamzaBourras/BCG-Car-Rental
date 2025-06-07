@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\Authenticate;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Sanctum\PersonalAccessToken;
 use App\Http\Requests\AuthentificationRequest;
 
@@ -55,7 +56,7 @@ class AuthentificationController extends Controller
                     "email" => $user->email,
                     "telephone" => $user->telephone,
                     "adresse" => $user->adresse,
-                    "image" => $user->image,
+                    "image" => "storage/" . $user->image,
                     "role" => $user->role->nom
                 ];
 
@@ -101,12 +102,22 @@ class AuthentificationController extends Controller
 
 
     /****** Modification des informations de compte ********/
-    public function modifierProfile(AuthentificationRequest $request, int $user_id)
+    public function modifierProfile(Request $request, int $user_id)
     {
         try {
-            $cheminImage = null;
-            $imageRecu = $request->file("image");
-            if ($imageRecu != null) $cheminImage = $imageRecu->store('images_profile', 'public');
+            $cheminImage = "";
+            $user = User::where('id', $user_id)->first();
+            $ancienImageName = $user->image;
+            if ($request->file('image')) {
+                // supprimer l'ancien image de la voiture du dossier storage/images_voitures si le fichier à été envoyé
+                if ($ancienImageName && Storage::exists("public/" . $ancienImageName)) {
+                    Storage::delete("public/" . $ancienImageName);
+                }
+
+                $cheminImage = $request->file('image')->store('images_profile', 'public');
+            } else {  // si l'aidmin va laisse l'ancien image
+                $cheminImage = $ancienImageName;
+            }
 
             $user = User::find($user_id);
             $user->nom = strtolower($request->nom);
@@ -129,12 +140,15 @@ class AuthentificationController extends Controller
                 "email" => $user->email,
                 "telephone" => $user->telephone,
                 "adresse" => $user->adresse,
-                "image" => $user->image,
+                "image" => "storage/" . $user->image,
                 "role" => $user->role->nom
             ];
 
+            $token = $user->createToken($request->email)->plainTextToken;
+
             return response()->json([
                 "data" => $userAuth,
+                "token" => $token,
                 "success" => true,
                 "message" => "Le profile a été modifié avec succès"
             ], 201);

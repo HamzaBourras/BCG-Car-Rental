@@ -100,10 +100,10 @@ class VoitureController extends Controller
     {
         try {
             $cheminImage = "";
-            $ancienImage = Voiture::where('id', $voiture_id)->first();
-            $ancienImageName = $ancienImage->image;
-            // supprimer l'ancien image de la voiture du dossier storage/images_voitures si le fichier à été envoyé
+            $voiture = Voiture::where('id', $voiture_id)->first();
+            $ancienImageName = $voiture->image;
             if ($request->file('image')) {
+                // supprimer l'ancien image de la voiture du dossier storage/images_voitures si le fichier à été envoyé
                 if ($ancienImageName && Storage::exists("public/" . $ancienImageName)) {
                     Storage::delete("public/" . $ancienImageName);
                 }

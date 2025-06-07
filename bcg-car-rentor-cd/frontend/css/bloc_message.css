@@ -31,6 +31,7 @@
     font-size: 26px;
     text-transform: uppercase;
     color: black;
+    text-align: left;
 }
 
 #glob #content #btn {

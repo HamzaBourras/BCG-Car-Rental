@@ -320,5 +320,6 @@ function recuReservation(reservation_id) {
 
         localStorage.setItem("recuInfos", JSON.stringify(recuInfos));
         window.open("/frontend/html/client/reservation_recu", "_blank");
+
     }
 }

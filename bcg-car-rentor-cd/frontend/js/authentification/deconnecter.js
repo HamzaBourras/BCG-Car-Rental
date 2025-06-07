@@ -8,9 +8,10 @@ async function deconnecter() {
         await sendData.postData(DECONNEXION_API, null, "post", user_id, false)
 
         if (sendData.success == true) {
-            localStorage.removeItem("userAuth")
-            localStorage.removeItem("token")
-            window.location.href = "../../html/page_accueil.html"
+            localStorage.removeItem("userAuth");
+            localStorage.removeItem("token");
+            window.history.replaceState(null, null, "/frontend/html/page_accueil.html");
+            window.location.href = "/frontend/html/page_accueil.html";
         }
 
 
@@ -21,9 +22,9 @@ async function deconnecter() {
 }
 
 const deconnecterButton = document.querySelector("#deconnecterBtn")
-deconnecterButton.addEventListener("click", () => {
+deconnecterButton.addEventListener("click", async () => {
 
-    deconnecter()
+    await deconnecter()
 
 })
 
