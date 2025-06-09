@@ -76,6 +76,37 @@ h1 {
     transform: translateX(0.15rem)
 }
 
+/* ====== Button d'ajout ====== */
+#ajouter {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#ajouter button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 1.5% 0px; */
+    height: 45px;
+    width: 45px;
+    background: rgb(0, 0, 159);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: 0.3s;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+#ajouter button:hover {
+    background-color: rgb(1, 1, 206);
+}
+
+
 /* pour le div contient les icons d'action */
 #actions {
     padding: 5px 0;
@@ -114,6 +145,7 @@ h1 {
 #modifierBtn i:hover {
     background-color: rgb(0,0,255);
 } 
+
 
 
 /************* pour le formulaire duc ommentaire */

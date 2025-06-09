@@ -84,12 +84,12 @@ h1 {
     display: flex;
     justify-content: end;
 }
-#supprimerBtn {
+#supprimerBtn, #likeBtn {
     background-color: inherit;
     border: none;
     outline: none;
 }
-#supprimerBtn i {
+#supprimerBtn i, #likeBtn i {
     font-size: 13px;
     color: white;
     height: 27px;
@@ -104,4 +104,13 @@ h1 {
 }
 #supprimerBtn i:hover {
     background-color: rgb(255, 0, 0);
+}
+
+#likeBtn i {
+    background-color: rgb(215, 215, 9);
+    color: black;
+    margin-right: 10px;
+}
+#likeBtn i:hover {
+    background-color: rgb(255, 255, 0);
 }

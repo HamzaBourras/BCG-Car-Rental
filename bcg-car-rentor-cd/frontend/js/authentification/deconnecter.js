@@ -8,8 +8,9 @@ async function deconnecter() {
         await sendData.postData(DECONNEXION_API, null, "post", user_id, false)
 
         if (sendData.success == true) {
-            localStorage.removeItem("userAuth");
-            localStorage.removeItem("token");
+            // localStorage.removeItem("userAuth");
+            // localStorage.removeItem("token");
+            localStorage.clear();
             window.history.replaceState(null, null, "/frontend/html/page_accueil.html");
             window.location.href = "/frontend/html/page_accueil.html";
         }

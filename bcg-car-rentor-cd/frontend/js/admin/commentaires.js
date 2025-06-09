@@ -41,6 +41,7 @@ function displayCommentairesAdmin(commentaires) {
           <p>${commentaire.contenu}</p>
         </div>
         <div id="actions">
+        <button id="likeBtn" data-commentaire-id="${commentaire.id}"><i class="fa-solid fa-thumbs-up"></i></button>
         <button id="supprimerBtn" data-commentaire-id="${commentaire.id}"><i class="fa-solid fa-trash"></i></button>
         </div>
       </div>

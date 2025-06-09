@@ -12,6 +12,8 @@ const annulerBtn = document.getElementById('annuler');
 const enregistrerBtn = document.getElementById('enregistrer');
 
 // Champs de formulaire
+const display_name = document.getElementById('display-name');
+const display_email = document.getElementById('display-email');
 const nom = document.getElementById('nom');
 const prenom = document.getElementById('prenom');
 const email = document.getElementById('email');
@@ -43,6 +45,8 @@ let userData = getDefaultUserData(); // Initialiser avec les données par défau
 function initialiseProfile(userData) {
 
     // Remplir les champs du formulaire avec les données de l'utilisateur
+    display_name.textContent = `${userData.nom} ${userData.prenom}`.toLocaleUpperCase();
+    display_email.textContent = userData.email
     nom.value = userData.nom || '';
     prenom.value = userData.prenom || '';
     email.value = userData.email || '';
