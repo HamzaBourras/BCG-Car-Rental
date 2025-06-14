@@ -29,7 +29,7 @@ class ReservationController extends Controller
                     ->setTimezone(config('app.timezone'))
                     ->format('d-m-Y H:i');
 
-                $expiree = Carbon::parse($reservation->date_fin)
+                $expiree = Carbon::parse($reservation->date_debut)
                     ->setTimezone(config('app.timezone'))
                     ->isPast() && ($reservation->statut_paiement == 0 || $reservation->statut == 0)  ? true : false;
 

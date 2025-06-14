@@ -50,12 +50,18 @@ function displayReservationsClient(reservations) {
             <button id="recuBtnR" data-reservation-id="${reservation.id}" role="button"> <span>Reçu</span> <i class="fa-solid fa-circle-down"></i></button>
             
             `
-
         }
         if (reservation.expiree == true) {
             expiree = `
                 <p class="expiree">Expirée</p>
-            `}
+                `
+            content2 += `
+                        <!-- Modification buttons -->
+                        <div class="actions">
+                            <button id="supprimerBtnR" data-reservation-id="${reservation.id}" style="background-color:rgb(159, 0, 0);" onmouseover="this.style.backgroundColor='rgb(206, 1, 1)'" onmouseout="this.style.backgroundColor='rgb(159, 0, 0)'"  class="button" role="button">Supprimer</button>
+                        </div>
+                    `
+        }
         if (reservation.statut == null && reservation.expiree == 0) {
             content2 += `
                     <!-- Modification buttons -->
@@ -67,7 +73,7 @@ function displayReservationsClient(reservations) {
         }
 
         // gérer l'affichage de statut du paiement
-        if (reservation.statut == 1) {
+        if (reservation.statut == 1 && reservation.expiree == false) {
             const statusClass = reservation.statut_paiement === 1 ? 'status-paid' : 'status-unpaid';
             const statusText = reservation.statut_paiement === 1 ? 'Payée' : 'Non payée';
 
