@@ -13,11 +13,10 @@ const userAuth = JSON.parse(localStorage.getItem("userAuth"))
 // **** appel à la fonction pour recevoir tous les voitures
 document.addEventListener("DOMContentLoaded", async function () {
     // vérifer si les commentaires ne sont pas déja récupérer
-    // if (!localStorage.getItem("reservations")) {
-    await getReservations();
-    // }
+    if (!localStorage.getItem("reservations")) {
+        await getReservations();
+    }
 });
-
 
 
 // ***************************************************************
@@ -138,11 +137,14 @@ function setupEventListeners() {
         });
     });
 
-    document.querySelector('#recuBtnR').addEventListener("click", function () {
-        const reservation_id = this.getAttribute('data-reservation-id');
-        recuReservation(reservation_id);
-
-    });
+    if (document.querySelector("#recuBtnR")) {
+        document.querySelectorAll('#recuBtnR').forEach(btn => {
+            btn.addEventListener('click', function () {
+                reservation_id_M = this.getAttribute('data-reservation-id');
+                recuReservation(reservation_id_M)  // fct pour afficher le reçu de la réservation
+            });
+        });
+    }
 
 }
 
@@ -329,3 +331,18 @@ function recuReservation(reservation_id) {
 
     }
 }
+
+
+
+/******* fct pour recharger les réservations *****/
+async function reloadReservations() {
+    const reservations = await getReservations(); // Récupérer les réservations depuis le localStorage ou l'API
+    if (reservations) {
+        const reservationsClient = reservations.filter(reser => reser.client_id == userAuth.id);
+        displayReservationsClient(reservationsClient);
+    }
+}
+
+document.querySelector("#reloadBtn").addEventListener("click", async () => {
+    await reloadReservations();
+})

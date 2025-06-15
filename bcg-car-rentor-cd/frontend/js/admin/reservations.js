@@ -5,8 +5,6 @@ import { displayMessageErreurs } from "../display_message_erreurs.js";
 
 let reservation_id_S = null // l'id de la reservation à supprimer
 let reservation_id_M = null // l'id de la reservation à modifier
-let reservation_id_C = null // l'id de la reservation à confirmer
-let reservation_id_P = null // l'id de la reservation à marquer payée
 
 function displayReservationsAdmin(reservations) {
 
@@ -212,3 +210,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }, 10); // Vérifie toutes les 10ms
 });
+
+
+
+
+/******* fct pour recharger les réservations *****/
+async function reloadReservations() {
+    const reservations = await getReservations(); // Récupérer les réservations depuis le localStorage ou l'API
+    if (reservations) {
+        displayReservationsAdmin(reservations);
+    }
+}
+
+document.querySelector("#reloadBtn").addEventListener("click", async () => {
+    await reloadReservations();
+})
