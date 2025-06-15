@@ -1,6 +1,6 @@
 import sendData from '/frontend/js/functions/sendData.js'
 import { baseUrl } from "../../apis/api.js";
-import { getReservations } from "../admin/get_reservation.js"
+import { getReservations } from "../admin/get_reservations.js"
 import { verifierDates } from "./valider_dates_reservation.js";
 import { calculateDaysBetweenDates } from "./valider_dates_reservation.js";
 import { CLIENT_EDIT_RESERVATIONS } from "../../apis/api.js";

@@ -114,6 +114,7 @@
 .data-table th, .data-table td {
 	padding: 15px 20px;
 	text-align: left;
+	/* color: white; */
 }
 
 .data-table th {
@@ -125,9 +126,13 @@
 
 .data-table td {
 	font-size: 14px;
-	color: black;
 }
 
 .data-table tr:last-child td {
 	border-bottom: none;
+}
+
+/* pour les statut des resérvations */
+.refusee {
+	border-left: 2px solid red;
 }

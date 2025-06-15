@@ -1,14 +1,16 @@
 <?php
 
-use App\Http\Controllers\AuthentificationController;
-use App\Http\Controllers\PublicController;
-use App\Http\Controllers\admin\VoitureController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\client\CommentaireController;
-use App\Http\Controllers\client\ReservationController;
+use GuzzleHttp\Middleware;
 use App\Models\Commentaire;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\admin\VoitureController;
+use App\Http\Controllers\AuthentificationController;
+use App\Http\Controllers\client\CommentaireController;
+use App\Http\Controllers\client\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +59,7 @@ Route::prefix("admin")->group(function () {
     Route::prefix("")->controller(AdminController::class)->group(function () {
         Route::get('/clients/index', 'indexClients');
         Route::delete("/commentaires/destroy/{commentaire_id}", "destroyCommentaire");
+        Route::get("/dashboard", "dashboard");
     });
 });
 
@@ -75,5 +78,9 @@ Route::prefix("client")->middleware("auth:sanctum")->group(function () {
         Route::post("store/{client_id}/{voiture_id}", "storeReservation");
         Route::put("edit/{client_id}/{voiture_id}/{reservation_id}", "editReservation");
         Route::delete("destroy/{client_id}/{voiture_id}/{reservation_id}", "destroyReservation");
+    });
+
+    Route::prefix("")->controller(ClientController::class)->group(function () {
+        Route::get("/dashboard", "dashboard");
     });
 });

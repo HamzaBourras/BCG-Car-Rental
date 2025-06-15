@@ -5,7 +5,7 @@ import { CLIENT_STORE_RESERVATIONS } from "../../apis/api.js";
 import { getVoitures } from "../page_accueil/get_voitures.js"  // je veux l'appeler pour récupérer les voitures s'ils ne sont pas d'ja récupérer
 import { verifierDates } from "./valider_dates_reservation.js"; // pour vérifier si la période de réservation est disponible
 import { displayMessageErreurs } from "../display_message_erreurs.js"
-import { getReservations } from "../admin/get_reservation.js";  // je veux l'appeler lorsque j'ajoute une nouvelle reservations
+import { getReservations } from "../admin/get_reservations.js";  // je veux l'appeler lorsque j'ajoute une nouvelle reservations
 
 console.log(("script voitures client"));
 

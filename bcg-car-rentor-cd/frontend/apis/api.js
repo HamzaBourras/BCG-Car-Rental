@@ -20,6 +20,8 @@ export const ADMIN_DESTROY_VOITURES = `${baseUrl}api/admin/voitures/destroy/`;
 export const ADMIN_INDEX_CLIENTS = `${baseUrl}api/admin/clients/index/`;
 /*** api supprimer commentaires ***/
 export const ADMIN_DESTROY_COMMENTAIRES = `${baseUrl}api/admin/commentaires/destroy/`;
+/*** api statistiques dashboard ***/
+export const ADMIN_STATISTIQUES_DASHBOARD = `${baseUrl}api/admin/dashboard/`;
 /*** api reservations ***/
 export const ADMIN_INDEX_RESERVATIONS = `${baseUrl}api/admin/reservations/index/`;
 export const ADMIN_EDIT_STATUT_RESERVATIONS = `${baseUrl}api/admin/reservations/editStatut/`;
@@ -29,6 +31,8 @@ export const ADMIN_DESTROY_RESERVATIONS = `${baseUrl}api/admin/reservations/dest
 
 
 /******* apis client *******/
+/*** api statistiques dashboard ***/
+export const CLIENT_STATISTIQUES_DASHBOARD = `${baseUrl}api/client/dashboard/`;
 /*** api reservations ***/
 export const CLIENT_INDEX_RESERVATIONS = `${baseUrl}api/client/reservations/index/`;
 export const CLIENT_STORE_RESERVATIONS = `${baseUrl}api/client/reservations/store/`;

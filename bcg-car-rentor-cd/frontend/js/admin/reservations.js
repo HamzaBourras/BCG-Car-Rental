@@ -1,4 +1,4 @@
-import { getReservations } from "./get_reservation.js";
+import { getReservations } from "./get_reservations.js";
 import sendData from "../functions/sendData.js";
 import { ADMIN_DESTROY_RESERVATIONS, ADMIN_EDIT_PAIEMENT_RESERVATIONS, ADMIN_EDIT_STATUT_RESERVATIONS } from "../../apis/api.js";
 import { displayMessageErreurs } from "../display_message_erreurs.js";

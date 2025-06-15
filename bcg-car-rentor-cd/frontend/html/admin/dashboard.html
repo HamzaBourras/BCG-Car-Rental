@@ -36,7 +36,7 @@
 							<div class="stat-card-content">
 								<div class="stat-card-info">
 									<h3>Voitures totales</h3>
-									<h2>30</h2>
+									<h2 id="nbreVoitures"></h2>
 								</div>
 								<div class="stat-card-icon vehicle-icon">
 									<i class="fas fa-car"></i>
@@ -51,7 +51,7 @@
 							<div class="stat-card-content">
 								<div class="stat-card-info">
 									<h3>Locations actives</h3>
-									<h2>10</h2>
+									<h2 id="reservationsActives"></h2>
 								</div>
 								<div class="stat-card-icon rental-icon">
 									<i class="fas fa-key"></i>
@@ -66,7 +66,7 @@
 							<div class="stat-card-content">
 								<div class="stat-card-info">
 									<h3>Clients</h3>
-									<h2>23</h2>
+									<h2 id="nbreClients"></h2>
 								</div>
 								<div class="stat-card-icon customer-icon">
 									<i class="fas fa-user-plus"></i>
@@ -81,7 +81,7 @@
 							<div class="stat-card-content">
 								<div class="stat-card-info">
 									<h3>Revenu</h3>
-									<h2>$78,450</h2>
+									<h2 id="revenueTotal"></h2>
 								</div>
 								<div class="stat-card-icon revenue-icon">
 									<i class="fas fa-dollar-sign"></i>
@@ -96,13 +96,13 @@
 					<div class="recent-section">
 						<div class="section-header">
 							<h3>Réservations récentes</h3>
-							<a href="#" class="view-all">Voir plus</a>
+							<a href="./reservations.html" class="view-all">Voir plus</a>
 						</div>
 						<div class="table-container">
 							<table class="data-table">
 								<thead>
 									<tr>
-										<th>ID</th>
+										<th>N °</th>
 										<th>Client</th>
 										<th>Voiture</th>
 										<th>Date de départ</th>
@@ -125,6 +125,7 @@
 	</div>
 	<script src="/frontend/js/routes_config.js"></script>
 	<script type="module" src="../../js/admin/sidebar_header.js"></script>
+	<script type="module" src="../../js/admin/dashboard.js"></script>
 </body>
 
 </html>
