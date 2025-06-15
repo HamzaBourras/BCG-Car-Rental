@@ -34,7 +34,7 @@ function displayCommentaires(commentaires) {
     let numberOfStars = 0
     let numberOfCommentaires = 0
     commentaires.forEach(commentaire => {
-        if (numberOfCommentaires < 4) {
+        if (numberOfCommentaires < 4 && commentaire.aimee == 1) {
             stars = ""
             numberOfStars = 0
             while (numberOfStars < commentaire.note) {
@@ -54,8 +54,8 @@ function displayCommentaires(commentaires) {
         </div>
       </div>
         `
+            numberOfCommentaires++;
         }
-        numberOfCommentaires++;
     });
 
     sectionsCommentaires.innerHTML = content

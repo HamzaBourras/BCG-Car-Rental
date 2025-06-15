@@ -50,6 +50,38 @@ class AdminController extends Controller
     }
 
 
+    /***** fct pour editer l'aime d'un commentaire */
+    public function editAimeCommentaire(int $commentaire_id)
+    {
+        try {
+            $commentaire = Commentaire::find($commentaire_id);
+            if (!$commentaire) {
+                return response()->json([
+                    "success" => false,
+                    "message" => "Commentaire non trouvé",
+                ], 404);
+            }
+
+            // Inverser l'état de l'aime
+            $commentaire->aimee = !$commentaire->aimee;
+            $commentaire->save();
+
+            return response()->json([
+                "success" => true,
+                "message" => "la priorité du commentaire a été modifié avec succès",
+                "data" => $commentaire
+            ], 200);
+        } catch (\Exception $e) {
+            // Erreur générale
+            return response()->json([
+                "success" => false,
+                "message" => "Erreur lors de la mise à jour de l'aime du commentaire",
+                "errors" => $e->getMessage()
+            ], 500);
+        }
+    }
+
+
     /***** fct pour supprimer un commentaire */
     public function destroyCommentaire(int $commentaire_id)
     {

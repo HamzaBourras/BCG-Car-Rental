@@ -77,7 +77,8 @@ class PublicController extends Controller
                     "note" => $commentaire->note,
                     "user_id" => $commentaire->user->id,
                     "nom" => $commentaire->user->nom,
-                    "prenom" => $commentaire->user->prenom
+                    "prenom" => $commentaire->user->prenom,
+                    "aimee" => $commentaire->aimee,
                 ];
 
                 array_push($tousCommentaires, $formCommentaire);

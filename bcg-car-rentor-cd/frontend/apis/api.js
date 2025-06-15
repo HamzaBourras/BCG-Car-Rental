@@ -20,6 +20,7 @@ export const ADMIN_DESTROY_VOITURES = `${baseUrl}api/admin/voitures/destroy/`;
 export const ADMIN_INDEX_CLIENTS = `${baseUrl}api/admin/clients/index/`;
 /*** api supprimer commentaires ***/
 export const ADMIN_DESTROY_COMMENTAIRES = `${baseUrl}api/admin/commentaires/destroy/`;
+export const ADMIN_EDIT_COMMENTAIRES = `${baseUrl}api/admin/commentaires/edit/`;
 /*** api statistiques dashboard ***/
 export const ADMIN_STATISTIQUES_DASHBOARD = `${baseUrl}api/admin/dashboard/`;
 /*** api reservations ***/

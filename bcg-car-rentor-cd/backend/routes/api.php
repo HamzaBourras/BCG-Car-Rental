@@ -58,6 +58,7 @@ Route::prefix("admin")->group(function () {
 
     Route::prefix("")->controller(AdminController::class)->group(function () {
         Route::get('/clients/index', 'indexClients');
+        Route::put("/commentaires/edit/{commentaire_id}", "editAimeCommentaire");
         Route::delete("/commentaires/destroy/{commentaire_id}", "destroyCommentaire");
         Route::get("/dashboard", "dashboard");
     });

@@ -1,13 +1,14 @@
 import sendData from "../functions/sendData.js";
 import { ADMIN_DESTROY_COMMENTAIRES } from "../../apis/api.js";
+import { ADMIN_EDIT_COMMENTAIRES } from "../../apis/api.js";
 import { getCommentaires } from "../page_accueil/get_display_commentaires.js";
 import { displayMessageErreurs } from "../display_message_erreurs.js"
 
 // **** appel à la fonction pour recevoir tous les commentaires
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
     //vérifer si les commentaires ne sont pas déja récupérer
     if (!localStorage.getItem("commentaires")) {
-        getCommentaires();
+        await getCommentaires();
     }
 });
 
@@ -21,8 +22,17 @@ function displayCommentairesAdmin(commentaires) {
     let content = ""
     let stars = ""
     let numberOfStars = 0
+    let likeBtn = ""
+    let classLike = ""
     commentaires.forEach(commentaire => {
-
+        // Vérifier si le commentaire est aimé  
+        if (commentaire.aimee === 1) {
+            classLike = "liked_comment"
+            likeBtn = '<i class="fa-solid fa-thumbs-down"></i>'
+        } else {
+            classLike = ""
+            likeBtn = '<i class="fa-solid fa-thumbs-up"></i>'
+        }
         stars = ""
         numberOfStars = 0
         while (numberOfStars < commentaire.note) {
@@ -30,20 +40,20 @@ function displayCommentairesAdmin(commentaires) {
             numberOfStars++;
         }
         content += `
-        <div class="comment-card">
-        <div class="comment-card-header">
-          <h2>${commentaire.prenom} ${commentaire.nom}</h2>
-          <div class="stars">
-            ${stars}
-          </div>
-        </div>
-        <div class="comment">
-          <p>${commentaire.contenu}</p>
-        </div>
-        <div id="actions">
-        <button id="likeBtn" data-commentaire-id="${commentaire.id}"><i class="fa-solid fa-thumbs-up"></i></button>
-        <button id="supprimerBtn" data-commentaire-id="${commentaire.id}"><i class="fa-solid fa-trash"></i></button>
-        </div>
+        <div class="comment-card ${classLike}">
+            <div class="comment-card-header">
+            <h2>${commentaire.prenom} ${commentaire.nom}</h2>
+            <div class="stars">
+                ${stars}
+            </div>
+            </div>
+            <div class="comment">
+            <p>${commentaire.contenu}</p>
+            </div>
+            <div id="actions">
+            <button id="likeBtn" data-commentaire-id="${commentaire.id}">${likeBtn}</button>
+            <button id="supprimerBtn" data-commentaire-id="${commentaire.id}"><i class="fa-solid fa-trash"></i></button>
+            </div>
       </div>
         `
 
@@ -51,7 +61,12 @@ function displayCommentairesAdmin(commentaires) {
 
     sectionsCommentaires.innerHTML = content
 
-    // ajouter event click sur tous les buttons supprimer
+    addEventListeners(); // ajouter les écouteurs d'événements sur les boutons "like" et "supprimer"
+}
+
+// fct pour ajouter les écouteurs d'événements sur les boutons "like" et "supprimer"
+function addEventListeners() {
+    // ajouter event click sur tous les buttons like
     document.querySelectorAll('#supprimerBtn').forEach(btn => {
         btn.addEventListener('click', function () {
             commentaire_id_S = this.getAttribute('data-commentaire-id');
@@ -63,12 +78,22 @@ function displayCommentairesAdmin(commentaires) {
             }
         });
     });
+    // ajouter event click sur tous les buttons like
+    document.querySelectorAll('#likeBtn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const commentaire_id = this.getAttribute('data-commentaire-id');
+            const conf = confirm("Voulez-vous modifier la priorité de ce commentaire ?");
+            if (conf) {
+                editLikeCommentaire(commentaire_id);
+            }
+        });
+    });
 }
 
 
 // **** appel à la fonction pour ajouter les commentaires à la page ""d'accueil""
 document.addEventListener("DOMContentLoaded", function () {
-    // Vérifier périodiquement si les voitures sont disponibles
+    // Vérifier périodiquement si les commentaires sont disponibles
     const checkData = setInterval(() => {
         const commentaires = JSON.parse(localStorage.getItem("commentaires")) // sélectionner les voitures enregistrer dans localStorage avec le fichier /page_accueil/get_voitures.js
         if (commentaires) {
@@ -90,6 +115,27 @@ async function supprimerCommentaire(commentaire_id) {
             const commentairesS = await getCommentaires()  // appel à la fct pour recevoir les commentaires après la modification
             displayCommentairesAdmin(commentairesS)
 
+
+        }
+    } catch (error) {
+        // affichage des erreurs du message
+        if (sendData.success === false)
+            displayMessageErreurs(sendData.errors, sendData.message, sendData.success)
+
+    }
+}
+
+
+/***** fct pour modifier le like d'un commentaire */
+async function editLikeCommentaire(commentaire_id) {
+
+    try {
+        await sendData.postData(ADMIN_EDIT_COMMENTAIRES, {}, "put", commentaire_id, false);
+        if (sendData.success === true) {
+            //affichage message succès
+            displayMessageErreurs(null, sendData.message, sendData.success);
+            const commentairesS = await getCommentaires()  // appel à la fct pour recevoir les commentaires après la modification
+            displayCommentairesAdmin(commentairesS)
 
         }
     } catch (error) {
