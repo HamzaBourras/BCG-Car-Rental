@@ -31,7 +31,7 @@
                 <div class="comments">
                     <div style="display: flex; align-items: center; justify-content: space-between;">
                         <h1>Gestion des commentaires</h1>
-                        <div id="ajouter"><button id="ajouterBtn"> <i class="fa fa-plus"></i></button></div>
+                        <div id="ajouterBtn"><button id="ajouterBtn"> <i class="fa fa-plus"></i></button></div>
                     </div>
                     <div class="comments-cards">
 
@@ -47,6 +47,7 @@
     <!-- formulaire pour le commentaire -->
     <div id="form_container">
         <form id="commentaire_form">
+            <input type="text" hidden id="action" value="">
             <div class="form_group">
                 <!-- <label for="content">Commentaire : </label> -->
                 <textarea rows="5" cols="10" id="contenu"></textarea>

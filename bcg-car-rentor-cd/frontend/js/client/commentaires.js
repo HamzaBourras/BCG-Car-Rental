@@ -1,6 +1,7 @@
 import sendData from "../functions/sendData.js";
 import { CLIENT_DESTROY_COMMENTAIRES } from "../../apis/api.js";
 import { CLIENT_EDIT_COMMENTAIRES } from "../../apis/api.js";
+import { CLIENT_STORE_COMMENTAIRES } from "../../apis/api.js";
 import { getCommentaires } from "../page_accueil/get_display_commentaires.js";
 import { displayMessageErreurs } from "../display_message_erreurs.js"
 
@@ -123,7 +124,23 @@ async function supprimerCommentaire(commentaire_id) {
 }
 
 
-// fonction pour modifier un commentaire
+//**** fonction pour modifier un commentaire
+// fonction pour initialise le formulaire lorsque je clique sur modifier
+function initialiseFormulaire(commenataire_id) {
+  document.querySelector("#action").value = "modifier" // pour modifier un commentaire
+
+  const allCommentaires = JSON.parse(localStorage.getItem("commentaires")) // sélectionner les voitures enregistrer dans localStorage avec le fichier /page_accueil/get_voitures.js
+  const commenataireSelected = allCommentaires.filter(cm => cm.id == commenataire_id)  // sélectionner la voiture à modifier
+  document.querySelector("#form_container").style.display = "flex"  // afficher la formulaire lorsque je clique sur le button modifier
+
+  if (commenataireSelected) {
+    document.querySelector("#contenu").value = commenataireSelected[0].contenu
+    document.querySelector("#note").value = commenataireSelected[0].note
+    document.querySelector("#note_span").textContent = commenataireSelected[0].note
+  }
+
+}
+// **** fonction pour modifier un commentaire
 async function modifierCommentaire(commentaire_id) {
   const formData = new FormData();
   try {
@@ -146,24 +163,52 @@ async function modifierCommentaire(commentaire_id) {
       displayMessageErreurs(sendData.errors, sendData.message, sendData.success)
   }
 }
-// appeler la méthode pour modifier un voiture lorsque je submit la formulaire
+
+// **** fonction pour afficher le formulaire de commentaire lorsque je clique sur le button "ajouter un commentaire" */
+document.querySelector("#ajouterBtn").addEventListener("click", function () {
+  document.querySelector("#action").value = "ajouter" // pour ajouter un commentaire
+  document.querySelector("#form_container").style.display = "flex" // afficher le formulaire
+  document.querySelector("#contenu").value = "" // vider le contenu de l'input contenu
+  document.querySelector("#note").value = 0 // mettre la note à 0
+  document.querySelector("#note_span").textContent = 0 // mettre la note à 0
+});
+
+async function ajouterCommentaire() {
+
+  const formData = new FormData();
+  try {
+    formData.append("contenu", document.querySelector("#contenu").value)
+    formData.append("note", document.querySelector("#note").value)
+
+    await sendData.postData(CLIENT_STORE_COMMENTAIRES, formData, "post", `${user_id}`, false);
+    if (sendData.success === true) {
+      //affichage message succès
+      displayMessageErreurs(null, sendData.message, sendData.success);
+      const commenatairesA = await getCommentaires()  // appel à la fct pour recevoir les commentaires après l'ajout
+      displayCommentaires(commenatairesA)
+
+      document.getElementById("annulerBtnC").click() // pour cacher le formulaire 
+    }
+  } catch (error) {
+    // affichage des erreurs du message
+    if (sendData.success === false)
+      displayMessageErreurs(sendData.errors, sendData.message, sendData.success)
+  }
+}
+
+
+// appeler la méthode pour ajouter ou modifier un commentaire lorsque je submit la formulaire
 const form = document.querySelector("#commentaire_form")
+
 form.addEventListener("submit", async (e) => {
+  const action = document.querySelector("#action").value // pour savoir si je suis en train de modifier ou ajouter un commentaire
   e.preventDefault();
-  await modifierCommentaire(commentaire_id_M)
+  if (action == "ajouter") {
+    ajouterCommentaire() // appeler la méthode pour ajouter un commentaire
+  } else if (action == "modifier") {
+    modifierCommentaire(commentaire_id_M) // appeler la méthode pour modifier un commentaire
+  }
 })
 
-// **** fonction pour initialise le formulaire lorsque je clique sur modifier
-function initialiseFormulaire(commenataire_id) {
-  const allCommentaires = JSON.parse(localStorage.getItem("commentaires")) // sélectionner les voitures enregistrer dans localStorage avec le fichier /page_accueil/get_voitures.js
-  const commenataireSelected = allCommentaires.filter(cm => cm.id == commenataire_id)  // sélectionner la voiture à modifier
-  document.querySelector("#form_container").style.display = "flex"  // afficher la formulaire lorsque je clique sur le button modifier
 
-  if (commenataireSelected) {
-    document.querySelector("#contenu").value = commenataireSelected[0].contenu
-    document.querySelector("#note").value = commenataireSelected[0].note
-    document.querySelector("#note_span").textContent = commenataireSelected[0].note
-  }
-
-}
 

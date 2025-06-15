@@ -100,37 +100,38 @@ function displayRecu(recuInfos) {
 
 
 function downloadAsPDF() {
-    // Créer un iframe caché
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    document.body.appendChild(iframe);
+    window.print(); // Utiliser la fonction d'impression du navigateur pour générer le PDF
+    //     // Créer un iframe caché
+    //     const iframe = document.createElement('iframe');
+    //     iframe.style.display = 'none';
+    //     document.body.appendChild(iframe);
 
-    // Écrire le contenu à imprimer dans l'iframe
-    const content = document.getElementById('recuContainer').innerHTML;
-    iframe.contentDocument.write(`
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <title>Reçu de réservation</title>
-                <style>
-                    body { font-family: Arial; margin: 0; padding: 20px; }
-                    @page { size: auto; margin: 0mm; }
-                </style>
-            </head>
-            <body>
-                ${content}
-                <script>
-                    window.onload = function() {
-                        setTimeout(function() {
-                            window.print();
-                            window.close();
-                        }, 200);
-                    };
-        </script>
-        </body>
+    //     // Écrire le contenu à imprimer dans l'iframe
+    //     const content = document.getElementById('recuContainer').innerHTML;
+    //     iframe.contentDocument.write(`
+    //             <!DOCTYPE html>
+    //             <html>
+    //             <head>
+    //                 <title>Reçu de réservation</title>
+    //                 <style>
+    //                     body { font-family: Arial; margin: 0; padding: 20px; }
+    //                     @page { size: auto; margin: 0mm; }
+    //                 </style>
+    //             </head>
+    //             <body>
+    //                 ${content}
+    //                 <script>
+    //                     window.onload = function() {
+    //                         setTimeout(function() {
+    //                             window.print();
+    //                             window.close();
+    //                         }, 200);
+    //                     };
+    //         </script>
+    //         </body>
 
-        </html>`);
-    iframe.contentDocument.close();
+    //         </html>`);
+    //     iframe.contentDocument.close();
 }
 
 
