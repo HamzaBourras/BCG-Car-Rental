@@ -83,6 +83,19 @@ input::placeholder {
     color: #aaa;
 }
 
+/* style pour l'eye du password */
+#password_group {
+    position: relative;
+}
+#eye {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #333;
+}
+
 /* Style pour les messages d'erreur */
 .error-message {
     color: #ff4d4d;

@@ -50,12 +50,19 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="min 8 caractères" required>
+                        <div id="password_group">
+                            <input type="password" id="password" name="password" placeholder="min 8 caractères"
+                                required>
+                            <i id="eye" class="fa-solid fa-eye-slash"></i>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <label for="confirm-password">Confirme Password</label>
-                        <input type="password" id="confirm-password" name="confirm-password" required>
+                        <div id="password_group">
+                            <input type="password" id="confirm-password" name="confirm-password" required>
+                            <i id="eye" class="fa-solid fa-eye-slash"></i>
+                        </div>
                     </div>
                 </div>
 
@@ -86,6 +93,32 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // script pour afficher le password
+        const eyes = document.querySelectorAll('#eye');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+        eyes.forEach(eye => {
+            eye.addEventListener('click', function () {
+                if (this.classList.contains('fa-eye-slash')) {
+                    eyes[0].classList.remove('fa-eye-slash');
+                    eyes[1].classList.remove('fa-eye-slash');
+                    eyes[0].classList.add('fa-eye');
+                    eyes[1].classList.add('fa-eye');
+                    passwordInput.type = 'text';
+                    confirmPasswordInput.type = 'text';
+                } else {
+                    eyes[0].classList.remove('fa-eye');
+                    eyes[1].classList.remove('fa-eye');
+                    eyes[0].classList.add('fa-eye-slash');
+                    eyes[1].classList.add('fa-eye-slash');
+                    passwordInput.type = 'password';
+                    confirmPasswordInput.type = 'password';
+                }
+            });
+        });
+    </script>
 
     <script src="/frontend/js/routes_config.js"></script>
     <script type="module" src="../../js/authentification/inscrire.js"></script>
