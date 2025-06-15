@@ -81,10 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
 const marque = document.querySelector("#marque");
 const prix_min = document.querySelector("#prix_min")
 const prix_max = document.querySelector("#prix_max")
+let voituresFiltrees = voitures; // initialiser les voitures filtrées avec toutes les voitures
 
 marque.addEventListener("input", () => {
   const marqueValue = marque.value.trim().toLowerCase()
-  const voituresFiltrees = voitures.filter(voiture => {
+  voituresFiltrees = voituresFiltrees.filter(voiture => {
     const matchesMarque = !marqueValue || voiture.marque.toLowerCase().includes(marqueValue);
 
     return matchesMarque;
@@ -96,7 +97,7 @@ marque.addEventListener("input", () => {
 
 prix_min.addEventListener("input", () => {
   const prixValue = parseFloat(prix_min.value) || 0
-  const voituresFiltrees = voitures.filter(voiture => {
+  voituresFiltrees = voituresFiltrees.filter(voiture => {
     const matchesPrix = voiture.prix_jour >= prixValue;
 
     return matchesPrix;
@@ -108,7 +109,7 @@ prix_min.addEventListener("input", () => {
 
 prix_max.addEventListener("input", () => {
   const prixValue = parseFloat(prix_max.value) || Infinity
-  const voituresFiltrees = voitures.filter(voiture => {
+  voituresFiltrees = voituresFiltrees.filter(voiture => {
     const matchesPrix = voiture.prix_jour <= prixValue;
 
     return matchesPrix;
@@ -125,6 +126,7 @@ resetButton.addEventListener("click", () => {
   marque.selectedIndex = 0;
   prix_min.value = ""
   prix_max.value = ""
+  voituresFiltrees = voitures; // réinitialiser les voitures filtrées avec toutes les voitures
   displayVoitures(voitures)
 })
 
