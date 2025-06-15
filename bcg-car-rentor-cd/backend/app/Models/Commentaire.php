@@ -12,7 +12,8 @@ class Commentaire extends Model
     protected $fillable = [
         "contenu",
         "note",
-        "user_id"
+        "user_id",
+        "aimee",
     ];
 
     public function user()

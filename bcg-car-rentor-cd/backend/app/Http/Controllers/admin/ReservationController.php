@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class ReservationController extends Controller
 {
@@ -99,6 +100,9 @@ class ReservationController extends Controller
     {
         try {
             $reservation = Reservation::findOrFail($reservation_id);
+            $user_id = $reservation->user_id;
+            User::where('id', $user_id)->increment('points', 10); // Ajout de 10 points au client grace à la réservation
+
             $reservation->statut_paiement = 1;  // parce que l'admin confirme le paiement seulemnt, par défaut le statut de paiement est 0
             $reservation->save();
 

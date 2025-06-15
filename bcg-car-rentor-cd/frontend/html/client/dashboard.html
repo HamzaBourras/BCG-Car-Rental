@@ -38,7 +38,7 @@
 							<div class="stat-card-content">
 								<div class="stat-card-info">
 									<h3>Réservations actives</h3>
-									<h2>3</h2>
+									<h2 id="reservationsActives"></h2>
 								</div>
 								<div class="stat-card-icon active-icon">
 									<i class="fa-solid fa-check"></i>
@@ -53,7 +53,7 @@
 							<div class="stat-card-content">
 								<div class="stat-card-info">
 									<h3>Réservations totales</h3>
-									<h2>8</h2>
+									<h2 id="reservationsTotales"></h2>
 								</div>
 								<div class="stat-card-icon total-icon">
 									<i class="fa-solid fa-list-ul"></i>
@@ -68,7 +68,7 @@
 							<div class="stat-card-content">
 								<div class="stat-card-info">
 									<h3>Commentaires</h3>
-									<h2>4</h2>
+									<h2 id="nbreCommentaires"></h2>
 								</div>
 								<div class="stat-card-icon customer-icon">
 									<i class="fas fa-comments"></i>
@@ -83,14 +83,14 @@
 							<div class="stat-card-content">
 								<div class="stat-card-info">
 									<h3>points de fidélité</h3>
-									<h2>40</h2>
+									<h2 id="points"></h2>
 								</div>
 								<div class="stat-card-icon points-icon">
 									<i class="fa-solid fa-star"></i>
 								</div>
 							</div>
 							<div class="stat-footer">
-								<a href="#">Voir plus</a>
+								<a href="./reservations.html">Voir plus</a>
 							</div>
 						</div>
 
@@ -99,13 +99,13 @@
 					<div class="recent-section">
 						<div class="section-header">
 							<h3>Réservations récentes</h3>
-							<a href="#" class="view-all">Voir plus</a>
+							<a href="./reservations.html" class="view-all">Voir plus</a>
 						</div>
 						<div class="table-container">
 							<table class="data-table">
 								<thead>
 									<tr>
-										<th>ID</th>
+										<th>N °</th>
 										<th>Voiture</th>
 										<th>Date de départ</th>
 										<th>Date de retour</th>
@@ -124,6 +124,7 @@
 			</div>
 			<script src="/frontend/js/routes_config.js"></script>
 			<script type="module" src="../../js/client/sidebar_header.js"></script>
+			<script type="module" src="../../js/client/dashboard.js"></script>
 </body>
 
 </html>

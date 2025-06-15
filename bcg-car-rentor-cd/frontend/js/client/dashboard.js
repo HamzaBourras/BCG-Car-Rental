@@ -1,11 +1,13 @@
 import getData from "../functions/getData.js";
-import { ADMIN_STATISTIQUES_DASHBOARD } from "../../apis/api.js";
-import { getReservations } from "./get_reservations.js";
+import { CLIENT_STATISTIQUES_DASHBOARD } from "../../apis/api.js";
+import { getReservations } from "../admin/get_reservations.js"
+
+const user_id = JSON.parse(localStorage.getItem("userAuth")).id;
 
 // Fonction pour récupérer les statistiques du dashboard
 async function getDashboardStats() {
     try {
-        await getData.getD(ADMIN_STATISTIQUES_DASHBOARD);
+        await getData.getD(CLIENT_STATISTIQUES_DASHBOARD, `${user_id}`);
         localStorage.setItem("dashboardStats", JSON.stringify(getData.returnData)); // Enregistrer les statistiques dans localStorage
         return getData.returnData; // Retourner les données récupérées
     } catch (error) {
@@ -17,10 +19,10 @@ async function getDashboardStats() {
 // **** Fonction pour afficher les statistiques du dashboard ****
 function displayDashboardStats(stats, reservations) {
 
-    document.querySelector("#nbreVoitures").textContent = stats.nombre_voitures;
+    document.querySelector("#reservationsTotales").textContent = stats.nombre_reservations;
     document.querySelector("#reservationsActives").textContent = stats.nombre_reservations_actives;
-    document.querySelector("#nbreClients").textContent = stats.nombre_clients;
-    document.querySelector("#revenueTotal").textContent = stats.revenue_total + " DH";
+    document.querySelector("#nbreCommentaires").textContent = stats.nombre_commentaires;
+    document.querySelector("#points").textContent = stats.points;
 
     // Afficher les trois reservations les plus récentes
     const recentReservationsContainer = document.querySelector("#recent-bookings-table");
@@ -44,7 +46,6 @@ function displayDashboardStats(stats, reservations) {
             content += `
         <tr>
             <td>${reser.id}</td>
-            <td>${reser.nom_client} ${reser.prenom_client}</td>
             <td>${reser.voiture_marque} ${reser.voiture_modele}</td>
             <td>${reser.date_debut}</td>
             <td>${reser.date_fin}</td>
@@ -69,7 +70,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         reservations = await getReservations();
     }
 
-    displayDashboardStats(dashboardStats, reservations);
+    const reservationsClient = reservations.filter(reser => reser.client_id == user_id)
+    displayDashboardStats(dashboardStats, reservationsClient);
 });
 
 

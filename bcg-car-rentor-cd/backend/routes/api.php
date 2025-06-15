@@ -65,7 +65,7 @@ Route::prefix("admin")->group(function () {
 
 
 /***************** Routes client *******************/
-Route::prefix("client")->middleware("auth:sanctum")->group(function () {
+Route::prefix("client")->group(function () {
     Route::prefix("commentaires")->controller(CommentaireController::class)->group(function () {
         Route::get("index/{client_id}", "indexCommentaire");
         Route::post("store/{client_id}", "storeCommentaire");
@@ -81,6 +81,6 @@ Route::prefix("client")->middleware("auth:sanctum")->group(function () {
     });
 
     Route::prefix("")->controller(ClientController::class)->group(function () {
-        Route::get("/dashboard", "dashboard");
+        Route::get("/dashboard/{client_id}", "dashboard");
     });
 });
