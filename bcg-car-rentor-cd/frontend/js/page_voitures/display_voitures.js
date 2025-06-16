@@ -117,7 +117,7 @@ resetButton.addEventListener("click", () => {
   marque.selectedIndex = 0;
   prix_min.value = "";
   prix_max.value = "";
-  voituresFiltrees = [...voitures]; // Crée une copie du tableau original
+  // voituresFiltrees = voitures; // Crée une copie du tableau original
   displayVoitures(voitures);
 });
 

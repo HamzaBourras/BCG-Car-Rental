@@ -7,6 +7,8 @@ use Carbon\Carbon;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NewReservationNotification;
 use App\Http\Requests\ReservationRequest;
 
 class ReservationController extends Controller
@@ -68,7 +70,7 @@ class ReservationController extends Controller
     {
         try {
 
-            Reservation::create([
+            $reservation = Reservation::create([
                 "user_id" => $client_id,
                 "voiture_id" => $voiture_id,
                 "date_debut" => $request->date_debut,
@@ -78,6 +80,13 @@ class ReservationController extends Controller
                 "statut" => null,
                 "statut_paiement" => 0,
             ]);
+
+            // Charger les relations pour l'email
+            $reservation->load(['user', 'voiture']);
+
+            // Envoyer l'email à l'admin
+            $adminEmail = config('mail.from.address'); // ou une adresse spécifique
+            Mail::to($adminEmail)->send(new NewReservationNotification($reservation));
 
             return response()->json([
                 "success" => true,
