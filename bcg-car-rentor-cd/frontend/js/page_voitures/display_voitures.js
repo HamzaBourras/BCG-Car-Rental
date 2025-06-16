@@ -14,8 +14,8 @@ function initialiseMarques(voitures) {
 
 
 // **** fonction pour ajouter les voitures à la page ""des voitures""
+let sectionsCards = document.querySelector(".cars-cards");
 function displayVoitures(voitures) {
-  let sectionsCards = document.querySelector(".cars-cards");
 
   let content = "";
 
@@ -76,58 +76,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// **** fonction pour les filtres
-
 const marque = document.querySelector("#marque");
-const prix_min = document.querySelector("#prix_min")
-const prix_max = document.querySelector("#prix_max")
-let voituresFiltrees = voitures; // initialiser les voitures filtrées avec toutes les voitures
+const prix_min = document.querySelector("#prix_min");
+const prix_max = document.querySelector("#prix_max");
+const resetButton = document.querySelector("#reset-btn");
 
-marque.addEventListener("input", () => {
-  const marqueValue = marque.value.trim().toLowerCase()
-  voituresFiltrees = voituresFiltrees.filter(voiture => {
-    const matchesMarque = !marqueValue || voiture.marque.toLowerCase().includes(marqueValue);
+function filtrerVoitures() {
+  const marqueValue = marque.value.trim().toLowerCase();
+  const prixMinValue = parseFloat(prix_min.value) || 0;
+  const prixMaxValue = parseFloat(prix_max.value) || Infinity;
 
-    return matchesMarque;
+  const voituresFiltrees = voitures.filter(voiture => {
+    const matchesMarque = marqueValue == "select marque" || voiture.marque.toLowerCase().includes(marqueValue);
+    const matchesPrixMin = voiture.prix_jour >= prixMinValue;
+    const matchesPrixMax = voiture.prix_jour <= prixMaxValue;
+
+    return matchesMarque && matchesPrixMin && matchesPrixMax;
   });
 
-  if (voituresFiltrees.length > 0) displayVoitures(voituresFiltrees)
-
-})
-
-prix_min.addEventListener("input", () => {
-  const prixValue = parseFloat(prix_min.value) || 0
-  voituresFiltrees = voituresFiltrees.filter(voiture => {
-    const matchesPrix = voiture.prix_jour >= prixValue;
-
-    return matchesPrix;
-  });
-
-  if (voituresFiltrees.length > 0) displayVoitures(voituresFiltrees)
-
-})
-
-prix_max.addEventListener("input", () => {
-  const prixValue = parseFloat(prix_max.value) || Infinity
-  voituresFiltrees = voituresFiltrees.filter(voiture => {
-    const matchesPrix = voiture.prix_jour <= prixValue;
-
-    return matchesPrix;
-  });
-
-  if (voituresFiltrees.length > 0) displayVoitures(voituresFiltrees)
-
-})
+  if (voituresFiltrees.length > 0) {
+    displayVoitures(voituresFiltrees);
+  } else {
+    // Afficher un message 
+    sectionsCards.innerHTML = `
+      <div>
+        <h3 style="color:#969696; font-weight:600; font-size:20px;">Aucune voiture trouvée pour ces critères.</h3>
+      </div>
+    `;
+  }
+}
 
 
-// pour afficher tous les voitures après le filtre
-const resetButton = document.querySelector("#reset-btn")
+// Écouteurs d'événements pour tous les filtres
+marque.addEventListener("input", filtrerVoitures);
+prix_min.addEventListener("input", filtrerVoitures);
+prix_max.addEventListener("input", filtrerVoitures);
+
+// Réinitialisation des filtres
 resetButton.addEventListener("click", () => {
   marque.selectedIndex = 0;
-  prix_min.value = ""
-  prix_max.value = ""
-  voituresFiltrees = voitures; // réinitialiser les voitures filtrées avec toutes les voitures
-  displayVoitures(voitures)
-})
+  prix_min.value = "";
+  prix_max.value = "";
+  voituresFiltrees = [...voitures]; // Crée une copie du tableau original
+  displayVoitures(voitures);
+});
 
 
