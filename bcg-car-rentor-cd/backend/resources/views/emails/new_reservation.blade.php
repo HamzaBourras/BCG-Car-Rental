@@ -1,198 +1,112 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nouvelle réservation de voiture</title>
-    <style>
-        * {
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        /* Base styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f7f7f7;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-        }
-
+        /* Container */
         .email-container {
             max-width: 600px;
-            margin: 0 auto;
+            margin: 20px auto;
             background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-            position: relative;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="grain" width="100" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="5" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="80" cy="15" r="1.5" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="20" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .header h2 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header .subtitle {
-            font-size: 16px;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
-        }
-
-        .content {
-            padding: 40px 30px;
-        }
-
-        .reservation-card {
-            background: #f8f9fa;
-            border-left: 5px solid #dc2626;
             border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #e5e7eb;
+        /* Header */
+        .email-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
         }
 
-        .info-row:last-child {
-            border-bottom: none;
-        }
-
-        .info-label {
+        .email-header h2 {
+            margin: 0;
+            font-size: 24px;
             font-weight: 600;
-            color: #374151;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        }
+
+        /* Content */
+        .email-content {
+            padding: 30px;
+        }
+
+        .reservation-details {
+            background-color: #f9f9f9;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .detail-row {
+            margin-bottom: 12px;
+            display: flex;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            min-width: 150px;
+            color: #2c3e50;
+        }
+
+        .detail-value {
             flex: 1;
         }
 
-        .info-value {
-            font-weight: 500;
-            color: #111827;
-            font-size: 16px;
-            text-align: right;
-            flex: 2;
-        }
-
         .price-highlight {
-            background: linear-gradient(135deg, #dc2626, #ef4444);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 24px;
+            color: #e74c3c;
             font-weight: 700;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+            font-size: 18px;
         }
 
-        .cta-section {
-            text-align: center;
-            margin-top: 30px;
-            padding: 25px;
-            background: #f9fafb;
-            border-radius: 8px;
-            border: 1px solid #e5e7eb;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #111827, #374151);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .footer {
-            background: #111827;
-            color: #9ca3af;
+        /* Footer */
+        .email-footer {
+            background-color: #ecf0f1;
             padding: 20px 30px;
             text-align: center;
             font-size: 14px;
+            color: #7f8c8d;
         }
 
-        .footer .company-name {
-            color: #dc2626;
-            font-weight: 600;
-        }
-
-        .alert-badge {
+        .action-button {
             display: inline-block;
-            background: #dc2626;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 12px;
+            background-color: #3498db;
+            color: white !important;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 4px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
+            margin-top: 15px;
         }
 
-        @media (max-width: 600px) {
+        /* Responsive adjustments */
+        @media only screen and (max-width: 600px) {
             .email-container {
                 margin: 0;
                 border-radius: 0;
             }
 
-            .header,
-            .content,
-            .footer {
-                padding: 20px;
-            }
-
-            .info-row {
+            .detail-row {
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
             }
 
-            .info-value {
-                text-align: left;
-            }
-
-            .header h2 {
-                font-size: 24px;
+            .detail-label {
+                margin-bottom: 5px;
             }
         }
     </style>
@@ -200,56 +114,54 @@
 
 <body>
     <div class="email-container">
-        <div class="header">
-            <div class="alert-badge">Nouvelle réservation</div>
-            <h2>Réservation confirmée</h2>
-            <p class="subtitle">Une nouvelle demande de location vient d'être effectuée</p>
+        <div class="email-header">
+            <h2>Nouvelle réservation de voiture</h2>
         </div>
 
-        <div class="content">
-            <div class="reservation-card">
-                <div class="info-row">
-                    <span class="info-label">Client</span>
-                    <span class="info-value">{{ $reservation->user->nom }} {{ $reservation->user->prenom }}</span>
+        <div class="email-content">
+            <p>Bonjour,</p>
+            <p>Une nouvelle réservation a été effectuée sur votre plateforme. Voici les détails :</p>
+
+            <div class="reservation-details">
+                <div class="detail-row">
+                    <span class="detail-label">Client:</span>
+                    <span class="detail-value">{{ $reservation->user->nom }} {{ $reservation->user->prenom }}</span>
                 </div>
 
-                <div class="info-row">
-                    <span class="info-label">Voiture</span>
-                    <span class="info-value">{{ $reservation->voiture->marque }}
+                <div class="detail-row">
+                    <span class="detail-label">Voiture:</span>
+                    <span class="detail-value">{{ $reservation->voiture->marque }}
                         {{ $reservation->voiture->modele }}</span>
                 </div>
 
-                <div class="info-row">
-                    <span class="info-label">Date début</span>
-                    <span class="info-value">{{ $reservation->date_debut }}</span>
+                <div class="detail-row">
+                    <span class="detail-label">Dates:</span>
+                    <span class="detail-value">
+                        Du {{ \Carbon\Carbon::parse($reservation->date_debut)->format('d/m/Y') }}
+                        au {{ \Carbon\Carbon::parse($reservation->date_fin)->format('d/m/Y') }}
+                    </span>
                 </div>
 
-                <div class="info-row">
-                    <span class="info-label">Date fin</span>
-                    <span class="info-value">{{ $reservation->date_fin }}</span>
+                <div class="detail-row">
+                    <span class="detail-label">Prix total:</span>
+                    <span class="detail-value price-highlight">{{ number_format($reservation->prix_total, 2) }}
+                        DH</span>
                 </div>
 
-                <div class="info-row">
-                    <span class="info-label">Livraison</span>
-                    <span class="info-value">{{ $reservation->adresse_livraison }}</span>
+                <div class="detail-row">
+                    <span class="detail-label">Adresse livraison:</span>
+                    <span class="detail-value">{{ $reservation->adresse_livraison }}</span>
                 </div>
             </div>
 
-            <div class="price-highlight">
-                💰 Prix total: {{ number_format($reservation->prix_total, 2) }} DH
-            </div>
+            <p>Pour gérer cette réservation, veuillez vous connecter à votre espace d'administration.</p>
 
-            <div class="cta-section">
-                <p style="margin-bottom: 20px; color: #6b7280;">Gérez cette réservation depuis votre espace
-                    administrateur</p>
-                <a href="#" class="cta-button">Accéder à l'espace admin</a>
-            </div>
+            {{-- <a href="{{ url('/admin/reservations') }}" class="action-button">Accéder à l'administration</a> --}}
         </div>
 
-        <div class="footer">
-            <p>© 2025 <span class="company-name">CarRental Pro</span> - Système de gestion des réservations</p>
-            <p style="margin-top: 10px; font-size: 12px;">Cet email a été généré automatiquement, merci de ne pas
-                répondre.</p>
+        <div class="email-footer">
+            <p>© {{ date('Y') }} BCG Location. Tous droits réservés.</p>
+            <p>Ceci est un message automatique, merci de ne pas y répondre.</p>
         </div>
     </div>
 </body>

@@ -37,6 +37,7 @@ Route::prefix("auth/")->controller(AuthentificationController::class)->group(fun
 Route::prefix("public")->controller(PublicController::class)->group(function () {
     Route::get("voitures/index", "indexVoiture");
     Route::get("commentaires/index", "indexCommentaires");
+    Route::post("contact", "sendContactMessage");
 });
 
 

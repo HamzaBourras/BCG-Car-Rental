@@ -80,7 +80,7 @@ function displayReservationsClient(reservations) {
                     <div class="statusPaiement ${statusClass}">${statusText}</div>
                 </div>`
         }
-        else if (reservation.statut == 0) {
+        else if (reservation.statut == 0 && reservation.expiree == false) {
             content2 += `
                     <div class="reservation-status refused">
                         <div class="status-text">Refusée</div>
@@ -274,6 +274,7 @@ async function supprimerReservation(reservation_id) {
 
         }
     } catch (error) {
+        console.log(error);
 
         // affichage des erreurs du message
         if (sendData.success === false)
