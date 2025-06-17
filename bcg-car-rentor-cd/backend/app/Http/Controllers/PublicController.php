@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
+use App\Models\Voiture;
 use App\Models\Commentaire;
 use App\Models\Reservation;
-use App\Models\Voiture;
-use Exception;
+use App\Mail\ContactMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\Mail;
 
 class PublicController extends Controller
 {
@@ -91,6 +93,44 @@ class PublicController extends Controller
             return response()->json([
                 "success" => false,
                 "message" => "Échec lors de la récupération des commentaires",
+                "errors" => $e->getMessage()
+            ], 500);
+        }
+    }
+
+
+    /************ Envoie un message de contact *************/
+    public function sendContactMessage(Request $request)
+    {
+        $validated = $request->validate([
+            "prenom" => "required|string|max:50",
+            "nom" => "required|string|max:50",
+            "email" => "required|email|max:100",
+            "telephone" => "required|string|max:15",
+            "message" => "required|string|max:500",
+        ]);
+
+        try {
+
+            // Envoi du message par email
+            $adminEmail = config('mail.from.address');
+            $email = new ContactMessage(
+                $validated['prenom'],
+                $validated['nom'],
+                $validated['email'],
+                $validated['telephone'],
+                $validated['message']
+            );
+            Mail::to($adminEmail)->send($email);
+
+            return response()->json([
+                "success" => true,
+                "message" => "Message envoyé avec succès"
+            ], 201);
+        } catch (Exception $e) {
+            return response()->json([
+                "success" => false,
+                "message" => "Échec lors de l'envoi du message",
                 "errors" => $e->getMessage()
             ], 500);
         }

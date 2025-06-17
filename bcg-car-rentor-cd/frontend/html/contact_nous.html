@@ -37,16 +37,16 @@
       <div class="contact-container">
         <div class="contact-form">
           <h2>Contacter nous</h2>
-          <form>
+          <form id="contactForm">
             <div class="form-group1">
-              <input type="text" placeholder="Votre prénom" required />
-              <input type="text" placeholder="Votre nom" required />
+              <input type="text" placeholder="Votre nom" required id="nom" />
+              <input type="text" placeholder="Votre prénom" required id="prenom" />
             </div>
             <div class="form-group">
-              <input type="tel" placeholder="Numéro de téléphone" required />
-              <input type="email" placeholder="example@gmail.com" required />
+              <input type="tel" placeholder="Numéro de téléphone" required id="telephone" />
+              <input type="email" placeholder="example@gmail.com" required id="email" />
             </div>
-            <textarea placeholder="Votre message ici ..." required></textarea>
+            <textarea placeholder="Votre message ici ..." required id="messageE"></textarea>
             <button type="submit" class="envoyer">Envoyer</button>
           </form>
         </div>
@@ -92,6 +92,7 @@
 
 
 <script src="/frontend/js/routes_config.js"></script>
+<script type="module" src="../js/send_contact_message.js"></script>
 <script src="../js/nav_bar.js"></script>
 
 </html>

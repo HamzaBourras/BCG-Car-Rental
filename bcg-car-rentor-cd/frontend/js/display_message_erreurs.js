@@ -7,7 +7,7 @@ async function init() {
         // Add CSS link (properly formatted as a string)
         document.head.insertAdjacentHTML(
             "beforeend",
-            '<link rel="stylesheet" href="../../css/bloc_message.css">'
+            '<link rel="stylesheet" href="/frontend/css/bloc_message.css">'
         );
 
         // Add HTML content
